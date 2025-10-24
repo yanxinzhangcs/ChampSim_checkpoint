@@ -895,12 +895,27 @@ void CACHE::end_phase(unsigned finished_cpu)
     ul->roi_stats.WQ_TO_CACHE = ul->sim_stats.WQ_TO_CACHE;
     ul->roi_stats.WQ_FORWARD = ul->sim_stats.WQ_FORWARD;
   }
+
+  dump_all_addrs();
 }
 
 template <typename T>
 bool CACHE::should_activate_prefetcher(const T& pkt) const
 {
   return !pkt.prefetch_from_this && std::count(std::begin(pref_activate_mask), std::end(pref_activate_mask), pkt.type) > 0;
+}
+
+void CACHE::dump_all_addrs() const
+{
+  fmt::print("[{}] Dumping all cache block addresses:\n", NAME);
+  for (long set = 0; set < NUM_SET; ++set) {
+    auto [set_begin, set_end] = get_span(std::cbegin(block), static_cast<set_type::difference_type>(set), NUM_WAY); // safe cast because of prior assert
+    for (auto way = set_begin; way != set_end; ++way) {
+      if (way->valid) {
+        fmt::print("  Set: {} Way: {} Address: {}\n", set, std::distance(set_begin, way), way->address);
+      }
+    }
+  }
 }
 
 // LCOV_EXCL_START Exclude the following function from LCOV

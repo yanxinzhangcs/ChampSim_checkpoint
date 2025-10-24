@@ -121,6 +121,7 @@ private:
   void finish_translation(const response_type& packet);
 
   void issue_translation(tag_lookup_type& q_entry) const;
+  void dump_all_addrs() const;
 
 public:
   using BLOCK = champsim::cache_block;
