@@ -23,6 +23,7 @@
 #include <fmt/chrono.h>
 #include <fmt/core.h>
 
+#include "cache_checkpoint.h"
 #include "environment.h"
 #include "ooo_cpu.h"
 #include "operable.h"
@@ -63,7 +64,11 @@ long do_cycle(environment& env, std::vector<tracereader>& traces, std::vector<st
 phase_stats do_phase(const phase_info& phase, environment& env, std::vector<tracereader>& traces, champsim::chrono::clock& global_clock)
 {
   auto operables = env.operable_view();
-  auto [phase_name, is_warmup, length, trace_index, trace_names] = phase;
+  const auto& phase_name = phase.name;
+  const auto is_warmup = phase.is_warmup;
+  const auto length = phase.length;
+  const auto& trace_index = phase.trace_index;
+  const auto& trace_names = phase.trace_names;
 
   // Initialize phase
   for (champsim::operable& op : operables) {
@@ -143,8 +148,10 @@ phase_stats do_phase(const phase_info& phase, environment& env, std::vector<trac
           op.end_phase(cpu.cpu);
         }
 
-        fmt::print("{} finished CPU {} instructions: {} cycles: {} cumulative IPC: {:.4g} (Simulation time: {:%H hr %M min %S sec})\n", phase_name, cpu.cpu,
-                   cpu.sim_instr(), cpu.sim_cycle(), std::ceil(cpu.sim_instr()) / std::ceil(cpu.sim_cycle()), elapsed_time());
+        if (phase.verbose) {
+          fmt::print("{} finished CPU {} instructions: {} cycles: {} cumulative IPC: {:.4g} (Simulation time: {:%H hr %M min %S sec})\n", phase_name,
+                     cpu.cpu, cpu.sim_instr(), cpu.sim_cycle(), std::ceil(cpu.sim_instr()) / std::ceil(cpu.sim_cycle()), elapsed_time());
+        }
       }
     }
 
@@ -152,8 +159,10 @@ phase_stats do_phase(const phase_info& phase, environment& env, std::vector<trac
   }
 
   for (O3_CPU& cpu : env.cpu_view()) {
-    fmt::print("{} complete CPU {} instructions: {} cycles: {} cumulative IPC: {:.4g} (Simulation time: {:%H hr %M min %S sec})\n", phase_name, cpu.cpu,
-               cpu.sim_instr(), cpu.sim_cycle(), std::ceil(cpu.sim_instr()) / std::ceil(cpu.sim_cycle()), elapsed_time());
+    if (phase.verbose) {
+      fmt::print("{} complete CPU {} instructions: {} cycles: {} cumulative IPC: {:.4g} (Simulation time: {:%H hr %M min %S sec})\n", phase_name, cpu.cpu,
+                 cpu.sim_instr(), cpu.sim_cycle(), std::ceil(cpu.sim_instr()) / std::ceil(cpu.sim_cycle()), elapsed_time());
+    }
   }
 
   phase_stats stats;
@@ -189,8 +198,26 @@ std::vector<phase_stats> main(environment& env, std::vector<phase_info>& phases,
 
   champsim::chrono::clock global_clock;
   std::vector<phase_stats> results;
-  for (auto phase : phases) {
+  bool checkpoint_written_this_run = false;
+  bool warm_phase_executed_this_run = false;
+  for (auto& phase : phases) {
+    const bool should_skip_load =
+        warm_phase_executed_this_run && checkpoint_written_this_run && phase.cache_checkpoint_in && phase.cache_checkpoint_out
+        && (*phase.cache_checkpoint_in == *phase.cache_checkpoint_out);
+
+    if (phase.cache_checkpoint_in && !should_skip_load) {
+      load_cache_checkpoint(env, *phase.cache_checkpoint_in);
+    }
+
     auto stats = do_phase(phase, env, traces, global_clock);
+
+    if (phase.cache_checkpoint_out) {
+      save_cache_checkpoint(env, *phase.cache_checkpoint_out);
+      checkpoint_written_this_run = true;
+    }
+
+    warm_phase_executed_this_run = warm_phase_executed_this_run || phase.is_warmup;
+
     if (!phase.is_warmup) {
       results.push_back(stats);
     }

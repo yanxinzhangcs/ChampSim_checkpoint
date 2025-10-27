@@ -39,10 +39,14 @@ VirtualMemory::VirtualMemory(champsim::data::bytes page_table_page_size, std::si
       champsim::lowest_address_for_size(champsim::data::bytes{PAGE_SIZE + champsim::ipow(pte_page_size.count(), static_cast<unsigned>(pt_levels))})};
   champsim::data::bits required_bits{LOG2_PAGE_SIZE + champsim::lg2(last_vpage.to<uint64_t>())};
   if (required_bits > champsim::address::bits) {
-    fmt::print("[VMEM] WARNING: virtual memory configuration would require {} bits of addressing.\n", required_bits); // LCOV_EXCL_LINE
+    if (dram.is_verbose()) {
+      fmt::print("[VMEM] WARNING: virtual memory configuration would require {} bits of addressing.\n", required_bits); // LCOV_EXCL_LINE
+    }
   }
   if (required_bits > champsim::data::bits{champsim::lg2(dram.size().count())}) {
-    fmt::print("[VMEM] WARNING: physical memory size is smaller than virtual memory size.\n"); // LCOV_EXCL_LINE
+    if (dram.is_verbose()) {
+      fmt::print("[VMEM] WARNING: physical memory size is smaller than virtual memory size.\n"); // LCOV_EXCL_LINE
+    }
   }
   populate_pages();
   shuffle_pages();
@@ -96,7 +100,9 @@ void VirtualMemory::ppage_pop()
 {
   ppage_free_list.pop_front();
   if (available_ppages() == 0) {
-    fmt::print("[VMEM] WARNING: Out of physical memory, freeing ppages\n");
+    if (dram.is_verbose()) {
+      fmt::print("[VMEM] WARNING: Out of physical memory, freeing ppages\n");
+    }
     populate_pages();
     shuffle_pages();
   }
@@ -116,7 +122,9 @@ std::pair<champsim::page_number, champsim::chrono::clock::duration> VirtualMemor
   auto penalty = fault ? minor_fault_penalty : champsim::chrono::clock::duration::zero();
 
   if constexpr (champsim::debug_print) {
-    fmt::print("[VMEM] {} paddr: {} vpage: {} fault: {}\n", __func__, ppage->second, champsim::page_number{vaddr}, fault);
+    if (dram.is_verbose()) {
+      fmt::print("[VMEM] {} paddr: {} vpage: {} fault: {}\n", __func__, ppage->second, champsim::page_number{vaddr}, fault);
+    }
   }
 
   return std::pair{ppage->second, penalty};
@@ -144,7 +152,9 @@ std::pair<champsim::address, champsim::chrono::clock::duration> VirtualMemory::g
                                                                                        static_cast<std::size_t>(champsim::lg2(pte_page_size.count()))},
                                                               offset})};
   if constexpr (champsim::debug_print) {
-    fmt::print("[VMEM] {} paddr: {} vaddr: {} pt_page_offset: {} translation_level: {} fault: {}\n", __func__, paddr, vaddr, offset, level, fault);
+    if (dram.is_verbose()) {
+      fmt::print("[VMEM] {} paddr: {} vaddr: {} pt_page_offset: {} translation_level: {} fault: {}\n", __func__, paddr, vaddr, offset, level, fault);
+    }
   }
 
   auto penalty = minor_fault_penalty;

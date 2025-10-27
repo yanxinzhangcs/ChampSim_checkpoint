@@ -21,6 +21,7 @@
 #include <cmath>
 #include <iomanip>
 #include <numeric>
+#include <stdexcept>
 #include <fmt/core.h>
 
 #include "bandwidth.h"
@@ -896,7 +897,7 @@ void CACHE::end_phase(unsigned finished_cpu)
     ul->roi_stats.WQ_FORWARD = ul->sim_stats.WQ_FORWARD;
   }
 
-  dump_all_addrs();
+  // Cache contents are persisted via the checkpoint log; avoid dumping to stdout by default.
 }
 
 template <typename T>
@@ -915,6 +916,62 @@ void CACHE::dump_all_addrs() const
         fmt::print("  Set: {} Way: {} Address: {}\n", set, std::distance(set_begin, way), way->address);
       }
     }
+  }
+}
+
+auto CACHE::checkpoint_contents() const -> std::vector<checkpoint_entry>
+{
+  std::vector<checkpoint_entry> entries;
+  entries.reserve(static_cast<std::size_t>(NUM_SET) * NUM_WAY);
+
+  for (long set = 0; set < NUM_SET; ++set) {
+    auto [set_begin, set_end] = get_span(std::cbegin(block), static_cast<set_type::difference_type>(set), NUM_WAY);
+    for (auto way = set_begin; way != set_end; ++way) {
+      if (way->valid) {
+        entries.push_back(checkpoint_entry{set, static_cast<long>(std::distance(set_begin, way)), *way});
+      }
+    }
+  }
+
+  return entries;
+}
+
+void CACHE::restore_checkpoint(const std::vector<checkpoint_entry>& entries)
+{
+  MSHR.clear();
+  inflight_writes.clear();
+  internal_PQ.clear();
+  inflight_tag_check.clear();
+  translation_stash.clear();
+
+  for (auto& blk : block) {
+    blk = BLOCK{};
+  }
+
+  impl_initialize_replacement();
+
+  for (const auto& entry : entries) {
+    if (entry.set < 0 || entry.set >= NUM_SET) {
+      throw std::out_of_range(fmt::format("[{}] checkpoint set {} outside 0..{}", NAME, entry.set, NUM_SET - 1));
+    }
+
+    if (entry.way < 0 || entry.way >= NUM_WAY) {
+      throw std::out_of_range(fmt::format("[{}] checkpoint way {} outside 0..{}", NAME, entry.way, NUM_WAY - 1));
+    }
+
+    const auto block_index = static_cast<std::size_t>(entry.set) * static_cast<std::size_t>(NUM_WAY) + static_cast<std::size_t>(entry.way);
+    block.at(block_index) = entry.block;
+
+    if (!entry.block.valid) {
+      continue;
+    }
+
+    auto module_addr = virtual_prefetch ? entry.block.v_address : entry.block.address;
+    auto trimmed_addr = module_addr.slice_upper(match_offset_bits ? champsim::data::bits{} : OFFSET_BITS);
+    champsim::address cache_addr{trimmed_addr};
+
+    auto type = entry.block.prefetch ? access_type::PREFETCH : (entry.block.dirty ? access_type::WRITE : access_type::LOAD);
+    impl_replacement_cache_fill(cpu, entry.set, entry.way, cache_addr, champsim::address{}, champsim::address{}, type);
   }
 }
 

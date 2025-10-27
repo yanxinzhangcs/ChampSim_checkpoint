@@ -218,6 +218,15 @@ public:
   [[deprecated("Use CACHE::prefetch_line(pf_addr, fill_this_level, prefetch_metadata) instead.")]] bool
   prefetch_line(uint64_t ip, uint64_t base_addr, uint64_t pf_addr, bool fill_this_level, uint32_t prefetch_metadata);
 
+  struct checkpoint_entry {
+    long set = 0;
+    long way = 0;
+    BLOCK block{};
+  };
+
+  [[nodiscard]] std::vector<checkpoint_entry> checkpoint_contents() const;
+  void restore_checkpoint(const std::vector<checkpoint_entry>& entries);
+
   void print_deadlock() final;
 
 #include "module_decl.inc"

@@ -19,6 +19,7 @@
 
 #include <cstdint>
 #include <memory>
+#include <optional>
 #include <string>
 #include <string_view>
 #include <vector>
@@ -36,6 +37,9 @@ struct phase_info {
   long long length;
   std::vector<std::size_t> trace_index;
   std::vector<std::string> trace_names;
+  std::optional<std::string> cache_checkpoint_in;
+  std::optional<std::string> cache_checkpoint_out;
+  bool verbose = false;
 };
 
 struct phase_stats {

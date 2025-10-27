@@ -369,18 +369,20 @@ void MEMORY_CONTROLLER::initialize()
 {
   using namespace champsim::data::data_literals;
   using namespace std::literals::chrono_literals;
-  auto sz = this->size();
-  if (champsim::data::gibibytes gb_sz{sz}; gb_sz > 1_GiB) {
-    fmt::print("Off-chip DRAM Size: {}", gb_sz);
-  } else if (champsim::data::mebibytes mb_sz{sz}; mb_sz > 1_MiB) {
-    fmt::print("Off-chip DRAM Size: {}", mb_sz);
-  } else if (champsim::data::kibibytes kb_sz{sz}; kb_sz > 1_kiB) {
-    fmt::print("Off-chip DRAM Size: {}", kb_sz);
-  } else {
-    fmt::print("Off-chip DRAM Size: {}", sz);
+  if (verbose) {
+    auto sz = this->size();
+    if (champsim::data::gibibytes gb_sz{sz}; gb_sz > 1_GiB) {
+      fmt::print("Off-chip DRAM Size: {}", gb_sz);
+    } else if (champsim::data::mebibytes mb_sz{sz}; mb_sz > 1_MiB) {
+      fmt::print("Off-chip DRAM Size: {}", mb_sz);
+    } else if (champsim::data::kibibytes kb_sz{sz}; kb_sz > 1_kiB) {
+      fmt::print("Off-chip DRAM Size: {}", kb_sz);
+    } else {
+      fmt::print("Off-chip DRAM Size: {}", sz);
+    }
+    fmt::print(" Channels: {} Width: {}-bit Data Rate: {} MT/s\n", std::size(channels), champsim::data::bits_per_byte * channel_width.count(),
+               1us / (data_bus_period));
   }
-  fmt::print(" Channels: {} Width: {}-bit Data Rate: {} MT/s\n", std::size(channels), champsim::data::bits_per_byte * channel_width.count(),
-             1us / (data_bus_period));
 }
 
 void DRAM_CHANNEL::initialize() {}
