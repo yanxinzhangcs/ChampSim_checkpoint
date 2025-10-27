@@ -193,6 +193,7 @@ class MEMORY_CONTROLLER : public champsim::operable
   using response_type = typename channel_type::response_type;
   std::vector<channel_type*> queues;
   const champsim::data::bytes channel_width;
+  bool verbose = false;
 
   void initiate_requests();
   bool add_rq(const request_type& packet, champsim::channel* ul);
@@ -218,6 +219,8 @@ public:
   void print_deadlock() final;
 
   [[nodiscard]] champsim::data::bytes size() const;
+  void set_verbose(bool enable) { verbose = enable; }
+  [[nodiscard]] bool is_verbose() const { return verbose; }
 };
 
 #endif
