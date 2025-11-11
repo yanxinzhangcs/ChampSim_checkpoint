@@ -6,7 +6,7 @@ from pathlib import Path
 from typing import List
 
 from .action_space import Action, ActionSpace, load_action_space
-from .agent import RandomAgent
+from .agent import EpsilonGreedyAgent, RandomAgent
 from .builder import ChampSimBuildManager
 from .runner import ChampSimRunner
 
@@ -20,8 +20,9 @@ def parse_args() -> argparse.Namespace:
   parser.add_argument("--steps", type=int, default=5, help="Number of RL steps to execute")
   parser.add_argument("--seed", type=int, default=0, help="Random seed")
   parser.add_argument("--output", type=Path, default=Path("rl_runs"), help="Directory to store checkpoints and stats")
-  parser.add_argument("--shared-base", action="store_true", help="Reuse the same warm checkpoint for every action")
   parser.add_argument("--resume-warmup", type=int, default=1, help="Warmup instructions to run before each measurement window")
+  parser.add_argument("--agent", choices=["random", "epsilon_greedy"], default="epsilon_greedy", help="Policy used to select actions")
+  parser.add_argument("--epsilon", type=float, default=0.1, help="Exploration rate for epsilon-greedy policy")
   return parser.parse_args()
 
 
@@ -39,26 +40,32 @@ def main() -> None:
       warmup_instructions=args.warmup,
       window_instructions=args.window,
       output_dir=args.output.resolve(),
-      shared_base=args.shared_base,
       resume_warmup=args.resume_warmup,
   )
 
   base_checkpoint = runner.initialise_checkpoint(base_action, action_space)
 
-  agent = RandomAgent(action_space, seed=args.seed)
+  if args.agent == "random":
+    agent = RandomAgent(action_space, seed=args.seed)
+  else:
+    agent = EpsilonGreedyAgent(action_space, epsilon=args.epsilon, seed=args.seed)
   episode_log: List[dict] = []
 
   state = None
   for step in range(args.steps):
-    action = agent.select_action(state=state)
+    action = agent.select_action(state)
     result = runner.run_window(action, action_space, base_checkpoint, step)
     metrics = result.metrics
-    state = metrics.feature_vector
+    next_state = metrics.feature_vector
+    reward = metrics.ipc
+    agent.observe(state, action, reward, next_state)
+    state = next_state
 
     episode_log.append(
         {
             "step": step,
             "action": action.values,
+            "reward": reward,
             "ipc": metrics.ipc,
             "l1d_mpki": metrics.l1d_mpki,
             "l2_mpki": metrics.l2_mpki,
@@ -66,11 +73,12 @@ def main() -> None:
             "prefetch_coverage": metrics.prefetch_coverage,
             "prefetch_accuracy": metrics.prefetch_accuracy,
             "branch_miss_rate": metrics.branch_miss_rate,
+            "skip_instructions": result.skip_instructions,
             "stats_path": str(result.stats_path),
             "cache_path": str(result.cache_path),
         }
     )
-    print(f"[step {step}] action={action.values} IPC={metrics.ipc:.6f}")
+    print(f"[step {step}] action={action.values} IPC={metrics.ipc:.6f} reward={reward:.6f}")
 
   summary_path = args.output / "episode_summary.json"
   with summary_path.open("w", encoding="utf-8") as handle:
