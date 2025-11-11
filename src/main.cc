@@ -66,6 +66,7 @@ int main(int argc, char** argv) // NOLINT(bugprone-exception-escape)
   long subtrace_count = 1;
   std::string json_file_name;
   std::string checkpoint_path;
+  long long skip_instructions = 0;
   std::vector<std::string> trace_names;
 
   auto set_heartbeat_callback = [&](auto) {
@@ -90,6 +91,8 @@ int main(int argc, char** argv) // NOLINT(bugprone-exception-escape)
   app.add_option("--subtrace-count", subtrace_count, "Number of simulation subtraces to run sequentially after warmup")->check(CLI::PositiveNumber);
   app.add_option("--cache-checkpoint", checkpoint_path, "Path to cache checkpoint log file used to persist cache contents between phases")
       ->expected(0, 1);
+  app.add_option("--skip-instructions", skip_instructions, "Number of instructions to fast-forward before warmup")
+      ->check(CLI::NonNegativeNumber);
 
   app.add_option("traces", trace_names, "The paths to the traces")->required()->expected(NUM_CPUS)->check(CLI::ExistingFile);
 
@@ -131,6 +134,14 @@ int main(int argc, char** argv) // NOLINT(bugprone-exception-escape)
   std::transform(
       std::begin(trace_names), std::end(trace_names), std::back_inserter(traces),
       [knob_cloudsuite, repeat = simulation_given, i = uint8_t(0)](auto name) mutable { return get_tracereader(name, i++, knob_cloudsuite, repeat); });
+
+  if (skip_instructions > 0) {
+    for (auto& trace : traces) {
+      for (long long skipped = 0; skipped < skip_instructions && !trace.eof(); ++skipped) {
+        static_cast<void>(trace());
+      }
+    }
+  }
 
   std::vector<std::size_t> default_trace_index(std::size(trace_names));
   std::iota(std::begin(default_trace_index), std::end(default_trace_index), 0);

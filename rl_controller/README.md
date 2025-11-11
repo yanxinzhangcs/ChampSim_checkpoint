@@ -26,12 +26,10 @@ python -m rl_controller.main \
   --window 50000000 \
   --steps 5 \
   --output rl_runs/perlbench \
-  --resume-warmup 100
+  --resume-warmup 100 \
+  --agent epsilon_greedy \
+  --epsilon 0.1
 ```
-
-By default each action gets its own warmup checkpoint.  Add `--shared-base`
-to reuse a single checkpoint for all actions (handy for strict A/B testing,
-but only safe if every policy can resume from the same cache image).
 
 The `--resume-warmup` knob controls how many instructions are run before each
 measurement window after the checkpoint is restored.  Keeping it small (e.g.
@@ -50,6 +48,11 @@ summary of the episode lives in `episode_summary.json`.
   `bin/champsim_rl_llc-replacement-srrip_l2c-prefetcher-next_line`).  If
   you change module code, remove the corresponding binary to force a
   rebuild.
-- Replace the default `RandomAgent` with your own agent to perform online
-  learning.  Each `RunResult` includes a feature vector you can feed into
-  an RL algorithm.
+- Two policy options exist out of the box: `--agent random` samples uniformly,
+  while `--agent epsilon_greedy` (default) keeps running action-value
+  averages and explores with probability `--epsilon`.
+- The controller keeps track of the trace offset: each step fast-forwards by
+  the cumulative `warmup + resume + window` instructions consumed so far, then
+  restores the prior cache checkpoint before running the next window.
+- Each `RunResult` exposes a feature vector so you can plug in richer RL
+  algorithms (contextual bandits, actor-critic, etc.) with minimal wiring.

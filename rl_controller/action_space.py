@@ -28,6 +28,10 @@ class Action:
 
   values: Mapping[str, str]
 
+  def key(self) -> str:
+    """Deterministic identifier for caching and logging."""
+    return "_".join(f"{name}-{value}" for name, value in sorted(self.values.items()))
+
   def as_config_updates(self, heads: Mapping[str, ActionHead]) -> Dict[str, str]:
     """Convert the action to {path: value} modifications."""
     updates: Dict[str, str] = {}
@@ -58,6 +62,17 @@ class ActionSpace:
 
   def default_action(self) -> Action:
     return Action({name: head.choices[0] for name, head in self._heads.items()})
+
+  def all_actions(self) -> List[Action]:
+    names: List[str] = list(self._heads.keys())
+    choice_lists: List[Sequence[str]] = [self._heads[name].choices for name in names]
+
+    from itertools import product
+
+    actions: List[Action] = []
+    for combo in product(*choice_lists):
+      actions.append(Action(dict(zip(names, combo))))
+    return actions
 
   def random_action(self, rng: random.Random) -> Action:
     return Action({name: rng.choice(head.choices) for name, head in self._heads.items()})
