@@ -4,7 +4,7 @@
     {
       "name": "l2c_prefetcher",
       "path": ["L2C", "prefetcher"],
-      "choices": ["next_line"]
+      "choices": ["no"]
     },
     {
       "name": "llc_replacement",
@@ -13,8 +13,7 @@
     }
   ],
   "base_action": {
-    "l2c_prefetcher": "next_line",
+    "l2c_prefetcher": "no",
     "llc_replacement": "srrip"
   }
 }
-
