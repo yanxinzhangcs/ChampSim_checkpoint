@@ -1,0 +1,19 @@
+{
+  "template_config": "champsim_config.json",
+  "heads": [
+    {
+      "name": "l2c_prefetcher",
+      "path": ["L2C", "prefetcher"],
+      "choices": ["ip_stride"]
+    },
+    {
+      "name": "llc_replacement",
+      "path": ["LLC", "replacement"],
+      "choices": ["lru"]
+    }
+  ],
+  "base_action": {
+    "l2c_prefetcher": "ip_stride",
+    "llc_replacement": "lru"
+  }
+}
