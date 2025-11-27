@@ -1,0 +1,3032 @@
+{
+  "config": {
+    "trace": "/users/lijrjyan/ChampSim_checkpoint/631.deepsjeng_s-928B.champsimtrace.xz",
+    "warmup": 1000000,
+    "window": 200000,
+    "resume_warmup": 100,
+    "steps": 100,
+    "epsilon": 0.1,
+    "seed": 0
+  },
+  "rl": {
+    "total_ipc": 67.9234022293607,
+    "episode": [
+      {
+        "step": 0,
+        "action": {
+          "l2c_prefetcher": "no",
+          "llc_replacement": "lru"
+        },
+        "reward": 0.6114805472750898,
+        "ipc": 0.6114805472750898,
+        "skip_instructions": 1000000,
+        "stats_path": "/users/lijrjyan/ChampSim_checkpoint/baseline/results/631.deepsjeng_s-928B/steps_100/no_lru/rl/iter_0000_stats.json",
+        "cache_path": "/users/lijrjyan/ChampSim_checkpoint/baseline/results/631.deepsjeng_s-928B/steps_100/no_lru/rl/iter_0000_cache.log"
+      },
+      {
+        "step": 1,
+        "action": {
+          "l2c_prefetcher": "no",
+          "llc_replacement": "lru"
+        },
+        "reward": 0.6731013872342144,
+        "ipc": 0.6731013872342144,
+        "skip_instructions": 1200100,
+        "stats_path": "/users/lijrjyan/ChampSim_checkpoint/baseline/results/631.deepsjeng_s-928B/steps_100/no_lru/rl/iter_0001_stats.json",
+        "cache_path": "/users/lijrjyan/ChampSim_checkpoint/baseline/results/631.deepsjeng_s-928B/steps_100/no_lru/rl/iter_0001_cache.log"
+      },
+      {
+        "step": 2,
+        "action": {
+          "l2c_prefetcher": "no",
+          "llc_replacement": "lru"
+        },
+        "reward": 0.6877456492361018,
+        "ipc": 0.6877456492361018,
+        "skip_instructions": 1400200,
+        "stats_path": "/users/lijrjyan/ChampSim_checkpoint/baseline/results/631.deepsjeng_s-928B/steps_100/no_lru/rl/iter_0002_stats.json",
+        "cache_path": "/users/lijrjyan/ChampSim_checkpoint/baseline/results/631.deepsjeng_s-928B/steps_100/no_lru/rl/iter_0002_cache.log"
+      },
+      {
+        "step": 3,
+        "action": {
+          "l2c_prefetcher": "no",
+          "llc_replacement": "lru"
+        },
+        "reward": 0.6811849894075734,
+        "ipc": 0.6811849894075734,
+        "skip_instructions": 1600300,
+        "stats_path": "/users/lijrjyan/ChampSim_checkpoint/baseline/results/631.deepsjeng_s-928B/steps_100/no_lru/rl/iter_0003_stats.json",
+        "cache_path": "/users/lijrjyan/ChampSim_checkpoint/baseline/results/631.deepsjeng_s-928B/steps_100/no_lru/rl/iter_0003_cache.log"
+      },
+      {
+        "step": 4,
+        "action": {
+          "l2c_prefetcher": "no",
+          "llc_replacement": "lru"
+        },
+        "reward": 0.6647731805249023,
+        "ipc": 0.6647731805249023,
+        "skip_instructions": 1800400,
+        "stats_path": "/users/lijrjyan/ChampSim_checkpoint/baseline/results/631.deepsjeng_s-928B/steps_100/no_lru/rl/iter_0004_stats.json",
+        "cache_path": "/users/lijrjyan/ChampSim_checkpoint/baseline/results/631.deepsjeng_s-928B/steps_100/no_lru/rl/iter_0004_cache.log"
+      },
+      {
+        "step": 5,
+        "action": {
+          "l2c_prefetcher": "no",
+          "llc_replacement": "lru"
+        },
+        "reward": 0.7134525036831986,
+        "ipc": 0.7134525036831986,
+        "skip_instructions": 2000500,
+        "stats_path": "/users/lijrjyan/ChampSim_checkpoint/baseline/results/631.deepsjeng_s-928B/steps_100/no_lru/rl/iter_0005_stats.json",
+        "cache_path": "/users/lijrjyan/ChampSim_checkpoint/baseline/results/631.deepsjeng_s-928B/steps_100/no_lru/rl/iter_0005_cache.log"
+      },
+      {
+        "step": 6,
+        "action": {
+          "l2c_prefetcher": "no",
+          "llc_replacement": "lru"
+        },
+        "reward": 0.6791168940530923,
+        "ipc": 0.6791168940530923,
+        "skip_instructions": 2200600,
+        "stats_path": "/users/lijrjyan/ChampSim_checkpoint/baseline/results/631.deepsjeng_s-928B/steps_100/no_lru/rl/iter_0006_stats.json",
+        "cache_path": "/users/lijrjyan/ChampSim_checkpoint/baseline/results/631.deepsjeng_s-928B/steps_100/no_lru/rl/iter_0006_cache.log"
+      },
+      {
+        "step": 7,
+        "action": {
+          "l2c_prefetcher": "no",
+          "llc_replacement": "lru"
+        },
+        "reward": 0.7622481296710584,
+        "ipc": 0.7622481296710584,
+        "skip_instructions": 2400700,
+        "stats_path": "/users/lijrjyan/ChampSim_checkpoint/baseline/results/631.deepsjeng_s-928B/steps_100/no_lru/rl/iter_0007_stats.json",
+        "cache_path": "/users/lijrjyan/ChampSim_checkpoint/baseline/results/631.deepsjeng_s-928B/steps_100/no_lru/rl/iter_0007_cache.log"
+      },
+      {
+        "step": 8,
+        "action": {
+          "l2c_prefetcher": "no",
+          "llc_replacement": "lru"
+        },
+        "reward": 0.7650085107196818,
+        "ipc": 0.7650085107196818,
+        "skip_instructions": 2600800,
+        "stats_path": "/users/lijrjyan/ChampSim_checkpoint/baseline/results/631.deepsjeng_s-928B/steps_100/no_lru/rl/iter_0008_stats.json",
+        "cache_path": "/users/lijrjyan/ChampSim_checkpoint/baseline/results/631.deepsjeng_s-928B/steps_100/no_lru/rl/iter_0008_cache.log"
+      },
+      {
+        "step": 9,
+        "action": {
+          "l2c_prefetcher": "no",
+          "llc_replacement": "lru"
+        },
+        "reward": 0.804758513296556,
+        "ipc": 0.804758513296556,
+        "skip_instructions": 2800900,
+        "stats_path": "/users/lijrjyan/ChampSim_checkpoint/baseline/results/631.deepsjeng_s-928B/steps_100/no_lru/rl/iter_0009_stats.json",
+        "cache_path": "/users/lijrjyan/ChampSim_checkpoint/baseline/results/631.deepsjeng_s-928B/steps_100/no_lru/rl/iter_0009_cache.log"
+      },
+      {
+        "step": 10,
+        "action": {
+          "l2c_prefetcher": "no",
+          "llc_replacement": "lru"
+        },
+        "reward": 0.743315766391889,
+        "ipc": 0.743315766391889,
+        "skip_instructions": 3001000,
+        "stats_path": "/users/lijrjyan/ChampSim_checkpoint/baseline/results/631.deepsjeng_s-928B/steps_100/no_lru/rl/iter_0010_stats.json",
+        "cache_path": "/users/lijrjyan/ChampSim_checkpoint/baseline/results/631.deepsjeng_s-928B/steps_100/no_lru/rl/iter_0010_cache.log"
+      },
+      {
+        "step": 11,
+        "action": {
+          "l2c_prefetcher": "no",
+          "llc_replacement": "lru"
+        },
+        "reward": 0.7696262347567429,
+        "ipc": 0.7696262347567429,
+        "skip_instructions": 3201100,
+        "stats_path": "/users/lijrjyan/ChampSim_checkpoint/baseline/results/631.deepsjeng_s-928B/steps_100/no_lru/rl/iter_0011_stats.json",
+        "cache_path": "/users/lijrjyan/ChampSim_checkpoint/baseline/results/631.deepsjeng_s-928B/steps_100/no_lru/rl/iter_0011_cache.log"
+      },
+      {
+        "step": 12,
+        "action": {
+          "l2c_prefetcher": "no",
+          "llc_replacement": "lru"
+        },
+        "reward": 0.724005864359536,
+        "ipc": 0.724005864359536,
+        "skip_instructions": 3401200,
+        "stats_path": "/users/lijrjyan/ChampSim_checkpoint/baseline/results/631.deepsjeng_s-928B/steps_100/no_lru/rl/iter_0012_stats.json",
+        "cache_path": "/users/lijrjyan/ChampSim_checkpoint/baseline/results/631.deepsjeng_s-928B/steps_100/no_lru/rl/iter_0012_cache.log"
+      },
+      {
+        "step": 13,
+        "action": {
+          "l2c_prefetcher": "no",
+          "llc_replacement": "lru"
+        },
+        "reward": 0.7148524901886496,
+        "ipc": 0.7148524901886496,
+        "skip_instructions": 3601300,
+        "stats_path": "/users/lijrjyan/ChampSim_checkpoint/baseline/results/631.deepsjeng_s-928B/steps_100/no_lru/rl/iter_0013_stats.json",
+        "cache_path": "/users/lijrjyan/ChampSim_checkpoint/baseline/results/631.deepsjeng_s-928B/steps_100/no_lru/rl/iter_0013_cache.log"
+      },
+      {
+        "step": 14,
+        "action": {
+          "l2c_prefetcher": "no",
+          "llc_replacement": "lru"
+        },
+        "reward": 0.7003659412042792,
+        "ipc": 0.7003659412042792,
+        "skip_instructions": 3801400,
+        "stats_path": "/users/lijrjyan/ChampSim_checkpoint/baseline/results/631.deepsjeng_s-928B/steps_100/no_lru/rl/iter_0014_stats.json",
+        "cache_path": "/users/lijrjyan/ChampSim_checkpoint/baseline/results/631.deepsjeng_s-928B/steps_100/no_lru/rl/iter_0014_cache.log"
+      },
+      {
+        "step": 15,
+        "action": {
+          "l2c_prefetcher": "no",
+          "llc_replacement": "lru"
+        },
+        "reward": 0.6402174156602016,
+        "ipc": 0.6402174156602016,
+        "skip_instructions": 4001500,
+        "stats_path": "/users/lijrjyan/ChampSim_checkpoint/baseline/results/631.deepsjeng_s-928B/steps_100/no_lru/rl/iter_0015_stats.json",
+        "cache_path": "/users/lijrjyan/ChampSim_checkpoint/baseline/results/631.deepsjeng_s-928B/steps_100/no_lru/rl/iter_0015_cache.log"
+      },
+      {
+        "step": 16,
+        "action": {
+          "l2c_prefetcher": "no",
+          "llc_replacement": "lru"
+        },
+        "reward": 0.710607379510046,
+        "ipc": 0.710607379510046,
+        "skip_instructions": 4201600,
+        "stats_path": "/users/lijrjyan/ChampSim_checkpoint/baseline/results/631.deepsjeng_s-928B/steps_100/no_lru/rl/iter_0016_stats.json",
+        "cache_path": "/users/lijrjyan/ChampSim_checkpoint/baseline/results/631.deepsjeng_s-928B/steps_100/no_lru/rl/iter_0016_cache.log"
+      },
+      {
+        "step": 17,
+        "action": {
+          "l2c_prefetcher": "no",
+          "llc_replacement": "lru"
+        },
+        "reward": 0.6512994858067689,
+        "ipc": 0.6512994858067689,
+        "skip_instructions": 4401700,
+        "stats_path": "/users/lijrjyan/ChampSim_checkpoint/baseline/results/631.deepsjeng_s-928B/steps_100/no_lru/rl/iter_0017_stats.json",
+        "cache_path": "/users/lijrjyan/ChampSim_checkpoint/baseline/results/631.deepsjeng_s-928B/steps_100/no_lru/rl/iter_0017_cache.log"
+      },
+      {
+        "step": 18,
+        "action": {
+          "l2c_prefetcher": "no",
+          "llc_replacement": "lru"
+        },
+        "reward": 0.661638216223369,
+        "ipc": 0.661638216223369,
+        "skip_instructions": 4601800,
+        "stats_path": "/users/lijrjyan/ChampSim_checkpoint/baseline/results/631.deepsjeng_s-928B/steps_100/no_lru/rl/iter_0018_stats.json",
+        "cache_path": "/users/lijrjyan/ChampSim_checkpoint/baseline/results/631.deepsjeng_s-928B/steps_100/no_lru/rl/iter_0018_cache.log"
+      },
+      {
+        "step": 19,
+        "action": {
+          "l2c_prefetcher": "no",
+          "llc_replacement": "lru"
+        },
+        "reward": 0.6493295672218434,
+        "ipc": 0.6493295672218434,
+        "skip_instructions": 4801900,
+        "stats_path": "/users/lijrjyan/ChampSim_checkpoint/baseline/results/631.deepsjeng_s-928B/steps_100/no_lru/rl/iter_0019_stats.json",
+        "cache_path": "/users/lijrjyan/ChampSim_checkpoint/baseline/results/631.deepsjeng_s-928B/steps_100/no_lru/rl/iter_0019_cache.log"
+      },
+      {
+        "step": 20,
+        "action": {
+          "l2c_prefetcher": "no",
+          "llc_replacement": "lru"
+        },
+        "reward": 0.6668367074764611,
+        "ipc": 0.6668367074764611,
+        "skip_instructions": 5002000,
+        "stats_path": "/users/lijrjyan/ChampSim_checkpoint/baseline/results/631.deepsjeng_s-928B/steps_100/no_lru/rl/iter_0020_stats.json",
+        "cache_path": "/users/lijrjyan/ChampSim_checkpoint/baseline/results/631.deepsjeng_s-928B/steps_100/no_lru/rl/iter_0020_cache.log"
+      },
+      {
+        "step": 21,
+        "action": {
+          "l2c_prefetcher": "no",
+          "llc_replacement": "lru"
+        },
+        "reward": 0.6718600932532484,
+        "ipc": 0.6718600932532484,
+        "skip_instructions": 5202100,
+        "stats_path": "/users/lijrjyan/ChampSim_checkpoint/baseline/results/631.deepsjeng_s-928B/steps_100/no_lru/rl/iter_0021_stats.json",
+        "cache_path": "/users/lijrjyan/ChampSim_checkpoint/baseline/results/631.deepsjeng_s-928B/steps_100/no_lru/rl/iter_0021_cache.log"
+      },
+      {
+        "step": 22,
+        "action": {
+          "l2c_prefetcher": "no",
+          "llc_replacement": "lru"
+        },
+        "reward": 0.661455525606469,
+        "ipc": 0.661455525606469,
+        "skip_instructions": 5402200,
+        "stats_path": "/users/lijrjyan/ChampSim_checkpoint/baseline/results/631.deepsjeng_s-928B/steps_100/no_lru/rl/iter_0022_stats.json",
+        "cache_path": "/users/lijrjyan/ChampSim_checkpoint/baseline/results/631.deepsjeng_s-928B/steps_100/no_lru/rl/iter_0022_cache.log"
+      },
+      {
+        "step": 23,
+        "action": {
+          "l2c_prefetcher": "no",
+          "llc_replacement": "lru"
+        },
+        "reward": 0.6337950507191953,
+        "ipc": 0.6337950507191953,
+        "skip_instructions": 5602300,
+        "stats_path": "/users/lijrjyan/ChampSim_checkpoint/baseline/results/631.deepsjeng_s-928B/steps_100/no_lru/rl/iter_0023_stats.json",
+        "cache_path": "/users/lijrjyan/ChampSim_checkpoint/baseline/results/631.deepsjeng_s-928B/steps_100/no_lru/rl/iter_0023_cache.log"
+      },
+      {
+        "step": 24,
+        "action": {
+          "l2c_prefetcher": "no",
+          "llc_replacement": "lru"
+        },
+        "reward": 0.6809878409620996,
+        "ipc": 0.6809878409620996,
+        "skip_instructions": 5802400,
+        "stats_path": "/users/lijrjyan/ChampSim_checkpoint/baseline/results/631.deepsjeng_s-928B/steps_100/no_lru/rl/iter_0024_stats.json",
+        "cache_path": "/users/lijrjyan/ChampSim_checkpoint/baseline/results/631.deepsjeng_s-928B/steps_100/no_lru/rl/iter_0024_cache.log"
+      },
+      {
+        "step": 25,
+        "action": {
+          "l2c_prefetcher": "no",
+          "llc_replacement": "lru"
+        },
+        "reward": 0.7390245614813008,
+        "ipc": 0.7390245614813008,
+        "skip_instructions": 6002500,
+        "stats_path": "/users/lijrjyan/ChampSim_checkpoint/baseline/results/631.deepsjeng_s-928B/steps_100/no_lru/rl/iter_0025_stats.json",
+        "cache_path": "/users/lijrjyan/ChampSim_checkpoint/baseline/results/631.deepsjeng_s-928B/steps_100/no_lru/rl/iter_0025_cache.log"
+      },
+      {
+        "step": 26,
+        "action": {
+          "l2c_prefetcher": "no",
+          "llc_replacement": "lru"
+        },
+        "reward": 0.6765201331384965,
+        "ipc": 0.6765201331384965,
+        "skip_instructions": 6202600,
+        "stats_path": "/users/lijrjyan/ChampSim_checkpoint/baseline/results/631.deepsjeng_s-928B/steps_100/no_lru/rl/iter_0026_stats.json",
+        "cache_path": "/users/lijrjyan/ChampSim_checkpoint/baseline/results/631.deepsjeng_s-928B/steps_100/no_lru/rl/iter_0026_cache.log"
+      },
+      {
+        "step": 27,
+        "action": {
+          "l2c_prefetcher": "no",
+          "llc_replacement": "lru"
+        },
+        "reward": 0.6531273369712526,
+        "ipc": 0.6531273369712526,
+        "skip_instructions": 6402700,
+        "stats_path": "/users/lijrjyan/ChampSim_checkpoint/baseline/results/631.deepsjeng_s-928B/steps_100/no_lru/rl/iter_0027_stats.json",
+        "cache_path": "/users/lijrjyan/ChampSim_checkpoint/baseline/results/631.deepsjeng_s-928B/steps_100/no_lru/rl/iter_0027_cache.log"
+      },
+      {
+        "step": 28,
+        "action": {
+          "l2c_prefetcher": "no",
+          "llc_replacement": "lru"
+        },
+        "reward": 0.6603787913807792,
+        "ipc": 0.6603787913807792,
+        "skip_instructions": 6602800,
+        "stats_path": "/users/lijrjyan/ChampSim_checkpoint/baseline/results/631.deepsjeng_s-928B/steps_100/no_lru/rl/iter_0028_stats.json",
+        "cache_path": "/users/lijrjyan/ChampSim_checkpoint/baseline/results/631.deepsjeng_s-928B/steps_100/no_lru/rl/iter_0028_cache.log"
+      },
+      {
+        "step": 29,
+        "action": {
+          "l2c_prefetcher": "no",
+          "llc_replacement": "lru"
+        },
+        "reward": 0.6676191175586992,
+        "ipc": 0.6676191175586992,
+        "skip_instructions": 6802900,
+        "stats_path": "/users/lijrjyan/ChampSim_checkpoint/baseline/results/631.deepsjeng_s-928B/steps_100/no_lru/rl/iter_0029_stats.json",
+        "cache_path": "/users/lijrjyan/ChampSim_checkpoint/baseline/results/631.deepsjeng_s-928B/steps_100/no_lru/rl/iter_0029_cache.log"
+      },
+      {
+        "step": 30,
+        "action": {
+          "l2c_prefetcher": "no",
+          "llc_replacement": "lru"
+        },
+        "reward": 0.6592273235174876,
+        "ipc": 0.6592273235174876,
+        "skip_instructions": 7003000,
+        "stats_path": "/users/lijrjyan/ChampSim_checkpoint/baseline/results/631.deepsjeng_s-928B/steps_100/no_lru/rl/iter_0030_stats.json",
+        "cache_path": "/users/lijrjyan/ChampSim_checkpoint/baseline/results/631.deepsjeng_s-928B/steps_100/no_lru/rl/iter_0030_cache.log"
+      },
+      {
+        "step": 31,
+        "action": {
+          "l2c_prefetcher": "no",
+          "llc_replacement": "lru"
+        },
+        "reward": 0.7583291310101121,
+        "ipc": 0.7583291310101121,
+        "skip_instructions": 7203100,
+        "stats_path": "/users/lijrjyan/ChampSim_checkpoint/baseline/results/631.deepsjeng_s-928B/steps_100/no_lru/rl/iter_0031_stats.json",
+        "cache_path": "/users/lijrjyan/ChampSim_checkpoint/baseline/results/631.deepsjeng_s-928B/steps_100/no_lru/rl/iter_0031_cache.log"
+      },
+      {
+        "step": 32,
+        "action": {
+          "l2c_prefetcher": "no",
+          "llc_replacement": "lru"
+        },
+        "reward": 0.6883778881465955,
+        "ipc": 0.6883778881465955,
+        "skip_instructions": 7403200,
+        "stats_path": "/users/lijrjyan/ChampSim_checkpoint/baseline/results/631.deepsjeng_s-928B/steps_100/no_lru/rl/iter_0032_stats.json",
+        "cache_path": "/users/lijrjyan/ChampSim_checkpoint/baseline/results/631.deepsjeng_s-928B/steps_100/no_lru/rl/iter_0032_cache.log"
+      },
+      {
+        "step": 33,
+        "action": {
+          "l2c_prefetcher": "no",
+          "llc_replacement": "lru"
+        },
+        "reward": 0.7050566154800683,
+        "ipc": 0.7050566154800683,
+        "skip_instructions": 7603300,
+        "stats_path": "/users/lijrjyan/ChampSim_checkpoint/baseline/results/631.deepsjeng_s-928B/steps_100/no_lru/rl/iter_0033_stats.json",
+        "cache_path": "/users/lijrjyan/ChampSim_checkpoint/baseline/results/631.deepsjeng_s-928B/steps_100/no_lru/rl/iter_0033_cache.log"
+      },
+      {
+        "step": 34,
+        "action": {
+          "l2c_prefetcher": "no",
+          "llc_replacement": "lru"
+        },
+        "reward": 0.6877802690582959,
+        "ipc": 0.6877802690582959,
+        "skip_instructions": 7803400,
+        "stats_path": "/users/lijrjyan/ChampSim_checkpoint/baseline/results/631.deepsjeng_s-928B/steps_100/no_lru/rl/iter_0034_stats.json",
+        "cache_path": "/users/lijrjyan/ChampSim_checkpoint/baseline/results/631.deepsjeng_s-928B/steps_100/no_lru/rl/iter_0034_cache.log"
+      },
+      {
+        "step": 35,
+        "action": {
+          "l2c_prefetcher": "no",
+          "llc_replacement": "lru"
+        },
+        "reward": 0.6935774726036898,
+        "ipc": 0.6935774726036898,
+        "skip_instructions": 8003500,
+        "stats_path": "/users/lijrjyan/ChampSim_checkpoint/baseline/results/631.deepsjeng_s-928B/steps_100/no_lru/rl/iter_0035_stats.json",
+        "cache_path": "/users/lijrjyan/ChampSim_checkpoint/baseline/results/631.deepsjeng_s-928B/steps_100/no_lru/rl/iter_0035_cache.log"
+      },
+      {
+        "step": 36,
+        "action": {
+          "l2c_prefetcher": "no",
+          "llc_replacement": "lru"
+        },
+        "reward": 0.6828265723474425,
+        "ipc": 0.6828265723474425,
+        "skip_instructions": 8203600,
+        "stats_path": "/users/lijrjyan/ChampSim_checkpoint/baseline/results/631.deepsjeng_s-928B/steps_100/no_lru/rl/iter_0036_stats.json",
+        "cache_path": "/users/lijrjyan/ChampSim_checkpoint/baseline/results/631.deepsjeng_s-928B/steps_100/no_lru/rl/iter_0036_cache.log"
+      },
+      {
+        "step": 37,
+        "action": {
+          "l2c_prefetcher": "no",
+          "llc_replacement": "lru"
+        },
+        "reward": 0.7216292864565292,
+        "ipc": 0.7216292864565292,
+        "skip_instructions": 8403700,
+        "stats_path": "/users/lijrjyan/ChampSim_checkpoint/baseline/results/631.deepsjeng_s-928B/steps_100/no_lru/rl/iter_0037_stats.json",
+        "cache_path": "/users/lijrjyan/ChampSim_checkpoint/baseline/results/631.deepsjeng_s-928B/steps_100/no_lru/rl/iter_0037_cache.log"
+      },
+      {
+        "step": 38,
+        "action": {
+          "l2c_prefetcher": "no",
+          "llc_replacement": "lru"
+        },
+        "reward": 0.6880760457843512,
+        "ipc": 0.6880760457843512,
+        "skip_instructions": 8603800,
+        "stats_path": "/users/lijrjyan/ChampSim_checkpoint/baseline/results/631.deepsjeng_s-928B/steps_100/no_lru/rl/iter_0038_stats.json",
+        "cache_path": "/users/lijrjyan/ChampSim_checkpoint/baseline/results/631.deepsjeng_s-928B/steps_100/no_lru/rl/iter_0038_cache.log"
+      },
+      {
+        "step": 39,
+        "action": {
+          "l2c_prefetcher": "no",
+          "llc_replacement": "lru"
+        },
+        "reward": 0.6486894981463883,
+        "ipc": 0.6486894981463883,
+        "skip_instructions": 8803900,
+        "stats_path": "/users/lijrjyan/ChampSim_checkpoint/baseline/results/631.deepsjeng_s-928B/steps_100/no_lru/rl/iter_0039_stats.json",
+        "cache_path": "/users/lijrjyan/ChampSim_checkpoint/baseline/results/631.deepsjeng_s-928B/steps_100/no_lru/rl/iter_0039_cache.log"
+      },
+      {
+        "step": 40,
+        "action": {
+          "l2c_prefetcher": "no",
+          "llc_replacement": "lru"
+        },
+        "reward": 0.6930353758138793,
+        "ipc": 0.6930353758138793,
+        "skip_instructions": 9004000,
+        "stats_path": "/users/lijrjyan/ChampSim_checkpoint/baseline/results/631.deepsjeng_s-928B/steps_100/no_lru/rl/iter_0040_stats.json",
+        "cache_path": "/users/lijrjyan/ChampSim_checkpoint/baseline/results/631.deepsjeng_s-928B/steps_100/no_lru/rl/iter_0040_cache.log"
+      },
+      {
+        "step": 41,
+        "action": {
+          "l2c_prefetcher": "no",
+          "llc_replacement": "lru"
+        },
+        "reward": 0.6825705607317156,
+        "ipc": 0.6825705607317156,
+        "skip_instructions": 9204100,
+        "stats_path": "/users/lijrjyan/ChampSim_checkpoint/baseline/results/631.deepsjeng_s-928B/steps_100/no_lru/rl/iter_0041_stats.json",
+        "cache_path": "/users/lijrjyan/ChampSim_checkpoint/baseline/results/631.deepsjeng_s-928B/steps_100/no_lru/rl/iter_0041_cache.log"
+      },
+      {
+        "step": 42,
+        "action": {
+          "l2c_prefetcher": "no",
+          "llc_replacement": "lru"
+        },
+        "reward": 0.7236214176396311,
+        "ipc": 0.7236214176396311,
+        "skip_instructions": 9404200,
+        "stats_path": "/users/lijrjyan/ChampSim_checkpoint/baseline/results/631.deepsjeng_s-928B/steps_100/no_lru/rl/iter_0042_stats.json",
+        "cache_path": "/users/lijrjyan/ChampSim_checkpoint/baseline/results/631.deepsjeng_s-928B/steps_100/no_lru/rl/iter_0042_cache.log"
+      },
+      {
+        "step": 43,
+        "action": {
+          "l2c_prefetcher": "no",
+          "llc_replacement": "lru"
+        },
+        "reward": 0.7604042308891407,
+        "ipc": 0.7604042308891407,
+        "skip_instructions": 9604300,
+        "stats_path": "/users/lijrjyan/ChampSim_checkpoint/baseline/results/631.deepsjeng_s-928B/steps_100/no_lru/rl/iter_0043_stats.json",
+        "cache_path": "/users/lijrjyan/ChampSim_checkpoint/baseline/results/631.deepsjeng_s-928B/steps_100/no_lru/rl/iter_0043_cache.log"
+      },
+      {
+        "step": 44,
+        "action": {
+          "l2c_prefetcher": "no",
+          "llc_replacement": "lru"
+        },
+        "reward": 0.7325409761010896,
+        "ipc": 0.7325409761010896,
+        "skip_instructions": 9804400,
+        "stats_path": "/users/lijrjyan/ChampSim_checkpoint/baseline/results/631.deepsjeng_s-928B/steps_100/no_lru/rl/iter_0044_stats.json",
+        "cache_path": "/users/lijrjyan/ChampSim_checkpoint/baseline/results/631.deepsjeng_s-928B/steps_100/no_lru/rl/iter_0044_cache.log"
+      },
+      {
+        "step": 45,
+        "action": {
+          "l2c_prefetcher": "no",
+          "llc_replacement": "lru"
+        },
+        "reward": 0.701381363688967,
+        "ipc": 0.701381363688967,
+        "skip_instructions": 10004500,
+        "stats_path": "/users/lijrjyan/ChampSim_checkpoint/baseline/results/631.deepsjeng_s-928B/steps_100/no_lru/rl/iter_0045_stats.json",
+        "cache_path": "/users/lijrjyan/ChampSim_checkpoint/baseline/results/631.deepsjeng_s-928B/steps_100/no_lru/rl/iter_0045_cache.log"
+      },
+      {
+        "step": 46,
+        "action": {
+          "l2c_prefetcher": "no",
+          "llc_replacement": "lru"
+        },
+        "reward": 0.6939330645553019,
+        "ipc": 0.6939330645553019,
+        "skip_instructions": 10204600,
+        "stats_path": "/users/lijrjyan/ChampSim_checkpoint/baseline/results/631.deepsjeng_s-928B/steps_100/no_lru/rl/iter_0046_stats.json",
+        "cache_path": "/users/lijrjyan/ChampSim_checkpoint/baseline/results/631.deepsjeng_s-928B/steps_100/no_lru/rl/iter_0046_cache.log"
+      },
+      {
+        "step": 47,
+        "action": {
+          "l2c_prefetcher": "no",
+          "llc_replacement": "lru"
+        },
+        "reward": 0.6757338432845906,
+        "ipc": 0.6757338432845906,
+        "skip_instructions": 10404700,
+        "stats_path": "/users/lijrjyan/ChampSim_checkpoint/baseline/results/631.deepsjeng_s-928B/steps_100/no_lru/rl/iter_0047_stats.json",
+        "cache_path": "/users/lijrjyan/ChampSim_checkpoint/baseline/results/631.deepsjeng_s-928B/steps_100/no_lru/rl/iter_0047_cache.log"
+      },
+      {
+        "step": 48,
+        "action": {
+          "l2c_prefetcher": "no",
+          "llc_replacement": "lru"
+        },
+        "reward": 0.7045892502968023,
+        "ipc": 0.7045892502968023,
+        "skip_instructions": 10604800,
+        "stats_path": "/users/lijrjyan/ChampSim_checkpoint/baseline/results/631.deepsjeng_s-928B/steps_100/no_lru/rl/iter_0048_stats.json",
+        "cache_path": "/users/lijrjyan/ChampSim_checkpoint/baseline/results/631.deepsjeng_s-928B/steps_100/no_lru/rl/iter_0048_cache.log"
+      },
+      {
+        "step": 49,
+        "action": {
+          "l2c_prefetcher": "no",
+          "llc_replacement": "lru"
+        },
+        "reward": 0.7578158450130532,
+        "ipc": 0.7578158450130532,
+        "skip_instructions": 10804900,
+        "stats_path": "/users/lijrjyan/ChampSim_checkpoint/baseline/results/631.deepsjeng_s-928B/steps_100/no_lru/rl/iter_0049_stats.json",
+        "cache_path": "/users/lijrjyan/ChampSim_checkpoint/baseline/results/631.deepsjeng_s-928B/steps_100/no_lru/rl/iter_0049_cache.log"
+      },
+      {
+        "step": 50,
+        "action": {
+          "l2c_prefetcher": "no",
+          "llc_replacement": "lru"
+        },
+        "reward": 0.6836495766521165,
+        "ipc": 0.6836495766521165,
+        "skip_instructions": 11005000,
+        "stats_path": "/users/lijrjyan/ChampSim_checkpoint/baseline/results/631.deepsjeng_s-928B/steps_100/no_lru/rl/iter_0050_stats.json",
+        "cache_path": "/users/lijrjyan/ChampSim_checkpoint/baseline/results/631.deepsjeng_s-928B/steps_100/no_lru/rl/iter_0050_cache.log"
+      },
+      {
+        "step": 51,
+        "action": {
+          "l2c_prefetcher": "no",
+          "llc_replacement": "lru"
+        },
+        "reward": 0.712006806717005,
+        "ipc": 0.712006806717005,
+        "skip_instructions": 11205100,
+        "stats_path": "/users/lijrjyan/ChampSim_checkpoint/baseline/results/631.deepsjeng_s-928B/steps_100/no_lru/rl/iter_0051_stats.json",
+        "cache_path": "/users/lijrjyan/ChampSim_checkpoint/baseline/results/631.deepsjeng_s-928B/steps_100/no_lru/rl/iter_0051_cache.log"
+      },
+      {
+        "step": 52,
+        "action": {
+          "l2c_prefetcher": "no",
+          "llc_replacement": "lru"
+        },
+        "reward": 0.6547084761409057,
+        "ipc": 0.6547084761409057,
+        "skip_instructions": 11405200,
+        "stats_path": "/users/lijrjyan/ChampSim_checkpoint/baseline/results/631.deepsjeng_s-928B/steps_100/no_lru/rl/iter_0052_stats.json",
+        "cache_path": "/users/lijrjyan/ChampSim_checkpoint/baseline/results/631.deepsjeng_s-928B/steps_100/no_lru/rl/iter_0052_cache.log"
+      },
+      {
+        "step": 53,
+        "action": {
+          "l2c_prefetcher": "no",
+          "llc_replacement": "lru"
+        },
+        "reward": 0.7069921170773092,
+        "ipc": 0.7069921170773092,
+        "skip_instructions": 11605300,
+        "stats_path": "/users/lijrjyan/ChampSim_checkpoint/baseline/results/631.deepsjeng_s-928B/steps_100/no_lru/rl/iter_0053_stats.json",
+        "cache_path": "/users/lijrjyan/ChampSim_checkpoint/baseline/results/631.deepsjeng_s-928B/steps_100/no_lru/rl/iter_0053_cache.log"
+      },
+      {
+        "step": 54,
+        "action": {
+          "l2c_prefetcher": "no",
+          "llc_replacement": "lru"
+        },
+        "reward": 0.692788904514815,
+        "ipc": 0.692788904514815,
+        "skip_instructions": 11805400,
+        "stats_path": "/users/lijrjyan/ChampSim_checkpoint/baseline/results/631.deepsjeng_s-928B/steps_100/no_lru/rl/iter_0054_stats.json",
+        "cache_path": "/users/lijrjyan/ChampSim_checkpoint/baseline/results/631.deepsjeng_s-928B/steps_100/no_lru/rl/iter_0054_cache.log"
+      },
+      {
+        "step": 55,
+        "action": {
+          "l2c_prefetcher": "no",
+          "llc_replacement": "lru"
+        },
+        "reward": 0.6974202682251529,
+        "ipc": 0.6974202682251529,
+        "skip_instructions": 12005500,
+        "stats_path": "/users/lijrjyan/ChampSim_checkpoint/baseline/results/631.deepsjeng_s-928B/steps_100/no_lru/rl/iter_0055_stats.json",
+        "cache_path": "/users/lijrjyan/ChampSim_checkpoint/baseline/results/631.deepsjeng_s-928B/steps_100/no_lru/rl/iter_0055_cache.log"
+      },
+      {
+        "step": 56,
+        "action": {
+          "l2c_prefetcher": "no",
+          "llc_replacement": "lru"
+        },
+        "reward": 0.6743758682545891,
+        "ipc": 0.6743758682545891,
+        "skip_instructions": 12205600,
+        "stats_path": "/users/lijrjyan/ChampSim_checkpoint/baseline/results/631.deepsjeng_s-928B/steps_100/no_lru/rl/iter_0056_stats.json",
+        "cache_path": "/users/lijrjyan/ChampSim_checkpoint/baseline/results/631.deepsjeng_s-928B/steps_100/no_lru/rl/iter_0056_cache.log"
+      },
+      {
+        "step": 57,
+        "action": {
+          "l2c_prefetcher": "no",
+          "llc_replacement": "lru"
+        },
+        "reward": 0.6418714216026086,
+        "ipc": 0.6418714216026086,
+        "skip_instructions": 12405700,
+        "stats_path": "/users/lijrjyan/ChampSim_checkpoint/baseline/results/631.deepsjeng_s-928B/steps_100/no_lru/rl/iter_0057_stats.json",
+        "cache_path": "/users/lijrjyan/ChampSim_checkpoint/baseline/results/631.deepsjeng_s-928B/steps_100/no_lru/rl/iter_0057_cache.log"
+      },
+      {
+        "step": 58,
+        "action": {
+          "l2c_prefetcher": "no",
+          "llc_replacement": "lru"
+        },
+        "reward": 0.661579123209188,
+        "ipc": 0.661579123209188,
+        "skip_instructions": 12605800,
+        "stats_path": "/users/lijrjyan/ChampSim_checkpoint/baseline/results/631.deepsjeng_s-928B/steps_100/no_lru/rl/iter_0058_stats.json",
+        "cache_path": "/users/lijrjyan/ChampSim_checkpoint/baseline/results/631.deepsjeng_s-928B/steps_100/no_lru/rl/iter_0058_cache.log"
+      },
+      {
+        "step": 59,
+        "action": {
+          "l2c_prefetcher": "no",
+          "llc_replacement": "lru"
+        },
+        "reward": 0.6729383264358534,
+        "ipc": 0.6729383264358534,
+        "skip_instructions": 12805900,
+        "stats_path": "/users/lijrjyan/ChampSim_checkpoint/baseline/results/631.deepsjeng_s-928B/steps_100/no_lru/rl/iter_0059_stats.json",
+        "cache_path": "/users/lijrjyan/ChampSim_checkpoint/baseline/results/631.deepsjeng_s-928B/steps_100/no_lru/rl/iter_0059_cache.log"
+      },
+      {
+        "step": 60,
+        "action": {
+          "l2c_prefetcher": "no",
+          "llc_replacement": "lru"
+        },
+        "reward": 0.7108785748306332,
+        "ipc": 0.7108785748306332,
+        "skip_instructions": 13006000,
+        "stats_path": "/users/lijrjyan/ChampSim_checkpoint/baseline/results/631.deepsjeng_s-928B/steps_100/no_lru/rl/iter_0060_stats.json",
+        "cache_path": "/users/lijrjyan/ChampSim_checkpoint/baseline/results/631.deepsjeng_s-928B/steps_100/no_lru/rl/iter_0060_cache.log"
+      },
+      {
+        "step": 61,
+        "action": {
+          "l2c_prefetcher": "no",
+          "llc_replacement": "lru"
+        },
+        "reward": 0.7371695637430522,
+        "ipc": 0.7371695637430522,
+        "skip_instructions": 13206100,
+        "stats_path": "/users/lijrjyan/ChampSim_checkpoint/baseline/results/631.deepsjeng_s-928B/steps_100/no_lru/rl/iter_0061_stats.json",
+        "cache_path": "/users/lijrjyan/ChampSim_checkpoint/baseline/results/631.deepsjeng_s-928B/steps_100/no_lru/rl/iter_0061_cache.log"
+      },
+      {
+        "step": 62,
+        "action": {
+          "l2c_prefetcher": "no",
+          "llc_replacement": "lru"
+        },
+        "reward": 0.708752967858535,
+        "ipc": 0.708752967858535,
+        "skip_instructions": 13406200,
+        "stats_path": "/users/lijrjyan/ChampSim_checkpoint/baseline/results/631.deepsjeng_s-928B/steps_100/no_lru/rl/iter_0062_stats.json",
+        "cache_path": "/users/lijrjyan/ChampSim_checkpoint/baseline/results/631.deepsjeng_s-928B/steps_100/no_lru/rl/iter_0062_cache.log"
+      },
+      {
+        "step": 63,
+        "action": {
+          "l2c_prefetcher": "no",
+          "llc_replacement": "lru"
+        },
+        "reward": 0.6824410550380455,
+        "ipc": 0.6824410550380455,
+        "skip_instructions": 13606300,
+        "stats_path": "/users/lijrjyan/ChampSim_checkpoint/baseline/results/631.deepsjeng_s-928B/steps_100/no_lru/rl/iter_0063_stats.json",
+        "cache_path": "/users/lijrjyan/ChampSim_checkpoint/baseline/results/631.deepsjeng_s-928B/steps_100/no_lru/rl/iter_0063_cache.log"
+      },
+      {
+        "step": 64,
+        "action": {
+          "l2c_prefetcher": "no",
+          "llc_replacement": "lru"
+        },
+        "reward": 0.706237751372729,
+        "ipc": 0.706237751372729,
+        "skip_instructions": 13806400,
+        "stats_path": "/users/lijrjyan/ChampSim_checkpoint/baseline/results/631.deepsjeng_s-928B/steps_100/no_lru/rl/iter_0064_stats.json",
+        "cache_path": "/users/lijrjyan/ChampSim_checkpoint/baseline/results/631.deepsjeng_s-928B/steps_100/no_lru/rl/iter_0064_cache.log"
+      },
+      {
+        "step": 65,
+        "action": {
+          "l2c_prefetcher": "no",
+          "llc_replacement": "lru"
+        },
+        "reward": 0.6245433027098934,
+        "ipc": 0.6245433027098934,
+        "skip_instructions": 14006500,
+        "stats_path": "/users/lijrjyan/ChampSim_checkpoint/baseline/results/631.deepsjeng_s-928B/steps_100/no_lru/rl/iter_0065_stats.json",
+        "cache_path": "/users/lijrjyan/ChampSim_checkpoint/baseline/results/631.deepsjeng_s-928B/steps_100/no_lru/rl/iter_0065_cache.log"
+      },
+      {
+        "step": 66,
+        "action": {
+          "l2c_prefetcher": "no",
+          "llc_replacement": "lru"
+        },
+        "reward": 0.6237396812130247,
+        "ipc": 0.6237396812130247,
+        "skip_instructions": 14206600,
+        "stats_path": "/users/lijrjyan/ChampSim_checkpoint/baseline/results/631.deepsjeng_s-928B/steps_100/no_lru/rl/iter_0066_stats.json",
+        "cache_path": "/users/lijrjyan/ChampSim_checkpoint/baseline/results/631.deepsjeng_s-928B/steps_100/no_lru/rl/iter_0066_cache.log"
+      },
+      {
+        "step": 67,
+        "action": {
+          "l2c_prefetcher": "no",
+          "llc_replacement": "lru"
+        },
+        "reward": 0.6798187621303947,
+        "ipc": 0.6798187621303947,
+        "skip_instructions": 14406700,
+        "stats_path": "/users/lijrjyan/ChampSim_checkpoint/baseline/results/631.deepsjeng_s-928B/steps_100/no_lru/rl/iter_0067_stats.json",
+        "cache_path": "/users/lijrjyan/ChampSim_checkpoint/baseline/results/631.deepsjeng_s-928B/steps_100/no_lru/rl/iter_0067_cache.log"
+      },
+      {
+        "step": 68,
+        "action": {
+          "l2c_prefetcher": "no",
+          "llc_replacement": "lru"
+        },
+        "reward": 0.6685799099427364,
+        "ipc": 0.6685799099427364,
+        "skip_instructions": 14606800,
+        "stats_path": "/users/lijrjyan/ChampSim_checkpoint/baseline/results/631.deepsjeng_s-928B/steps_100/no_lru/rl/iter_0068_stats.json",
+        "cache_path": "/users/lijrjyan/ChampSim_checkpoint/baseline/results/631.deepsjeng_s-928B/steps_100/no_lru/rl/iter_0068_cache.log"
+      },
+      {
+        "step": 69,
+        "action": {
+          "l2c_prefetcher": "no",
+          "llc_replacement": "lru"
+        },
+        "reward": 0.7340132708935833,
+        "ipc": 0.7340132708935833,
+        "skip_instructions": 14806900,
+        "stats_path": "/users/lijrjyan/ChampSim_checkpoint/baseline/results/631.deepsjeng_s-928B/steps_100/no_lru/rl/iter_0069_stats.json",
+        "cache_path": "/users/lijrjyan/ChampSim_checkpoint/baseline/results/631.deepsjeng_s-928B/steps_100/no_lru/rl/iter_0069_cache.log"
+      },
+      {
+        "step": 70,
+        "action": {
+          "l2c_prefetcher": "no",
+          "llc_replacement": "lru"
+        },
+        "reward": 0.7000027999832001,
+        "ipc": 0.7000027999832001,
+        "skip_instructions": 15007000,
+        "stats_path": "/users/lijrjyan/ChampSim_checkpoint/baseline/results/631.deepsjeng_s-928B/steps_100/no_lru/rl/iter_0070_stats.json",
+        "cache_path": "/users/lijrjyan/ChampSim_checkpoint/baseline/results/631.deepsjeng_s-928B/steps_100/no_lru/rl/iter_0070_cache.log"
+      },
+      {
+        "step": 71,
+        "action": {
+          "l2c_prefetcher": "no",
+          "llc_replacement": "lru"
+        },
+        "reward": 0.6520043944437018,
+        "ipc": 0.6520043944437018,
+        "skip_instructions": 15207100,
+        "stats_path": "/users/lijrjyan/ChampSim_checkpoint/baseline/results/631.deepsjeng_s-928B/steps_100/no_lru/rl/iter_0071_stats.json",
+        "cache_path": "/users/lijrjyan/ChampSim_checkpoint/baseline/results/631.deepsjeng_s-928B/steps_100/no_lru/rl/iter_0071_cache.log"
+      },
+      {
+        "step": 72,
+        "action": {
+          "l2c_prefetcher": "no",
+          "llc_replacement": "lru"
+        },
+        "reward": 0.5892677206649264,
+        "ipc": 0.5892677206649264,
+        "skip_instructions": 15407200,
+        "stats_path": "/users/lijrjyan/ChampSim_checkpoint/baseline/results/631.deepsjeng_s-928B/steps_100/no_lru/rl/iter_0072_stats.json",
+        "cache_path": "/users/lijrjyan/ChampSim_checkpoint/baseline/results/631.deepsjeng_s-928B/steps_100/no_lru/rl/iter_0072_cache.log"
+      },
+      {
+        "step": 73,
+        "action": {
+          "l2c_prefetcher": "no",
+          "llc_replacement": "lru"
+        },
+        "reward": 0.661898883729858,
+        "ipc": 0.661898883729858,
+        "skip_instructions": 15607300,
+        "stats_path": "/users/lijrjyan/ChampSim_checkpoint/baseline/results/631.deepsjeng_s-928B/steps_100/no_lru/rl/iter_0073_stats.json",
+        "cache_path": "/users/lijrjyan/ChampSim_checkpoint/baseline/results/631.deepsjeng_s-928B/steps_100/no_lru/rl/iter_0073_cache.log"
+      },
+      {
+        "step": 74,
+        "action": {
+          "l2c_prefetcher": "no",
+          "llc_replacement": "lru"
+        },
+        "reward": 0.5791833058708035,
+        "ipc": 0.5791833058708035,
+        "skip_instructions": 15807400,
+        "stats_path": "/users/lijrjyan/ChampSim_checkpoint/baseline/results/631.deepsjeng_s-928B/steps_100/no_lru/rl/iter_0074_stats.json",
+        "cache_path": "/users/lijrjyan/ChampSim_checkpoint/baseline/results/631.deepsjeng_s-928B/steps_100/no_lru/rl/iter_0074_cache.log"
+      },
+      {
+        "step": 75,
+        "action": {
+          "l2c_prefetcher": "no",
+          "llc_replacement": "lru"
+        },
+        "reward": 0.6969047594158662,
+        "ipc": 0.6969047594158662,
+        "skip_instructions": 16007500,
+        "stats_path": "/users/lijrjyan/ChampSim_checkpoint/baseline/results/631.deepsjeng_s-928B/steps_100/no_lru/rl/iter_0075_stats.json",
+        "cache_path": "/users/lijrjyan/ChampSim_checkpoint/baseline/results/631.deepsjeng_s-928B/steps_100/no_lru/rl/iter_0075_cache.log"
+      },
+      {
+        "step": 76,
+        "action": {
+          "l2c_prefetcher": "no",
+          "llc_replacement": "lru"
+        },
+        "reward": 0.6772773450728073,
+        "ipc": 0.6772773450728073,
+        "skip_instructions": 16207600,
+        "stats_path": "/users/lijrjyan/ChampSim_checkpoint/baseline/results/631.deepsjeng_s-928B/steps_100/no_lru/rl/iter_0076_stats.json",
+        "cache_path": "/users/lijrjyan/ChampSim_checkpoint/baseline/results/631.deepsjeng_s-928B/steps_100/no_lru/rl/iter_0076_cache.log"
+      },
+      {
+        "step": 77,
+        "action": {
+          "l2c_prefetcher": "no",
+          "llc_replacement": "lru"
+        },
+        "reward": 0.6583646879515971,
+        "ipc": 0.6583646879515971,
+        "skip_instructions": 16407700,
+        "stats_path": "/users/lijrjyan/ChampSim_checkpoint/baseline/results/631.deepsjeng_s-928B/steps_100/no_lru/rl/iter_0077_stats.json",
+        "cache_path": "/users/lijrjyan/ChampSim_checkpoint/baseline/results/631.deepsjeng_s-928B/steps_100/no_lru/rl/iter_0077_cache.log"
+      },
+      {
+        "step": 78,
+        "action": {
+          "l2c_prefetcher": "no",
+          "llc_replacement": "lru"
+        },
+        "reward": 0.6480778204064703,
+        "ipc": 0.6480778204064703,
+        "skip_instructions": 16607800,
+        "stats_path": "/users/lijrjyan/ChampSim_checkpoint/baseline/results/631.deepsjeng_s-928B/steps_100/no_lru/rl/iter_0078_stats.json",
+        "cache_path": "/users/lijrjyan/ChampSim_checkpoint/baseline/results/631.deepsjeng_s-928B/steps_100/no_lru/rl/iter_0078_cache.log"
+      },
+      {
+        "step": 79,
+        "action": {
+          "l2c_prefetcher": "no",
+          "llc_replacement": "lru"
+        },
+        "reward": 0.6798466266010388,
+        "ipc": 0.6798466266010388,
+        "skip_instructions": 16807900,
+        "stats_path": "/users/lijrjyan/ChampSim_checkpoint/baseline/results/631.deepsjeng_s-928B/steps_100/no_lru/rl/iter_0079_stats.json",
+        "cache_path": "/users/lijrjyan/ChampSim_checkpoint/baseline/results/631.deepsjeng_s-928B/steps_100/no_lru/rl/iter_0079_cache.log"
+      },
+      {
+        "step": 80,
+        "action": {
+          "l2c_prefetcher": "no",
+          "llc_replacement": "lru"
+        },
+        "reward": 0.7287507515166973,
+        "ipc": 0.7287507515166973,
+        "skip_instructions": 17008000,
+        "stats_path": "/users/lijrjyan/ChampSim_checkpoint/baseline/results/631.deepsjeng_s-928B/steps_100/no_lru/rl/iter_0080_stats.json",
+        "cache_path": "/users/lijrjyan/ChampSim_checkpoint/baseline/results/631.deepsjeng_s-928B/steps_100/no_lru/rl/iter_0080_cache.log"
+      },
+      {
+        "step": 81,
+        "action": {
+          "l2c_prefetcher": "no",
+          "llc_replacement": "lru"
+        },
+        "reward": 0.6959060257900194,
+        "ipc": 0.6959060257900194,
+        "skip_instructions": 17208100,
+        "stats_path": "/users/lijrjyan/ChampSim_checkpoint/baseline/results/631.deepsjeng_s-928B/steps_100/no_lru/rl/iter_0081_stats.json",
+        "cache_path": "/users/lijrjyan/ChampSim_checkpoint/baseline/results/631.deepsjeng_s-928B/steps_100/no_lru/rl/iter_0081_cache.log"
+      },
+      {
+        "step": 82,
+        "action": {
+          "l2c_prefetcher": "no",
+          "llc_replacement": "lru"
+        },
+        "reward": 0.6372961071156585,
+        "ipc": 0.6372961071156585,
+        "skip_instructions": 17408200,
+        "stats_path": "/users/lijrjyan/ChampSim_checkpoint/baseline/results/631.deepsjeng_s-928B/steps_100/no_lru/rl/iter_0082_stats.json",
+        "cache_path": "/users/lijrjyan/ChampSim_checkpoint/baseline/results/631.deepsjeng_s-928B/steps_100/no_lru/rl/iter_0082_cache.log"
+      },
+      {
+        "step": 83,
+        "action": {
+          "l2c_prefetcher": "no",
+          "llc_replacement": "lru"
+        },
+        "reward": 0.6346759836635218,
+        "ipc": 0.6346759836635218,
+        "skip_instructions": 17608300,
+        "stats_path": "/users/lijrjyan/ChampSim_checkpoint/baseline/results/631.deepsjeng_s-928B/steps_100/no_lru/rl/iter_0083_stats.json",
+        "cache_path": "/users/lijrjyan/ChampSim_checkpoint/baseline/results/631.deepsjeng_s-928B/steps_100/no_lru/rl/iter_0083_cache.log"
+      },
+      {
+        "step": 84,
+        "action": {
+          "l2c_prefetcher": "no",
+          "llc_replacement": "lru"
+        },
+        "reward": 0.6162979169234561,
+        "ipc": 0.6162979169234561,
+        "skip_instructions": 17808400,
+        "stats_path": "/users/lijrjyan/ChampSim_checkpoint/baseline/results/631.deepsjeng_s-928B/steps_100/no_lru/rl/iter_0084_stats.json",
+        "cache_path": "/users/lijrjyan/ChampSim_checkpoint/baseline/results/631.deepsjeng_s-928B/steps_100/no_lru/rl/iter_0084_cache.log"
+      },
+      {
+        "step": 85,
+        "action": {
+          "l2c_prefetcher": "no",
+          "llc_replacement": "lru"
+        },
+        "reward": 0.6165643698960797,
+        "ipc": 0.6165643698960797,
+        "skip_instructions": 18008500,
+        "stats_path": "/users/lijrjyan/ChampSim_checkpoint/baseline/results/631.deepsjeng_s-928B/steps_100/no_lru/rl/iter_0085_stats.json",
+        "cache_path": "/users/lijrjyan/ChampSim_checkpoint/baseline/results/631.deepsjeng_s-928B/steps_100/no_lru/rl/iter_0085_cache.log"
+      },
+      {
+        "step": 86,
+        "action": {
+          "l2c_prefetcher": "no",
+          "llc_replacement": "lru"
+        },
+        "reward": 0.6677584462674159,
+        "ipc": 0.6677584462674159,
+        "skip_instructions": 18208600,
+        "stats_path": "/users/lijrjyan/ChampSim_checkpoint/baseline/results/631.deepsjeng_s-928B/steps_100/no_lru/rl/iter_0086_stats.json",
+        "cache_path": "/users/lijrjyan/ChampSim_checkpoint/baseline/results/631.deepsjeng_s-928B/steps_100/no_lru/rl/iter_0086_cache.log"
+      },
+      {
+        "step": 87,
+        "action": {
+          "l2c_prefetcher": "no",
+          "llc_replacement": "lru"
+        },
+        "reward": 0.6029483585059239,
+        "ipc": 0.6029483585059239,
+        "skip_instructions": 18408700,
+        "stats_path": "/users/lijrjyan/ChampSim_checkpoint/baseline/results/631.deepsjeng_s-928B/steps_100/no_lru/rl/iter_0087_stats.json",
+        "cache_path": "/users/lijrjyan/ChampSim_checkpoint/baseline/results/631.deepsjeng_s-928B/steps_100/no_lru/rl/iter_0087_cache.log"
+      },
+      {
+        "step": 88,
+        "action": {
+          "l2c_prefetcher": "no",
+          "llc_replacement": "lru"
+        },
+        "reward": 0.5507272316732662,
+        "ipc": 0.5507272316732662,
+        "skip_instructions": 18608800,
+        "stats_path": "/users/lijrjyan/ChampSim_checkpoint/baseline/results/631.deepsjeng_s-928B/steps_100/no_lru/rl/iter_0088_stats.json",
+        "cache_path": "/users/lijrjyan/ChampSim_checkpoint/baseline/results/631.deepsjeng_s-928B/steps_100/no_lru/rl/iter_0088_cache.log"
+      },
+      {
+        "step": 89,
+        "action": {
+          "l2c_prefetcher": "no",
+          "llc_replacement": "lru"
+        },
+        "reward": 0.6447831637587528,
+        "ipc": 0.6447831637587528,
+        "skip_instructions": 18808900,
+        "stats_path": "/users/lijrjyan/ChampSim_checkpoint/baseline/results/631.deepsjeng_s-928B/steps_100/no_lru/rl/iter_0089_stats.json",
+        "cache_path": "/users/lijrjyan/ChampSim_checkpoint/baseline/results/631.deepsjeng_s-928B/steps_100/no_lru/rl/iter_0089_cache.log"
+      },
+      {
+        "step": 90,
+        "action": {
+          "l2c_prefetcher": "no",
+          "llc_replacement": "lru"
+        },
+        "reward": 0.7092546163148208,
+        "ipc": 0.7092546163148208,
+        "skip_instructions": 19009000,
+        "stats_path": "/users/lijrjyan/ChampSim_checkpoint/baseline/results/631.deepsjeng_s-928B/steps_100/no_lru/rl/iter_0090_stats.json",
+        "cache_path": "/users/lijrjyan/ChampSim_checkpoint/baseline/results/631.deepsjeng_s-928B/steps_100/no_lru/rl/iter_0090_cache.log"
+      },
+      {
+        "step": 91,
+        "action": {
+          "l2c_prefetcher": "no",
+          "llc_replacement": "lru"
+        },
+        "reward": 0.678110802197057,
+        "ipc": 0.678110802197057,
+        "skip_instructions": 19209100,
+        "stats_path": "/users/lijrjyan/ChampSim_checkpoint/baseline/results/631.deepsjeng_s-928B/steps_100/no_lru/rl/iter_0091_stats.json",
+        "cache_path": "/users/lijrjyan/ChampSim_checkpoint/baseline/results/631.deepsjeng_s-928B/steps_100/no_lru/rl/iter_0091_cache.log"
+      },
+      {
+        "step": 92,
+        "action": {
+          "l2c_prefetcher": "no",
+          "llc_replacement": "lru"
+        },
+        "reward": 0.6745998819462012,
+        "ipc": 0.6745998819462012,
+        "skip_instructions": 19409200,
+        "stats_path": "/users/lijrjyan/ChampSim_checkpoint/baseline/results/631.deepsjeng_s-928B/steps_100/no_lru/rl/iter_0092_stats.json",
+        "cache_path": "/users/lijrjyan/ChampSim_checkpoint/baseline/results/631.deepsjeng_s-928B/steps_100/no_lru/rl/iter_0092_cache.log"
+      },
+      {
+        "step": 93,
+        "action": {
+          "l2c_prefetcher": "no",
+          "llc_replacement": "lru"
+        },
+        "reward": 0.65577323474925,
+        "ipc": 0.65577323474925,
+        "skip_instructions": 19609300,
+        "stats_path": "/users/lijrjyan/ChampSim_checkpoint/baseline/results/631.deepsjeng_s-928B/steps_100/no_lru/rl/iter_0093_stats.json",
+        "cache_path": "/users/lijrjyan/ChampSim_checkpoint/baseline/results/631.deepsjeng_s-928B/steps_100/no_lru/rl/iter_0093_cache.log"
+      },
+      {
+        "step": 94,
+        "action": {
+          "l2c_prefetcher": "no",
+          "llc_replacement": "lru"
+        },
+        "reward": 0.6428895167745109,
+        "ipc": 0.6428895167745109,
+        "skip_instructions": 19809400,
+        "stats_path": "/users/lijrjyan/ChampSim_checkpoint/baseline/results/631.deepsjeng_s-928B/steps_100/no_lru/rl/iter_0094_stats.json",
+        "cache_path": "/users/lijrjyan/ChampSim_checkpoint/baseline/results/631.deepsjeng_s-928B/steps_100/no_lru/rl/iter_0094_cache.log"
+      },
+      {
+        "step": 95,
+        "action": {
+          "l2c_prefetcher": "no",
+          "llc_replacement": "lru"
+        },
+        "reward": 0.6854513674686408,
+        "ipc": 0.6854513674686408,
+        "skip_instructions": 20009500,
+        "stats_path": "/users/lijrjyan/ChampSim_checkpoint/baseline/results/631.deepsjeng_s-928B/steps_100/no_lru/rl/iter_0095_stats.json",
+        "cache_path": "/users/lijrjyan/ChampSim_checkpoint/baseline/results/631.deepsjeng_s-928B/steps_100/no_lru/rl/iter_0095_cache.log"
+      },
+      {
+        "step": 96,
+        "action": {
+          "l2c_prefetcher": "no",
+          "llc_replacement": "lru"
+        },
+        "reward": 0.6366654676373499,
+        "ipc": 0.6366654676373499,
+        "skip_instructions": 20209600,
+        "stats_path": "/users/lijrjyan/ChampSim_checkpoint/baseline/results/631.deepsjeng_s-928B/steps_100/no_lru/rl/iter_0096_stats.json",
+        "cache_path": "/users/lijrjyan/ChampSim_checkpoint/baseline/results/631.deepsjeng_s-928B/steps_100/no_lru/rl/iter_0096_cache.log"
+      },
+      {
+        "step": 97,
+        "action": {
+          "l2c_prefetcher": "no",
+          "llc_replacement": "lru"
+        },
+        "reward": 0.5999142122676457,
+        "ipc": 0.5999142122676457,
+        "skip_instructions": 20409700,
+        "stats_path": "/users/lijrjyan/ChampSim_checkpoint/baseline/results/631.deepsjeng_s-928B/steps_100/no_lru/rl/iter_0097_stats.json",
+        "cache_path": "/users/lijrjyan/ChampSim_checkpoint/baseline/results/631.deepsjeng_s-928B/steps_100/no_lru/rl/iter_0097_cache.log"
+      },
+      {
+        "step": 98,
+        "action": {
+          "l2c_prefetcher": "no",
+          "llc_replacement": "lru"
+        },
+        "reward": 0.6217015178690772,
+        "ipc": 0.6217015178690772,
+        "skip_instructions": 20609800,
+        "stats_path": "/users/lijrjyan/ChampSim_checkpoint/baseline/results/631.deepsjeng_s-928B/steps_100/no_lru/rl/iter_0098_stats.json",
+        "cache_path": "/users/lijrjyan/ChampSim_checkpoint/baseline/results/631.deepsjeng_s-928B/steps_100/no_lru/rl/iter_0098_cache.log"
+      },
+      {
+        "step": 99,
+        "action": {
+          "l2c_prefetcher": "no",
+          "llc_replacement": "lru"
+        },
+        "reward": 0.6270693287849904,
+        "ipc": 0.6270693287849904,
+        "skip_instructions": 20809900,
+        "stats_path": "/users/lijrjyan/ChampSim_checkpoint/baseline/results/631.deepsjeng_s-928B/steps_100/no_lru/rl/iter_0099_stats.json",
+        "cache_path": "/users/lijrjyan/ChampSim_checkpoint/baseline/results/631.deepsjeng_s-928B/steps_100/no_lru/rl/iter_0099_cache.log"
+      }
+    ]
+  },
+  "fixed_policies": {
+    "l2c_prefetcher-no_llc_replacement-lru": {
+      "total_ipc": 67.9234022293607,
+      "per_step_ipc": [
+        0.6114805472750898,
+        0.6731013872342144,
+        0.6877456492361018,
+        0.6811849894075734,
+        0.6647731805249023,
+        0.7134525036831986,
+        0.6791168940530923,
+        0.7622481296710584,
+        0.7650085107196818,
+        0.804758513296556,
+        0.743315766391889,
+        0.7696262347567429,
+        0.724005864359536,
+        0.7148524901886496,
+        0.7003659412042792,
+        0.6402174156602016,
+        0.710607379510046,
+        0.6512994858067689,
+        0.661638216223369,
+        0.6493295672218434,
+        0.6668367074764611,
+        0.6718600932532484,
+        0.661455525606469,
+        0.6337950507191953,
+        0.6809878409620996,
+        0.7390245614813008,
+        0.6765201331384965,
+        0.6531273369712526,
+        0.6603787913807792,
+        0.6676191175586992,
+        0.6592273235174876,
+        0.7583291310101121,
+        0.6883778881465955,
+        0.7050566154800683,
+        0.6877802690582959,
+        0.6935774726036898,
+        0.6828265723474425,
+        0.7216292864565292,
+        0.6880760457843512,
+        0.6486894981463883,
+        0.6930353758138793,
+        0.6825705607317156,
+        0.7236214176396311,
+        0.7604042308891407,
+        0.7325409761010896,
+        0.701381363688967,
+        0.6939330645553019,
+        0.6757338432845906,
+        0.7045892502968023,
+        0.7578158450130532,
+        0.6836495766521165,
+        0.712006806717005,
+        0.6547084761409057,
+        0.7069921170773092,
+        0.692788904514815,
+        0.6974202682251529,
+        0.6743758682545891,
+        0.6418714216026086,
+        0.661579123209188,
+        0.6729383264358534,
+        0.7108785748306332,
+        0.7371695637430522,
+        0.708752967858535,
+        0.6824410550380455,
+        0.706237751372729,
+        0.6245433027098934,
+        0.6237396812130247,
+        0.6798187621303947,
+        0.6685799099427364,
+        0.7340132708935833,
+        0.7000027999832001,
+        0.6520043944437018,
+        0.5892677206649264,
+        0.661898883729858,
+        0.5791833058708035,
+        0.6969047594158662,
+        0.6772773450728073,
+        0.6583646879515971,
+        0.6480778204064703,
+        0.6798466266010388,
+        0.7287507515166973,
+        0.6959060257900194,
+        0.6372961071156585,
+        0.6346759836635218,
+        0.6162979169234561,
+        0.6165643698960797,
+        0.6677584462674159,
+        0.6029483585059239,
+        0.5507272316732662,
+        0.6447831637587528,
+        0.7092546163148208,
+        0.678110802197057,
+        0.6745998819462012,
+        0.65577323474925,
+        0.6428895167745109,
+        0.6854513674686408,
+        0.6366654676373499,
+        0.5999142122676457,
+        0.6217015178690772,
+        0.6270693287849904
+      ]
+    }
+  },
+  "best_fixed_policy": {
+    "action": "l2c_prefetcher-no_llc_replacement-lru",
+    "total_ipc": 67.9234022293607
+  },
+  "per_step_comparison": {
+    "steps_evaluated": 100,
+    "results": [
+      {
+        "step": 0,
+        "skip_instructions": 1000000,
+        "rl_action": {
+          "l2c_prefetcher": "no",
+          "llc_replacement": "lru"
+        },
+        "rl_ipc": 0.6114805472750898,
+        "best_action": {
+          "l2c_prefetcher": "no",
+          "llc_replacement": "lru"
+        },
+        "best_ipc": 0.6114805472750898,
+        "per_action_ipc": {
+          "l2c_prefetcher-no_llc_replacement-lru": 0.6114805472750898
+        }
+      },
+      {
+        "step": 1,
+        "skip_instructions": 1200100,
+        "rl_action": {
+          "l2c_prefetcher": "no",
+          "llc_replacement": "lru"
+        },
+        "rl_ipc": 0.6731013872342144,
+        "best_action": {
+          "l2c_prefetcher": "no",
+          "llc_replacement": "lru"
+        },
+        "best_ipc": 0.6731013872342144,
+        "per_action_ipc": {
+          "l2c_prefetcher-no_llc_replacement-lru": 0.6731013872342144
+        }
+      },
+      {
+        "step": 2,
+        "skip_instructions": 1400200,
+        "rl_action": {
+          "l2c_prefetcher": "no",
+          "llc_replacement": "lru"
+        },
+        "rl_ipc": 0.6877456492361018,
+        "best_action": {
+          "l2c_prefetcher": "no",
+          "llc_replacement": "lru"
+        },
+        "best_ipc": 0.6877456492361018,
+        "per_action_ipc": {
+          "l2c_prefetcher-no_llc_replacement-lru": 0.6877456492361018
+        }
+      },
+      {
+        "step": 3,
+        "skip_instructions": 1600300,
+        "rl_action": {
+          "l2c_prefetcher": "no",
+          "llc_replacement": "lru"
+        },
+        "rl_ipc": 0.6811849894075734,
+        "best_action": {
+          "l2c_prefetcher": "no",
+          "llc_replacement": "lru"
+        },
+        "best_ipc": 0.6811849894075734,
+        "per_action_ipc": {
+          "l2c_prefetcher-no_llc_replacement-lru": 0.6811849894075734
+        }
+      },
+      {
+        "step": 4,
+        "skip_instructions": 1800400,
+        "rl_action": {
+          "l2c_prefetcher": "no",
+          "llc_replacement": "lru"
+        },
+        "rl_ipc": 0.6647731805249023,
+        "best_action": {
+          "l2c_prefetcher": "no",
+          "llc_replacement": "lru"
+        },
+        "best_ipc": 0.6647731805249023,
+        "per_action_ipc": {
+          "l2c_prefetcher-no_llc_replacement-lru": 0.6647731805249023
+        }
+      },
+      {
+        "step": 5,
+        "skip_instructions": 2000500,
+        "rl_action": {
+          "l2c_prefetcher": "no",
+          "llc_replacement": "lru"
+        },
+        "rl_ipc": 0.7134525036831986,
+        "best_action": {
+          "l2c_prefetcher": "no",
+          "llc_replacement": "lru"
+        },
+        "best_ipc": 0.7134525036831986,
+        "per_action_ipc": {
+          "l2c_prefetcher-no_llc_replacement-lru": 0.7134525036831986
+        }
+      },
+      {
+        "step": 6,
+        "skip_instructions": 2200600,
+        "rl_action": {
+          "l2c_prefetcher": "no",
+          "llc_replacement": "lru"
+        },
+        "rl_ipc": 0.6791168940530923,
+        "best_action": {
+          "l2c_prefetcher": "no",
+          "llc_replacement": "lru"
+        },
+        "best_ipc": 0.6791168940530923,
+        "per_action_ipc": {
+          "l2c_prefetcher-no_llc_replacement-lru": 0.6791168940530923
+        }
+      },
+      {
+        "step": 7,
+        "skip_instructions": 2400700,
+        "rl_action": {
+          "l2c_prefetcher": "no",
+          "llc_replacement": "lru"
+        },
+        "rl_ipc": 0.7622481296710584,
+        "best_action": {
+          "l2c_prefetcher": "no",
+          "llc_replacement": "lru"
+        },
+        "best_ipc": 0.7622481296710584,
+        "per_action_ipc": {
+          "l2c_prefetcher-no_llc_replacement-lru": 0.7622481296710584
+        }
+      },
+      {
+        "step": 8,
+        "skip_instructions": 2600800,
+        "rl_action": {
+          "l2c_prefetcher": "no",
+          "llc_replacement": "lru"
+        },
+        "rl_ipc": 0.7650085107196818,
+        "best_action": {
+          "l2c_prefetcher": "no",
+          "llc_replacement": "lru"
+        },
+        "best_ipc": 0.7650085107196818,
+        "per_action_ipc": {
+          "l2c_prefetcher-no_llc_replacement-lru": 0.7650085107196818
+        }
+      },
+      {
+        "step": 9,
+        "skip_instructions": 2800900,
+        "rl_action": {
+          "l2c_prefetcher": "no",
+          "llc_replacement": "lru"
+        },
+        "rl_ipc": 0.804758513296556,
+        "best_action": {
+          "l2c_prefetcher": "no",
+          "llc_replacement": "lru"
+        },
+        "best_ipc": 0.804758513296556,
+        "per_action_ipc": {
+          "l2c_prefetcher-no_llc_replacement-lru": 0.804758513296556
+        }
+      },
+      {
+        "step": 10,
+        "skip_instructions": 3001000,
+        "rl_action": {
+          "l2c_prefetcher": "no",
+          "llc_replacement": "lru"
+        },
+        "rl_ipc": 0.743315766391889,
+        "best_action": {
+          "l2c_prefetcher": "no",
+          "llc_replacement": "lru"
+        },
+        "best_ipc": 0.743315766391889,
+        "per_action_ipc": {
+          "l2c_prefetcher-no_llc_replacement-lru": 0.743315766391889
+        }
+      },
+      {
+        "step": 11,
+        "skip_instructions": 3201100,
+        "rl_action": {
+          "l2c_prefetcher": "no",
+          "llc_replacement": "lru"
+        },
+        "rl_ipc": 0.7696262347567429,
+        "best_action": {
+          "l2c_prefetcher": "no",
+          "llc_replacement": "lru"
+        },
+        "best_ipc": 0.7696262347567429,
+        "per_action_ipc": {
+          "l2c_prefetcher-no_llc_replacement-lru": 0.7696262347567429
+        }
+      },
+      {
+        "step": 12,
+        "skip_instructions": 3401200,
+        "rl_action": {
+          "l2c_prefetcher": "no",
+          "llc_replacement": "lru"
+        },
+        "rl_ipc": 0.724005864359536,
+        "best_action": {
+          "l2c_prefetcher": "no",
+          "llc_replacement": "lru"
+        },
+        "best_ipc": 0.724005864359536,
+        "per_action_ipc": {
+          "l2c_prefetcher-no_llc_replacement-lru": 0.724005864359536
+        }
+      },
+      {
+        "step": 13,
+        "skip_instructions": 3601300,
+        "rl_action": {
+          "l2c_prefetcher": "no",
+          "llc_replacement": "lru"
+        },
+        "rl_ipc": 0.7148524901886496,
+        "best_action": {
+          "l2c_prefetcher": "no",
+          "llc_replacement": "lru"
+        },
+        "best_ipc": 0.7148524901886496,
+        "per_action_ipc": {
+          "l2c_prefetcher-no_llc_replacement-lru": 0.7148524901886496
+        }
+      },
+      {
+        "step": 14,
+        "skip_instructions": 3801400,
+        "rl_action": {
+          "l2c_prefetcher": "no",
+          "llc_replacement": "lru"
+        },
+        "rl_ipc": 0.7003659412042792,
+        "best_action": {
+          "l2c_prefetcher": "no",
+          "llc_replacement": "lru"
+        },
+        "best_ipc": 0.7003659412042792,
+        "per_action_ipc": {
+          "l2c_prefetcher-no_llc_replacement-lru": 0.7003659412042792
+        }
+      },
+      {
+        "step": 15,
+        "skip_instructions": 4001500,
+        "rl_action": {
+          "l2c_prefetcher": "no",
+          "llc_replacement": "lru"
+        },
+        "rl_ipc": 0.6402174156602016,
+        "best_action": {
+          "l2c_prefetcher": "no",
+          "llc_replacement": "lru"
+        },
+        "best_ipc": 0.6402174156602016,
+        "per_action_ipc": {
+          "l2c_prefetcher-no_llc_replacement-lru": 0.6402174156602016
+        }
+      },
+      {
+        "step": 16,
+        "skip_instructions": 4201600,
+        "rl_action": {
+          "l2c_prefetcher": "no",
+          "llc_replacement": "lru"
+        },
+        "rl_ipc": 0.710607379510046,
+        "best_action": {
+          "l2c_prefetcher": "no",
+          "llc_replacement": "lru"
+        },
+        "best_ipc": 0.710607379510046,
+        "per_action_ipc": {
+          "l2c_prefetcher-no_llc_replacement-lru": 0.710607379510046
+        }
+      },
+      {
+        "step": 17,
+        "skip_instructions": 4401700,
+        "rl_action": {
+          "l2c_prefetcher": "no",
+          "llc_replacement": "lru"
+        },
+        "rl_ipc": 0.6512994858067689,
+        "best_action": {
+          "l2c_prefetcher": "no",
+          "llc_replacement": "lru"
+        },
+        "best_ipc": 0.6512994858067689,
+        "per_action_ipc": {
+          "l2c_prefetcher-no_llc_replacement-lru": 0.6512994858067689
+        }
+      },
+      {
+        "step": 18,
+        "skip_instructions": 4601800,
+        "rl_action": {
+          "l2c_prefetcher": "no",
+          "llc_replacement": "lru"
+        },
+        "rl_ipc": 0.661638216223369,
+        "best_action": {
+          "l2c_prefetcher": "no",
+          "llc_replacement": "lru"
+        },
+        "best_ipc": 0.661638216223369,
+        "per_action_ipc": {
+          "l2c_prefetcher-no_llc_replacement-lru": 0.661638216223369
+        }
+      },
+      {
+        "step": 19,
+        "skip_instructions": 4801900,
+        "rl_action": {
+          "l2c_prefetcher": "no",
+          "llc_replacement": "lru"
+        },
+        "rl_ipc": 0.6493295672218434,
+        "best_action": {
+          "l2c_prefetcher": "no",
+          "llc_replacement": "lru"
+        },
+        "best_ipc": 0.6493295672218434,
+        "per_action_ipc": {
+          "l2c_prefetcher-no_llc_replacement-lru": 0.6493295672218434
+        }
+      },
+      {
+        "step": 20,
+        "skip_instructions": 5002000,
+        "rl_action": {
+          "l2c_prefetcher": "no",
+          "llc_replacement": "lru"
+        },
+        "rl_ipc": 0.6668367074764611,
+        "best_action": {
+          "l2c_prefetcher": "no",
+          "llc_replacement": "lru"
+        },
+        "best_ipc": 0.6668367074764611,
+        "per_action_ipc": {
+          "l2c_prefetcher-no_llc_replacement-lru": 0.6668367074764611
+        }
+      },
+      {
+        "step": 21,
+        "skip_instructions": 5202100,
+        "rl_action": {
+          "l2c_prefetcher": "no",
+          "llc_replacement": "lru"
+        },
+        "rl_ipc": 0.6718600932532484,
+        "best_action": {
+          "l2c_prefetcher": "no",
+          "llc_replacement": "lru"
+        },
+        "best_ipc": 0.6718600932532484,
+        "per_action_ipc": {
+          "l2c_prefetcher-no_llc_replacement-lru": 0.6718600932532484
+        }
+      },
+      {
+        "step": 22,
+        "skip_instructions": 5402200,
+        "rl_action": {
+          "l2c_prefetcher": "no",
+          "llc_replacement": "lru"
+        },
+        "rl_ipc": 0.661455525606469,
+        "best_action": {
+          "l2c_prefetcher": "no",
+          "llc_replacement": "lru"
+        },
+        "best_ipc": 0.661455525606469,
+        "per_action_ipc": {
+          "l2c_prefetcher-no_llc_replacement-lru": 0.661455525606469
+        }
+      },
+      {
+        "step": 23,
+        "skip_instructions": 5602300,
+        "rl_action": {
+          "l2c_prefetcher": "no",
+          "llc_replacement": "lru"
+        },
+        "rl_ipc": 0.6337950507191953,
+        "best_action": {
+          "l2c_prefetcher": "no",
+          "llc_replacement": "lru"
+        },
+        "best_ipc": 0.6337950507191953,
+        "per_action_ipc": {
+          "l2c_prefetcher-no_llc_replacement-lru": 0.6337950507191953
+        }
+      },
+      {
+        "step": 24,
+        "skip_instructions": 5802400,
+        "rl_action": {
+          "l2c_prefetcher": "no",
+          "llc_replacement": "lru"
+        },
+        "rl_ipc": 0.6809878409620996,
+        "best_action": {
+          "l2c_prefetcher": "no",
+          "llc_replacement": "lru"
+        },
+        "best_ipc": 0.6809878409620996,
+        "per_action_ipc": {
+          "l2c_prefetcher-no_llc_replacement-lru": 0.6809878409620996
+        }
+      },
+      {
+        "step": 25,
+        "skip_instructions": 6002500,
+        "rl_action": {
+          "l2c_prefetcher": "no",
+          "llc_replacement": "lru"
+        },
+        "rl_ipc": 0.7390245614813008,
+        "best_action": {
+          "l2c_prefetcher": "no",
+          "llc_replacement": "lru"
+        },
+        "best_ipc": 0.7390245614813008,
+        "per_action_ipc": {
+          "l2c_prefetcher-no_llc_replacement-lru": 0.7390245614813008
+        }
+      },
+      {
+        "step": 26,
+        "skip_instructions": 6202600,
+        "rl_action": {
+          "l2c_prefetcher": "no",
+          "llc_replacement": "lru"
+        },
+        "rl_ipc": 0.6765201331384965,
+        "best_action": {
+          "l2c_prefetcher": "no",
+          "llc_replacement": "lru"
+        },
+        "best_ipc": 0.6765201331384965,
+        "per_action_ipc": {
+          "l2c_prefetcher-no_llc_replacement-lru": 0.6765201331384965
+        }
+      },
+      {
+        "step": 27,
+        "skip_instructions": 6402700,
+        "rl_action": {
+          "l2c_prefetcher": "no",
+          "llc_replacement": "lru"
+        },
+        "rl_ipc": 0.6531273369712526,
+        "best_action": {
+          "l2c_prefetcher": "no",
+          "llc_replacement": "lru"
+        },
+        "best_ipc": 0.6531273369712526,
+        "per_action_ipc": {
+          "l2c_prefetcher-no_llc_replacement-lru": 0.6531273369712526
+        }
+      },
+      {
+        "step": 28,
+        "skip_instructions": 6602800,
+        "rl_action": {
+          "l2c_prefetcher": "no",
+          "llc_replacement": "lru"
+        },
+        "rl_ipc": 0.6603787913807792,
+        "best_action": {
+          "l2c_prefetcher": "no",
+          "llc_replacement": "lru"
+        },
+        "best_ipc": 0.6603787913807792,
+        "per_action_ipc": {
+          "l2c_prefetcher-no_llc_replacement-lru": 0.6603787913807792
+        }
+      },
+      {
+        "step": 29,
+        "skip_instructions": 6802900,
+        "rl_action": {
+          "l2c_prefetcher": "no",
+          "llc_replacement": "lru"
+        },
+        "rl_ipc": 0.6676191175586992,
+        "best_action": {
+          "l2c_prefetcher": "no",
+          "llc_replacement": "lru"
+        },
+        "best_ipc": 0.6676191175586992,
+        "per_action_ipc": {
+          "l2c_prefetcher-no_llc_replacement-lru": 0.6676191175586992
+        }
+      },
+      {
+        "step": 30,
+        "skip_instructions": 7003000,
+        "rl_action": {
+          "l2c_prefetcher": "no",
+          "llc_replacement": "lru"
+        },
+        "rl_ipc": 0.6592273235174876,
+        "best_action": {
+          "l2c_prefetcher": "no",
+          "llc_replacement": "lru"
+        },
+        "best_ipc": 0.6592273235174876,
+        "per_action_ipc": {
+          "l2c_prefetcher-no_llc_replacement-lru": 0.6592273235174876
+        }
+      },
+      {
+        "step": 31,
+        "skip_instructions": 7203100,
+        "rl_action": {
+          "l2c_prefetcher": "no",
+          "llc_replacement": "lru"
+        },
+        "rl_ipc": 0.7583291310101121,
+        "best_action": {
+          "l2c_prefetcher": "no",
+          "llc_replacement": "lru"
+        },
+        "best_ipc": 0.7583291310101121,
+        "per_action_ipc": {
+          "l2c_prefetcher-no_llc_replacement-lru": 0.7583291310101121
+        }
+      },
+      {
+        "step": 32,
+        "skip_instructions": 7403200,
+        "rl_action": {
+          "l2c_prefetcher": "no",
+          "llc_replacement": "lru"
+        },
+        "rl_ipc": 0.6883778881465955,
+        "best_action": {
+          "l2c_prefetcher": "no",
+          "llc_replacement": "lru"
+        },
+        "best_ipc": 0.6883778881465955,
+        "per_action_ipc": {
+          "l2c_prefetcher-no_llc_replacement-lru": 0.6883778881465955
+        }
+      },
+      {
+        "step": 33,
+        "skip_instructions": 7603300,
+        "rl_action": {
+          "l2c_prefetcher": "no",
+          "llc_replacement": "lru"
+        },
+        "rl_ipc": 0.7050566154800683,
+        "best_action": {
+          "l2c_prefetcher": "no",
+          "llc_replacement": "lru"
+        },
+        "best_ipc": 0.7050566154800683,
+        "per_action_ipc": {
+          "l2c_prefetcher-no_llc_replacement-lru": 0.7050566154800683
+        }
+      },
+      {
+        "step": 34,
+        "skip_instructions": 7803400,
+        "rl_action": {
+          "l2c_prefetcher": "no",
+          "llc_replacement": "lru"
+        },
+        "rl_ipc": 0.6877802690582959,
+        "best_action": {
+          "l2c_prefetcher": "no",
+          "llc_replacement": "lru"
+        },
+        "best_ipc": 0.6877802690582959,
+        "per_action_ipc": {
+          "l2c_prefetcher-no_llc_replacement-lru": 0.6877802690582959
+        }
+      },
+      {
+        "step": 35,
+        "skip_instructions": 8003500,
+        "rl_action": {
+          "l2c_prefetcher": "no",
+          "llc_replacement": "lru"
+        },
+        "rl_ipc": 0.6935774726036898,
+        "best_action": {
+          "l2c_prefetcher": "no",
+          "llc_replacement": "lru"
+        },
+        "best_ipc": 0.6935774726036898,
+        "per_action_ipc": {
+          "l2c_prefetcher-no_llc_replacement-lru": 0.6935774726036898
+        }
+      },
+      {
+        "step": 36,
+        "skip_instructions": 8203600,
+        "rl_action": {
+          "l2c_prefetcher": "no",
+          "llc_replacement": "lru"
+        },
+        "rl_ipc": 0.6828265723474425,
+        "best_action": {
+          "l2c_prefetcher": "no",
+          "llc_replacement": "lru"
+        },
+        "best_ipc": 0.6828265723474425,
+        "per_action_ipc": {
+          "l2c_prefetcher-no_llc_replacement-lru": 0.6828265723474425
+        }
+      },
+      {
+        "step": 37,
+        "skip_instructions": 8403700,
+        "rl_action": {
+          "l2c_prefetcher": "no",
+          "llc_replacement": "lru"
+        },
+        "rl_ipc": 0.7216292864565292,
+        "best_action": {
+          "l2c_prefetcher": "no",
+          "llc_replacement": "lru"
+        },
+        "best_ipc": 0.7216292864565292,
+        "per_action_ipc": {
+          "l2c_prefetcher-no_llc_replacement-lru": 0.7216292864565292
+        }
+      },
+      {
+        "step": 38,
+        "skip_instructions": 8603800,
+        "rl_action": {
+          "l2c_prefetcher": "no",
+          "llc_replacement": "lru"
+        },
+        "rl_ipc": 0.6880760457843512,
+        "best_action": {
+          "l2c_prefetcher": "no",
+          "llc_replacement": "lru"
+        },
+        "best_ipc": 0.6880760457843512,
+        "per_action_ipc": {
+          "l2c_prefetcher-no_llc_replacement-lru": 0.6880760457843512
+        }
+      },
+      {
+        "step": 39,
+        "skip_instructions": 8803900,
+        "rl_action": {
+          "l2c_prefetcher": "no",
+          "llc_replacement": "lru"
+        },
+        "rl_ipc": 0.6486894981463883,
+        "best_action": {
+          "l2c_prefetcher": "no",
+          "llc_replacement": "lru"
+        },
+        "best_ipc": 0.6486894981463883,
+        "per_action_ipc": {
+          "l2c_prefetcher-no_llc_replacement-lru": 0.6486894981463883
+        }
+      },
+      {
+        "step": 40,
+        "skip_instructions": 9004000,
+        "rl_action": {
+          "l2c_prefetcher": "no",
+          "llc_replacement": "lru"
+        },
+        "rl_ipc": 0.6930353758138793,
+        "best_action": {
+          "l2c_prefetcher": "no",
+          "llc_replacement": "lru"
+        },
+        "best_ipc": 0.6930353758138793,
+        "per_action_ipc": {
+          "l2c_prefetcher-no_llc_replacement-lru": 0.6930353758138793
+        }
+      },
+      {
+        "step": 41,
+        "skip_instructions": 9204100,
+        "rl_action": {
+          "l2c_prefetcher": "no",
+          "llc_replacement": "lru"
+        },
+        "rl_ipc": 0.6825705607317156,
+        "best_action": {
+          "l2c_prefetcher": "no",
+          "llc_replacement": "lru"
+        },
+        "best_ipc": 0.6825705607317156,
+        "per_action_ipc": {
+          "l2c_prefetcher-no_llc_replacement-lru": 0.6825705607317156
+        }
+      },
+      {
+        "step": 42,
+        "skip_instructions": 9404200,
+        "rl_action": {
+          "l2c_prefetcher": "no",
+          "llc_replacement": "lru"
+        },
+        "rl_ipc": 0.7236214176396311,
+        "best_action": {
+          "l2c_prefetcher": "no",
+          "llc_replacement": "lru"
+        },
+        "best_ipc": 0.7236214176396311,
+        "per_action_ipc": {
+          "l2c_prefetcher-no_llc_replacement-lru": 0.7236214176396311
+        }
+      },
+      {
+        "step": 43,
+        "skip_instructions": 9604300,
+        "rl_action": {
+          "l2c_prefetcher": "no",
+          "llc_replacement": "lru"
+        },
+        "rl_ipc": 0.7604042308891407,
+        "best_action": {
+          "l2c_prefetcher": "no",
+          "llc_replacement": "lru"
+        },
+        "best_ipc": 0.7604042308891407,
+        "per_action_ipc": {
+          "l2c_prefetcher-no_llc_replacement-lru": 0.7604042308891407
+        }
+      },
+      {
+        "step": 44,
+        "skip_instructions": 9804400,
+        "rl_action": {
+          "l2c_prefetcher": "no",
+          "llc_replacement": "lru"
+        },
+        "rl_ipc": 0.7325409761010896,
+        "best_action": {
+          "l2c_prefetcher": "no",
+          "llc_replacement": "lru"
+        },
+        "best_ipc": 0.7325409761010896,
+        "per_action_ipc": {
+          "l2c_prefetcher-no_llc_replacement-lru": 0.7325409761010896
+        }
+      },
+      {
+        "step": 45,
+        "skip_instructions": 10004500,
+        "rl_action": {
+          "l2c_prefetcher": "no",
+          "llc_replacement": "lru"
+        },
+        "rl_ipc": 0.701381363688967,
+        "best_action": {
+          "l2c_prefetcher": "no",
+          "llc_replacement": "lru"
+        },
+        "best_ipc": 0.701381363688967,
+        "per_action_ipc": {
+          "l2c_prefetcher-no_llc_replacement-lru": 0.701381363688967
+        }
+      },
+      {
+        "step": 46,
+        "skip_instructions": 10204600,
+        "rl_action": {
+          "l2c_prefetcher": "no",
+          "llc_replacement": "lru"
+        },
+        "rl_ipc": 0.6939330645553019,
+        "best_action": {
+          "l2c_prefetcher": "no",
+          "llc_replacement": "lru"
+        },
+        "best_ipc": 0.6939330645553019,
+        "per_action_ipc": {
+          "l2c_prefetcher-no_llc_replacement-lru": 0.6939330645553019
+        }
+      },
+      {
+        "step": 47,
+        "skip_instructions": 10404700,
+        "rl_action": {
+          "l2c_prefetcher": "no",
+          "llc_replacement": "lru"
+        },
+        "rl_ipc": 0.6757338432845906,
+        "best_action": {
+          "l2c_prefetcher": "no",
+          "llc_replacement": "lru"
+        },
+        "best_ipc": 0.6757338432845906,
+        "per_action_ipc": {
+          "l2c_prefetcher-no_llc_replacement-lru": 0.6757338432845906
+        }
+      },
+      {
+        "step": 48,
+        "skip_instructions": 10604800,
+        "rl_action": {
+          "l2c_prefetcher": "no",
+          "llc_replacement": "lru"
+        },
+        "rl_ipc": 0.7045892502968023,
+        "best_action": {
+          "l2c_prefetcher": "no",
+          "llc_replacement": "lru"
+        },
+        "best_ipc": 0.7045892502968023,
+        "per_action_ipc": {
+          "l2c_prefetcher-no_llc_replacement-lru": 0.7045892502968023
+        }
+      },
+      {
+        "step": 49,
+        "skip_instructions": 10804900,
+        "rl_action": {
+          "l2c_prefetcher": "no",
+          "llc_replacement": "lru"
+        },
+        "rl_ipc": 0.7578158450130532,
+        "best_action": {
+          "l2c_prefetcher": "no",
+          "llc_replacement": "lru"
+        },
+        "best_ipc": 0.7578158450130532,
+        "per_action_ipc": {
+          "l2c_prefetcher-no_llc_replacement-lru": 0.7578158450130532
+        }
+      },
+      {
+        "step": 50,
+        "skip_instructions": 11005000,
+        "rl_action": {
+          "l2c_prefetcher": "no",
+          "llc_replacement": "lru"
+        },
+        "rl_ipc": 0.6836495766521165,
+        "best_action": {
+          "l2c_prefetcher": "no",
+          "llc_replacement": "lru"
+        },
+        "best_ipc": 0.6836495766521165,
+        "per_action_ipc": {
+          "l2c_prefetcher-no_llc_replacement-lru": 0.6836495766521165
+        }
+      },
+      {
+        "step": 51,
+        "skip_instructions": 11205100,
+        "rl_action": {
+          "l2c_prefetcher": "no",
+          "llc_replacement": "lru"
+        },
+        "rl_ipc": 0.712006806717005,
+        "best_action": {
+          "l2c_prefetcher": "no",
+          "llc_replacement": "lru"
+        },
+        "best_ipc": 0.712006806717005,
+        "per_action_ipc": {
+          "l2c_prefetcher-no_llc_replacement-lru": 0.712006806717005
+        }
+      },
+      {
+        "step": 52,
+        "skip_instructions": 11405200,
+        "rl_action": {
+          "l2c_prefetcher": "no",
+          "llc_replacement": "lru"
+        },
+        "rl_ipc": 0.6547084761409057,
+        "best_action": {
+          "l2c_prefetcher": "no",
+          "llc_replacement": "lru"
+        },
+        "best_ipc": 0.6547084761409057,
+        "per_action_ipc": {
+          "l2c_prefetcher-no_llc_replacement-lru": 0.6547084761409057
+        }
+      },
+      {
+        "step": 53,
+        "skip_instructions": 11605300,
+        "rl_action": {
+          "l2c_prefetcher": "no",
+          "llc_replacement": "lru"
+        },
+        "rl_ipc": 0.7069921170773092,
+        "best_action": {
+          "l2c_prefetcher": "no",
+          "llc_replacement": "lru"
+        },
+        "best_ipc": 0.7069921170773092,
+        "per_action_ipc": {
+          "l2c_prefetcher-no_llc_replacement-lru": 0.7069921170773092
+        }
+      },
+      {
+        "step": 54,
+        "skip_instructions": 11805400,
+        "rl_action": {
+          "l2c_prefetcher": "no",
+          "llc_replacement": "lru"
+        },
+        "rl_ipc": 0.692788904514815,
+        "best_action": {
+          "l2c_prefetcher": "no",
+          "llc_replacement": "lru"
+        },
+        "best_ipc": 0.692788904514815,
+        "per_action_ipc": {
+          "l2c_prefetcher-no_llc_replacement-lru": 0.692788904514815
+        }
+      },
+      {
+        "step": 55,
+        "skip_instructions": 12005500,
+        "rl_action": {
+          "l2c_prefetcher": "no",
+          "llc_replacement": "lru"
+        },
+        "rl_ipc": 0.6974202682251529,
+        "best_action": {
+          "l2c_prefetcher": "no",
+          "llc_replacement": "lru"
+        },
+        "best_ipc": 0.6974202682251529,
+        "per_action_ipc": {
+          "l2c_prefetcher-no_llc_replacement-lru": 0.6974202682251529
+        }
+      },
+      {
+        "step": 56,
+        "skip_instructions": 12205600,
+        "rl_action": {
+          "l2c_prefetcher": "no",
+          "llc_replacement": "lru"
+        },
+        "rl_ipc": 0.6743758682545891,
+        "best_action": {
+          "l2c_prefetcher": "no",
+          "llc_replacement": "lru"
+        },
+        "best_ipc": 0.6743758682545891,
+        "per_action_ipc": {
+          "l2c_prefetcher-no_llc_replacement-lru": 0.6743758682545891
+        }
+      },
+      {
+        "step": 57,
+        "skip_instructions": 12405700,
+        "rl_action": {
+          "l2c_prefetcher": "no",
+          "llc_replacement": "lru"
+        },
+        "rl_ipc": 0.6418714216026086,
+        "best_action": {
+          "l2c_prefetcher": "no",
+          "llc_replacement": "lru"
+        },
+        "best_ipc": 0.6418714216026086,
+        "per_action_ipc": {
+          "l2c_prefetcher-no_llc_replacement-lru": 0.6418714216026086
+        }
+      },
+      {
+        "step": 58,
+        "skip_instructions": 12605800,
+        "rl_action": {
+          "l2c_prefetcher": "no",
+          "llc_replacement": "lru"
+        },
+        "rl_ipc": 0.661579123209188,
+        "best_action": {
+          "l2c_prefetcher": "no",
+          "llc_replacement": "lru"
+        },
+        "best_ipc": 0.661579123209188,
+        "per_action_ipc": {
+          "l2c_prefetcher-no_llc_replacement-lru": 0.661579123209188
+        }
+      },
+      {
+        "step": 59,
+        "skip_instructions": 12805900,
+        "rl_action": {
+          "l2c_prefetcher": "no",
+          "llc_replacement": "lru"
+        },
+        "rl_ipc": 0.6729383264358534,
+        "best_action": {
+          "l2c_prefetcher": "no",
+          "llc_replacement": "lru"
+        },
+        "best_ipc": 0.6729383264358534,
+        "per_action_ipc": {
+          "l2c_prefetcher-no_llc_replacement-lru": 0.6729383264358534
+        }
+      },
+      {
+        "step": 60,
+        "skip_instructions": 13006000,
+        "rl_action": {
+          "l2c_prefetcher": "no",
+          "llc_replacement": "lru"
+        },
+        "rl_ipc": 0.7108785748306332,
+        "best_action": {
+          "l2c_prefetcher": "no",
+          "llc_replacement": "lru"
+        },
+        "best_ipc": 0.7108785748306332,
+        "per_action_ipc": {
+          "l2c_prefetcher-no_llc_replacement-lru": 0.7108785748306332
+        }
+      },
+      {
+        "step": 61,
+        "skip_instructions": 13206100,
+        "rl_action": {
+          "l2c_prefetcher": "no",
+          "llc_replacement": "lru"
+        },
+        "rl_ipc": 0.7371695637430522,
+        "best_action": {
+          "l2c_prefetcher": "no",
+          "llc_replacement": "lru"
+        },
+        "best_ipc": 0.7371695637430522,
+        "per_action_ipc": {
+          "l2c_prefetcher-no_llc_replacement-lru": 0.7371695637430522
+        }
+      },
+      {
+        "step": 62,
+        "skip_instructions": 13406200,
+        "rl_action": {
+          "l2c_prefetcher": "no",
+          "llc_replacement": "lru"
+        },
+        "rl_ipc": 0.708752967858535,
+        "best_action": {
+          "l2c_prefetcher": "no",
+          "llc_replacement": "lru"
+        },
+        "best_ipc": 0.708752967858535,
+        "per_action_ipc": {
+          "l2c_prefetcher-no_llc_replacement-lru": 0.708752967858535
+        }
+      },
+      {
+        "step": 63,
+        "skip_instructions": 13606300,
+        "rl_action": {
+          "l2c_prefetcher": "no",
+          "llc_replacement": "lru"
+        },
+        "rl_ipc": 0.6824410550380455,
+        "best_action": {
+          "l2c_prefetcher": "no",
+          "llc_replacement": "lru"
+        },
+        "best_ipc": 0.6824410550380455,
+        "per_action_ipc": {
+          "l2c_prefetcher-no_llc_replacement-lru": 0.6824410550380455
+        }
+      },
+      {
+        "step": 64,
+        "skip_instructions": 13806400,
+        "rl_action": {
+          "l2c_prefetcher": "no",
+          "llc_replacement": "lru"
+        },
+        "rl_ipc": 0.706237751372729,
+        "best_action": {
+          "l2c_prefetcher": "no",
+          "llc_replacement": "lru"
+        },
+        "best_ipc": 0.706237751372729,
+        "per_action_ipc": {
+          "l2c_prefetcher-no_llc_replacement-lru": 0.706237751372729
+        }
+      },
+      {
+        "step": 65,
+        "skip_instructions": 14006500,
+        "rl_action": {
+          "l2c_prefetcher": "no",
+          "llc_replacement": "lru"
+        },
+        "rl_ipc": 0.6245433027098934,
+        "best_action": {
+          "l2c_prefetcher": "no",
+          "llc_replacement": "lru"
+        },
+        "best_ipc": 0.6245433027098934,
+        "per_action_ipc": {
+          "l2c_prefetcher-no_llc_replacement-lru": 0.6245433027098934
+        }
+      },
+      {
+        "step": 66,
+        "skip_instructions": 14206600,
+        "rl_action": {
+          "l2c_prefetcher": "no",
+          "llc_replacement": "lru"
+        },
+        "rl_ipc": 0.6237396812130247,
+        "best_action": {
+          "l2c_prefetcher": "no",
+          "llc_replacement": "lru"
+        },
+        "best_ipc": 0.6237396812130247,
+        "per_action_ipc": {
+          "l2c_prefetcher-no_llc_replacement-lru": 0.6237396812130247
+        }
+      },
+      {
+        "step": 67,
+        "skip_instructions": 14406700,
+        "rl_action": {
+          "l2c_prefetcher": "no",
+          "llc_replacement": "lru"
+        },
+        "rl_ipc": 0.6798187621303947,
+        "best_action": {
+          "l2c_prefetcher": "no",
+          "llc_replacement": "lru"
+        },
+        "best_ipc": 0.6798187621303947,
+        "per_action_ipc": {
+          "l2c_prefetcher-no_llc_replacement-lru": 0.6798187621303947
+        }
+      },
+      {
+        "step": 68,
+        "skip_instructions": 14606800,
+        "rl_action": {
+          "l2c_prefetcher": "no",
+          "llc_replacement": "lru"
+        },
+        "rl_ipc": 0.6685799099427364,
+        "best_action": {
+          "l2c_prefetcher": "no",
+          "llc_replacement": "lru"
+        },
+        "best_ipc": 0.6685799099427364,
+        "per_action_ipc": {
+          "l2c_prefetcher-no_llc_replacement-lru": 0.6685799099427364
+        }
+      },
+      {
+        "step": 69,
+        "skip_instructions": 14806900,
+        "rl_action": {
+          "l2c_prefetcher": "no",
+          "llc_replacement": "lru"
+        },
+        "rl_ipc": 0.7340132708935833,
+        "best_action": {
+          "l2c_prefetcher": "no",
+          "llc_replacement": "lru"
+        },
+        "best_ipc": 0.7340132708935833,
+        "per_action_ipc": {
+          "l2c_prefetcher-no_llc_replacement-lru": 0.7340132708935833
+        }
+      },
+      {
+        "step": 70,
+        "skip_instructions": 15007000,
+        "rl_action": {
+          "l2c_prefetcher": "no",
+          "llc_replacement": "lru"
+        },
+        "rl_ipc": 0.7000027999832001,
+        "best_action": {
+          "l2c_prefetcher": "no",
+          "llc_replacement": "lru"
+        },
+        "best_ipc": 0.7000027999832001,
+        "per_action_ipc": {
+          "l2c_prefetcher-no_llc_replacement-lru": 0.7000027999832001
+        }
+      },
+      {
+        "step": 71,
+        "skip_instructions": 15207100,
+        "rl_action": {
+          "l2c_prefetcher": "no",
+          "llc_replacement": "lru"
+        },
+        "rl_ipc": 0.6520043944437018,
+        "best_action": {
+          "l2c_prefetcher": "no",
+          "llc_replacement": "lru"
+        },
+        "best_ipc": 0.6520043944437018,
+        "per_action_ipc": {
+          "l2c_prefetcher-no_llc_replacement-lru": 0.6520043944437018
+        }
+      },
+      {
+        "step": 72,
+        "skip_instructions": 15407200,
+        "rl_action": {
+          "l2c_prefetcher": "no",
+          "llc_replacement": "lru"
+        },
+        "rl_ipc": 0.5892677206649264,
+        "best_action": {
+          "l2c_prefetcher": "no",
+          "llc_replacement": "lru"
+        },
+        "best_ipc": 0.5892677206649264,
+        "per_action_ipc": {
+          "l2c_prefetcher-no_llc_replacement-lru": 0.5892677206649264
+        }
+      },
+      {
+        "step": 73,
+        "skip_instructions": 15607300,
+        "rl_action": {
+          "l2c_prefetcher": "no",
+          "llc_replacement": "lru"
+        },
+        "rl_ipc": 0.661898883729858,
+        "best_action": {
+          "l2c_prefetcher": "no",
+          "llc_replacement": "lru"
+        },
+        "best_ipc": 0.661898883729858,
+        "per_action_ipc": {
+          "l2c_prefetcher-no_llc_replacement-lru": 0.661898883729858
+        }
+      },
+      {
+        "step": 74,
+        "skip_instructions": 15807400,
+        "rl_action": {
+          "l2c_prefetcher": "no",
+          "llc_replacement": "lru"
+        },
+        "rl_ipc": 0.5791833058708035,
+        "best_action": {
+          "l2c_prefetcher": "no",
+          "llc_replacement": "lru"
+        },
+        "best_ipc": 0.5791833058708035,
+        "per_action_ipc": {
+          "l2c_prefetcher-no_llc_replacement-lru": 0.5791833058708035
+        }
+      },
+      {
+        "step": 75,
+        "skip_instructions": 16007500,
+        "rl_action": {
+          "l2c_prefetcher": "no",
+          "llc_replacement": "lru"
+        },
+        "rl_ipc": 0.6969047594158662,
+        "best_action": {
+          "l2c_prefetcher": "no",
+          "llc_replacement": "lru"
+        },
+        "best_ipc": 0.6969047594158662,
+        "per_action_ipc": {
+          "l2c_prefetcher-no_llc_replacement-lru": 0.6969047594158662
+        }
+      },
+      {
+        "step": 76,
+        "skip_instructions": 16207600,
+        "rl_action": {
+          "l2c_prefetcher": "no",
+          "llc_replacement": "lru"
+        },
+        "rl_ipc": 0.6772773450728073,
+        "best_action": {
+          "l2c_prefetcher": "no",
+          "llc_replacement": "lru"
+        },
+        "best_ipc": 0.6772773450728073,
+        "per_action_ipc": {
+          "l2c_prefetcher-no_llc_replacement-lru": 0.6772773450728073
+        }
+      },
+      {
+        "step": 77,
+        "skip_instructions": 16407700,
+        "rl_action": {
+          "l2c_prefetcher": "no",
+          "llc_replacement": "lru"
+        },
+        "rl_ipc": 0.6583646879515971,
+        "best_action": {
+          "l2c_prefetcher": "no",
+          "llc_replacement": "lru"
+        },
+        "best_ipc": 0.6583646879515971,
+        "per_action_ipc": {
+          "l2c_prefetcher-no_llc_replacement-lru": 0.6583646879515971
+        }
+      },
+      {
+        "step": 78,
+        "skip_instructions": 16607800,
+        "rl_action": {
+          "l2c_prefetcher": "no",
+          "llc_replacement": "lru"
+        },
+        "rl_ipc": 0.6480778204064703,
+        "best_action": {
+          "l2c_prefetcher": "no",
+          "llc_replacement": "lru"
+        },
+        "best_ipc": 0.6480778204064703,
+        "per_action_ipc": {
+          "l2c_prefetcher-no_llc_replacement-lru": 0.6480778204064703
+        }
+      },
+      {
+        "step": 79,
+        "skip_instructions": 16807900,
+        "rl_action": {
+          "l2c_prefetcher": "no",
+          "llc_replacement": "lru"
+        },
+        "rl_ipc": 0.6798466266010388,
+        "best_action": {
+          "l2c_prefetcher": "no",
+          "llc_replacement": "lru"
+        },
+        "best_ipc": 0.6798466266010388,
+        "per_action_ipc": {
+          "l2c_prefetcher-no_llc_replacement-lru": 0.6798466266010388
+        }
+      },
+      {
+        "step": 80,
+        "skip_instructions": 17008000,
+        "rl_action": {
+          "l2c_prefetcher": "no",
+          "llc_replacement": "lru"
+        },
+        "rl_ipc": 0.7287507515166973,
+        "best_action": {
+          "l2c_prefetcher": "no",
+          "llc_replacement": "lru"
+        },
+        "best_ipc": 0.7287507515166973,
+        "per_action_ipc": {
+          "l2c_prefetcher-no_llc_replacement-lru": 0.7287507515166973
+        }
+      },
+      {
+        "step": 81,
+        "skip_instructions": 17208100,
+        "rl_action": {
+          "l2c_prefetcher": "no",
+          "llc_replacement": "lru"
+        },
+        "rl_ipc": 0.6959060257900194,
+        "best_action": {
+          "l2c_prefetcher": "no",
+          "llc_replacement": "lru"
+        },
+        "best_ipc": 0.6959060257900194,
+        "per_action_ipc": {
+          "l2c_prefetcher-no_llc_replacement-lru": 0.6959060257900194
+        }
+      },
+      {
+        "step": 82,
+        "skip_instructions": 17408200,
+        "rl_action": {
+          "l2c_prefetcher": "no",
+          "llc_replacement": "lru"
+        },
+        "rl_ipc": 0.6372961071156585,
+        "best_action": {
+          "l2c_prefetcher": "no",
+          "llc_replacement": "lru"
+        },
+        "best_ipc": 0.6372961071156585,
+        "per_action_ipc": {
+          "l2c_prefetcher-no_llc_replacement-lru": 0.6372961071156585
+        }
+      },
+      {
+        "step": 83,
+        "skip_instructions": 17608300,
+        "rl_action": {
+          "l2c_prefetcher": "no",
+          "llc_replacement": "lru"
+        },
+        "rl_ipc": 0.6346759836635218,
+        "best_action": {
+          "l2c_prefetcher": "no",
+          "llc_replacement": "lru"
+        },
+        "best_ipc": 0.6346759836635218,
+        "per_action_ipc": {
+          "l2c_prefetcher-no_llc_replacement-lru": 0.6346759836635218
+        }
+      },
+      {
+        "step": 84,
+        "skip_instructions": 17808400,
+        "rl_action": {
+          "l2c_prefetcher": "no",
+          "llc_replacement": "lru"
+        },
+        "rl_ipc": 0.6162979169234561,
+        "best_action": {
+          "l2c_prefetcher": "no",
+          "llc_replacement": "lru"
+        },
+        "best_ipc": 0.6162979169234561,
+        "per_action_ipc": {
+          "l2c_prefetcher-no_llc_replacement-lru": 0.6162979169234561
+        }
+      },
+      {
+        "step": 85,
+        "skip_instructions": 18008500,
+        "rl_action": {
+          "l2c_prefetcher": "no",
+          "llc_replacement": "lru"
+        },
+        "rl_ipc": 0.6165643698960797,
+        "best_action": {
+          "l2c_prefetcher": "no",
+          "llc_replacement": "lru"
+        },
+        "best_ipc": 0.6165643698960797,
+        "per_action_ipc": {
+          "l2c_prefetcher-no_llc_replacement-lru": 0.6165643698960797
+        }
+      },
+      {
+        "step": 86,
+        "skip_instructions": 18208600,
+        "rl_action": {
+          "l2c_prefetcher": "no",
+          "llc_replacement": "lru"
+        },
+        "rl_ipc": 0.6677584462674159,
+        "best_action": {
+          "l2c_prefetcher": "no",
+          "llc_replacement": "lru"
+        },
+        "best_ipc": 0.6677584462674159,
+        "per_action_ipc": {
+          "l2c_prefetcher-no_llc_replacement-lru": 0.6677584462674159
+        }
+      },
+      {
+        "step": 87,
+        "skip_instructions": 18408700,
+        "rl_action": {
+          "l2c_prefetcher": "no",
+          "llc_replacement": "lru"
+        },
+        "rl_ipc": 0.6029483585059239,
+        "best_action": {
+          "l2c_prefetcher": "no",
+          "llc_replacement": "lru"
+        },
+        "best_ipc": 0.6029483585059239,
+        "per_action_ipc": {
+          "l2c_prefetcher-no_llc_replacement-lru": 0.6029483585059239
+        }
+      },
+      {
+        "step": 88,
+        "skip_instructions": 18608800,
+        "rl_action": {
+          "l2c_prefetcher": "no",
+          "llc_replacement": "lru"
+        },
+        "rl_ipc": 0.5507272316732662,
+        "best_action": {
+          "l2c_prefetcher": "no",
+          "llc_replacement": "lru"
+        },
+        "best_ipc": 0.5507272316732662,
+        "per_action_ipc": {
+          "l2c_prefetcher-no_llc_replacement-lru": 0.5507272316732662
+        }
+      },
+      {
+        "step": 89,
+        "skip_instructions": 18808900,
+        "rl_action": {
+          "l2c_prefetcher": "no",
+          "llc_replacement": "lru"
+        },
+        "rl_ipc": 0.6447831637587528,
+        "best_action": {
+          "l2c_prefetcher": "no",
+          "llc_replacement": "lru"
+        },
+        "best_ipc": 0.6447831637587528,
+        "per_action_ipc": {
+          "l2c_prefetcher-no_llc_replacement-lru": 0.6447831637587528
+        }
+      },
+      {
+        "step": 90,
+        "skip_instructions": 19009000,
+        "rl_action": {
+          "l2c_prefetcher": "no",
+          "llc_replacement": "lru"
+        },
+        "rl_ipc": 0.7092546163148208,
+        "best_action": {
+          "l2c_prefetcher": "no",
+          "llc_replacement": "lru"
+        },
+        "best_ipc": 0.7092546163148208,
+        "per_action_ipc": {
+          "l2c_prefetcher-no_llc_replacement-lru": 0.7092546163148208
+        }
+      },
+      {
+        "step": 91,
+        "skip_instructions": 19209100,
+        "rl_action": {
+          "l2c_prefetcher": "no",
+          "llc_replacement": "lru"
+        },
+        "rl_ipc": 0.678110802197057,
+        "best_action": {
+          "l2c_prefetcher": "no",
+          "llc_replacement": "lru"
+        },
+        "best_ipc": 0.678110802197057,
+        "per_action_ipc": {
+          "l2c_prefetcher-no_llc_replacement-lru": 0.678110802197057
+        }
+      },
+      {
+        "step": 92,
+        "skip_instructions": 19409200,
+        "rl_action": {
+          "l2c_prefetcher": "no",
+          "llc_replacement": "lru"
+        },
+        "rl_ipc": 0.6745998819462012,
+        "best_action": {
+          "l2c_prefetcher": "no",
+          "llc_replacement": "lru"
+        },
+        "best_ipc": 0.6745998819462012,
+        "per_action_ipc": {
+          "l2c_prefetcher-no_llc_replacement-lru": 0.6745998819462012
+        }
+      },
+      {
+        "step": 93,
+        "skip_instructions": 19609300,
+        "rl_action": {
+          "l2c_prefetcher": "no",
+          "llc_replacement": "lru"
+        },
+        "rl_ipc": 0.65577323474925,
+        "best_action": {
+          "l2c_prefetcher": "no",
+          "llc_replacement": "lru"
+        },
+        "best_ipc": 0.65577323474925,
+        "per_action_ipc": {
+          "l2c_prefetcher-no_llc_replacement-lru": 0.65577323474925
+        }
+      },
+      {
+        "step": 94,
+        "skip_instructions": 19809400,
+        "rl_action": {
+          "l2c_prefetcher": "no",
+          "llc_replacement": "lru"
+        },
+        "rl_ipc": 0.6428895167745109,
+        "best_action": {
+          "l2c_prefetcher": "no",
+          "llc_replacement": "lru"
+        },
+        "best_ipc": 0.6428895167745109,
+        "per_action_ipc": {
+          "l2c_prefetcher-no_llc_replacement-lru": 0.6428895167745109
+        }
+      },
+      {
+        "step": 95,
+        "skip_instructions": 20009500,
+        "rl_action": {
+          "l2c_prefetcher": "no",
+          "llc_replacement": "lru"
+        },
+        "rl_ipc": 0.6854513674686408,
+        "best_action": {
+          "l2c_prefetcher": "no",
+          "llc_replacement": "lru"
+        },
+        "best_ipc": 0.6854513674686408,
+        "per_action_ipc": {
+          "l2c_prefetcher-no_llc_replacement-lru": 0.6854513674686408
+        }
+      },
+      {
+        "step": 96,
+        "skip_instructions": 20209600,
+        "rl_action": {
+          "l2c_prefetcher": "no",
+          "llc_replacement": "lru"
+        },
+        "rl_ipc": 0.6366654676373499,
+        "best_action": {
+          "l2c_prefetcher": "no",
+          "llc_replacement": "lru"
+        },
+        "best_ipc": 0.6366654676373499,
+        "per_action_ipc": {
+          "l2c_prefetcher-no_llc_replacement-lru": 0.6366654676373499
+        }
+      },
+      {
+        "step": 97,
+        "skip_instructions": 20409700,
+        "rl_action": {
+          "l2c_prefetcher": "no",
+          "llc_replacement": "lru"
+        },
+        "rl_ipc": 0.5999142122676457,
+        "best_action": {
+          "l2c_prefetcher": "no",
+          "llc_replacement": "lru"
+        },
+        "best_ipc": 0.5999142122676457,
+        "per_action_ipc": {
+          "l2c_prefetcher-no_llc_replacement-lru": 0.5999142122676457
+        }
+      },
+      {
+        "step": 98,
+        "skip_instructions": 20609800,
+        "rl_action": {
+          "l2c_prefetcher": "no",
+          "llc_replacement": "lru"
+        },
+        "rl_ipc": 0.6217015178690772,
+        "best_action": {
+          "l2c_prefetcher": "no",
+          "llc_replacement": "lru"
+        },
+        "best_ipc": 0.6217015178690772,
+        "per_action_ipc": {
+          "l2c_prefetcher-no_llc_replacement-lru": 0.6217015178690772
+        }
+      },
+      {
+        "step": 99,
+        "skip_instructions": 20809900,
+        "rl_action": {
+          "l2c_prefetcher": "no",
+          "llc_replacement": "lru"
+        },
+        "rl_ipc": 0.6270693287849904,
+        "best_action": {
+          "l2c_prefetcher": "no",
+          "llc_replacement": "lru"
+        },
+        "best_ipc": 0.6270693287849904,
+        "per_action_ipc": {
+          "l2c_prefetcher-no_llc_replacement-lru": 0.6270693287849904
+        }
+      }
+    ]
+  }
+}
