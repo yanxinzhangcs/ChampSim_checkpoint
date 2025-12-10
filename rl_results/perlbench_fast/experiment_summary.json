@@ -1,0 +1,4672 @@
+{
+  "config": {
+    "trace": "/home/ubuntu/yanxin/ChampSim_checkpoint/600.perlbench_s-210B.champsimtrace.xz",
+    "warmup": 1000000,
+    "window": 200000,
+    "resume_warmup": 100,
+    "steps": 100,
+    "epsilon": 0.1,
+    "seed": 0
+  },
+  "rl": {
+    "total_ipc": 141.31846581734249,
+    "episode": [
+      {
+        "step": 0,
+        "action": {
+          "l2c_prefetcher": "ip_stride",
+          "llc_replacement": "lru"
+        },
+        "reward": 1.3562148233539024,
+        "ipc": 1.3562148233539024,
+        "skip_instructions": 1000000,
+        "stats_path": "/home/ubuntu/yanxin/ChampSim_checkpoint/rl_results/perlbench_fast/rl/iter_0000_stats.json",
+        "cache_path": "/home/ubuntu/yanxin/ChampSim_checkpoint/rl_results/perlbench_fast/rl/iter_0000_cache.log"
+      },
+      {
+        "step": 1,
+        "action": {
+          "l2c_prefetcher": "ip_stride",
+          "llc_replacement": "srrip"
+        },
+        "reward": 1.4227059325650875,
+        "ipc": 1.4227059325650875,
+        "skip_instructions": 1200100,
+        "stats_path": "/home/ubuntu/yanxin/ChampSim_checkpoint/rl_results/perlbench_fast/rl/iter_0001_stats.json",
+        "cache_path": "/home/ubuntu/yanxin/ChampSim_checkpoint/rl_results/perlbench_fast/rl/iter_0001_cache.log"
+      },
+      {
+        "step": 2,
+        "action": {
+          "l2c_prefetcher": "ip_stride",
+          "llc_replacement": "srrip"
+        },
+        "reward": 1.38699140758823,
+        "ipc": 1.38699140758823,
+        "skip_instructions": 1400200,
+        "stats_path": "/home/ubuntu/yanxin/ChampSim_checkpoint/rl_results/perlbench_fast/rl/iter_0002_stats.json",
+        "cache_path": "/home/ubuntu/yanxin/ChampSim_checkpoint/rl_results/perlbench_fast/rl/iter_0002_cache.log"
+      },
+      {
+        "step": 3,
+        "action": {
+          "l2c_prefetcher": "ip_stride",
+          "llc_replacement": "srrip"
+        },
+        "reward": 1.4012190422811504,
+        "ipc": 1.4012190422811504,
+        "skip_instructions": 1600300,
+        "stats_path": "/home/ubuntu/yanxin/ChampSim_checkpoint/rl_results/perlbench_fast/rl/iter_0003_stats.json",
+        "cache_path": "/home/ubuntu/yanxin/ChampSim_checkpoint/rl_results/perlbench_fast/rl/iter_0003_cache.log"
+      },
+      {
+        "step": 4,
+        "action": {
+          "l2c_prefetcher": "ip_stride",
+          "llc_replacement": "srrip"
+        },
+        "reward": 1.4781712157158378,
+        "ipc": 1.4781712157158378,
+        "skip_instructions": 1800400,
+        "stats_path": "/home/ubuntu/yanxin/ChampSim_checkpoint/rl_results/perlbench_fast/rl/iter_0004_stats.json",
+        "cache_path": "/home/ubuntu/yanxin/ChampSim_checkpoint/rl_results/perlbench_fast/rl/iter_0004_cache.log"
+      },
+      {
+        "step": 5,
+        "action": {
+          "l2c_prefetcher": "ip_stride",
+          "llc_replacement": "srrip"
+        },
+        "reward": 1.382021462578688,
+        "ipc": 1.382021462578688,
+        "skip_instructions": 2000500,
+        "stats_path": "/home/ubuntu/yanxin/ChampSim_checkpoint/rl_results/perlbench_fast/rl/iter_0005_stats.json",
+        "cache_path": "/home/ubuntu/yanxin/ChampSim_checkpoint/rl_results/perlbench_fast/rl/iter_0005_cache.log"
+      },
+      {
+        "step": 6,
+        "action": {
+          "l2c_prefetcher": "ip_stride",
+          "llc_replacement": "srrip"
+        },
+        "reward": 0.6057540577949947,
+        "ipc": 0.6057540577949947,
+        "skip_instructions": 2200600,
+        "stats_path": "/home/ubuntu/yanxin/ChampSim_checkpoint/rl_results/perlbench_fast/rl/iter_0006_stats.json",
+        "cache_path": "/home/ubuntu/yanxin/ChampSim_checkpoint/rl_results/perlbench_fast/rl/iter_0006_cache.log"
+      },
+      {
+        "step": 7,
+        "action": {
+          "l2c_prefetcher": "ip_stride",
+          "llc_replacement": "lru"
+        },
+        "reward": 0.5755291964501537,
+        "ipc": 0.5755291964501537,
+        "skip_instructions": 2400700,
+        "stats_path": "/home/ubuntu/yanxin/ChampSim_checkpoint/rl_results/perlbench_fast/rl/iter_0007_stats.json",
+        "cache_path": "/home/ubuntu/yanxin/ChampSim_checkpoint/rl_results/perlbench_fast/rl/iter_0007_cache.log"
+      },
+      {
+        "step": 8,
+        "action": {
+          "l2c_prefetcher": "ip_stride",
+          "llc_replacement": "srrip"
+        },
+        "reward": 1.5277124262886126,
+        "ipc": 1.5277124262886126,
+        "skip_instructions": 2600800,
+        "stats_path": "/home/ubuntu/yanxin/ChampSim_checkpoint/rl_results/perlbench_fast/rl/iter_0008_stats.json",
+        "cache_path": "/home/ubuntu/yanxin/ChampSim_checkpoint/rl_results/perlbench_fast/rl/iter_0008_cache.log"
+      },
+      {
+        "step": 9,
+        "action": {
+          "l2c_prefetcher": "ip_stride",
+          "llc_replacement": "srrip"
+        },
+        "reward": 1.4745351597634881,
+        "ipc": 1.4745351597634881,
+        "skip_instructions": 2800900,
+        "stats_path": "/home/ubuntu/yanxin/ChampSim_checkpoint/rl_results/perlbench_fast/rl/iter_0009_stats.json",
+        "cache_path": "/home/ubuntu/yanxin/ChampSim_checkpoint/rl_results/perlbench_fast/rl/iter_0009_cache.log"
+      },
+      {
+        "step": 10,
+        "action": {
+          "l2c_prefetcher": "ip_stride",
+          "llc_replacement": "srrip"
+        },
+        "reward": 1.2883111529096507,
+        "ipc": 1.2883111529096507,
+        "skip_instructions": 3001000,
+        "stats_path": "/home/ubuntu/yanxin/ChampSim_checkpoint/rl_results/perlbench_fast/rl/iter_0010_stats.json",
+        "cache_path": "/home/ubuntu/yanxin/ChampSim_checkpoint/rl_results/perlbench_fast/rl/iter_0010_cache.log"
+      },
+      {
+        "step": 11,
+        "action": {
+          "l2c_prefetcher": "ip_stride",
+          "llc_replacement": "srrip"
+        },
+        "reward": 1.4410643648180306,
+        "ipc": 1.4410643648180306,
+        "skip_instructions": 3201100,
+        "stats_path": "/home/ubuntu/yanxin/ChampSim_checkpoint/rl_results/perlbench_fast/rl/iter_0011_stats.json",
+        "cache_path": "/home/ubuntu/yanxin/ChampSim_checkpoint/rl_results/perlbench_fast/rl/iter_0011_cache.log"
+      },
+      {
+        "step": 12,
+        "action": {
+          "l2c_prefetcher": "ip_stride",
+          "llc_replacement": "srrip"
+        },
+        "reward": 1.4030445457734129,
+        "ipc": 1.4030445457734129,
+        "skip_instructions": 3401200,
+        "stats_path": "/home/ubuntu/yanxin/ChampSim_checkpoint/rl_results/perlbench_fast/rl/iter_0012_stats.json",
+        "cache_path": "/home/ubuntu/yanxin/ChampSim_checkpoint/rl_results/perlbench_fast/rl/iter_0012_cache.log"
+      },
+      {
+        "step": 13,
+        "action": {
+          "l2c_prefetcher": "ip_stride",
+          "llc_replacement": "srrip"
+        },
+        "reward": 1.3736075053914094,
+        "ipc": 1.3736075053914094,
+        "skip_instructions": 3601300,
+        "stats_path": "/home/ubuntu/yanxin/ChampSim_checkpoint/rl_results/perlbench_fast/rl/iter_0013_stats.json",
+        "cache_path": "/home/ubuntu/yanxin/ChampSim_checkpoint/rl_results/perlbench_fast/rl/iter_0013_cache.log"
+      },
+      {
+        "step": 14,
+        "action": {
+          "l2c_prefetcher": "ip_stride",
+          "llc_replacement": "srrip"
+        },
+        "reward": 1.5222050552177122,
+        "ipc": 1.5222050552177122,
+        "skip_instructions": 3801400,
+        "stats_path": "/home/ubuntu/yanxin/ChampSim_checkpoint/rl_results/perlbench_fast/rl/iter_0014_stats.json",
+        "cache_path": "/home/ubuntu/yanxin/ChampSim_checkpoint/rl_results/perlbench_fast/rl/iter_0014_cache.log"
+      },
+      {
+        "step": 15,
+        "action": {
+          "l2c_prefetcher": "ip_stride",
+          "llc_replacement": "srrip"
+        },
+        "reward": 1.4920696498112531,
+        "ipc": 1.4920696498112531,
+        "skip_instructions": 4001500,
+        "stats_path": "/home/ubuntu/yanxin/ChampSim_checkpoint/rl_results/perlbench_fast/rl/iter_0015_stats.json",
+        "cache_path": "/home/ubuntu/yanxin/ChampSim_checkpoint/rl_results/perlbench_fast/rl/iter_0015_cache.log"
+      },
+      {
+        "step": 16,
+        "action": {
+          "l2c_prefetcher": "ip_stride",
+          "llc_replacement": "lru"
+        },
+        "reward": 0.5910271602457454,
+        "ipc": 0.5910271602457454,
+        "skip_instructions": 4201600,
+        "stats_path": "/home/ubuntu/yanxin/ChampSim_checkpoint/rl_results/perlbench_fast/rl/iter_0016_stats.json",
+        "cache_path": "/home/ubuntu/yanxin/ChampSim_checkpoint/rl_results/perlbench_fast/rl/iter_0016_cache.log"
+      },
+      {
+        "step": 17,
+        "action": {
+          "l2c_prefetcher": "next_line",
+          "llc_replacement": "random"
+        },
+        "reward": 0.5305638454498428,
+        "ipc": 0.5305638454498428,
+        "skip_instructions": 4401700,
+        "stats_path": "/home/ubuntu/yanxin/ChampSim_checkpoint/rl_results/perlbench_fast/rl/iter_0017_stats.json",
+        "cache_path": "/home/ubuntu/yanxin/ChampSim_checkpoint/rl_results/perlbench_fast/rl/iter_0017_cache.log"
+      },
+      {
+        "step": 18,
+        "action": {
+          "l2c_prefetcher": "ip_stride",
+          "llc_replacement": "srrip"
+        },
+        "reward": 1.050216081958863,
+        "ipc": 1.050216081958863,
+        "skip_instructions": 4601800,
+        "stats_path": "/home/ubuntu/yanxin/ChampSim_checkpoint/rl_results/perlbench_fast/rl/iter_0018_stats.json",
+        "cache_path": "/home/ubuntu/yanxin/ChampSim_checkpoint/rl_results/perlbench_fast/rl/iter_0018_cache.log"
+      },
+      {
+        "step": 19,
+        "action": {
+          "l2c_prefetcher": "ip_stride",
+          "llc_replacement": "srrip"
+        },
+        "reward": 1.0114291493880854,
+        "ipc": 1.0114291493880854,
+        "skip_instructions": 4801900,
+        "stats_path": "/home/ubuntu/yanxin/ChampSim_checkpoint/rl_results/perlbench_fast/rl/iter_0019_stats.json",
+        "cache_path": "/home/ubuntu/yanxin/ChampSim_checkpoint/rl_results/perlbench_fast/rl/iter_0019_cache.log"
+      },
+      {
+        "step": 20,
+        "action": {
+          "l2c_prefetcher": "ip_stride",
+          "llc_replacement": "srrip"
+        },
+        "reward": 1.098055901746449,
+        "ipc": 1.098055901746449,
+        "skip_instructions": 5002000,
+        "stats_path": "/home/ubuntu/yanxin/ChampSim_checkpoint/rl_results/perlbench_fast/rl/iter_0020_stats.json",
+        "cache_path": "/home/ubuntu/yanxin/ChampSim_checkpoint/rl_results/perlbench_fast/rl/iter_0020_cache.log"
+      },
+      {
+        "step": 21,
+        "action": {
+          "l2c_prefetcher": "ip_stride",
+          "llc_replacement": "srrip"
+        },
+        "reward": 0.9707843898650617,
+        "ipc": 0.9707843898650617,
+        "skip_instructions": 5202100,
+        "stats_path": "/home/ubuntu/yanxin/ChampSim_checkpoint/rl_results/perlbench_fast/rl/iter_0021_stats.json",
+        "cache_path": "/home/ubuntu/yanxin/ChampSim_checkpoint/rl_results/perlbench_fast/rl/iter_0021_cache.log"
+      },
+      {
+        "step": 22,
+        "action": {
+          "l2c_prefetcher": "ip_stride",
+          "llc_replacement": "srrip"
+        },
+        "reward": 1.0336772032829589,
+        "ipc": 1.0336772032829589,
+        "skip_instructions": 5402200,
+        "stats_path": "/home/ubuntu/yanxin/ChampSim_checkpoint/rl_results/perlbench_fast/rl/iter_0022_stats.json",
+        "cache_path": "/home/ubuntu/yanxin/ChampSim_checkpoint/rl_results/perlbench_fast/rl/iter_0022_cache.log"
+      },
+      {
+        "step": 23,
+        "action": {
+          "l2c_prefetcher": "ip_stride",
+          "llc_replacement": "srrip"
+        },
+        "reward": 1.0234469348070823,
+        "ipc": 1.0234469348070823,
+        "skip_instructions": 5602300,
+        "stats_path": "/home/ubuntu/yanxin/ChampSim_checkpoint/rl_results/perlbench_fast/rl/iter_0023_stats.json",
+        "cache_path": "/home/ubuntu/yanxin/ChampSim_checkpoint/rl_results/perlbench_fast/rl/iter_0023_cache.log"
+      },
+      {
+        "step": 24,
+        "action": {
+          "l2c_prefetcher": "ip_stride",
+          "llc_replacement": "srrip"
+        },
+        "reward": 0.6389994696383956,
+        "ipc": 0.6389994696383956,
+        "skip_instructions": 5802400,
+        "stats_path": "/home/ubuntu/yanxin/ChampSim_checkpoint/rl_results/perlbench_fast/rl/iter_0024_stats.json",
+        "cache_path": "/home/ubuntu/yanxin/ChampSim_checkpoint/rl_results/perlbench_fast/rl/iter_0024_cache.log"
+      },
+      {
+        "step": 25,
+        "action": {
+          "l2c_prefetcher": "next_line",
+          "llc_replacement": "random"
+        },
+        "reward": 1.6021003220173344,
+        "ipc": 1.6021003220173344,
+        "skip_instructions": 6002500,
+        "stats_path": "/home/ubuntu/yanxin/ChampSim_checkpoint/rl_results/perlbench_fast/rl/iter_0025_stats.json",
+        "cache_path": "/home/ubuntu/yanxin/ChampSim_checkpoint/rl_results/perlbench_fast/rl/iter_0025_cache.log"
+      },
+      {
+        "step": 26,
+        "action": {
+          "l2c_prefetcher": "ip_stride",
+          "llc_replacement": "srrip"
+        },
+        "reward": 1.3414535991200065,
+        "ipc": 1.3414535991200065,
+        "skip_instructions": 6202600,
+        "stats_path": "/home/ubuntu/yanxin/ChampSim_checkpoint/rl_results/perlbench_fast/rl/iter_0026_stats.json",
+        "cache_path": "/home/ubuntu/yanxin/ChampSim_checkpoint/rl_results/perlbench_fast/rl/iter_0026_cache.log"
+      },
+      {
+        "step": 27,
+        "action": {
+          "l2c_prefetcher": "ip_stride",
+          "llc_replacement": "srrip"
+        },
+        "reward": 1.458895616018674,
+        "ipc": 1.458895616018674,
+        "skip_instructions": 6402700,
+        "stats_path": "/home/ubuntu/yanxin/ChampSim_checkpoint/rl_results/perlbench_fast/rl/iter_0027_stats.json",
+        "cache_path": "/home/ubuntu/yanxin/ChampSim_checkpoint/rl_results/perlbench_fast/rl/iter_0027_cache.log"
+      },
+      {
+        "step": 28,
+        "action": {
+          "l2c_prefetcher": "ip_stride",
+          "llc_replacement": "srrip"
+        },
+        "reward": 1.4251307557468398,
+        "ipc": 1.4251307557468398,
+        "skip_instructions": 6602800,
+        "stats_path": "/home/ubuntu/yanxin/ChampSim_checkpoint/rl_results/perlbench_fast/rl/iter_0028_stats.json",
+        "cache_path": "/home/ubuntu/yanxin/ChampSim_checkpoint/rl_results/perlbench_fast/rl/iter_0028_cache.log"
+      },
+      {
+        "step": 29,
+        "action": {
+          "l2c_prefetcher": "ip_stride",
+          "llc_replacement": "srrip"
+        },
+        "reward": 1.409998096540639,
+        "ipc": 1.409998096540639,
+        "skip_instructions": 6802900,
+        "stats_path": "/home/ubuntu/yanxin/ChampSim_checkpoint/rl_results/perlbench_fast/rl/iter_0029_stats.json",
+        "cache_path": "/home/ubuntu/yanxin/ChampSim_checkpoint/rl_results/perlbench_fast/rl/iter_0029_cache.log"
+      },
+      {
+        "step": 30,
+        "action": {
+          "l2c_prefetcher": "ip_stride",
+          "llc_replacement": "srrip"
+        },
+        "reward": 1.4490935964874148,
+        "ipc": 1.4490935964874148,
+        "skip_instructions": 7003000,
+        "stats_path": "/home/ubuntu/yanxin/ChampSim_checkpoint/rl_results/perlbench_fast/rl/iter_0030_stats.json",
+        "cache_path": "/home/ubuntu/yanxin/ChampSim_checkpoint/rl_results/perlbench_fast/rl/iter_0030_cache.log"
+      },
+      {
+        "step": 31,
+        "action": {
+          "l2c_prefetcher": "ip_stride",
+          "llc_replacement": "srrip"
+        },
+        "reward": 1.4372534224426,
+        "ipc": 1.4372534224426,
+        "skip_instructions": 7203100,
+        "stats_path": "/home/ubuntu/yanxin/ChampSim_checkpoint/rl_results/perlbench_fast/rl/iter_0031_stats.json",
+        "cache_path": "/home/ubuntu/yanxin/ChampSim_checkpoint/rl_results/perlbench_fast/rl/iter_0031_cache.log"
+      },
+      {
+        "step": 32,
+        "action": {
+          "l2c_prefetcher": "ip_stride",
+          "llc_replacement": "srrip"
+        },
+        "reward": 1.00756667439119,
+        "ipc": 1.00756667439119,
+        "skip_instructions": 7403200,
+        "stats_path": "/home/ubuntu/yanxin/ChampSim_checkpoint/rl_results/perlbench_fast/rl/iter_0032_stats.json",
+        "cache_path": "/home/ubuntu/yanxin/ChampSim_checkpoint/rl_results/perlbench_fast/rl/iter_0032_cache.log"
+      },
+      {
+        "step": 33,
+        "action": {
+          "l2c_prefetcher": "ip_stride",
+          "llc_replacement": "srrip"
+        },
+        "reward": 0.5390048941399681,
+        "ipc": 0.5390048941399681,
+        "skip_instructions": 7603300,
+        "stats_path": "/home/ubuntu/yanxin/ChampSim_checkpoint/rl_results/perlbench_fast/rl/iter_0033_stats.json",
+        "cache_path": "/home/ubuntu/yanxin/ChampSim_checkpoint/rl_results/perlbench_fast/rl/iter_0033_cache.log"
+      },
+      {
+        "step": 34,
+        "action": {
+          "l2c_prefetcher": "ip_stride",
+          "llc_replacement": "srrip"
+        },
+        "reward": 1.3166016049293319,
+        "ipc": 1.3166016049293319,
+        "skip_instructions": 7803400,
+        "stats_path": "/home/ubuntu/yanxin/ChampSim_checkpoint/rl_results/perlbench_fast/rl/iter_0034_stats.json",
+        "cache_path": "/home/ubuntu/yanxin/ChampSim_checkpoint/rl_results/perlbench_fast/rl/iter_0034_cache.log"
+      },
+      {
+        "step": 35,
+        "action": {
+          "l2c_prefetcher": "ip_stride",
+          "llc_replacement": "srrip"
+        },
+        "reward": 1.3794261673218842,
+        "ipc": 1.3794261673218842,
+        "skip_instructions": 8003500,
+        "stats_path": "/home/ubuntu/yanxin/ChampSim_checkpoint/rl_results/perlbench_fast/rl/iter_0035_stats.json",
+        "cache_path": "/home/ubuntu/yanxin/ChampSim_checkpoint/rl_results/perlbench_fast/rl/iter_0035_cache.log"
+      },
+      {
+        "step": 36,
+        "action": {
+          "l2c_prefetcher": "ip_stride",
+          "llc_replacement": "srrip"
+        },
+        "reward": 1.26000126000126,
+        "ipc": 1.26000126000126,
+        "skip_instructions": 8203600,
+        "stats_path": "/home/ubuntu/yanxin/ChampSim_checkpoint/rl_results/perlbench_fast/rl/iter_0036_stats.json",
+        "cache_path": "/home/ubuntu/yanxin/ChampSim_checkpoint/rl_results/perlbench_fast/rl/iter_0036_cache.log"
+      },
+      {
+        "step": 37,
+        "action": {
+          "l2c_prefetcher": "ip_stride",
+          "llc_replacement": "srrip"
+        },
+        "reward": 1.3209428890341925,
+        "ipc": 1.3209428890341925,
+        "skip_instructions": 8403700,
+        "stats_path": "/home/ubuntu/yanxin/ChampSim_checkpoint/rl_results/perlbench_fast/rl/iter_0037_stats.json",
+        "cache_path": "/home/ubuntu/yanxin/ChampSim_checkpoint/rl_results/perlbench_fast/rl/iter_0037_cache.log"
+      },
+      {
+        "step": 38,
+        "action": {
+          "l2c_prefetcher": "ip_stride",
+          "llc_replacement": "srrip"
+        },
+        "reward": 1.3013892051924392,
+        "ipc": 1.3013892051924392,
+        "skip_instructions": 8603800,
+        "stats_path": "/home/ubuntu/yanxin/ChampSim_checkpoint/rl_results/perlbench_fast/rl/iter_0038_stats.json",
+        "cache_path": "/home/ubuntu/yanxin/ChampSim_checkpoint/rl_results/perlbench_fast/rl/iter_0038_cache.log"
+      },
+      {
+        "step": 39,
+        "action": {
+          "l2c_prefetcher": "ip_stride",
+          "llc_replacement": "srrip"
+        },
+        "reward": 1.3738356917158951,
+        "ipc": 1.3738356917158951,
+        "skip_instructions": 8803900,
+        "stats_path": "/home/ubuntu/yanxin/ChampSim_checkpoint/rl_results/perlbench_fast/rl/iter_0039_stats.json",
+        "cache_path": "/home/ubuntu/yanxin/ChampSim_checkpoint/rl_results/perlbench_fast/rl/iter_0039_cache.log"
+      },
+      {
+        "step": 40,
+        "action": {
+          "l2c_prefetcher": "ip_stride",
+          "llc_replacement": "srrip"
+        },
+        "reward": 1.2222792607802875,
+        "ipc": 1.2222792607802875,
+        "skip_instructions": 9004000,
+        "stats_path": "/home/ubuntu/yanxin/ChampSim_checkpoint/rl_results/perlbench_fast/rl/iter_0040_stats.json",
+        "cache_path": "/home/ubuntu/yanxin/ChampSim_checkpoint/rl_results/perlbench_fast/rl/iter_0040_cache.log"
+      },
+      {
+        "step": 41,
+        "action": {
+          "l2c_prefetcher": "ip_stride",
+          "llc_replacement": "srrip"
+        },
+        "reward": 1.4264796085759526,
+        "ipc": 1.4264796085759526,
+        "skip_instructions": 9204100,
+        "stats_path": "/home/ubuntu/yanxin/ChampSim_checkpoint/rl_results/perlbench_fast/rl/iter_0041_stats.json",
+        "cache_path": "/home/ubuntu/yanxin/ChampSim_checkpoint/rl_results/perlbench_fast/rl/iter_0041_cache.log"
+      },
+      {
+        "step": 42,
+        "action": {
+          "l2c_prefetcher": "ip_stride",
+          "llc_replacement": "srrip"
+        },
+        "reward": 1.338542468393824,
+        "ipc": 1.338542468393824,
+        "skip_instructions": 9404200,
+        "stats_path": "/home/ubuntu/yanxin/ChampSim_checkpoint/rl_results/perlbench_fast/rl/iter_0042_stats.json",
+        "cache_path": "/home/ubuntu/yanxin/ChampSim_checkpoint/rl_results/perlbench_fast/rl/iter_0042_cache.log"
+      },
+      {
+        "step": 43,
+        "action": {
+          "l2c_prefetcher": "ip_stride",
+          "llc_replacement": "srrip"
+        },
+        "reward": 1.2240937161463274,
+        "ipc": 1.2240937161463274,
+        "skip_instructions": 9604300,
+        "stats_path": "/home/ubuntu/yanxin/ChampSim_checkpoint/rl_results/perlbench_fast/rl/iter_0043_stats.json",
+        "cache_path": "/home/ubuntu/yanxin/ChampSim_checkpoint/rl_results/perlbench_fast/rl/iter_0043_cache.log"
+      },
+      {
+        "step": 44,
+        "action": {
+          "l2c_prefetcher": "ip_stride",
+          "llc_replacement": "srrip"
+        },
+        "reward": 0.5844603677424633,
+        "ipc": 0.5844603677424633,
+        "skip_instructions": 9804400,
+        "stats_path": "/home/ubuntu/yanxin/ChampSim_checkpoint/rl_results/perlbench_fast/rl/iter_0044_stats.json",
+        "cache_path": "/home/ubuntu/yanxin/ChampSim_checkpoint/rl_results/perlbench_fast/rl/iter_0044_cache.log"
+      },
+      {
+        "step": 45,
+        "action": {
+          "l2c_prefetcher": "ip_stride",
+          "llc_replacement": "lru"
+        },
+        "reward": 1.405448898133573,
+        "ipc": 1.405448898133573,
+        "skip_instructions": 10004500,
+        "stats_path": "/home/ubuntu/yanxin/ChampSim_checkpoint/rl_results/perlbench_fast/rl/iter_0045_stats.json",
+        "cache_path": "/home/ubuntu/yanxin/ChampSim_checkpoint/rl_results/perlbench_fast/rl/iter_0045_cache.log"
+      },
+      {
+        "step": 46,
+        "action": {
+          "l2c_prefetcher": "ip_stride",
+          "llc_replacement": "srrip"
+        },
+        "reward": 1.5198911779680981,
+        "ipc": 1.5198911779680981,
+        "skip_instructions": 10204600,
+        "stats_path": "/home/ubuntu/yanxin/ChampSim_checkpoint/rl_results/perlbench_fast/rl/iter_0046_stats.json",
+        "cache_path": "/home/ubuntu/yanxin/ChampSim_checkpoint/rl_results/perlbench_fast/rl/iter_0046_cache.log"
+      },
+      {
+        "step": 47,
+        "action": {
+          "l2c_prefetcher": "ip_stride",
+          "llc_replacement": "srrip"
+        },
+        "reward": 1.293605158819991,
+        "ipc": 1.293605158819991,
+        "skip_instructions": 10404700,
+        "stats_path": "/home/ubuntu/yanxin/ChampSim_checkpoint/rl_results/perlbench_fast/rl/iter_0047_stats.json",
+        "cache_path": "/home/ubuntu/yanxin/ChampSim_checkpoint/rl_results/perlbench_fast/rl/iter_0047_cache.log"
+      },
+      {
+        "step": 48,
+        "action": {
+          "l2c_prefetcher": "next_line",
+          "llc_replacement": "lru"
+        },
+        "reward": 1.5253319503656984,
+        "ipc": 1.5253319503656984,
+        "skip_instructions": 10604800,
+        "stats_path": "/home/ubuntu/yanxin/ChampSim_checkpoint/rl_results/perlbench_fast/rl/iter_0048_stats.json",
+        "cache_path": "/home/ubuntu/yanxin/ChampSim_checkpoint/rl_results/perlbench_fast/rl/iter_0048_cache.log"
+      },
+      {
+        "step": 49,
+        "action": {
+          "l2c_prefetcher": "next_line",
+          "llc_replacement": "lru"
+        },
+        "reward": 1.5115213990432212,
+        "ipc": 1.5115213990432212,
+        "skip_instructions": 10804900,
+        "stats_path": "/home/ubuntu/yanxin/ChampSim_checkpoint/rl_results/perlbench_fast/rl/iter_0049_stats.json",
+        "cache_path": "/home/ubuntu/yanxin/ChampSim_checkpoint/rl_results/perlbench_fast/rl/iter_0049_cache.log"
+      },
+      {
+        "step": 50,
+        "action": {
+          "l2c_prefetcher": "next_line",
+          "llc_replacement": "lru"
+        },
+        "reward": 1.4587825122901197,
+        "ipc": 1.4587825122901197,
+        "skip_instructions": 11005000,
+        "stats_path": "/home/ubuntu/yanxin/ChampSim_checkpoint/rl_results/perlbench_fast/rl/iter_0050_stats.json",
+        "cache_path": "/home/ubuntu/yanxin/ChampSim_checkpoint/rl_results/perlbench_fast/rl/iter_0050_cache.log"
+      },
+      {
+        "step": 51,
+        "action": {
+          "l2c_prefetcher": "next_line",
+          "llc_replacement": "lru"
+        },
+        "reward": 1.6117593965572818,
+        "ipc": 1.6117593965572818,
+        "skip_instructions": 11205100,
+        "stats_path": "/home/ubuntu/yanxin/ChampSim_checkpoint/rl_results/perlbench_fast/rl/iter_0051_stats.json",
+        "cache_path": "/home/ubuntu/yanxin/ChampSim_checkpoint/rl_results/perlbench_fast/rl/iter_0051_cache.log"
+      },
+      {
+        "step": 52,
+        "action": {
+          "l2c_prefetcher": "next_line",
+          "llc_replacement": "lru"
+        },
+        "reward": 1.507556627595824,
+        "ipc": 1.507556627595824,
+        "skip_instructions": 11405200,
+        "stats_path": "/home/ubuntu/yanxin/ChampSim_checkpoint/rl_results/perlbench_fast/rl/iter_0052_stats.json",
+        "cache_path": "/home/ubuntu/yanxin/ChampSim_checkpoint/rl_results/perlbench_fast/rl/iter_0052_cache.log"
+      },
+      {
+        "step": 53,
+        "action": {
+          "l2c_prefetcher": "next_line",
+          "llc_replacement": "lru"
+        },
+        "reward": 0.7985785585945299,
+        "ipc": 0.7985785585945299,
+        "skip_instructions": 11605300,
+        "stats_path": "/home/ubuntu/yanxin/ChampSim_checkpoint/rl_results/perlbench_fast/rl/iter_0053_stats.json",
+        "cache_path": "/home/ubuntu/yanxin/ChampSim_checkpoint/rl_results/perlbench_fast/rl/iter_0053_cache.log"
+      },
+      {
+        "step": 54,
+        "action": {
+          "l2c_prefetcher": "ip_stride",
+          "llc_replacement": "random"
+        },
+        "reward": 1.5343106794626897,
+        "ipc": 1.5343106794626897,
+        "skip_instructions": 11805400,
+        "stats_path": "/home/ubuntu/yanxin/ChampSim_checkpoint/rl_results/perlbench_fast/rl/iter_0054_stats.json",
+        "cache_path": "/home/ubuntu/yanxin/ChampSim_checkpoint/rl_results/perlbench_fast/rl/iter_0054_cache.log"
+      },
+      {
+        "step": 55,
+        "action": {
+          "l2c_prefetcher": "ip_stride",
+          "llc_replacement": "random"
+        },
+        "reward": 1.4639968377826416,
+        "ipc": 1.4639968377826416,
+        "skip_instructions": 12005500,
+        "stats_path": "/home/ubuntu/yanxin/ChampSim_checkpoint/rl_results/perlbench_fast/rl/iter_0055_stats.json",
+        "cache_path": "/home/ubuntu/yanxin/ChampSim_checkpoint/rl_results/perlbench_fast/rl/iter_0055_cache.log"
+      },
+      {
+        "step": 56,
+        "action": {
+          "l2c_prefetcher": "ip_stride",
+          "llc_replacement": "lru"
+        },
+        "reward": 1.3934675222428916,
+        "ipc": 1.3934675222428916,
+        "skip_instructions": 12205600,
+        "stats_path": "/home/ubuntu/yanxin/ChampSim_checkpoint/rl_results/perlbench_fast/rl/iter_0056_stats.json",
+        "cache_path": "/home/ubuntu/yanxin/ChampSim_checkpoint/rl_results/perlbench_fast/rl/iter_0056_cache.log"
+      },
+      {
+        "step": 57,
+        "action": {
+          "l2c_prefetcher": "ip_stride",
+          "llc_replacement": "random"
+        },
+        "reward": 1.469486569094222,
+        "ipc": 1.469486569094222,
+        "skip_instructions": 12405700,
+        "stats_path": "/home/ubuntu/yanxin/ChampSim_checkpoint/rl_results/perlbench_fast/rl/iter_0057_stats.json",
+        "cache_path": "/home/ubuntu/yanxin/ChampSim_checkpoint/rl_results/perlbench_fast/rl/iter_0057_cache.log"
+      },
+      {
+        "step": 58,
+        "action": {
+          "l2c_prefetcher": "ip_stride",
+          "llc_replacement": "random"
+        },
+        "reward": 1.3642608167747832,
+        "ipc": 1.3642608167747832,
+        "skip_instructions": 12605800,
+        "stats_path": "/home/ubuntu/yanxin/ChampSim_checkpoint/rl_results/perlbench_fast/rl/iter_0058_stats.json",
+        "cache_path": "/home/ubuntu/yanxin/ChampSim_checkpoint/rl_results/perlbench_fast/rl/iter_0058_cache.log"
+      },
+      {
+        "step": 59,
+        "action": {
+          "l2c_prefetcher": "ip_stride",
+          "llc_replacement": "random"
+        },
+        "reward": 1.3946891300103206,
+        "ipc": 1.3946891300103206,
+        "skip_instructions": 12805900,
+        "stats_path": "/home/ubuntu/yanxin/ChampSim_checkpoint/rl_results/perlbench_fast/rl/iter_0059_stats.json",
+        "cache_path": "/home/ubuntu/yanxin/ChampSim_checkpoint/rl_results/perlbench_fast/rl/iter_0059_cache.log"
+      },
+      {
+        "step": 60,
+        "action": {
+          "l2c_prefetcher": "no",
+          "llc_replacement": "lru"
+        },
+        "reward": 1.499823770706942,
+        "ipc": 1.499823770706942,
+        "skip_instructions": 13006000,
+        "stats_path": "/home/ubuntu/yanxin/ChampSim_checkpoint/rl_results/perlbench_fast/rl/iter_0060_stats.json",
+        "cache_path": "/home/ubuntu/yanxin/ChampSim_checkpoint/rl_results/perlbench_fast/rl/iter_0060_cache.log"
+      },
+      {
+        "step": 61,
+        "action": {
+          "l2c_prefetcher": "no",
+          "llc_replacement": "lru"
+        },
+        "reward": 1.4390640514599013,
+        "ipc": 1.4390640514599013,
+        "skip_instructions": 13206100,
+        "stats_path": "/home/ubuntu/yanxin/ChampSim_checkpoint/rl_results/perlbench_fast/rl/iter_0061_stats.json",
+        "cache_path": "/home/ubuntu/yanxin/ChampSim_checkpoint/rl_results/perlbench_fast/rl/iter_0061_cache.log"
+      },
+      {
+        "step": 62,
+        "action": {
+          "l2c_prefetcher": "no",
+          "llc_replacement": "lru"
+        },
+        "reward": 0.7435212068715543,
+        "ipc": 0.7435212068715543,
+        "skip_instructions": 13406200,
+        "stats_path": "/home/ubuntu/yanxin/ChampSim_checkpoint/rl_results/perlbench_fast/rl/iter_0062_stats.json",
+        "cache_path": "/home/ubuntu/yanxin/ChampSim_checkpoint/rl_results/perlbench_fast/rl/iter_0062_cache.log"
+      },
+      {
+        "step": 63,
+        "action": {
+          "l2c_prefetcher": "ip_stride",
+          "llc_replacement": "random"
+        },
+        "reward": 1.4794106116531427,
+        "ipc": 1.4794106116531427,
+        "skip_instructions": 13606300,
+        "stats_path": "/home/ubuntu/yanxin/ChampSim_checkpoint/rl_results/perlbench_fast/rl/iter_0063_stats.json",
+        "cache_path": "/home/ubuntu/yanxin/ChampSim_checkpoint/rl_results/perlbench_fast/rl/iter_0063_cache.log"
+      },
+      {
+        "step": 64,
+        "action": {
+          "l2c_prefetcher": "ip_stride",
+          "llc_replacement": "random"
+        },
+        "reward": 1.4061236685766514,
+        "ipc": 1.4061236685766514,
+        "skip_instructions": 13806400,
+        "stats_path": "/home/ubuntu/yanxin/ChampSim_checkpoint/rl_results/perlbench_fast/rl/iter_0064_stats.json",
+        "cache_path": "/home/ubuntu/yanxin/ChampSim_checkpoint/rl_results/perlbench_fast/rl/iter_0064_cache.log"
+      },
+      {
+        "step": 65,
+        "action": {
+          "l2c_prefetcher": "ip_stride",
+          "llc_replacement": "random"
+        },
+        "reward": 1.3985147995608729,
+        "ipc": 1.3985147995608729,
+        "skip_instructions": 14006500,
+        "stats_path": "/home/ubuntu/yanxin/ChampSim_checkpoint/rl_results/perlbench_fast/rl/iter_0065_stats.json",
+        "cache_path": "/home/ubuntu/yanxin/ChampSim_checkpoint/rl_results/perlbench_fast/rl/iter_0065_cache.log"
+      },
+      {
+        "step": 66,
+        "action": {
+          "l2c_prefetcher": "ip_stride",
+          "llc_replacement": "random"
+        },
+        "reward": 1.3651224856150217,
+        "ipc": 1.3651224856150217,
+        "skip_instructions": 14206600,
+        "stats_path": "/home/ubuntu/yanxin/ChampSim_checkpoint/rl_results/perlbench_fast/rl/iter_0066_stats.json",
+        "cache_path": "/home/ubuntu/yanxin/ChampSim_checkpoint/rl_results/perlbench_fast/rl/iter_0066_cache.log"
+      },
+      {
+        "step": 67,
+        "action": {
+          "l2c_prefetcher": "ip_stride",
+          "llc_replacement": "random"
+        },
+        "reward": 1.5169631006105655,
+        "ipc": 1.5169631006105655,
+        "skip_instructions": 14406700,
+        "stats_path": "/home/ubuntu/yanxin/ChampSim_checkpoint/rl_results/perlbench_fast/rl/iter_0067_stats.json",
+        "cache_path": "/home/ubuntu/yanxin/ChampSim_checkpoint/rl_results/perlbench_fast/rl/iter_0067_cache.log"
+      },
+      {
+        "step": 68,
+        "action": {
+          "l2c_prefetcher": "ip_stride",
+          "llc_replacement": "random"
+        },
+        "reward": 1.3543983205796708,
+        "ipc": 1.3543983205796708,
+        "skip_instructions": 14606800,
+        "stats_path": "/home/ubuntu/yanxin/ChampSim_checkpoint/rl_results/perlbench_fast/rl/iter_0068_stats.json",
+        "cache_path": "/home/ubuntu/yanxin/ChampSim_checkpoint/rl_results/perlbench_fast/rl/iter_0068_cache.log"
+      },
+      {
+        "step": 69,
+        "action": {
+          "l2c_prefetcher": "next_line",
+          "llc_replacement": "lru"
+        },
+        "reward": 1.582297608404997,
+        "ipc": 1.582297608404997,
+        "skip_instructions": 14806900,
+        "stats_path": "/home/ubuntu/yanxin/ChampSim_checkpoint/rl_results/perlbench_fast/rl/iter_0069_stats.json",
+        "cache_path": "/home/ubuntu/yanxin/ChampSim_checkpoint/rl_results/perlbench_fast/rl/iter_0069_cache.log"
+      },
+      {
+        "step": 70,
+        "action": {
+          "l2c_prefetcher": "ip_stride",
+          "llc_replacement": "random"
+        },
+        "reward": 1.3694690568466605,
+        "ipc": 1.3694690568466605,
+        "skip_instructions": 15007000,
+        "stats_path": "/home/ubuntu/yanxin/ChampSim_checkpoint/rl_results/perlbench_fast/rl/iter_0070_stats.json",
+        "cache_path": "/home/ubuntu/yanxin/ChampSim_checkpoint/rl_results/perlbench_fast/rl/iter_0070_cache.log"
+      },
+      {
+        "step": 71,
+        "action": {
+          "l2c_prefetcher": "next_line",
+          "llc_replacement": "lru"
+        },
+        "reward": 0.852588860185351,
+        "ipc": 0.852588860185351,
+        "skip_instructions": 15207100,
+        "stats_path": "/home/ubuntu/yanxin/ChampSim_checkpoint/rl_results/perlbench_fast/rl/iter_0071_stats.json",
+        "cache_path": "/home/ubuntu/yanxin/ChampSim_checkpoint/rl_results/perlbench_fast/rl/iter_0071_cache.log"
+      },
+      {
+        "step": 72,
+        "action": {
+          "l2c_prefetcher": "ip_stride",
+          "llc_replacement": "random"
+        },
+        "reward": 1.5101137847979886,
+        "ipc": 1.5101137847979886,
+        "skip_instructions": 15407200,
+        "stats_path": "/home/ubuntu/yanxin/ChampSim_checkpoint/rl_results/perlbench_fast/rl/iter_0072_stats.json",
+        "cache_path": "/home/ubuntu/yanxin/ChampSim_checkpoint/rl_results/perlbench_fast/rl/iter_0072_cache.log"
+      },
+      {
+        "step": 73,
+        "action": {
+          "l2c_prefetcher": "ip_stride",
+          "llc_replacement": "random"
+        },
+        "reward": 2.1532324917909245,
+        "ipc": 2.1532324917909245,
+        "skip_instructions": 15607300,
+        "stats_path": "/home/ubuntu/yanxin/ChampSim_checkpoint/rl_results/perlbench_fast/rl/iter_0073_stats.json",
+        "cache_path": "/home/ubuntu/yanxin/ChampSim_checkpoint/rl_results/perlbench_fast/rl/iter_0073_cache.log"
+      },
+      {
+        "step": 74,
+        "action": {
+          "l2c_prefetcher": "ip_stride",
+          "llc_replacement": "random"
+        },
+        "reward": 2.137435743980507,
+        "ipc": 2.137435743980507,
+        "skip_instructions": 15807400,
+        "stats_path": "/home/ubuntu/yanxin/ChampSim_checkpoint/rl_results/perlbench_fast/rl/iter_0074_stats.json",
+        "cache_path": "/home/ubuntu/yanxin/ChampSim_checkpoint/rl_results/perlbench_fast/rl/iter_0074_cache.log"
+      },
+      {
+        "step": 75,
+        "action": {
+          "l2c_prefetcher": "ip_stride",
+          "llc_replacement": "random"
+        },
+        "reward": 1.4985875812047145,
+        "ipc": 1.4985875812047145,
+        "skip_instructions": 16007500,
+        "stats_path": "/home/ubuntu/yanxin/ChampSim_checkpoint/rl_results/perlbench_fast/rl/iter_0075_stats.json",
+        "cache_path": "/home/ubuntu/yanxin/ChampSim_checkpoint/rl_results/perlbench_fast/rl/iter_0075_cache.log"
+      },
+      {
+        "step": 76,
+        "action": {
+          "l2c_prefetcher": "ip_stride",
+          "llc_replacement": "random"
+        },
+        "reward": 2.0884011360788572,
+        "ipc": 2.0884011360788572,
+        "skip_instructions": 16207600,
+        "stats_path": "/home/ubuntu/yanxin/ChampSim_checkpoint/rl_results/perlbench_fast/rl/iter_0076_stats.json",
+        "cache_path": "/home/ubuntu/yanxin/ChampSim_checkpoint/rl_results/perlbench_fast/rl/iter_0076_cache.log"
+      },
+      {
+        "step": 77,
+        "action": {
+          "l2c_prefetcher": "ip_stride",
+          "llc_replacement": "random"
+        },
+        "reward": 2.030333177674456,
+        "ipc": 2.030333177674456,
+        "skip_instructions": 16407700,
+        "stats_path": "/home/ubuntu/yanxin/ChampSim_checkpoint/rl_results/perlbench_fast/rl/iter_0077_stats.json",
+        "cache_path": "/home/ubuntu/yanxin/ChampSim_checkpoint/rl_results/perlbench_fast/rl/iter_0077_cache.log"
+      },
+      {
+        "step": 78,
+        "action": {
+          "l2c_prefetcher": "ip_stride",
+          "llc_replacement": "random"
+        },
+        "reward": 1.5097984449309279,
+        "ipc": 1.5097984449309279,
+        "skip_instructions": 16607800,
+        "stats_path": "/home/ubuntu/yanxin/ChampSim_checkpoint/rl_results/perlbench_fast/rl/iter_0078_stats.json",
+        "cache_path": "/home/ubuntu/yanxin/ChampSim_checkpoint/rl_results/perlbench_fast/rl/iter_0078_cache.log"
+      },
+      {
+        "step": 79,
+        "action": {
+          "l2c_prefetcher": "ip_stride",
+          "llc_replacement": "random"
+        },
+        "reward": 1.9784937726908505,
+        "ipc": 1.9784937726908505,
+        "skip_instructions": 16807900,
+        "stats_path": "/home/ubuntu/yanxin/ChampSim_checkpoint/rl_results/perlbench_fast/rl/iter_0079_stats.json",
+        "cache_path": "/home/ubuntu/yanxin/ChampSim_checkpoint/rl_results/perlbench_fast/rl/iter_0079_cache.log"
+      },
+      {
+        "step": 80,
+        "action": {
+          "l2c_prefetcher": "ip_stride",
+          "llc_replacement": "random"
+        },
+        "reward": 2.1903755380083014,
+        "ipc": 2.1903755380083014,
+        "skip_instructions": 17008000,
+        "stats_path": "/home/ubuntu/yanxin/ChampSim_checkpoint/rl_results/perlbench_fast/rl/iter_0080_stats.json",
+        "cache_path": "/home/ubuntu/yanxin/ChampSim_checkpoint/rl_results/perlbench_fast/rl/iter_0080_cache.log"
+      },
+      {
+        "step": 81,
+        "action": {
+          "l2c_prefetcher": "ip_stride",
+          "llc_replacement": "random"
+        },
+        "reward": 1.419215894979599,
+        "ipc": 1.419215894979599,
+        "skip_instructions": 17208100,
+        "stats_path": "/home/ubuntu/yanxin/ChampSim_checkpoint/rl_results/perlbench_fast/rl/iter_0081_stats.json",
+        "cache_path": "/home/ubuntu/yanxin/ChampSim_checkpoint/rl_results/perlbench_fast/rl/iter_0081_cache.log"
+      },
+      {
+        "step": 82,
+        "action": {
+          "l2c_prefetcher": "ip_stride",
+          "llc_replacement": "random"
+        },
+        "reward": 2.1643850440993453,
+        "ipc": 2.1643850440993453,
+        "skip_instructions": 17408200,
+        "stats_path": "/home/ubuntu/yanxin/ChampSim_checkpoint/rl_results/perlbench_fast/rl/iter_0082_stats.json",
+        "cache_path": "/home/ubuntu/yanxin/ChampSim_checkpoint/rl_results/perlbench_fast/rl/iter_0082_cache.log"
+      },
+      {
+        "step": 83,
+        "action": {
+          "l2c_prefetcher": "ip_stride",
+          "llc_replacement": "random"
+        },
+        "reward": 1.404683143352788,
+        "ipc": 1.404683143352788,
+        "skip_instructions": 17608300,
+        "stats_path": "/home/ubuntu/yanxin/ChampSim_checkpoint/rl_results/perlbench_fast/rl/iter_0083_stats.json",
+        "cache_path": "/home/ubuntu/yanxin/ChampSim_checkpoint/rl_results/perlbench_fast/rl/iter_0083_cache.log"
+      },
+      {
+        "step": 84,
+        "action": {
+          "l2c_prefetcher": "ip_stride",
+          "llc_replacement": "random"
+        },
+        "reward": 1.499666324242856,
+        "ipc": 1.499666324242856,
+        "skip_instructions": 17808400,
+        "stats_path": "/home/ubuntu/yanxin/ChampSim_checkpoint/rl_results/perlbench_fast/rl/iter_0084_stats.json",
+        "cache_path": "/home/ubuntu/yanxin/ChampSim_checkpoint/rl_results/perlbench_fast/rl/iter_0084_cache.log"
+      },
+      {
+        "step": 85,
+        "action": {
+          "l2c_prefetcher": "ip_stride",
+          "llc_replacement": "random"
+        },
+        "reward": 2.136866285592179,
+        "ipc": 2.136866285592179,
+        "skip_instructions": 18008500,
+        "stats_path": "/home/ubuntu/yanxin/ChampSim_checkpoint/rl_results/perlbench_fast/rl/iter_0085_stats.json",
+        "cache_path": "/home/ubuntu/yanxin/ChampSim_checkpoint/rl_results/perlbench_fast/rl/iter_0085_cache.log"
+      },
+      {
+        "step": 86,
+        "action": {
+          "l2c_prefetcher": "ip_stride",
+          "llc_replacement": "random"
+        },
+        "reward": 1.4657168821270483,
+        "ipc": 1.4657168821270483,
+        "skip_instructions": 18208600,
+        "stats_path": "/home/ubuntu/yanxin/ChampSim_checkpoint/rl_results/perlbench_fast/rl/iter_0086_stats.json",
+        "cache_path": "/home/ubuntu/yanxin/ChampSim_checkpoint/rl_results/perlbench_fast/rl/iter_0086_cache.log"
+      },
+      {
+        "step": 87,
+        "action": {
+          "l2c_prefetcher": "ip_stride",
+          "llc_replacement": "random"
+        },
+        "reward": 1.5459014492753622,
+        "ipc": 1.5459014492753622,
+        "skip_instructions": 18408700,
+        "stats_path": "/home/ubuntu/yanxin/ChampSim_checkpoint/rl_results/perlbench_fast/rl/iter_0087_stats.json",
+        "cache_path": "/home/ubuntu/yanxin/ChampSim_checkpoint/rl_results/perlbench_fast/rl/iter_0087_cache.log"
+      },
+      {
+        "step": 88,
+        "action": {
+          "l2c_prefetcher": "ip_stride",
+          "llc_replacement": "random"
+        },
+        "reward": 2.086234053428187,
+        "ipc": 2.086234053428187,
+        "skip_instructions": 18608800,
+        "stats_path": "/home/ubuntu/yanxin/ChampSim_checkpoint/rl_results/perlbench_fast/rl/iter_0088_stats.json",
+        "cache_path": "/home/ubuntu/yanxin/ChampSim_checkpoint/rl_results/perlbench_fast/rl/iter_0088_cache.log"
+      },
+      {
+        "step": 89,
+        "action": {
+          "l2c_prefetcher": "ip_stride",
+          "llc_replacement": "random"
+        },
+        "reward": 1.9858313061609492,
+        "ipc": 1.9858313061609492,
+        "skip_instructions": 18808900,
+        "stats_path": "/home/ubuntu/yanxin/ChampSim_checkpoint/rl_results/perlbench_fast/rl/iter_0089_stats.json",
+        "cache_path": "/home/ubuntu/yanxin/ChampSim_checkpoint/rl_results/perlbench_fast/rl/iter_0089_cache.log"
+      },
+      {
+        "step": 90,
+        "action": {
+          "l2c_prefetcher": "ip_stride",
+          "llc_replacement": "random"
+        },
+        "reward": 1.53933362580526,
+        "ipc": 1.53933362580526,
+        "skip_instructions": 19009000,
+        "stats_path": "/home/ubuntu/yanxin/ChampSim_checkpoint/rl_results/perlbench_fast/rl/iter_0090_stats.json",
+        "cache_path": "/home/ubuntu/yanxin/ChampSim_checkpoint/rl_results/perlbench_fast/rl/iter_0090_cache.log"
+      },
+      {
+        "step": 91,
+        "action": {
+          "l2c_prefetcher": "ip_stride",
+          "llc_replacement": "random"
+        },
+        "reward": 1.516422776556221,
+        "ipc": 1.516422776556221,
+        "skip_instructions": 19209100,
+        "stats_path": "/home/ubuntu/yanxin/ChampSim_checkpoint/rl_results/perlbench_fast/rl/iter_0091_stats.json",
+        "cache_path": "/home/ubuntu/yanxin/ChampSim_checkpoint/rl_results/perlbench_fast/rl/iter_0091_cache.log"
+      },
+      {
+        "step": 92,
+        "action": {
+          "l2c_prefetcher": "ip_stride",
+          "llc_replacement": "random"
+        },
+        "reward": 1.5088530625485654,
+        "ipc": 1.5088530625485654,
+        "skip_instructions": 19409200,
+        "stats_path": "/home/ubuntu/yanxin/ChampSim_checkpoint/rl_results/perlbench_fast/rl/iter_0092_stats.json",
+        "cache_path": "/home/ubuntu/yanxin/ChampSim_checkpoint/rl_results/perlbench_fast/rl/iter_0092_cache.log"
+      },
+      {
+        "step": 93,
+        "action": {
+          "l2c_prefetcher": "ip_stride",
+          "llc_replacement": "random"
+        },
+        "reward": 2.090212677013116,
+        "ipc": 2.090212677013116,
+        "skip_instructions": 19609300,
+        "stats_path": "/home/ubuntu/yanxin/ChampSim_checkpoint/rl_results/perlbench_fast/rl/iter_0093_stats.json",
+        "cache_path": "/home/ubuntu/yanxin/ChampSim_checkpoint/rl_results/perlbench_fast/rl/iter_0093_cache.log"
+      },
+      {
+        "step": 94,
+        "action": {
+          "l2c_prefetcher": "no",
+          "llc_replacement": "random"
+        },
+        "reward": 1.3642819138050997,
+        "ipc": 1.3642819138050997,
+        "skip_instructions": 19809400,
+        "stats_path": "/home/ubuntu/yanxin/ChampSim_checkpoint/rl_results/perlbench_fast/rl/iter_0094_stats.json",
+        "cache_path": "/home/ubuntu/yanxin/ChampSim_checkpoint/rl_results/perlbench_fast/rl/iter_0094_cache.log"
+      },
+      {
+        "step": 95,
+        "action": {
+          "l2c_prefetcher": "ip_stride",
+          "llc_replacement": "random"
+        },
+        "reward": 1.9832616068064177,
+        "ipc": 1.9832616068064177,
+        "skip_instructions": 20009500,
+        "stats_path": "/home/ubuntu/yanxin/ChampSim_checkpoint/rl_results/perlbench_fast/rl/iter_0095_stats.json",
+        "cache_path": "/home/ubuntu/yanxin/ChampSim_checkpoint/rl_results/perlbench_fast/rl/iter_0095_cache.log"
+      },
+      {
+        "step": 96,
+        "action": {
+          "l2c_prefetcher": "ip_stride",
+          "llc_replacement": "random"
+        },
+        "reward": 1.5032620296739474,
+        "ipc": 1.5032620296739474,
+        "skip_instructions": 20209600,
+        "stats_path": "/home/ubuntu/yanxin/ChampSim_checkpoint/rl_results/perlbench_fast/rl/iter_0096_stats.json",
+        "cache_path": "/home/ubuntu/yanxin/ChampSim_checkpoint/rl_results/perlbench_fast/rl/iter_0096_cache.log"
+      },
+      {
+        "step": 97,
+        "action": {
+          "l2c_prefetcher": "ip_stride",
+          "llc_replacement": "random"
+        },
+        "reward": 2.14105103144102,
+        "ipc": 2.14105103144102,
+        "skip_instructions": 20409700,
+        "stats_path": "/home/ubuntu/yanxin/ChampSim_checkpoint/rl_results/perlbench_fast/rl/iter_0097_stats.json",
+        "cache_path": "/home/ubuntu/yanxin/ChampSim_checkpoint/rl_results/perlbench_fast/rl/iter_0097_cache.log"
+      },
+      {
+        "step": 98,
+        "action": {
+          "l2c_prefetcher": "ip_stride",
+          "llc_replacement": "random"
+        },
+        "reward": 1.5509759369692835,
+        "ipc": 1.5509759369692835,
+        "skip_instructions": 20609800,
+        "stats_path": "/home/ubuntu/yanxin/ChampSim_checkpoint/rl_results/perlbench_fast/rl/iter_0098_stats.json",
+        "cache_path": "/home/ubuntu/yanxin/ChampSim_checkpoint/rl_results/perlbench_fast/rl/iter_0098_cache.log"
+      },
+      {
+        "step": 99,
+        "action": {
+          "l2c_prefetcher": "ip_stride",
+          "llc_replacement": "random"
+        },
+        "reward": 1.5576479750778816,
+        "ipc": 1.5576479750778816,
+        "skip_instructions": 20809900,
+        "stats_path": "/home/ubuntu/yanxin/ChampSim_checkpoint/rl_results/perlbench_fast/rl/iter_0099_stats.json",
+        "cache_path": "/home/ubuntu/yanxin/ChampSim_checkpoint/rl_results/perlbench_fast/rl/iter_0099_cache.log"
+      }
+    ]
+  },
+  "fixed_policies": {
+    "l2c_prefetcher-no_llc_replacement-lru": {
+      "total_ipc": 139.35873808879964,
+      "per_step_ipc": [
+        1.3348617423863205,
+        1.4018840945411726,
+        1.3671754838092243,
+        1.3805592561658302,
+        1.4452087954967519,
+        1.3644841960198395,
+        0.5662001177696245,
+        0.5383491068832973,
+        1.5056763430498674,
+        1.4590239276334986,
+        1.2722727243811984,
+        1.4204919138902108,
+        1.3858658370115786,
+        1.3635217038567211,
+        1.4835108592451935,
+        1.464632779946248,
+        0.588470852004743,
+        0.45949727408693974,
+        1.0383137784238397,
+        0.9911785112498761,
+        1.079237198961779,
+        0.9556622706422019,
+        1.017293997965412,
+        1.005616310933454,
+        0.6371815334817944,
+        1.5014676626252768,
+        1.3309553597572337,
+        1.4361522608626967,
+        1.409363813174733,
+        1.39272732337089,
+        1.4269783171728847,
+        1.4188996488240928,
+        0.9933644581305254,
+        0.5062598720181443,
+        1.2984717064429845,
+        1.3719063820446689,
+        1.2553745723880363,
+        1.306301598913157,
+        1.2932686711930166,
+        1.364444474764978,
+        1.2130497279790389,
+        1.3943181818181818,
+        1.3208709779679821,
+        1.2110556719508798,
+        0.5486276080384918,
+        1.3910306790282307,
+        1.4960616963504305,
+        1.2850690071705775,
+        1.42733780090065,
+        1.4369889784598584,
+        1.3628106325422298,
+        1.49774589243189,
+        1.4092645048549162,
+        0.7420197373302664,
+        1.5169709427121651,
+        1.4515756775195598,
+        1.3783139338557064,
+        1.4468751582495967,
+        1.356810441908742,
+        1.3791952556632072,
+        1.499823770706942,
+        1.4390640514599013,
+        0.7435212068715543,
+        1.4689792950474105,
+        1.3881466160455866,
+        1.381465159971266,
+        1.353326476479186,
+        1.5068939017223453,
+        1.347245611435192,
+        1.4943402993103758,
+        1.3454966228034768,
+        0.7962750625069673,
+        1.5101137847979886,
+        2.1532324917909245,
+        2.137435743980507,
+        1.4985875812047145,
+        2.0861356809078773,
+        2.0221833513644683,
+        1.5084775164798696,
+        1.9742167295125659,
+        2.185062984125597,
+        1.4180989250971383,
+        2.1526886812761012,
+        1.404683143352788,
+        1.498329362760522,
+        2.136866285592179,
+        1.4626405049035023,
+        1.5445166073317838,
+        2.081370783944386,
+        1.9858313061609492,
+        1.5379132159911417,
+        1.511609099841282,
+        1.5088530625485654,
+        2.085526590198123,
+        1.3642819138050997,
+        1.9787290877251995,
+        1.5032620296739474,
+        2.1382126858890067,
+        1.5516979199801386,
+        1.55550370595052
+      ]
+    },
+    "l2c_prefetcher-no_llc_replacement-srrip": {
+      "total_ipc": 139.35873808879964,
+      "per_step_ipc": [
+        1.3348617423863205,
+        1.4018840945411726,
+        1.3671754838092243,
+        1.3805592561658302,
+        1.4452087954967519,
+        1.3644841960198395,
+        0.5662001177696245,
+        0.5383491068832973,
+        1.5056763430498674,
+        1.4590239276334986,
+        1.2722727243811984,
+        1.4204919138902108,
+        1.3858658370115786,
+        1.3635217038567211,
+        1.4835108592451935,
+        1.464632779946248,
+        0.588470852004743,
+        0.45949727408693974,
+        1.0383137784238397,
+        0.9911785112498761,
+        1.079237198961779,
+        0.9556622706422019,
+        1.017293997965412,
+        1.005616310933454,
+        0.6371815334817944,
+        1.5014676626252768,
+        1.3309553597572337,
+        1.4361522608626967,
+        1.409363813174733,
+        1.39272732337089,
+        1.4269783171728847,
+        1.4188996488240928,
+        0.9933644581305254,
+        0.5062598720181443,
+        1.2984717064429845,
+        1.3719063820446689,
+        1.2553745723880363,
+        1.306301598913157,
+        1.2932686711930166,
+        1.364444474764978,
+        1.2130497279790389,
+        1.3943181818181818,
+        1.3208709779679821,
+        1.2110556719508798,
+        0.5486276080384918,
+        1.3910306790282307,
+        1.4960616963504305,
+        1.2850690071705775,
+        1.42733780090065,
+        1.4369889784598584,
+        1.3628106325422298,
+        1.49774589243189,
+        1.4092645048549162,
+        0.7420197373302664,
+        1.5169709427121651,
+        1.4515756775195598,
+        1.3783139338557064,
+        1.4468751582495967,
+        1.356810441908742,
+        1.3791952556632072,
+        1.499823770706942,
+        1.4390640514599013,
+        0.7435212068715543,
+        1.4689792950474105,
+        1.3881466160455866,
+        1.381465159971266,
+        1.353326476479186,
+        1.5068939017223453,
+        1.347245611435192,
+        1.4943402993103758,
+        1.3454966228034768,
+        0.7962750625069673,
+        1.5101137847979886,
+        2.1532324917909245,
+        2.137435743980507,
+        1.4985875812047145,
+        2.0861356809078773,
+        2.0221833513644683,
+        1.5084775164798696,
+        1.9742167295125659,
+        2.185062984125597,
+        1.4180989250971383,
+        2.1526886812761012,
+        1.404683143352788,
+        1.498329362760522,
+        2.136866285592179,
+        1.4626405049035023,
+        1.5445166073317838,
+        2.081370783944386,
+        1.9858313061609492,
+        1.5379132159911417,
+        1.511609099841282,
+        1.5088530625485654,
+        2.085526590198123,
+        1.3642819138050997,
+        1.9787290877251995,
+        1.5032620296739474,
+        2.1382126858890067,
+        1.5516979199801386,
+        1.55550370595052
+      ]
+    },
+    "l2c_prefetcher-no_llc_replacement-random": {
+      "total_ipc": 139.35873808879964,
+      "per_step_ipc": [
+        1.3348617423863205,
+        1.4018840945411726,
+        1.3671754838092243,
+        1.3805592561658302,
+        1.4452087954967519,
+        1.3644841960198395,
+        0.5662001177696245,
+        0.5383491068832973,
+        1.5056763430498674,
+        1.4590239276334986,
+        1.2722727243811984,
+        1.4204919138902108,
+        1.3858658370115786,
+        1.3635217038567211,
+        1.4835108592451935,
+        1.464632779946248,
+        0.588470852004743,
+        0.45949727408693974,
+        1.0383137784238397,
+        0.9911785112498761,
+        1.079237198961779,
+        0.9556622706422019,
+        1.017293997965412,
+        1.005616310933454,
+        0.6371815334817944,
+        1.5014676626252768,
+        1.3309553597572337,
+        1.4361522608626967,
+        1.409363813174733,
+        1.39272732337089,
+        1.4269783171728847,
+        1.4188996488240928,
+        0.9933644581305254,
+        0.5062598720181443,
+        1.2984717064429845,
+        1.3719063820446689,
+        1.2553745723880363,
+        1.306301598913157,
+        1.2932686711930166,
+        1.364444474764978,
+        1.2130497279790389,
+        1.3943181818181818,
+        1.3208709779679821,
+        1.2110556719508798,
+        0.5486276080384918,
+        1.3910306790282307,
+        1.4960616963504305,
+        1.2850690071705775,
+        1.42733780090065,
+        1.4369889784598584,
+        1.3628106325422298,
+        1.49774589243189,
+        1.4092645048549162,
+        0.7420197373302664,
+        1.5169709427121651,
+        1.4515756775195598,
+        1.3783139338557064,
+        1.4468751582495967,
+        1.356810441908742,
+        1.3791952556632072,
+        1.499823770706942,
+        1.4390640514599013,
+        0.7435212068715543,
+        1.4689792950474105,
+        1.3881466160455866,
+        1.381465159971266,
+        1.353326476479186,
+        1.5068939017223453,
+        1.347245611435192,
+        1.4943402993103758,
+        1.3454966228034768,
+        0.7962750625069673,
+        1.5101137847979886,
+        2.1532324917909245,
+        2.137435743980507,
+        1.4985875812047145,
+        2.0861356809078773,
+        2.0221833513644683,
+        1.5084775164798696,
+        1.9742167295125659,
+        2.185062984125597,
+        1.4180989250971383,
+        2.1526886812761012,
+        1.404683143352788,
+        1.498329362760522,
+        2.136866285592179,
+        1.4626405049035023,
+        1.5445166073317838,
+        2.081370783944386,
+        1.9858313061609492,
+        1.5379132159911417,
+        1.511609099841282,
+        1.5088530625485654,
+        2.085526590198123,
+        1.3642819138050997,
+        1.9787290877251995,
+        1.5032620296739474,
+        2.1382126858890067,
+        1.5516979199801386,
+        1.55550370595052
+      ]
+    },
+    "l2c_prefetcher-next_line_llc_replacement-lru": {
+      "total_ipc": 147.12029841675854,
+      "per_step_ipc": [
+        1.4247926936995983,
+        1.4811271151923575,
+        1.4574603752960467,
+        1.474698244398074,
+        1.558842097879206,
+        1.4460205911273063,
+        0.6527244719459022,
+        0.6165810137157761,
+        1.6033895315744326,
+        1.562376964659563,
+        1.3720432468031392,
+        1.5136110795777047,
+        1.4724690603626618,
+        1.4455985139247276,
+        1.5826995972049664,
+        1.5805653682322167,
+        0.6329589437339587,
+        0.5305638454498428,
+        1.105186085707181,
+        1.0685473099321472,
+        1.1529428719663342,
+        1.020022950401632,
+        1.0996019440962372,
+        1.078439513628643,
+        0.6890881089294143,
+        1.6021003220173344,
+        1.4078558355624384,
+        1.5330016939668718,
+        1.4936631341533544,
+        1.4775709219858155,
+        1.5082690436867945,
+        1.5208276302582353,
+        1.0603822601595843,
+        0.57726010633078,
+        1.370480008222839,
+        1.4571742900024771,
+        1.3250385917489846,
+        1.3844087882269878,
+        1.3692058080548766,
+        1.4420346804138577,
+        1.2689803946450098,
+        1.4839511485724461,
+        1.4031219306861231,
+        1.2867841494720995,
+        0.6325490779015817,
+        1.4761528696268305,
+        1.5888212770690011,
+        1.3809500794034386,
+        1.5253319503656984,
+        1.5115213990432212,
+        1.4587825122901197,
+        1.6117593965572818,
+        1.507556627595824,
+        0.7985785585945299,
+        1.605088078327515,
+        1.5486905886543494,
+        1.4520538994322554,
+        1.5546288379323747,
+        1.4310389238694905,
+        1.46142998063644,
+        1.5976227373667982,
+        1.5419438897840552,
+        0.798500431185921,
+        1.565887649246428,
+        1.4760147601476015,
+        1.4634008926611546,
+        1.4305128388527286,
+        1.583487720298323,
+        1.4370684390156279,
+        1.582297608404997,
+        1.4312806383511647,
+        0.852588860185351,
+        1.569828499666418,
+        2.193255839456081,
+        2.184811343427061,
+        1.578918283084259,
+        2.1315130394006245,
+        2.0820320632937745,
+        1.5777711161774335,
+        2.0182042019011486,
+        2.2310086339602435,
+        1.4968715853129164,
+        2.1998328127062345,
+        1.4802318008229964,
+        1.5728092732834753,
+        2.196257577088641,
+        1.5355086372360844,
+        1.6181179763917768,
+        2.1294598652058645,
+        2.039473415862786,
+        1.6113778823377753,
+        1.603831534377957,
+        1.575794582499488,
+        2.1196981580007206,
+        1.435984146814285,
+        2.040336648814078,
+        1.5610964977325414,
+        2.178243917314688,
+        1.6238227461678358,
+        1.6342035380152797
+      ]
+    },
+    "l2c_prefetcher-next_line_llc_replacement-srrip": {
+      "total_ipc": 147.12029841675854,
+      "per_step_ipc": [
+        1.4247926936995983,
+        1.4811271151923575,
+        1.4574603752960467,
+        1.474698244398074,
+        1.558842097879206,
+        1.4460205911273063,
+        0.6527244719459022,
+        0.6165810137157761,
+        1.6033895315744326,
+        1.562376964659563,
+        1.3720432468031392,
+        1.5136110795777047,
+        1.4724690603626618,
+        1.4455985139247276,
+        1.5826995972049664,
+        1.5805653682322167,
+        0.6329589437339587,
+        0.5305638454498428,
+        1.105186085707181,
+        1.0685473099321472,
+        1.1529428719663342,
+        1.020022950401632,
+        1.0996019440962372,
+        1.078439513628643,
+        0.6890881089294143,
+        1.6021003220173344,
+        1.4078558355624384,
+        1.5330016939668718,
+        1.4936631341533544,
+        1.4775709219858155,
+        1.5082690436867945,
+        1.5208276302582353,
+        1.0603822601595843,
+        0.57726010633078,
+        1.370480008222839,
+        1.4571742900024771,
+        1.3250385917489846,
+        1.3844087882269878,
+        1.3692058080548766,
+        1.4420346804138577,
+        1.2689803946450098,
+        1.4839511485724461,
+        1.4031219306861231,
+        1.2867841494720995,
+        0.6325490779015817,
+        1.4761528696268305,
+        1.5888212770690011,
+        1.3809500794034386,
+        1.5253319503656984,
+        1.5115213990432212,
+        1.4587825122901197,
+        1.6117593965572818,
+        1.507556627595824,
+        0.7985785585945299,
+        1.605088078327515,
+        1.5486905886543494,
+        1.4520538994322554,
+        1.5546288379323747,
+        1.4310389238694905,
+        1.46142998063644,
+        1.5976227373667982,
+        1.5419438897840552,
+        0.798500431185921,
+        1.565887649246428,
+        1.4760147601476015,
+        1.4634008926611546,
+        1.4305128388527286,
+        1.583487720298323,
+        1.4370684390156279,
+        1.582297608404997,
+        1.4312806383511647,
+        0.852588860185351,
+        1.569828499666418,
+        2.193255839456081,
+        2.184811343427061,
+        1.578918283084259,
+        2.1315130394006245,
+        2.0820320632937745,
+        1.5777711161774335,
+        2.0182042019011486,
+        2.2310086339602435,
+        1.4968715853129164,
+        2.1998328127062345,
+        1.4802318008229964,
+        1.5728092732834753,
+        2.196257577088641,
+        1.5355086372360844,
+        1.6181179763917768,
+        2.1294598652058645,
+        2.039473415862786,
+        1.6113778823377753,
+        1.603831534377957,
+        1.575794582499488,
+        2.1196981580007206,
+        1.435984146814285,
+        2.040336648814078,
+        1.5610964977325414,
+        2.178243917314688,
+        1.6238227461678358,
+        1.6342035380152797
+      ]
+    },
+    "l2c_prefetcher-next_line_llc_replacement-random": {
+      "total_ipc": 147.12029841675854,
+      "per_step_ipc": [
+        1.4247926936995983,
+        1.4811271151923575,
+        1.4574603752960467,
+        1.474698244398074,
+        1.558842097879206,
+        1.4460205911273063,
+        0.6527244719459022,
+        0.6165810137157761,
+        1.6033895315744326,
+        1.562376964659563,
+        1.3720432468031392,
+        1.5136110795777047,
+        1.4724690603626618,
+        1.4455985139247276,
+        1.5826995972049664,
+        1.5805653682322167,
+        0.6329589437339587,
+        0.5305638454498428,
+        1.105186085707181,
+        1.0685473099321472,
+        1.1529428719663342,
+        1.020022950401632,
+        1.0996019440962372,
+        1.078439513628643,
+        0.6890881089294143,
+        1.6021003220173344,
+        1.4078558355624384,
+        1.5330016939668718,
+        1.4936631341533544,
+        1.4775709219858155,
+        1.5082690436867945,
+        1.5208276302582353,
+        1.0603822601595843,
+        0.57726010633078,
+        1.370480008222839,
+        1.4571742900024771,
+        1.3250385917489846,
+        1.3844087882269878,
+        1.3692058080548766,
+        1.4420346804138577,
+        1.2689803946450098,
+        1.4839511485724461,
+        1.4031219306861231,
+        1.2867841494720995,
+        0.6325490779015817,
+        1.4761528696268305,
+        1.5888212770690011,
+        1.3809500794034386,
+        1.5253319503656984,
+        1.5115213990432212,
+        1.4587825122901197,
+        1.6117593965572818,
+        1.507556627595824,
+        0.7985785585945299,
+        1.605088078327515,
+        1.5486905886543494,
+        1.4520538994322554,
+        1.5546288379323747,
+        1.4310389238694905,
+        1.46142998063644,
+        1.5976227373667982,
+        1.5419438897840552,
+        0.798500431185921,
+        1.565887649246428,
+        1.4760147601476015,
+        1.4634008926611546,
+        1.4305128388527286,
+        1.583487720298323,
+        1.4370684390156279,
+        1.582297608404997,
+        1.4312806383511647,
+        0.852588860185351,
+        1.569828499666418,
+        2.193255839456081,
+        2.184811343427061,
+        1.578918283084259,
+        2.1315130394006245,
+        2.0820320632937745,
+        1.5777711161774335,
+        2.0182042019011486,
+        2.2310086339602435,
+        1.4968715853129164,
+        2.1998328127062345,
+        1.4802318008229964,
+        1.5728092732834753,
+        2.196257577088641,
+        1.5355086372360844,
+        1.6181179763917768,
+        2.1294598652058645,
+        2.039473415862786,
+        1.6113778823377753,
+        1.603831534377957,
+        1.575794582499488,
+        2.1196981580007206,
+        1.435984146814285,
+        2.040336648814078,
+        1.5610964977325414,
+        2.178243917314688,
+        1.6238227461678358,
+        1.6342035380152797
+      ]
+    },
+    "l2c_prefetcher-ip_stride_llc_replacement-lru": {
+      "total_ipc": 140.73426595270791,
+      "per_step_ipc": [
+        1.3562148233539024,
+        1.4227059325650875,
+        1.38699140758823,
+        1.4012190422811504,
+        1.4781712157158378,
+        1.382021462578688,
+        0.6057540577949947,
+        0.5755291964501537,
+        1.5277124262886126,
+        1.4745351597634881,
+        1.2883111529096507,
+        1.4410643648180306,
+        1.4030445457734129,
+        1.3736075053914094,
+        1.5222050552177122,
+        1.4920696498112531,
+        0.5910271602457454,
+        0.4852793454683095,
+        1.050216081958863,
+        1.0114291493880854,
+        1.098055901746449,
+        0.9707843898650617,
+        1.0336772032829589,
+        1.0234469348070823,
+        0.6389994696383956,
+        1.5239252678258484,
+        1.3414535991200065,
+        1.458895616018674,
+        1.4251307557468398,
+        1.409998096540639,
+        1.4490935964874148,
+        1.4372534224426,
+        1.00756667439119,
+        0.5390048941399681,
+        1.3166016049293319,
+        1.3794261673218842,
+        1.26000126000126,
+        1.3209428890341925,
+        1.3013892051924392,
+        1.3738356917158951,
+        1.2222792607802875,
+        1.4264796085759526,
+        1.338542468393824,
+        1.2240937161463274,
+        0.5844603677424633,
+        1.405448898133573,
+        1.5198911779680981,
+        1.293605158819991,
+        1.4543973704495543,
+        1.4490975880132446,
+        1.3846430772000027,
+        1.5374799166685884,
+        1.4360594528613484,
+        0.7423447231480725,
+        1.5343106794626897,
+        1.4639968377826416,
+        1.3934675222428916,
+        1.469486569094222,
+        1.3642608167747832,
+        1.3946891300103206,
+        1.5286078967883947,
+        1.466154500271233,
+        0.7551348657383635,
+        1.4794106116531427,
+        1.4061236685766514,
+        1.3985147995608729,
+        1.3651224856150217,
+        1.5169631006105655,
+        1.3543983205796708,
+        1.5198911779680981,
+        1.3694690568466605,
+        0.7962750625069673,
+        1.5101137847979886,
+        2.1532324917909245,
+        2.137435743980507,
+        1.4985875812047145,
+        2.0884011360788572,
+        2.030333177674456,
+        1.5097984449309279,
+        1.9784937726908505,
+        2.1903755380083014,
+        1.419215894979599,
+        2.1643850440993453,
+        1.404683143352788,
+        1.499666324242856,
+        2.136866285592179,
+        1.4657168821270483,
+        1.5459014492753622,
+        2.086234053428187,
+        1.9858313061609492,
+        1.53933362580526,
+        1.516422776556221,
+        1.5088530625485654,
+        2.090212677013116,
+        1.3642819138050997,
+        1.9832616068064177,
+        1.5032620296739474,
+        2.14105103144102,
+        1.5509759369692835,
+        1.5576479750778816
+      ]
+    },
+    "l2c_prefetcher-ip_stride_llc_replacement-srrip": {
+      "total_ipc": 140.73426595270791,
+      "per_step_ipc": [
+        1.3562148233539024,
+        1.4227059325650875,
+        1.38699140758823,
+        1.4012190422811504,
+        1.4781712157158378,
+        1.382021462578688,
+        0.6057540577949947,
+        0.5755291964501537,
+        1.5277124262886126,
+        1.4745351597634881,
+        1.2883111529096507,
+        1.4410643648180306,
+        1.4030445457734129,
+        1.3736075053914094,
+        1.5222050552177122,
+        1.4920696498112531,
+        0.5910271602457454,
+        0.4852793454683095,
+        1.050216081958863,
+        1.0114291493880854,
+        1.098055901746449,
+        0.9707843898650617,
+        1.0336772032829589,
+        1.0234469348070823,
+        0.6389994696383956,
+        1.5239252678258484,
+        1.3414535991200065,
+        1.458895616018674,
+        1.4251307557468398,
+        1.409998096540639,
+        1.4490935964874148,
+        1.4372534224426,
+        1.00756667439119,
+        0.5390048941399681,
+        1.3166016049293319,
+        1.3794261673218842,
+        1.26000126000126,
+        1.3209428890341925,
+        1.3013892051924392,
+        1.3738356917158951,
+        1.2222792607802875,
+        1.4264796085759526,
+        1.338542468393824,
+        1.2240937161463274,
+        0.5844603677424633,
+        1.405448898133573,
+        1.5198911779680981,
+        1.293605158819991,
+        1.4543973704495543,
+        1.4490975880132446,
+        1.3846430772000027,
+        1.5374799166685884,
+        1.4360594528613484,
+        0.7423447231480725,
+        1.5343106794626897,
+        1.4639968377826416,
+        1.3934675222428916,
+        1.469486569094222,
+        1.3642608167747832,
+        1.3946891300103206,
+        1.5286078967883947,
+        1.466154500271233,
+        0.7551348657383635,
+        1.4794106116531427,
+        1.4061236685766514,
+        1.3985147995608729,
+        1.3651224856150217,
+        1.5169631006105655,
+        1.3543983205796708,
+        1.5198911779680981,
+        1.3694690568466605,
+        0.7962750625069673,
+        1.5101137847979886,
+        2.1532324917909245,
+        2.137435743980507,
+        1.4985875812047145,
+        2.0884011360788572,
+        2.030333177674456,
+        1.5097984449309279,
+        1.9784937726908505,
+        2.1903755380083014,
+        1.419215894979599,
+        2.1643850440993453,
+        1.404683143352788,
+        1.499666324242856,
+        2.136866285592179,
+        1.4657168821270483,
+        1.5459014492753622,
+        2.086234053428187,
+        1.9858313061609492,
+        1.53933362580526,
+        1.516422776556221,
+        1.5088530625485654,
+        2.090212677013116,
+        1.3642819138050997,
+        1.9832616068064177,
+        1.5032620296739474,
+        2.14105103144102,
+        1.5509759369692835,
+        1.5576479750778816
+      ]
+    },
+    "l2c_prefetcher-ip_stride_llc_replacement-random": {
+      "total_ipc": 140.73426595270791,
+      "per_step_ipc": [
+        1.3562148233539024,
+        1.4227059325650875,
+        1.38699140758823,
+        1.4012190422811504,
+        1.4781712157158378,
+        1.382021462578688,
+        0.6057540577949947,
+        0.5755291964501537,
+        1.5277124262886126,
+        1.4745351597634881,
+        1.2883111529096507,
+        1.4410643648180306,
+        1.4030445457734129,
+        1.3736075053914094,
+        1.5222050552177122,
+        1.4920696498112531,
+        0.5910271602457454,
+        0.4852793454683095,
+        1.050216081958863,
+        1.0114291493880854,
+        1.098055901746449,
+        0.9707843898650617,
+        1.0336772032829589,
+        1.0234469348070823,
+        0.6389994696383956,
+        1.5239252678258484,
+        1.3414535991200065,
+        1.458895616018674,
+        1.4251307557468398,
+        1.409998096540639,
+        1.4490935964874148,
+        1.4372534224426,
+        1.00756667439119,
+        0.5390048941399681,
+        1.3166016049293319,
+        1.3794261673218842,
+        1.26000126000126,
+        1.3209428890341925,
+        1.3013892051924392,
+        1.3738356917158951,
+        1.2222792607802875,
+        1.4264796085759526,
+        1.338542468393824,
+        1.2240937161463274,
+        0.5844603677424633,
+        1.405448898133573,
+        1.5198911779680981,
+        1.293605158819991,
+        1.4543973704495543,
+        1.4490975880132446,
+        1.3846430772000027,
+        1.5374799166685884,
+        1.4360594528613484,
+        0.7423447231480725,
+        1.5343106794626897,
+        1.4639968377826416,
+        1.3934675222428916,
+        1.469486569094222,
+        1.3642608167747832,
+        1.3946891300103206,
+        1.5286078967883947,
+        1.466154500271233,
+        0.7551348657383635,
+        1.4794106116531427,
+        1.4061236685766514,
+        1.3985147995608729,
+        1.3651224856150217,
+        1.5169631006105655,
+        1.3543983205796708,
+        1.5198911779680981,
+        1.3694690568466605,
+        0.7962750625069673,
+        1.5101137847979886,
+        2.1532324917909245,
+        2.137435743980507,
+        1.4985875812047145,
+        2.0884011360788572,
+        2.030333177674456,
+        1.5097984449309279,
+        1.9784937726908505,
+        2.1903755380083014,
+        1.419215894979599,
+        2.1643850440993453,
+        1.404683143352788,
+        1.499666324242856,
+        2.136866285592179,
+        1.4657168821270483,
+        1.5459014492753622,
+        2.086234053428187,
+        1.9858313061609492,
+        1.53933362580526,
+        1.516422776556221,
+        1.5088530625485654,
+        2.090212677013116,
+        1.3642819138050997,
+        1.9832616068064177,
+        1.5032620296739474,
+        2.14105103144102,
+        1.5509759369692835,
+        1.5576479750778816
+      ]
+    }
+  },
+  "best_fixed_policy": {
+    "action": "l2c_prefetcher-next_line_llc_replacement-lru",
+    "total_ipc": 147.12029841675854
+  },
+  "per_step_comparison": {
+    "steps_evaluated": 100,
+    "results": [
+      {
+        "step": 0,
+        "skip_instructions": 1000000,
+        "rl_action": {
+          "l2c_prefetcher": "ip_stride",
+          "llc_replacement": "lru"
+        },
+        "rl_ipc": 1.3562148233539024,
+        "best_action": {
+          "l2c_prefetcher": "next_line",
+          "llc_replacement": "lru"
+        },
+        "best_ipc": 1.4247926936995983,
+        "per_action_ipc": {
+          "l2c_prefetcher-no_llc_replacement-lru": 1.3348617423863205,
+          "l2c_prefetcher-no_llc_replacement-srrip": 1.3348617423863205,
+          "l2c_prefetcher-no_llc_replacement-random": 1.3348617423863205,
+          "l2c_prefetcher-next_line_llc_replacement-lru": 1.4247926936995983,
+          "l2c_prefetcher-next_line_llc_replacement-srrip": 1.4247926936995983,
+          "l2c_prefetcher-next_line_llc_replacement-random": 1.4247926936995983,
+          "l2c_prefetcher-ip_stride_llc_replacement-lru": 1.3562148233539024,
+          "l2c_prefetcher-ip_stride_llc_replacement-srrip": 1.3562148233539024,
+          "l2c_prefetcher-ip_stride_llc_replacement-random": 1.3562148233539024
+        }
+      },
+      {
+        "step": 1,
+        "skip_instructions": 1200100,
+        "rl_action": {
+          "l2c_prefetcher": "ip_stride",
+          "llc_replacement": "srrip"
+        },
+        "rl_ipc": 1.4227059325650875,
+        "best_action": {
+          "l2c_prefetcher": "next_line",
+          "llc_replacement": "lru"
+        },
+        "best_ipc": 1.4811271151923575,
+        "per_action_ipc": {
+          "l2c_prefetcher-no_llc_replacement-lru": 1.4018840945411726,
+          "l2c_prefetcher-no_llc_replacement-srrip": 1.4018840945411726,
+          "l2c_prefetcher-no_llc_replacement-random": 1.4018840945411726,
+          "l2c_prefetcher-next_line_llc_replacement-lru": 1.4811271151923575,
+          "l2c_prefetcher-next_line_llc_replacement-srrip": 1.4811271151923575,
+          "l2c_prefetcher-next_line_llc_replacement-random": 1.4811271151923575,
+          "l2c_prefetcher-ip_stride_llc_replacement-lru": 1.4227059325650875,
+          "l2c_prefetcher-ip_stride_llc_replacement-srrip": 1.4227059325650875,
+          "l2c_prefetcher-ip_stride_llc_replacement-random": 1.4227059325650875
+        }
+      },
+      {
+        "step": 2,
+        "skip_instructions": 1400200,
+        "rl_action": {
+          "l2c_prefetcher": "ip_stride",
+          "llc_replacement": "srrip"
+        },
+        "rl_ipc": 1.38699140758823,
+        "best_action": {
+          "l2c_prefetcher": "next_line",
+          "llc_replacement": "lru"
+        },
+        "best_ipc": 1.4574603752960467,
+        "per_action_ipc": {
+          "l2c_prefetcher-no_llc_replacement-lru": 1.3671754838092243,
+          "l2c_prefetcher-no_llc_replacement-srrip": 1.3671754838092243,
+          "l2c_prefetcher-no_llc_replacement-random": 1.3671754838092243,
+          "l2c_prefetcher-next_line_llc_replacement-lru": 1.4574603752960467,
+          "l2c_prefetcher-next_line_llc_replacement-srrip": 1.4574603752960467,
+          "l2c_prefetcher-next_line_llc_replacement-random": 1.4574603752960467,
+          "l2c_prefetcher-ip_stride_llc_replacement-lru": 1.38699140758823,
+          "l2c_prefetcher-ip_stride_llc_replacement-srrip": 1.38699140758823,
+          "l2c_prefetcher-ip_stride_llc_replacement-random": 1.38699140758823
+        }
+      },
+      {
+        "step": 3,
+        "skip_instructions": 1600300,
+        "rl_action": {
+          "l2c_prefetcher": "ip_stride",
+          "llc_replacement": "srrip"
+        },
+        "rl_ipc": 1.4012190422811504,
+        "best_action": {
+          "l2c_prefetcher": "next_line",
+          "llc_replacement": "lru"
+        },
+        "best_ipc": 1.474698244398074,
+        "per_action_ipc": {
+          "l2c_prefetcher-no_llc_replacement-lru": 1.3805592561658302,
+          "l2c_prefetcher-no_llc_replacement-srrip": 1.3805592561658302,
+          "l2c_prefetcher-no_llc_replacement-random": 1.3805592561658302,
+          "l2c_prefetcher-next_line_llc_replacement-lru": 1.474698244398074,
+          "l2c_prefetcher-next_line_llc_replacement-srrip": 1.474698244398074,
+          "l2c_prefetcher-next_line_llc_replacement-random": 1.474698244398074,
+          "l2c_prefetcher-ip_stride_llc_replacement-lru": 1.4012190422811504,
+          "l2c_prefetcher-ip_stride_llc_replacement-srrip": 1.4012190422811504,
+          "l2c_prefetcher-ip_stride_llc_replacement-random": 1.4012190422811504
+        }
+      },
+      {
+        "step": 4,
+        "skip_instructions": 1800400,
+        "rl_action": {
+          "l2c_prefetcher": "ip_stride",
+          "llc_replacement": "srrip"
+        },
+        "rl_ipc": 1.4781712157158378,
+        "best_action": {
+          "l2c_prefetcher": "next_line",
+          "llc_replacement": "lru"
+        },
+        "best_ipc": 1.558842097879206,
+        "per_action_ipc": {
+          "l2c_prefetcher-no_llc_replacement-lru": 1.4452087954967519,
+          "l2c_prefetcher-no_llc_replacement-srrip": 1.4452087954967519,
+          "l2c_prefetcher-no_llc_replacement-random": 1.4452087954967519,
+          "l2c_prefetcher-next_line_llc_replacement-lru": 1.558842097879206,
+          "l2c_prefetcher-next_line_llc_replacement-srrip": 1.558842097879206,
+          "l2c_prefetcher-next_line_llc_replacement-random": 1.558842097879206,
+          "l2c_prefetcher-ip_stride_llc_replacement-lru": 1.4781712157158378,
+          "l2c_prefetcher-ip_stride_llc_replacement-srrip": 1.4781712157158378,
+          "l2c_prefetcher-ip_stride_llc_replacement-random": 1.4781712157158378
+        }
+      },
+      {
+        "step": 5,
+        "skip_instructions": 2000500,
+        "rl_action": {
+          "l2c_prefetcher": "ip_stride",
+          "llc_replacement": "srrip"
+        },
+        "rl_ipc": 1.382021462578688,
+        "best_action": {
+          "l2c_prefetcher": "next_line",
+          "llc_replacement": "lru"
+        },
+        "best_ipc": 1.4460205911273063,
+        "per_action_ipc": {
+          "l2c_prefetcher-no_llc_replacement-lru": 1.3644841960198395,
+          "l2c_prefetcher-no_llc_replacement-srrip": 1.3644841960198395,
+          "l2c_prefetcher-no_llc_replacement-random": 1.3644841960198395,
+          "l2c_prefetcher-next_line_llc_replacement-lru": 1.4460205911273063,
+          "l2c_prefetcher-next_line_llc_replacement-srrip": 1.4460205911273063,
+          "l2c_prefetcher-next_line_llc_replacement-random": 1.4460205911273063,
+          "l2c_prefetcher-ip_stride_llc_replacement-lru": 1.382021462578688,
+          "l2c_prefetcher-ip_stride_llc_replacement-srrip": 1.382021462578688,
+          "l2c_prefetcher-ip_stride_llc_replacement-random": 1.382021462578688
+        }
+      },
+      {
+        "step": 6,
+        "skip_instructions": 2200600,
+        "rl_action": {
+          "l2c_prefetcher": "ip_stride",
+          "llc_replacement": "srrip"
+        },
+        "rl_ipc": 0.6057540577949947,
+        "best_action": {
+          "l2c_prefetcher": "next_line",
+          "llc_replacement": "lru"
+        },
+        "best_ipc": 0.6527244719459022,
+        "per_action_ipc": {
+          "l2c_prefetcher-no_llc_replacement-lru": 0.5662001177696245,
+          "l2c_prefetcher-no_llc_replacement-srrip": 0.5662001177696245,
+          "l2c_prefetcher-no_llc_replacement-random": 0.5662001177696245,
+          "l2c_prefetcher-next_line_llc_replacement-lru": 0.6527244719459022,
+          "l2c_prefetcher-next_line_llc_replacement-srrip": 0.6527244719459022,
+          "l2c_prefetcher-next_line_llc_replacement-random": 0.6527244719459022,
+          "l2c_prefetcher-ip_stride_llc_replacement-lru": 0.6057540577949947,
+          "l2c_prefetcher-ip_stride_llc_replacement-srrip": 0.6057540577949947,
+          "l2c_prefetcher-ip_stride_llc_replacement-random": 0.6057540577949947
+        }
+      },
+      {
+        "step": 7,
+        "skip_instructions": 2400700,
+        "rl_action": {
+          "l2c_prefetcher": "ip_stride",
+          "llc_replacement": "lru"
+        },
+        "rl_ipc": 0.5755291964501537,
+        "best_action": {
+          "l2c_prefetcher": "next_line",
+          "llc_replacement": "lru"
+        },
+        "best_ipc": 0.6165810137157761,
+        "per_action_ipc": {
+          "l2c_prefetcher-no_llc_replacement-lru": 0.5383491068832973,
+          "l2c_prefetcher-no_llc_replacement-srrip": 0.5383491068832973,
+          "l2c_prefetcher-no_llc_replacement-random": 0.5383491068832973,
+          "l2c_prefetcher-next_line_llc_replacement-lru": 0.6165810137157761,
+          "l2c_prefetcher-next_line_llc_replacement-srrip": 0.6165810137157761,
+          "l2c_prefetcher-next_line_llc_replacement-random": 0.6165810137157761,
+          "l2c_prefetcher-ip_stride_llc_replacement-lru": 0.5755291964501537,
+          "l2c_prefetcher-ip_stride_llc_replacement-srrip": 0.5755291964501537,
+          "l2c_prefetcher-ip_stride_llc_replacement-random": 0.5755291964501537
+        }
+      },
+      {
+        "step": 8,
+        "skip_instructions": 2600800,
+        "rl_action": {
+          "l2c_prefetcher": "ip_stride",
+          "llc_replacement": "srrip"
+        },
+        "rl_ipc": 1.5277124262886126,
+        "best_action": {
+          "l2c_prefetcher": "next_line",
+          "llc_replacement": "lru"
+        },
+        "best_ipc": 1.6033895315744326,
+        "per_action_ipc": {
+          "l2c_prefetcher-no_llc_replacement-lru": 1.5056763430498674,
+          "l2c_prefetcher-no_llc_replacement-srrip": 1.5056763430498674,
+          "l2c_prefetcher-no_llc_replacement-random": 1.5056763430498674,
+          "l2c_prefetcher-next_line_llc_replacement-lru": 1.6033895315744326,
+          "l2c_prefetcher-next_line_llc_replacement-srrip": 1.6033895315744326,
+          "l2c_prefetcher-next_line_llc_replacement-random": 1.6033895315744326,
+          "l2c_prefetcher-ip_stride_llc_replacement-lru": 1.5277124262886126,
+          "l2c_prefetcher-ip_stride_llc_replacement-srrip": 1.5277124262886126,
+          "l2c_prefetcher-ip_stride_llc_replacement-random": 1.5277124262886126
+        }
+      },
+      {
+        "step": 9,
+        "skip_instructions": 2800900,
+        "rl_action": {
+          "l2c_prefetcher": "ip_stride",
+          "llc_replacement": "srrip"
+        },
+        "rl_ipc": 1.4745351597634881,
+        "best_action": {
+          "l2c_prefetcher": "next_line",
+          "llc_replacement": "lru"
+        },
+        "best_ipc": 1.562376964659563,
+        "per_action_ipc": {
+          "l2c_prefetcher-no_llc_replacement-lru": 1.4590239276334986,
+          "l2c_prefetcher-no_llc_replacement-srrip": 1.4590239276334986,
+          "l2c_prefetcher-no_llc_replacement-random": 1.4590239276334986,
+          "l2c_prefetcher-next_line_llc_replacement-lru": 1.562376964659563,
+          "l2c_prefetcher-next_line_llc_replacement-srrip": 1.562376964659563,
+          "l2c_prefetcher-next_line_llc_replacement-random": 1.562376964659563,
+          "l2c_prefetcher-ip_stride_llc_replacement-lru": 1.4745351597634881,
+          "l2c_prefetcher-ip_stride_llc_replacement-srrip": 1.4745351597634881,
+          "l2c_prefetcher-ip_stride_llc_replacement-random": 1.4745351597634881
+        }
+      },
+      {
+        "step": 10,
+        "skip_instructions": 3001000,
+        "rl_action": {
+          "l2c_prefetcher": "ip_stride",
+          "llc_replacement": "srrip"
+        },
+        "rl_ipc": 1.2883111529096507,
+        "best_action": {
+          "l2c_prefetcher": "next_line",
+          "llc_replacement": "lru"
+        },
+        "best_ipc": 1.3720432468031392,
+        "per_action_ipc": {
+          "l2c_prefetcher-no_llc_replacement-lru": 1.2722727243811984,
+          "l2c_prefetcher-no_llc_replacement-srrip": 1.2722727243811984,
+          "l2c_prefetcher-no_llc_replacement-random": 1.2722727243811984,
+          "l2c_prefetcher-next_line_llc_replacement-lru": 1.3720432468031392,
+          "l2c_prefetcher-next_line_llc_replacement-srrip": 1.3720432468031392,
+          "l2c_prefetcher-next_line_llc_replacement-random": 1.3720432468031392,
+          "l2c_prefetcher-ip_stride_llc_replacement-lru": 1.2883111529096507,
+          "l2c_prefetcher-ip_stride_llc_replacement-srrip": 1.2883111529096507,
+          "l2c_prefetcher-ip_stride_llc_replacement-random": 1.2883111529096507
+        }
+      },
+      {
+        "step": 11,
+        "skip_instructions": 3201100,
+        "rl_action": {
+          "l2c_prefetcher": "ip_stride",
+          "llc_replacement": "srrip"
+        },
+        "rl_ipc": 1.4410643648180306,
+        "best_action": {
+          "l2c_prefetcher": "next_line",
+          "llc_replacement": "lru"
+        },
+        "best_ipc": 1.5136110795777047,
+        "per_action_ipc": {
+          "l2c_prefetcher-no_llc_replacement-lru": 1.4204919138902108,
+          "l2c_prefetcher-no_llc_replacement-srrip": 1.4204919138902108,
+          "l2c_prefetcher-no_llc_replacement-random": 1.4204919138902108,
+          "l2c_prefetcher-next_line_llc_replacement-lru": 1.5136110795777047,
+          "l2c_prefetcher-next_line_llc_replacement-srrip": 1.5136110795777047,
+          "l2c_prefetcher-next_line_llc_replacement-random": 1.5136110795777047,
+          "l2c_prefetcher-ip_stride_llc_replacement-lru": 1.4410643648180306,
+          "l2c_prefetcher-ip_stride_llc_replacement-srrip": 1.4410643648180306,
+          "l2c_prefetcher-ip_stride_llc_replacement-random": 1.4410643648180306
+        }
+      },
+      {
+        "step": 12,
+        "skip_instructions": 3401200,
+        "rl_action": {
+          "l2c_prefetcher": "ip_stride",
+          "llc_replacement": "srrip"
+        },
+        "rl_ipc": 1.4030445457734129,
+        "best_action": {
+          "l2c_prefetcher": "next_line",
+          "llc_replacement": "lru"
+        },
+        "best_ipc": 1.4724690603626618,
+        "per_action_ipc": {
+          "l2c_prefetcher-no_llc_replacement-lru": 1.3858658370115786,
+          "l2c_prefetcher-no_llc_replacement-srrip": 1.3858658370115786,
+          "l2c_prefetcher-no_llc_replacement-random": 1.3858658370115786,
+          "l2c_prefetcher-next_line_llc_replacement-lru": 1.4724690603626618,
+          "l2c_prefetcher-next_line_llc_replacement-srrip": 1.4724690603626618,
+          "l2c_prefetcher-next_line_llc_replacement-random": 1.4724690603626618,
+          "l2c_prefetcher-ip_stride_llc_replacement-lru": 1.4030445457734129,
+          "l2c_prefetcher-ip_stride_llc_replacement-srrip": 1.4030445457734129,
+          "l2c_prefetcher-ip_stride_llc_replacement-random": 1.4030445457734129
+        }
+      },
+      {
+        "step": 13,
+        "skip_instructions": 3601300,
+        "rl_action": {
+          "l2c_prefetcher": "ip_stride",
+          "llc_replacement": "srrip"
+        },
+        "rl_ipc": 1.3736075053914094,
+        "best_action": {
+          "l2c_prefetcher": "next_line",
+          "llc_replacement": "lru"
+        },
+        "best_ipc": 1.4455985139247276,
+        "per_action_ipc": {
+          "l2c_prefetcher-no_llc_replacement-lru": 1.3635217038567211,
+          "l2c_prefetcher-no_llc_replacement-srrip": 1.3635217038567211,
+          "l2c_prefetcher-no_llc_replacement-random": 1.3635217038567211,
+          "l2c_prefetcher-next_line_llc_replacement-lru": 1.4455985139247276,
+          "l2c_prefetcher-next_line_llc_replacement-srrip": 1.4455985139247276,
+          "l2c_prefetcher-next_line_llc_replacement-random": 1.4455985139247276,
+          "l2c_prefetcher-ip_stride_llc_replacement-lru": 1.3736075053914094,
+          "l2c_prefetcher-ip_stride_llc_replacement-srrip": 1.3736075053914094,
+          "l2c_prefetcher-ip_stride_llc_replacement-random": 1.3736075053914094
+        }
+      },
+      {
+        "step": 14,
+        "skip_instructions": 3801400,
+        "rl_action": {
+          "l2c_prefetcher": "ip_stride",
+          "llc_replacement": "srrip"
+        },
+        "rl_ipc": 1.5222050552177122,
+        "best_action": {
+          "l2c_prefetcher": "next_line",
+          "llc_replacement": "lru"
+        },
+        "best_ipc": 1.5826995972049664,
+        "per_action_ipc": {
+          "l2c_prefetcher-no_llc_replacement-lru": 1.4835108592451935,
+          "l2c_prefetcher-no_llc_replacement-srrip": 1.4835108592451935,
+          "l2c_prefetcher-no_llc_replacement-random": 1.4835108592451935,
+          "l2c_prefetcher-next_line_llc_replacement-lru": 1.5826995972049664,
+          "l2c_prefetcher-next_line_llc_replacement-srrip": 1.5826995972049664,
+          "l2c_prefetcher-next_line_llc_replacement-random": 1.5826995972049664,
+          "l2c_prefetcher-ip_stride_llc_replacement-lru": 1.5222050552177122,
+          "l2c_prefetcher-ip_stride_llc_replacement-srrip": 1.5222050552177122,
+          "l2c_prefetcher-ip_stride_llc_replacement-random": 1.5222050552177122
+        }
+      },
+      {
+        "step": 15,
+        "skip_instructions": 4001500,
+        "rl_action": {
+          "l2c_prefetcher": "ip_stride",
+          "llc_replacement": "srrip"
+        },
+        "rl_ipc": 1.4920696498112531,
+        "best_action": {
+          "l2c_prefetcher": "next_line",
+          "llc_replacement": "lru"
+        },
+        "best_ipc": 1.5805653682322167,
+        "per_action_ipc": {
+          "l2c_prefetcher-no_llc_replacement-lru": 1.464632779946248,
+          "l2c_prefetcher-no_llc_replacement-srrip": 1.464632779946248,
+          "l2c_prefetcher-no_llc_replacement-random": 1.464632779946248,
+          "l2c_prefetcher-next_line_llc_replacement-lru": 1.5805653682322167,
+          "l2c_prefetcher-next_line_llc_replacement-srrip": 1.5805653682322167,
+          "l2c_prefetcher-next_line_llc_replacement-random": 1.5805653682322167,
+          "l2c_prefetcher-ip_stride_llc_replacement-lru": 1.4920696498112531,
+          "l2c_prefetcher-ip_stride_llc_replacement-srrip": 1.4920696498112531,
+          "l2c_prefetcher-ip_stride_llc_replacement-random": 1.4920696498112531
+        }
+      },
+      {
+        "step": 16,
+        "skip_instructions": 4201600,
+        "rl_action": {
+          "l2c_prefetcher": "ip_stride",
+          "llc_replacement": "lru"
+        },
+        "rl_ipc": 0.5910271602457454,
+        "best_action": {
+          "l2c_prefetcher": "next_line",
+          "llc_replacement": "lru"
+        },
+        "best_ipc": 0.6329589437339587,
+        "per_action_ipc": {
+          "l2c_prefetcher-no_llc_replacement-lru": 0.588470852004743,
+          "l2c_prefetcher-no_llc_replacement-srrip": 0.588470852004743,
+          "l2c_prefetcher-no_llc_replacement-random": 0.588470852004743,
+          "l2c_prefetcher-next_line_llc_replacement-lru": 0.6329589437339587,
+          "l2c_prefetcher-next_line_llc_replacement-srrip": 0.6329589437339587,
+          "l2c_prefetcher-next_line_llc_replacement-random": 0.6329589437339587,
+          "l2c_prefetcher-ip_stride_llc_replacement-lru": 0.5910271602457454,
+          "l2c_prefetcher-ip_stride_llc_replacement-srrip": 0.5910271602457454,
+          "l2c_prefetcher-ip_stride_llc_replacement-random": 0.5910271602457454
+        }
+      },
+      {
+        "step": 17,
+        "skip_instructions": 4401700,
+        "rl_action": {
+          "l2c_prefetcher": "next_line",
+          "llc_replacement": "random"
+        },
+        "rl_ipc": 0.5305638454498428,
+        "best_action": {
+          "l2c_prefetcher": "next_line",
+          "llc_replacement": "lru"
+        },
+        "best_ipc": 0.5305638454498428,
+        "per_action_ipc": {
+          "l2c_prefetcher-no_llc_replacement-lru": 0.45949727408693974,
+          "l2c_prefetcher-no_llc_replacement-srrip": 0.45949727408693974,
+          "l2c_prefetcher-no_llc_replacement-random": 0.45949727408693974,
+          "l2c_prefetcher-next_line_llc_replacement-lru": 0.5305638454498428,
+          "l2c_prefetcher-next_line_llc_replacement-srrip": 0.5305638454498428,
+          "l2c_prefetcher-next_line_llc_replacement-random": 0.5305638454498428,
+          "l2c_prefetcher-ip_stride_llc_replacement-lru": 0.4852793454683095,
+          "l2c_prefetcher-ip_stride_llc_replacement-srrip": 0.4852793454683095,
+          "l2c_prefetcher-ip_stride_llc_replacement-random": 0.4852793454683095
+        }
+      },
+      {
+        "step": 18,
+        "skip_instructions": 4601800,
+        "rl_action": {
+          "l2c_prefetcher": "ip_stride",
+          "llc_replacement": "srrip"
+        },
+        "rl_ipc": 1.050216081958863,
+        "best_action": {
+          "l2c_prefetcher": "next_line",
+          "llc_replacement": "lru"
+        },
+        "best_ipc": 1.105186085707181,
+        "per_action_ipc": {
+          "l2c_prefetcher-no_llc_replacement-lru": 1.0383137784238397,
+          "l2c_prefetcher-no_llc_replacement-srrip": 1.0383137784238397,
+          "l2c_prefetcher-no_llc_replacement-random": 1.0383137784238397,
+          "l2c_prefetcher-next_line_llc_replacement-lru": 1.105186085707181,
+          "l2c_prefetcher-next_line_llc_replacement-srrip": 1.105186085707181,
+          "l2c_prefetcher-next_line_llc_replacement-random": 1.105186085707181,
+          "l2c_prefetcher-ip_stride_llc_replacement-lru": 1.050216081958863,
+          "l2c_prefetcher-ip_stride_llc_replacement-srrip": 1.050216081958863,
+          "l2c_prefetcher-ip_stride_llc_replacement-random": 1.050216081958863
+        }
+      },
+      {
+        "step": 19,
+        "skip_instructions": 4801900,
+        "rl_action": {
+          "l2c_prefetcher": "ip_stride",
+          "llc_replacement": "srrip"
+        },
+        "rl_ipc": 1.0114291493880854,
+        "best_action": {
+          "l2c_prefetcher": "next_line",
+          "llc_replacement": "lru"
+        },
+        "best_ipc": 1.0685473099321472,
+        "per_action_ipc": {
+          "l2c_prefetcher-no_llc_replacement-lru": 0.9911785112498761,
+          "l2c_prefetcher-no_llc_replacement-srrip": 0.9911785112498761,
+          "l2c_prefetcher-no_llc_replacement-random": 0.9911785112498761,
+          "l2c_prefetcher-next_line_llc_replacement-lru": 1.0685473099321472,
+          "l2c_prefetcher-next_line_llc_replacement-srrip": 1.0685473099321472,
+          "l2c_prefetcher-next_line_llc_replacement-random": 1.0685473099321472,
+          "l2c_prefetcher-ip_stride_llc_replacement-lru": 1.0114291493880854,
+          "l2c_prefetcher-ip_stride_llc_replacement-srrip": 1.0114291493880854,
+          "l2c_prefetcher-ip_stride_llc_replacement-random": 1.0114291493880854
+        }
+      },
+      {
+        "step": 20,
+        "skip_instructions": 5002000,
+        "rl_action": {
+          "l2c_prefetcher": "ip_stride",
+          "llc_replacement": "srrip"
+        },
+        "rl_ipc": 1.098055901746449,
+        "best_action": {
+          "l2c_prefetcher": "next_line",
+          "llc_replacement": "lru"
+        },
+        "best_ipc": 1.1529428719663342,
+        "per_action_ipc": {
+          "l2c_prefetcher-no_llc_replacement-lru": 1.079237198961779,
+          "l2c_prefetcher-no_llc_replacement-srrip": 1.079237198961779,
+          "l2c_prefetcher-no_llc_replacement-random": 1.079237198961779,
+          "l2c_prefetcher-next_line_llc_replacement-lru": 1.1529428719663342,
+          "l2c_prefetcher-next_line_llc_replacement-srrip": 1.1529428719663342,
+          "l2c_prefetcher-next_line_llc_replacement-random": 1.1529428719663342,
+          "l2c_prefetcher-ip_stride_llc_replacement-lru": 1.098055901746449,
+          "l2c_prefetcher-ip_stride_llc_replacement-srrip": 1.098055901746449,
+          "l2c_prefetcher-ip_stride_llc_replacement-random": 1.098055901746449
+        }
+      },
+      {
+        "step": 21,
+        "skip_instructions": 5202100,
+        "rl_action": {
+          "l2c_prefetcher": "ip_stride",
+          "llc_replacement": "srrip"
+        },
+        "rl_ipc": 0.9707843898650617,
+        "best_action": {
+          "l2c_prefetcher": "next_line",
+          "llc_replacement": "lru"
+        },
+        "best_ipc": 1.020022950401632,
+        "per_action_ipc": {
+          "l2c_prefetcher-no_llc_replacement-lru": 0.9556622706422019,
+          "l2c_prefetcher-no_llc_replacement-srrip": 0.9556622706422019,
+          "l2c_prefetcher-no_llc_replacement-random": 0.9556622706422019,
+          "l2c_prefetcher-next_line_llc_replacement-lru": 1.020022950401632,
+          "l2c_prefetcher-next_line_llc_replacement-srrip": 1.020022950401632,
+          "l2c_prefetcher-next_line_llc_replacement-random": 1.020022950401632,
+          "l2c_prefetcher-ip_stride_llc_replacement-lru": 0.9707843898650617,
+          "l2c_prefetcher-ip_stride_llc_replacement-srrip": 0.9707843898650617,
+          "l2c_prefetcher-ip_stride_llc_replacement-random": 0.9707843898650617
+        }
+      },
+      {
+        "step": 22,
+        "skip_instructions": 5402200,
+        "rl_action": {
+          "l2c_prefetcher": "ip_stride",
+          "llc_replacement": "srrip"
+        },
+        "rl_ipc": 1.0336772032829589,
+        "best_action": {
+          "l2c_prefetcher": "next_line",
+          "llc_replacement": "lru"
+        },
+        "best_ipc": 1.0996019440962372,
+        "per_action_ipc": {
+          "l2c_prefetcher-no_llc_replacement-lru": 1.017293997965412,
+          "l2c_prefetcher-no_llc_replacement-srrip": 1.017293997965412,
+          "l2c_prefetcher-no_llc_replacement-random": 1.017293997965412,
+          "l2c_prefetcher-next_line_llc_replacement-lru": 1.0996019440962372,
+          "l2c_prefetcher-next_line_llc_replacement-srrip": 1.0996019440962372,
+          "l2c_prefetcher-next_line_llc_replacement-random": 1.0996019440962372,
+          "l2c_prefetcher-ip_stride_llc_replacement-lru": 1.0336772032829589,
+          "l2c_prefetcher-ip_stride_llc_replacement-srrip": 1.0336772032829589,
+          "l2c_prefetcher-ip_stride_llc_replacement-random": 1.0336772032829589
+        }
+      },
+      {
+        "step": 23,
+        "skip_instructions": 5602300,
+        "rl_action": {
+          "l2c_prefetcher": "ip_stride",
+          "llc_replacement": "srrip"
+        },
+        "rl_ipc": 1.0234469348070823,
+        "best_action": {
+          "l2c_prefetcher": "next_line",
+          "llc_replacement": "lru"
+        },
+        "best_ipc": 1.078439513628643,
+        "per_action_ipc": {
+          "l2c_prefetcher-no_llc_replacement-lru": 1.005616310933454,
+          "l2c_prefetcher-no_llc_replacement-srrip": 1.005616310933454,
+          "l2c_prefetcher-no_llc_replacement-random": 1.005616310933454,
+          "l2c_prefetcher-next_line_llc_replacement-lru": 1.078439513628643,
+          "l2c_prefetcher-next_line_llc_replacement-srrip": 1.078439513628643,
+          "l2c_prefetcher-next_line_llc_replacement-random": 1.078439513628643,
+          "l2c_prefetcher-ip_stride_llc_replacement-lru": 1.0234469348070823,
+          "l2c_prefetcher-ip_stride_llc_replacement-srrip": 1.0234469348070823,
+          "l2c_prefetcher-ip_stride_llc_replacement-random": 1.0234469348070823
+        }
+      },
+      {
+        "step": 24,
+        "skip_instructions": 5802400,
+        "rl_action": {
+          "l2c_prefetcher": "ip_stride",
+          "llc_replacement": "srrip"
+        },
+        "rl_ipc": 0.6389994696383956,
+        "best_action": {
+          "l2c_prefetcher": "next_line",
+          "llc_replacement": "lru"
+        },
+        "best_ipc": 0.6890881089294143,
+        "per_action_ipc": {
+          "l2c_prefetcher-no_llc_replacement-lru": 0.6371815334817944,
+          "l2c_prefetcher-no_llc_replacement-srrip": 0.6371815334817944,
+          "l2c_prefetcher-no_llc_replacement-random": 0.6371815334817944,
+          "l2c_prefetcher-next_line_llc_replacement-lru": 0.6890881089294143,
+          "l2c_prefetcher-next_line_llc_replacement-srrip": 0.6890881089294143,
+          "l2c_prefetcher-next_line_llc_replacement-random": 0.6890881089294143,
+          "l2c_prefetcher-ip_stride_llc_replacement-lru": 0.6389994696383956,
+          "l2c_prefetcher-ip_stride_llc_replacement-srrip": 0.6389994696383956,
+          "l2c_prefetcher-ip_stride_llc_replacement-random": 0.6389994696383956
+        }
+      },
+      {
+        "step": 25,
+        "skip_instructions": 6002500,
+        "rl_action": {
+          "l2c_prefetcher": "next_line",
+          "llc_replacement": "random"
+        },
+        "rl_ipc": 1.6021003220173344,
+        "best_action": {
+          "l2c_prefetcher": "next_line",
+          "llc_replacement": "lru"
+        },
+        "best_ipc": 1.6021003220173344,
+        "per_action_ipc": {
+          "l2c_prefetcher-no_llc_replacement-lru": 1.5014676626252768,
+          "l2c_prefetcher-no_llc_replacement-srrip": 1.5014676626252768,
+          "l2c_prefetcher-no_llc_replacement-random": 1.5014676626252768,
+          "l2c_prefetcher-next_line_llc_replacement-lru": 1.6021003220173344,
+          "l2c_prefetcher-next_line_llc_replacement-srrip": 1.6021003220173344,
+          "l2c_prefetcher-next_line_llc_replacement-random": 1.6021003220173344,
+          "l2c_prefetcher-ip_stride_llc_replacement-lru": 1.5239252678258484,
+          "l2c_prefetcher-ip_stride_llc_replacement-srrip": 1.5239252678258484,
+          "l2c_prefetcher-ip_stride_llc_replacement-random": 1.5239252678258484
+        }
+      },
+      {
+        "step": 26,
+        "skip_instructions": 6202600,
+        "rl_action": {
+          "l2c_prefetcher": "ip_stride",
+          "llc_replacement": "srrip"
+        },
+        "rl_ipc": 1.3414535991200065,
+        "best_action": {
+          "l2c_prefetcher": "next_line",
+          "llc_replacement": "lru"
+        },
+        "best_ipc": 1.4078558355624384,
+        "per_action_ipc": {
+          "l2c_prefetcher-no_llc_replacement-lru": 1.3309553597572337,
+          "l2c_prefetcher-no_llc_replacement-srrip": 1.3309553597572337,
+          "l2c_prefetcher-no_llc_replacement-random": 1.3309553597572337,
+          "l2c_prefetcher-next_line_llc_replacement-lru": 1.4078558355624384,
+          "l2c_prefetcher-next_line_llc_replacement-srrip": 1.4078558355624384,
+          "l2c_prefetcher-next_line_llc_replacement-random": 1.4078558355624384,
+          "l2c_prefetcher-ip_stride_llc_replacement-lru": 1.3414535991200065,
+          "l2c_prefetcher-ip_stride_llc_replacement-srrip": 1.3414535991200065,
+          "l2c_prefetcher-ip_stride_llc_replacement-random": 1.3414535991200065
+        }
+      },
+      {
+        "step": 27,
+        "skip_instructions": 6402700,
+        "rl_action": {
+          "l2c_prefetcher": "ip_stride",
+          "llc_replacement": "srrip"
+        },
+        "rl_ipc": 1.458895616018674,
+        "best_action": {
+          "l2c_prefetcher": "next_line",
+          "llc_replacement": "lru"
+        },
+        "best_ipc": 1.5330016939668718,
+        "per_action_ipc": {
+          "l2c_prefetcher-no_llc_replacement-lru": 1.4361522608626967,
+          "l2c_prefetcher-no_llc_replacement-srrip": 1.4361522608626967,
+          "l2c_prefetcher-no_llc_replacement-random": 1.4361522608626967,
+          "l2c_prefetcher-next_line_llc_replacement-lru": 1.5330016939668718,
+          "l2c_prefetcher-next_line_llc_replacement-srrip": 1.5330016939668718,
+          "l2c_prefetcher-next_line_llc_replacement-random": 1.5330016939668718,
+          "l2c_prefetcher-ip_stride_llc_replacement-lru": 1.458895616018674,
+          "l2c_prefetcher-ip_stride_llc_replacement-srrip": 1.458895616018674,
+          "l2c_prefetcher-ip_stride_llc_replacement-random": 1.458895616018674
+        }
+      },
+      {
+        "step": 28,
+        "skip_instructions": 6602800,
+        "rl_action": {
+          "l2c_prefetcher": "ip_stride",
+          "llc_replacement": "srrip"
+        },
+        "rl_ipc": 1.4251307557468398,
+        "best_action": {
+          "l2c_prefetcher": "next_line",
+          "llc_replacement": "lru"
+        },
+        "best_ipc": 1.4936631341533544,
+        "per_action_ipc": {
+          "l2c_prefetcher-no_llc_replacement-lru": 1.409363813174733,
+          "l2c_prefetcher-no_llc_replacement-srrip": 1.409363813174733,
+          "l2c_prefetcher-no_llc_replacement-random": 1.409363813174733,
+          "l2c_prefetcher-next_line_llc_replacement-lru": 1.4936631341533544,
+          "l2c_prefetcher-next_line_llc_replacement-srrip": 1.4936631341533544,
+          "l2c_prefetcher-next_line_llc_replacement-random": 1.4936631341533544,
+          "l2c_prefetcher-ip_stride_llc_replacement-lru": 1.4251307557468398,
+          "l2c_prefetcher-ip_stride_llc_replacement-srrip": 1.4251307557468398,
+          "l2c_prefetcher-ip_stride_llc_replacement-random": 1.4251307557468398
+        }
+      },
+      {
+        "step": 29,
+        "skip_instructions": 6802900,
+        "rl_action": {
+          "l2c_prefetcher": "ip_stride",
+          "llc_replacement": "srrip"
+        },
+        "rl_ipc": 1.409998096540639,
+        "best_action": {
+          "l2c_prefetcher": "next_line",
+          "llc_replacement": "lru"
+        },
+        "best_ipc": 1.4775709219858155,
+        "per_action_ipc": {
+          "l2c_prefetcher-no_llc_replacement-lru": 1.39272732337089,
+          "l2c_prefetcher-no_llc_replacement-srrip": 1.39272732337089,
+          "l2c_prefetcher-no_llc_replacement-random": 1.39272732337089,
+          "l2c_prefetcher-next_line_llc_replacement-lru": 1.4775709219858155,
+          "l2c_prefetcher-next_line_llc_replacement-srrip": 1.4775709219858155,
+          "l2c_prefetcher-next_line_llc_replacement-random": 1.4775709219858155,
+          "l2c_prefetcher-ip_stride_llc_replacement-lru": 1.409998096540639,
+          "l2c_prefetcher-ip_stride_llc_replacement-srrip": 1.409998096540639,
+          "l2c_prefetcher-ip_stride_llc_replacement-random": 1.409998096540639
+        }
+      },
+      {
+        "step": 30,
+        "skip_instructions": 7003000,
+        "rl_action": {
+          "l2c_prefetcher": "ip_stride",
+          "llc_replacement": "srrip"
+        },
+        "rl_ipc": 1.4490935964874148,
+        "best_action": {
+          "l2c_prefetcher": "next_line",
+          "llc_replacement": "lru"
+        },
+        "best_ipc": 1.5082690436867945,
+        "per_action_ipc": {
+          "l2c_prefetcher-no_llc_replacement-lru": 1.4269783171728847,
+          "l2c_prefetcher-no_llc_replacement-srrip": 1.4269783171728847,
+          "l2c_prefetcher-no_llc_replacement-random": 1.4269783171728847,
+          "l2c_prefetcher-next_line_llc_replacement-lru": 1.5082690436867945,
+          "l2c_prefetcher-next_line_llc_replacement-srrip": 1.5082690436867945,
+          "l2c_prefetcher-next_line_llc_replacement-random": 1.5082690436867945,
+          "l2c_prefetcher-ip_stride_llc_replacement-lru": 1.4490935964874148,
+          "l2c_prefetcher-ip_stride_llc_replacement-srrip": 1.4490935964874148,
+          "l2c_prefetcher-ip_stride_llc_replacement-random": 1.4490935964874148
+        }
+      },
+      {
+        "step": 31,
+        "skip_instructions": 7203100,
+        "rl_action": {
+          "l2c_prefetcher": "ip_stride",
+          "llc_replacement": "srrip"
+        },
+        "rl_ipc": 1.4372534224426,
+        "best_action": {
+          "l2c_prefetcher": "next_line",
+          "llc_replacement": "lru"
+        },
+        "best_ipc": 1.5208276302582353,
+        "per_action_ipc": {
+          "l2c_prefetcher-no_llc_replacement-lru": 1.4188996488240928,
+          "l2c_prefetcher-no_llc_replacement-srrip": 1.4188996488240928,
+          "l2c_prefetcher-no_llc_replacement-random": 1.4188996488240928,
+          "l2c_prefetcher-next_line_llc_replacement-lru": 1.5208276302582353,
+          "l2c_prefetcher-next_line_llc_replacement-srrip": 1.5208276302582353,
+          "l2c_prefetcher-next_line_llc_replacement-random": 1.5208276302582353,
+          "l2c_prefetcher-ip_stride_llc_replacement-lru": 1.4372534224426,
+          "l2c_prefetcher-ip_stride_llc_replacement-srrip": 1.4372534224426,
+          "l2c_prefetcher-ip_stride_llc_replacement-random": 1.4372534224426
+        }
+      },
+      {
+        "step": 32,
+        "skip_instructions": 7403200,
+        "rl_action": {
+          "l2c_prefetcher": "ip_stride",
+          "llc_replacement": "srrip"
+        },
+        "rl_ipc": 1.00756667439119,
+        "best_action": {
+          "l2c_prefetcher": "next_line",
+          "llc_replacement": "lru"
+        },
+        "best_ipc": 1.0603822601595843,
+        "per_action_ipc": {
+          "l2c_prefetcher-no_llc_replacement-lru": 0.9933644581305254,
+          "l2c_prefetcher-no_llc_replacement-srrip": 0.9933644581305254,
+          "l2c_prefetcher-no_llc_replacement-random": 0.9933644581305254,
+          "l2c_prefetcher-next_line_llc_replacement-lru": 1.0603822601595843,
+          "l2c_prefetcher-next_line_llc_replacement-srrip": 1.0603822601595843,
+          "l2c_prefetcher-next_line_llc_replacement-random": 1.0603822601595843,
+          "l2c_prefetcher-ip_stride_llc_replacement-lru": 1.00756667439119,
+          "l2c_prefetcher-ip_stride_llc_replacement-srrip": 1.00756667439119,
+          "l2c_prefetcher-ip_stride_llc_replacement-random": 1.00756667439119
+        }
+      },
+      {
+        "step": 33,
+        "skip_instructions": 7603300,
+        "rl_action": {
+          "l2c_prefetcher": "ip_stride",
+          "llc_replacement": "srrip"
+        },
+        "rl_ipc": 0.5390048941399681,
+        "best_action": {
+          "l2c_prefetcher": "next_line",
+          "llc_replacement": "lru"
+        },
+        "best_ipc": 0.57726010633078,
+        "per_action_ipc": {
+          "l2c_prefetcher-no_llc_replacement-lru": 0.5062598720181443,
+          "l2c_prefetcher-no_llc_replacement-srrip": 0.5062598720181443,
+          "l2c_prefetcher-no_llc_replacement-random": 0.5062598720181443,
+          "l2c_prefetcher-next_line_llc_replacement-lru": 0.57726010633078,
+          "l2c_prefetcher-next_line_llc_replacement-srrip": 0.57726010633078,
+          "l2c_prefetcher-next_line_llc_replacement-random": 0.57726010633078,
+          "l2c_prefetcher-ip_stride_llc_replacement-lru": 0.5390048941399681,
+          "l2c_prefetcher-ip_stride_llc_replacement-srrip": 0.5390048941399681,
+          "l2c_prefetcher-ip_stride_llc_replacement-random": 0.5390048941399681
+        }
+      },
+      {
+        "step": 34,
+        "skip_instructions": 7803400,
+        "rl_action": {
+          "l2c_prefetcher": "ip_stride",
+          "llc_replacement": "srrip"
+        },
+        "rl_ipc": 1.3166016049293319,
+        "best_action": {
+          "l2c_prefetcher": "next_line",
+          "llc_replacement": "lru"
+        },
+        "best_ipc": 1.370480008222839,
+        "per_action_ipc": {
+          "l2c_prefetcher-no_llc_replacement-lru": 1.2984717064429845,
+          "l2c_prefetcher-no_llc_replacement-srrip": 1.2984717064429845,
+          "l2c_prefetcher-no_llc_replacement-random": 1.2984717064429845,
+          "l2c_prefetcher-next_line_llc_replacement-lru": 1.370480008222839,
+          "l2c_prefetcher-next_line_llc_replacement-srrip": 1.370480008222839,
+          "l2c_prefetcher-next_line_llc_replacement-random": 1.370480008222839,
+          "l2c_prefetcher-ip_stride_llc_replacement-lru": 1.3166016049293319,
+          "l2c_prefetcher-ip_stride_llc_replacement-srrip": 1.3166016049293319,
+          "l2c_prefetcher-ip_stride_llc_replacement-random": 1.3166016049293319
+        }
+      },
+      {
+        "step": 35,
+        "skip_instructions": 8003500,
+        "rl_action": {
+          "l2c_prefetcher": "ip_stride",
+          "llc_replacement": "srrip"
+        },
+        "rl_ipc": 1.3794261673218842,
+        "best_action": {
+          "l2c_prefetcher": "next_line",
+          "llc_replacement": "lru"
+        },
+        "best_ipc": 1.4571742900024771,
+        "per_action_ipc": {
+          "l2c_prefetcher-no_llc_replacement-lru": 1.3719063820446689,
+          "l2c_prefetcher-no_llc_replacement-srrip": 1.3719063820446689,
+          "l2c_prefetcher-no_llc_replacement-random": 1.3719063820446689,
+          "l2c_prefetcher-next_line_llc_replacement-lru": 1.4571742900024771,
+          "l2c_prefetcher-next_line_llc_replacement-srrip": 1.4571742900024771,
+          "l2c_prefetcher-next_line_llc_replacement-random": 1.4571742900024771,
+          "l2c_prefetcher-ip_stride_llc_replacement-lru": 1.3794261673218842,
+          "l2c_prefetcher-ip_stride_llc_replacement-srrip": 1.3794261673218842,
+          "l2c_prefetcher-ip_stride_llc_replacement-random": 1.3794261673218842
+        }
+      },
+      {
+        "step": 36,
+        "skip_instructions": 8203600,
+        "rl_action": {
+          "l2c_prefetcher": "ip_stride",
+          "llc_replacement": "srrip"
+        },
+        "rl_ipc": 1.26000126000126,
+        "best_action": {
+          "l2c_prefetcher": "next_line",
+          "llc_replacement": "lru"
+        },
+        "best_ipc": 1.3250385917489846,
+        "per_action_ipc": {
+          "l2c_prefetcher-no_llc_replacement-lru": 1.2553745723880363,
+          "l2c_prefetcher-no_llc_replacement-srrip": 1.2553745723880363,
+          "l2c_prefetcher-no_llc_replacement-random": 1.2553745723880363,
+          "l2c_prefetcher-next_line_llc_replacement-lru": 1.3250385917489846,
+          "l2c_prefetcher-next_line_llc_replacement-srrip": 1.3250385917489846,
+          "l2c_prefetcher-next_line_llc_replacement-random": 1.3250385917489846,
+          "l2c_prefetcher-ip_stride_llc_replacement-lru": 1.26000126000126,
+          "l2c_prefetcher-ip_stride_llc_replacement-srrip": 1.26000126000126,
+          "l2c_prefetcher-ip_stride_llc_replacement-random": 1.26000126000126
+        }
+      },
+      {
+        "step": 37,
+        "skip_instructions": 8403700,
+        "rl_action": {
+          "l2c_prefetcher": "ip_stride",
+          "llc_replacement": "srrip"
+        },
+        "rl_ipc": 1.3209428890341925,
+        "best_action": {
+          "l2c_prefetcher": "next_line",
+          "llc_replacement": "lru"
+        },
+        "best_ipc": 1.3844087882269878,
+        "per_action_ipc": {
+          "l2c_prefetcher-no_llc_replacement-lru": 1.306301598913157,
+          "l2c_prefetcher-no_llc_replacement-srrip": 1.306301598913157,
+          "l2c_prefetcher-no_llc_replacement-random": 1.306301598913157,
+          "l2c_prefetcher-next_line_llc_replacement-lru": 1.3844087882269878,
+          "l2c_prefetcher-next_line_llc_replacement-srrip": 1.3844087882269878,
+          "l2c_prefetcher-next_line_llc_replacement-random": 1.3844087882269878,
+          "l2c_prefetcher-ip_stride_llc_replacement-lru": 1.3209428890341925,
+          "l2c_prefetcher-ip_stride_llc_replacement-srrip": 1.3209428890341925,
+          "l2c_prefetcher-ip_stride_llc_replacement-random": 1.3209428890341925
+        }
+      },
+      {
+        "step": 38,
+        "skip_instructions": 8603800,
+        "rl_action": {
+          "l2c_prefetcher": "ip_stride",
+          "llc_replacement": "srrip"
+        },
+        "rl_ipc": 1.3013892051924392,
+        "best_action": {
+          "l2c_prefetcher": "next_line",
+          "llc_replacement": "lru"
+        },
+        "best_ipc": 1.3692058080548766,
+        "per_action_ipc": {
+          "l2c_prefetcher-no_llc_replacement-lru": 1.2932686711930166,
+          "l2c_prefetcher-no_llc_replacement-srrip": 1.2932686711930166,
+          "l2c_prefetcher-no_llc_replacement-random": 1.2932686711930166,
+          "l2c_prefetcher-next_line_llc_replacement-lru": 1.3692058080548766,
+          "l2c_prefetcher-next_line_llc_replacement-srrip": 1.3692058080548766,
+          "l2c_prefetcher-next_line_llc_replacement-random": 1.3692058080548766,
+          "l2c_prefetcher-ip_stride_llc_replacement-lru": 1.3013892051924392,
+          "l2c_prefetcher-ip_stride_llc_replacement-srrip": 1.3013892051924392,
+          "l2c_prefetcher-ip_stride_llc_replacement-random": 1.3013892051924392
+        }
+      },
+      {
+        "step": 39,
+        "skip_instructions": 8803900,
+        "rl_action": {
+          "l2c_prefetcher": "ip_stride",
+          "llc_replacement": "srrip"
+        },
+        "rl_ipc": 1.3738356917158951,
+        "best_action": {
+          "l2c_prefetcher": "next_line",
+          "llc_replacement": "lru"
+        },
+        "best_ipc": 1.4420346804138577,
+        "per_action_ipc": {
+          "l2c_prefetcher-no_llc_replacement-lru": 1.364444474764978,
+          "l2c_prefetcher-no_llc_replacement-srrip": 1.364444474764978,
+          "l2c_prefetcher-no_llc_replacement-random": 1.364444474764978,
+          "l2c_prefetcher-next_line_llc_replacement-lru": 1.4420346804138577,
+          "l2c_prefetcher-next_line_llc_replacement-srrip": 1.4420346804138577,
+          "l2c_prefetcher-next_line_llc_replacement-random": 1.4420346804138577,
+          "l2c_prefetcher-ip_stride_llc_replacement-lru": 1.3738356917158951,
+          "l2c_prefetcher-ip_stride_llc_replacement-srrip": 1.3738356917158951,
+          "l2c_prefetcher-ip_stride_llc_replacement-random": 1.3738356917158951
+        }
+      },
+      {
+        "step": 40,
+        "skip_instructions": 9004000,
+        "rl_action": {
+          "l2c_prefetcher": "ip_stride",
+          "llc_replacement": "srrip"
+        },
+        "rl_ipc": 1.2222792607802875,
+        "best_action": {
+          "l2c_prefetcher": "next_line",
+          "llc_replacement": "lru"
+        },
+        "best_ipc": 1.2689803946450098,
+        "per_action_ipc": {
+          "l2c_prefetcher-no_llc_replacement-lru": 1.2130497279790389,
+          "l2c_prefetcher-no_llc_replacement-srrip": 1.2130497279790389,
+          "l2c_prefetcher-no_llc_replacement-random": 1.2130497279790389,
+          "l2c_prefetcher-next_line_llc_replacement-lru": 1.2689803946450098,
+          "l2c_prefetcher-next_line_llc_replacement-srrip": 1.2689803946450098,
+          "l2c_prefetcher-next_line_llc_replacement-random": 1.2689803946450098,
+          "l2c_prefetcher-ip_stride_llc_replacement-lru": 1.2222792607802875,
+          "l2c_prefetcher-ip_stride_llc_replacement-srrip": 1.2222792607802875,
+          "l2c_prefetcher-ip_stride_llc_replacement-random": 1.2222792607802875
+        }
+      },
+      {
+        "step": 41,
+        "skip_instructions": 9204100,
+        "rl_action": {
+          "l2c_prefetcher": "ip_stride",
+          "llc_replacement": "srrip"
+        },
+        "rl_ipc": 1.4264796085759526,
+        "best_action": {
+          "l2c_prefetcher": "next_line",
+          "llc_replacement": "lru"
+        },
+        "best_ipc": 1.4839511485724461,
+        "per_action_ipc": {
+          "l2c_prefetcher-no_llc_replacement-lru": 1.3943181818181818,
+          "l2c_prefetcher-no_llc_replacement-srrip": 1.3943181818181818,
+          "l2c_prefetcher-no_llc_replacement-random": 1.3943181818181818,
+          "l2c_prefetcher-next_line_llc_replacement-lru": 1.4839511485724461,
+          "l2c_prefetcher-next_line_llc_replacement-srrip": 1.4839511485724461,
+          "l2c_prefetcher-next_line_llc_replacement-random": 1.4839511485724461,
+          "l2c_prefetcher-ip_stride_llc_replacement-lru": 1.4264796085759526,
+          "l2c_prefetcher-ip_stride_llc_replacement-srrip": 1.4264796085759526,
+          "l2c_prefetcher-ip_stride_llc_replacement-random": 1.4264796085759526
+        }
+      },
+      {
+        "step": 42,
+        "skip_instructions": 9404200,
+        "rl_action": {
+          "l2c_prefetcher": "ip_stride",
+          "llc_replacement": "srrip"
+        },
+        "rl_ipc": 1.338542468393824,
+        "best_action": {
+          "l2c_prefetcher": "next_line",
+          "llc_replacement": "lru"
+        },
+        "best_ipc": 1.4031219306861231,
+        "per_action_ipc": {
+          "l2c_prefetcher-no_llc_replacement-lru": 1.3208709779679821,
+          "l2c_prefetcher-no_llc_replacement-srrip": 1.3208709779679821,
+          "l2c_prefetcher-no_llc_replacement-random": 1.3208709779679821,
+          "l2c_prefetcher-next_line_llc_replacement-lru": 1.4031219306861231,
+          "l2c_prefetcher-next_line_llc_replacement-srrip": 1.4031219306861231,
+          "l2c_prefetcher-next_line_llc_replacement-random": 1.4031219306861231,
+          "l2c_prefetcher-ip_stride_llc_replacement-lru": 1.338542468393824,
+          "l2c_prefetcher-ip_stride_llc_replacement-srrip": 1.338542468393824,
+          "l2c_prefetcher-ip_stride_llc_replacement-random": 1.338542468393824
+        }
+      },
+      {
+        "step": 43,
+        "skip_instructions": 9604300,
+        "rl_action": {
+          "l2c_prefetcher": "ip_stride",
+          "llc_replacement": "srrip"
+        },
+        "rl_ipc": 1.2240937161463274,
+        "best_action": {
+          "l2c_prefetcher": "next_line",
+          "llc_replacement": "lru"
+        },
+        "best_ipc": 1.2867841494720995,
+        "per_action_ipc": {
+          "l2c_prefetcher-no_llc_replacement-lru": 1.2110556719508798,
+          "l2c_prefetcher-no_llc_replacement-srrip": 1.2110556719508798,
+          "l2c_prefetcher-no_llc_replacement-random": 1.2110556719508798,
+          "l2c_prefetcher-next_line_llc_replacement-lru": 1.2867841494720995,
+          "l2c_prefetcher-next_line_llc_replacement-srrip": 1.2867841494720995,
+          "l2c_prefetcher-next_line_llc_replacement-random": 1.2867841494720995,
+          "l2c_prefetcher-ip_stride_llc_replacement-lru": 1.2240937161463274,
+          "l2c_prefetcher-ip_stride_llc_replacement-srrip": 1.2240937161463274,
+          "l2c_prefetcher-ip_stride_llc_replacement-random": 1.2240937161463274
+        }
+      },
+      {
+        "step": 44,
+        "skip_instructions": 9804400,
+        "rl_action": {
+          "l2c_prefetcher": "ip_stride",
+          "llc_replacement": "srrip"
+        },
+        "rl_ipc": 0.5844603677424633,
+        "best_action": {
+          "l2c_prefetcher": "next_line",
+          "llc_replacement": "lru"
+        },
+        "best_ipc": 0.6325490779015817,
+        "per_action_ipc": {
+          "l2c_prefetcher-no_llc_replacement-lru": 0.5486276080384918,
+          "l2c_prefetcher-no_llc_replacement-srrip": 0.5486276080384918,
+          "l2c_prefetcher-no_llc_replacement-random": 0.5486276080384918,
+          "l2c_prefetcher-next_line_llc_replacement-lru": 0.6325490779015817,
+          "l2c_prefetcher-next_line_llc_replacement-srrip": 0.6325490779015817,
+          "l2c_prefetcher-next_line_llc_replacement-random": 0.6325490779015817,
+          "l2c_prefetcher-ip_stride_llc_replacement-lru": 0.5844603677424633,
+          "l2c_prefetcher-ip_stride_llc_replacement-srrip": 0.5844603677424633,
+          "l2c_prefetcher-ip_stride_llc_replacement-random": 0.5844603677424633
+        }
+      },
+      {
+        "step": 45,
+        "skip_instructions": 10004500,
+        "rl_action": {
+          "l2c_prefetcher": "ip_stride",
+          "llc_replacement": "lru"
+        },
+        "rl_ipc": 1.405448898133573,
+        "best_action": {
+          "l2c_prefetcher": "next_line",
+          "llc_replacement": "lru"
+        },
+        "best_ipc": 1.4761528696268305,
+        "per_action_ipc": {
+          "l2c_prefetcher-no_llc_replacement-lru": 1.3910306790282307,
+          "l2c_prefetcher-no_llc_replacement-srrip": 1.3910306790282307,
+          "l2c_prefetcher-no_llc_replacement-random": 1.3910306790282307,
+          "l2c_prefetcher-next_line_llc_replacement-lru": 1.4761528696268305,
+          "l2c_prefetcher-next_line_llc_replacement-srrip": 1.4761528696268305,
+          "l2c_prefetcher-next_line_llc_replacement-random": 1.4761528696268305,
+          "l2c_prefetcher-ip_stride_llc_replacement-lru": 1.405448898133573,
+          "l2c_prefetcher-ip_stride_llc_replacement-srrip": 1.405448898133573,
+          "l2c_prefetcher-ip_stride_llc_replacement-random": 1.405448898133573
+        }
+      },
+      {
+        "step": 46,
+        "skip_instructions": 10204600,
+        "rl_action": {
+          "l2c_prefetcher": "ip_stride",
+          "llc_replacement": "srrip"
+        },
+        "rl_ipc": 1.5198911779680981,
+        "best_action": {
+          "l2c_prefetcher": "next_line",
+          "llc_replacement": "lru"
+        },
+        "best_ipc": 1.5888212770690011,
+        "per_action_ipc": {
+          "l2c_prefetcher-no_llc_replacement-lru": 1.4960616963504305,
+          "l2c_prefetcher-no_llc_replacement-srrip": 1.4960616963504305,
+          "l2c_prefetcher-no_llc_replacement-random": 1.4960616963504305,
+          "l2c_prefetcher-next_line_llc_replacement-lru": 1.5888212770690011,
+          "l2c_prefetcher-next_line_llc_replacement-srrip": 1.5888212770690011,
+          "l2c_prefetcher-next_line_llc_replacement-random": 1.5888212770690011,
+          "l2c_prefetcher-ip_stride_llc_replacement-lru": 1.5198911779680981,
+          "l2c_prefetcher-ip_stride_llc_replacement-srrip": 1.5198911779680981,
+          "l2c_prefetcher-ip_stride_llc_replacement-random": 1.5198911779680981
+        }
+      },
+      {
+        "step": 47,
+        "skip_instructions": 10404700,
+        "rl_action": {
+          "l2c_prefetcher": "ip_stride",
+          "llc_replacement": "srrip"
+        },
+        "rl_ipc": 1.293605158819991,
+        "best_action": {
+          "l2c_prefetcher": "next_line",
+          "llc_replacement": "lru"
+        },
+        "best_ipc": 1.3809500794034386,
+        "per_action_ipc": {
+          "l2c_prefetcher-no_llc_replacement-lru": 1.2850690071705775,
+          "l2c_prefetcher-no_llc_replacement-srrip": 1.2850690071705775,
+          "l2c_prefetcher-no_llc_replacement-random": 1.2850690071705775,
+          "l2c_prefetcher-next_line_llc_replacement-lru": 1.3809500794034386,
+          "l2c_prefetcher-next_line_llc_replacement-srrip": 1.3809500794034386,
+          "l2c_prefetcher-next_line_llc_replacement-random": 1.3809500794034386,
+          "l2c_prefetcher-ip_stride_llc_replacement-lru": 1.293605158819991,
+          "l2c_prefetcher-ip_stride_llc_replacement-srrip": 1.293605158819991,
+          "l2c_prefetcher-ip_stride_llc_replacement-random": 1.293605158819991
+        }
+      },
+      {
+        "step": 48,
+        "skip_instructions": 10604800,
+        "rl_action": {
+          "l2c_prefetcher": "next_line",
+          "llc_replacement": "lru"
+        },
+        "rl_ipc": 1.5253319503656984,
+        "best_action": {
+          "l2c_prefetcher": "next_line",
+          "llc_replacement": "lru"
+        },
+        "best_ipc": 1.5253319503656984,
+        "per_action_ipc": {
+          "l2c_prefetcher-no_llc_replacement-lru": 1.42733780090065,
+          "l2c_prefetcher-no_llc_replacement-srrip": 1.42733780090065,
+          "l2c_prefetcher-no_llc_replacement-random": 1.42733780090065,
+          "l2c_prefetcher-next_line_llc_replacement-lru": 1.5253319503656984,
+          "l2c_prefetcher-next_line_llc_replacement-srrip": 1.5253319503656984,
+          "l2c_prefetcher-next_line_llc_replacement-random": 1.5253319503656984,
+          "l2c_prefetcher-ip_stride_llc_replacement-lru": 1.4543973704495543,
+          "l2c_prefetcher-ip_stride_llc_replacement-srrip": 1.4543973704495543,
+          "l2c_prefetcher-ip_stride_llc_replacement-random": 1.4543973704495543
+        }
+      },
+      {
+        "step": 49,
+        "skip_instructions": 10804900,
+        "rl_action": {
+          "l2c_prefetcher": "next_line",
+          "llc_replacement": "lru"
+        },
+        "rl_ipc": 1.5115213990432212,
+        "best_action": {
+          "l2c_prefetcher": "next_line",
+          "llc_replacement": "lru"
+        },
+        "best_ipc": 1.5115213990432212,
+        "per_action_ipc": {
+          "l2c_prefetcher-no_llc_replacement-lru": 1.4369889784598584,
+          "l2c_prefetcher-no_llc_replacement-srrip": 1.4369889784598584,
+          "l2c_prefetcher-no_llc_replacement-random": 1.4369889784598584,
+          "l2c_prefetcher-next_line_llc_replacement-lru": 1.5115213990432212,
+          "l2c_prefetcher-next_line_llc_replacement-srrip": 1.5115213990432212,
+          "l2c_prefetcher-next_line_llc_replacement-random": 1.5115213990432212,
+          "l2c_prefetcher-ip_stride_llc_replacement-lru": 1.4490975880132446,
+          "l2c_prefetcher-ip_stride_llc_replacement-srrip": 1.4490975880132446,
+          "l2c_prefetcher-ip_stride_llc_replacement-random": 1.4490975880132446
+        }
+      },
+      {
+        "step": 50,
+        "skip_instructions": 11005000,
+        "rl_action": {
+          "l2c_prefetcher": "next_line",
+          "llc_replacement": "lru"
+        },
+        "rl_ipc": 1.4587825122901197,
+        "best_action": {
+          "l2c_prefetcher": "next_line",
+          "llc_replacement": "lru"
+        },
+        "best_ipc": 1.4587825122901197,
+        "per_action_ipc": {
+          "l2c_prefetcher-no_llc_replacement-lru": 1.3628106325422298,
+          "l2c_prefetcher-no_llc_replacement-srrip": 1.3628106325422298,
+          "l2c_prefetcher-no_llc_replacement-random": 1.3628106325422298,
+          "l2c_prefetcher-next_line_llc_replacement-lru": 1.4587825122901197,
+          "l2c_prefetcher-next_line_llc_replacement-srrip": 1.4587825122901197,
+          "l2c_prefetcher-next_line_llc_replacement-random": 1.4587825122901197,
+          "l2c_prefetcher-ip_stride_llc_replacement-lru": 1.3846430772000027,
+          "l2c_prefetcher-ip_stride_llc_replacement-srrip": 1.3846430772000027,
+          "l2c_prefetcher-ip_stride_llc_replacement-random": 1.3846430772000027
+        }
+      },
+      {
+        "step": 51,
+        "skip_instructions": 11205100,
+        "rl_action": {
+          "l2c_prefetcher": "next_line",
+          "llc_replacement": "lru"
+        },
+        "rl_ipc": 1.6117593965572818,
+        "best_action": {
+          "l2c_prefetcher": "next_line",
+          "llc_replacement": "lru"
+        },
+        "best_ipc": 1.6117593965572818,
+        "per_action_ipc": {
+          "l2c_prefetcher-no_llc_replacement-lru": 1.49774589243189,
+          "l2c_prefetcher-no_llc_replacement-srrip": 1.49774589243189,
+          "l2c_prefetcher-no_llc_replacement-random": 1.49774589243189,
+          "l2c_prefetcher-next_line_llc_replacement-lru": 1.6117593965572818,
+          "l2c_prefetcher-next_line_llc_replacement-srrip": 1.6117593965572818,
+          "l2c_prefetcher-next_line_llc_replacement-random": 1.6117593965572818,
+          "l2c_prefetcher-ip_stride_llc_replacement-lru": 1.5374799166685884,
+          "l2c_prefetcher-ip_stride_llc_replacement-srrip": 1.5374799166685884,
+          "l2c_prefetcher-ip_stride_llc_replacement-random": 1.5374799166685884
+        }
+      },
+      {
+        "step": 52,
+        "skip_instructions": 11405200,
+        "rl_action": {
+          "l2c_prefetcher": "next_line",
+          "llc_replacement": "lru"
+        },
+        "rl_ipc": 1.507556627595824,
+        "best_action": {
+          "l2c_prefetcher": "next_line",
+          "llc_replacement": "lru"
+        },
+        "best_ipc": 1.507556627595824,
+        "per_action_ipc": {
+          "l2c_prefetcher-no_llc_replacement-lru": 1.4092645048549162,
+          "l2c_prefetcher-no_llc_replacement-srrip": 1.4092645048549162,
+          "l2c_prefetcher-no_llc_replacement-random": 1.4092645048549162,
+          "l2c_prefetcher-next_line_llc_replacement-lru": 1.507556627595824,
+          "l2c_prefetcher-next_line_llc_replacement-srrip": 1.507556627595824,
+          "l2c_prefetcher-next_line_llc_replacement-random": 1.507556627595824,
+          "l2c_prefetcher-ip_stride_llc_replacement-lru": 1.4360594528613484,
+          "l2c_prefetcher-ip_stride_llc_replacement-srrip": 1.4360594528613484,
+          "l2c_prefetcher-ip_stride_llc_replacement-random": 1.4360594528613484
+        }
+      },
+      {
+        "step": 53,
+        "skip_instructions": 11605300,
+        "rl_action": {
+          "l2c_prefetcher": "next_line",
+          "llc_replacement": "lru"
+        },
+        "rl_ipc": 0.7985785585945299,
+        "best_action": {
+          "l2c_prefetcher": "next_line",
+          "llc_replacement": "lru"
+        },
+        "best_ipc": 0.7985785585945299,
+        "per_action_ipc": {
+          "l2c_prefetcher-no_llc_replacement-lru": 0.7420197373302664,
+          "l2c_prefetcher-no_llc_replacement-srrip": 0.7420197373302664,
+          "l2c_prefetcher-no_llc_replacement-random": 0.7420197373302664,
+          "l2c_prefetcher-next_line_llc_replacement-lru": 0.7985785585945299,
+          "l2c_prefetcher-next_line_llc_replacement-srrip": 0.7985785585945299,
+          "l2c_prefetcher-next_line_llc_replacement-random": 0.7985785585945299,
+          "l2c_prefetcher-ip_stride_llc_replacement-lru": 0.7423447231480725,
+          "l2c_prefetcher-ip_stride_llc_replacement-srrip": 0.7423447231480725,
+          "l2c_prefetcher-ip_stride_llc_replacement-random": 0.7423447231480725
+        }
+      },
+      {
+        "step": 54,
+        "skip_instructions": 11805400,
+        "rl_action": {
+          "l2c_prefetcher": "ip_stride",
+          "llc_replacement": "random"
+        },
+        "rl_ipc": 1.5343106794626897,
+        "best_action": {
+          "l2c_prefetcher": "next_line",
+          "llc_replacement": "lru"
+        },
+        "best_ipc": 1.605088078327515,
+        "per_action_ipc": {
+          "l2c_prefetcher-no_llc_replacement-lru": 1.5169709427121651,
+          "l2c_prefetcher-no_llc_replacement-srrip": 1.5169709427121651,
+          "l2c_prefetcher-no_llc_replacement-random": 1.5169709427121651,
+          "l2c_prefetcher-next_line_llc_replacement-lru": 1.605088078327515,
+          "l2c_prefetcher-next_line_llc_replacement-srrip": 1.605088078327515,
+          "l2c_prefetcher-next_line_llc_replacement-random": 1.605088078327515,
+          "l2c_prefetcher-ip_stride_llc_replacement-lru": 1.5343106794626897,
+          "l2c_prefetcher-ip_stride_llc_replacement-srrip": 1.5343106794626897,
+          "l2c_prefetcher-ip_stride_llc_replacement-random": 1.5343106794626897
+        }
+      },
+      {
+        "step": 55,
+        "skip_instructions": 12005500,
+        "rl_action": {
+          "l2c_prefetcher": "ip_stride",
+          "llc_replacement": "random"
+        },
+        "rl_ipc": 1.4639968377826416,
+        "best_action": {
+          "l2c_prefetcher": "next_line",
+          "llc_replacement": "lru"
+        },
+        "best_ipc": 1.5486905886543494,
+        "per_action_ipc": {
+          "l2c_prefetcher-no_llc_replacement-lru": 1.4515756775195598,
+          "l2c_prefetcher-no_llc_replacement-srrip": 1.4515756775195598,
+          "l2c_prefetcher-no_llc_replacement-random": 1.4515756775195598,
+          "l2c_prefetcher-next_line_llc_replacement-lru": 1.5486905886543494,
+          "l2c_prefetcher-next_line_llc_replacement-srrip": 1.5486905886543494,
+          "l2c_prefetcher-next_line_llc_replacement-random": 1.5486905886543494,
+          "l2c_prefetcher-ip_stride_llc_replacement-lru": 1.4639968377826416,
+          "l2c_prefetcher-ip_stride_llc_replacement-srrip": 1.4639968377826416,
+          "l2c_prefetcher-ip_stride_llc_replacement-random": 1.4639968377826416
+        }
+      },
+      {
+        "step": 56,
+        "skip_instructions": 12205600,
+        "rl_action": {
+          "l2c_prefetcher": "ip_stride",
+          "llc_replacement": "lru"
+        },
+        "rl_ipc": 1.3934675222428916,
+        "best_action": {
+          "l2c_prefetcher": "next_line",
+          "llc_replacement": "lru"
+        },
+        "best_ipc": 1.4520538994322554,
+        "per_action_ipc": {
+          "l2c_prefetcher-no_llc_replacement-lru": 1.3783139338557064,
+          "l2c_prefetcher-no_llc_replacement-srrip": 1.3783139338557064,
+          "l2c_prefetcher-no_llc_replacement-random": 1.3783139338557064,
+          "l2c_prefetcher-next_line_llc_replacement-lru": 1.4520538994322554,
+          "l2c_prefetcher-next_line_llc_replacement-srrip": 1.4520538994322554,
+          "l2c_prefetcher-next_line_llc_replacement-random": 1.4520538994322554,
+          "l2c_prefetcher-ip_stride_llc_replacement-lru": 1.3934675222428916,
+          "l2c_prefetcher-ip_stride_llc_replacement-srrip": 1.3934675222428916,
+          "l2c_prefetcher-ip_stride_llc_replacement-random": 1.3934675222428916
+        }
+      },
+      {
+        "step": 57,
+        "skip_instructions": 12405700,
+        "rl_action": {
+          "l2c_prefetcher": "ip_stride",
+          "llc_replacement": "random"
+        },
+        "rl_ipc": 1.469486569094222,
+        "best_action": {
+          "l2c_prefetcher": "next_line",
+          "llc_replacement": "lru"
+        },
+        "best_ipc": 1.5546288379323747,
+        "per_action_ipc": {
+          "l2c_prefetcher-no_llc_replacement-lru": 1.4468751582495967,
+          "l2c_prefetcher-no_llc_replacement-srrip": 1.4468751582495967,
+          "l2c_prefetcher-no_llc_replacement-random": 1.4468751582495967,
+          "l2c_prefetcher-next_line_llc_replacement-lru": 1.5546288379323747,
+          "l2c_prefetcher-next_line_llc_replacement-srrip": 1.5546288379323747,
+          "l2c_prefetcher-next_line_llc_replacement-random": 1.5546288379323747,
+          "l2c_prefetcher-ip_stride_llc_replacement-lru": 1.469486569094222,
+          "l2c_prefetcher-ip_stride_llc_replacement-srrip": 1.469486569094222,
+          "l2c_prefetcher-ip_stride_llc_replacement-random": 1.469486569094222
+        }
+      },
+      {
+        "step": 58,
+        "skip_instructions": 12605800,
+        "rl_action": {
+          "l2c_prefetcher": "ip_stride",
+          "llc_replacement": "random"
+        },
+        "rl_ipc": 1.3642608167747832,
+        "best_action": {
+          "l2c_prefetcher": "next_line",
+          "llc_replacement": "lru"
+        },
+        "best_ipc": 1.4310389238694905,
+        "per_action_ipc": {
+          "l2c_prefetcher-no_llc_replacement-lru": 1.356810441908742,
+          "l2c_prefetcher-no_llc_replacement-srrip": 1.356810441908742,
+          "l2c_prefetcher-no_llc_replacement-random": 1.356810441908742,
+          "l2c_prefetcher-next_line_llc_replacement-lru": 1.4310389238694905,
+          "l2c_prefetcher-next_line_llc_replacement-srrip": 1.4310389238694905,
+          "l2c_prefetcher-next_line_llc_replacement-random": 1.4310389238694905,
+          "l2c_prefetcher-ip_stride_llc_replacement-lru": 1.3642608167747832,
+          "l2c_prefetcher-ip_stride_llc_replacement-srrip": 1.3642608167747832,
+          "l2c_prefetcher-ip_stride_llc_replacement-random": 1.3642608167747832
+        }
+      },
+      {
+        "step": 59,
+        "skip_instructions": 12805900,
+        "rl_action": {
+          "l2c_prefetcher": "ip_stride",
+          "llc_replacement": "random"
+        },
+        "rl_ipc": 1.3946891300103206,
+        "best_action": {
+          "l2c_prefetcher": "next_line",
+          "llc_replacement": "lru"
+        },
+        "best_ipc": 1.46142998063644,
+        "per_action_ipc": {
+          "l2c_prefetcher-no_llc_replacement-lru": 1.3791952556632072,
+          "l2c_prefetcher-no_llc_replacement-srrip": 1.3791952556632072,
+          "l2c_prefetcher-no_llc_replacement-random": 1.3791952556632072,
+          "l2c_prefetcher-next_line_llc_replacement-lru": 1.46142998063644,
+          "l2c_prefetcher-next_line_llc_replacement-srrip": 1.46142998063644,
+          "l2c_prefetcher-next_line_llc_replacement-random": 1.46142998063644,
+          "l2c_prefetcher-ip_stride_llc_replacement-lru": 1.3946891300103206,
+          "l2c_prefetcher-ip_stride_llc_replacement-srrip": 1.3946891300103206,
+          "l2c_prefetcher-ip_stride_llc_replacement-random": 1.3946891300103206
+        }
+      },
+      {
+        "step": 60,
+        "skip_instructions": 13006000,
+        "rl_action": {
+          "l2c_prefetcher": "no",
+          "llc_replacement": "lru"
+        },
+        "rl_ipc": 1.499823770706942,
+        "best_action": {
+          "l2c_prefetcher": "next_line",
+          "llc_replacement": "lru"
+        },
+        "best_ipc": 1.5976227373667982,
+        "per_action_ipc": {
+          "l2c_prefetcher-no_llc_replacement-lru": 1.499823770706942,
+          "l2c_prefetcher-no_llc_replacement-srrip": 1.499823770706942,
+          "l2c_prefetcher-no_llc_replacement-random": 1.499823770706942,
+          "l2c_prefetcher-next_line_llc_replacement-lru": 1.5976227373667982,
+          "l2c_prefetcher-next_line_llc_replacement-srrip": 1.5976227373667982,
+          "l2c_prefetcher-next_line_llc_replacement-random": 1.5976227373667982,
+          "l2c_prefetcher-ip_stride_llc_replacement-lru": 1.5286078967883947,
+          "l2c_prefetcher-ip_stride_llc_replacement-srrip": 1.5286078967883947,
+          "l2c_prefetcher-ip_stride_llc_replacement-random": 1.5286078967883947
+        }
+      },
+      {
+        "step": 61,
+        "skip_instructions": 13206100,
+        "rl_action": {
+          "l2c_prefetcher": "no",
+          "llc_replacement": "lru"
+        },
+        "rl_ipc": 1.4390640514599013,
+        "best_action": {
+          "l2c_prefetcher": "next_line",
+          "llc_replacement": "lru"
+        },
+        "best_ipc": 1.5419438897840552,
+        "per_action_ipc": {
+          "l2c_prefetcher-no_llc_replacement-lru": 1.4390640514599013,
+          "l2c_prefetcher-no_llc_replacement-srrip": 1.4390640514599013,
+          "l2c_prefetcher-no_llc_replacement-random": 1.4390640514599013,
+          "l2c_prefetcher-next_line_llc_replacement-lru": 1.5419438897840552,
+          "l2c_prefetcher-next_line_llc_replacement-srrip": 1.5419438897840552,
+          "l2c_prefetcher-next_line_llc_replacement-random": 1.5419438897840552,
+          "l2c_prefetcher-ip_stride_llc_replacement-lru": 1.466154500271233,
+          "l2c_prefetcher-ip_stride_llc_replacement-srrip": 1.466154500271233,
+          "l2c_prefetcher-ip_stride_llc_replacement-random": 1.466154500271233
+        }
+      },
+      {
+        "step": 62,
+        "skip_instructions": 13406200,
+        "rl_action": {
+          "l2c_prefetcher": "no",
+          "llc_replacement": "lru"
+        },
+        "rl_ipc": 0.7435212068715543,
+        "best_action": {
+          "l2c_prefetcher": "next_line",
+          "llc_replacement": "lru"
+        },
+        "best_ipc": 0.798500431185921,
+        "per_action_ipc": {
+          "l2c_prefetcher-no_llc_replacement-lru": 0.7435212068715543,
+          "l2c_prefetcher-no_llc_replacement-srrip": 0.7435212068715543,
+          "l2c_prefetcher-no_llc_replacement-random": 0.7435212068715543,
+          "l2c_prefetcher-next_line_llc_replacement-lru": 0.798500431185921,
+          "l2c_prefetcher-next_line_llc_replacement-srrip": 0.798500431185921,
+          "l2c_prefetcher-next_line_llc_replacement-random": 0.798500431185921,
+          "l2c_prefetcher-ip_stride_llc_replacement-lru": 0.7551348657383635,
+          "l2c_prefetcher-ip_stride_llc_replacement-srrip": 0.7551348657383635,
+          "l2c_prefetcher-ip_stride_llc_replacement-random": 0.7551348657383635
+        }
+      },
+      {
+        "step": 63,
+        "skip_instructions": 13606300,
+        "rl_action": {
+          "l2c_prefetcher": "ip_stride",
+          "llc_replacement": "random"
+        },
+        "rl_ipc": 1.4794106116531427,
+        "best_action": {
+          "l2c_prefetcher": "next_line",
+          "llc_replacement": "lru"
+        },
+        "best_ipc": 1.565887649246428,
+        "per_action_ipc": {
+          "l2c_prefetcher-no_llc_replacement-lru": 1.4689792950474105,
+          "l2c_prefetcher-no_llc_replacement-srrip": 1.4689792950474105,
+          "l2c_prefetcher-no_llc_replacement-random": 1.4689792950474105,
+          "l2c_prefetcher-next_line_llc_replacement-lru": 1.565887649246428,
+          "l2c_prefetcher-next_line_llc_replacement-srrip": 1.565887649246428,
+          "l2c_prefetcher-next_line_llc_replacement-random": 1.565887649246428,
+          "l2c_prefetcher-ip_stride_llc_replacement-lru": 1.4794106116531427,
+          "l2c_prefetcher-ip_stride_llc_replacement-srrip": 1.4794106116531427,
+          "l2c_prefetcher-ip_stride_llc_replacement-random": 1.4794106116531427
+        }
+      },
+      {
+        "step": 64,
+        "skip_instructions": 13806400,
+        "rl_action": {
+          "l2c_prefetcher": "ip_stride",
+          "llc_replacement": "random"
+        },
+        "rl_ipc": 1.4061236685766514,
+        "best_action": {
+          "l2c_prefetcher": "next_line",
+          "llc_replacement": "lru"
+        },
+        "best_ipc": 1.4760147601476015,
+        "per_action_ipc": {
+          "l2c_prefetcher-no_llc_replacement-lru": 1.3881466160455866,
+          "l2c_prefetcher-no_llc_replacement-srrip": 1.3881466160455866,
+          "l2c_prefetcher-no_llc_replacement-random": 1.3881466160455866,
+          "l2c_prefetcher-next_line_llc_replacement-lru": 1.4760147601476015,
+          "l2c_prefetcher-next_line_llc_replacement-srrip": 1.4760147601476015,
+          "l2c_prefetcher-next_line_llc_replacement-random": 1.4760147601476015,
+          "l2c_prefetcher-ip_stride_llc_replacement-lru": 1.4061236685766514,
+          "l2c_prefetcher-ip_stride_llc_replacement-srrip": 1.4061236685766514,
+          "l2c_prefetcher-ip_stride_llc_replacement-random": 1.4061236685766514
+        }
+      },
+      {
+        "step": 65,
+        "skip_instructions": 14006500,
+        "rl_action": {
+          "l2c_prefetcher": "ip_stride",
+          "llc_replacement": "random"
+        },
+        "rl_ipc": 1.3985147995608729,
+        "best_action": {
+          "l2c_prefetcher": "next_line",
+          "llc_replacement": "lru"
+        },
+        "best_ipc": 1.4634008926611546,
+        "per_action_ipc": {
+          "l2c_prefetcher-no_llc_replacement-lru": 1.381465159971266,
+          "l2c_prefetcher-no_llc_replacement-srrip": 1.381465159971266,
+          "l2c_prefetcher-no_llc_replacement-random": 1.381465159971266,
+          "l2c_prefetcher-next_line_llc_replacement-lru": 1.4634008926611546,
+          "l2c_prefetcher-next_line_llc_replacement-srrip": 1.4634008926611546,
+          "l2c_prefetcher-next_line_llc_replacement-random": 1.4634008926611546,
+          "l2c_prefetcher-ip_stride_llc_replacement-lru": 1.3985147995608729,
+          "l2c_prefetcher-ip_stride_llc_replacement-srrip": 1.3985147995608729,
+          "l2c_prefetcher-ip_stride_llc_replacement-random": 1.3985147995608729
+        }
+      },
+      {
+        "step": 66,
+        "skip_instructions": 14206600,
+        "rl_action": {
+          "l2c_prefetcher": "ip_stride",
+          "llc_replacement": "random"
+        },
+        "rl_ipc": 1.3651224856150217,
+        "best_action": {
+          "l2c_prefetcher": "next_line",
+          "llc_replacement": "lru"
+        },
+        "best_ipc": 1.4305128388527286,
+        "per_action_ipc": {
+          "l2c_prefetcher-no_llc_replacement-lru": 1.353326476479186,
+          "l2c_prefetcher-no_llc_replacement-srrip": 1.353326476479186,
+          "l2c_prefetcher-no_llc_replacement-random": 1.353326476479186,
+          "l2c_prefetcher-next_line_llc_replacement-lru": 1.4305128388527286,
+          "l2c_prefetcher-next_line_llc_replacement-srrip": 1.4305128388527286,
+          "l2c_prefetcher-next_line_llc_replacement-random": 1.4305128388527286,
+          "l2c_prefetcher-ip_stride_llc_replacement-lru": 1.3651224856150217,
+          "l2c_prefetcher-ip_stride_llc_replacement-srrip": 1.3651224856150217,
+          "l2c_prefetcher-ip_stride_llc_replacement-random": 1.3651224856150217
+        }
+      },
+      {
+        "step": 67,
+        "skip_instructions": 14406700,
+        "rl_action": {
+          "l2c_prefetcher": "ip_stride",
+          "llc_replacement": "random"
+        },
+        "rl_ipc": 1.5169631006105655,
+        "best_action": {
+          "l2c_prefetcher": "next_line",
+          "llc_replacement": "lru"
+        },
+        "best_ipc": 1.583487720298323,
+        "per_action_ipc": {
+          "l2c_prefetcher-no_llc_replacement-lru": 1.5068939017223453,
+          "l2c_prefetcher-no_llc_replacement-srrip": 1.5068939017223453,
+          "l2c_prefetcher-no_llc_replacement-random": 1.5068939017223453,
+          "l2c_prefetcher-next_line_llc_replacement-lru": 1.583487720298323,
+          "l2c_prefetcher-next_line_llc_replacement-srrip": 1.583487720298323,
+          "l2c_prefetcher-next_line_llc_replacement-random": 1.583487720298323,
+          "l2c_prefetcher-ip_stride_llc_replacement-lru": 1.5169631006105655,
+          "l2c_prefetcher-ip_stride_llc_replacement-srrip": 1.5169631006105655,
+          "l2c_prefetcher-ip_stride_llc_replacement-random": 1.5169631006105655
+        }
+      },
+      {
+        "step": 68,
+        "skip_instructions": 14606800,
+        "rl_action": {
+          "l2c_prefetcher": "ip_stride",
+          "llc_replacement": "random"
+        },
+        "rl_ipc": 1.3543983205796708,
+        "best_action": {
+          "l2c_prefetcher": "next_line",
+          "llc_replacement": "lru"
+        },
+        "best_ipc": 1.4370684390156279,
+        "per_action_ipc": {
+          "l2c_prefetcher-no_llc_replacement-lru": 1.347245611435192,
+          "l2c_prefetcher-no_llc_replacement-srrip": 1.347245611435192,
+          "l2c_prefetcher-no_llc_replacement-random": 1.347245611435192,
+          "l2c_prefetcher-next_line_llc_replacement-lru": 1.4370684390156279,
+          "l2c_prefetcher-next_line_llc_replacement-srrip": 1.4370684390156279,
+          "l2c_prefetcher-next_line_llc_replacement-random": 1.4370684390156279,
+          "l2c_prefetcher-ip_stride_llc_replacement-lru": 1.3543983205796708,
+          "l2c_prefetcher-ip_stride_llc_replacement-srrip": 1.3543983205796708,
+          "l2c_prefetcher-ip_stride_llc_replacement-random": 1.3543983205796708
+        }
+      },
+      {
+        "step": 69,
+        "skip_instructions": 14806900,
+        "rl_action": {
+          "l2c_prefetcher": "next_line",
+          "llc_replacement": "lru"
+        },
+        "rl_ipc": 1.582297608404997,
+        "best_action": {
+          "l2c_prefetcher": "next_line",
+          "llc_replacement": "lru"
+        },
+        "best_ipc": 1.582297608404997,
+        "per_action_ipc": {
+          "l2c_prefetcher-no_llc_replacement-lru": 1.4943402993103758,
+          "l2c_prefetcher-no_llc_replacement-srrip": 1.4943402993103758,
+          "l2c_prefetcher-no_llc_replacement-random": 1.4943402993103758,
+          "l2c_prefetcher-next_line_llc_replacement-lru": 1.582297608404997,
+          "l2c_prefetcher-next_line_llc_replacement-srrip": 1.582297608404997,
+          "l2c_prefetcher-next_line_llc_replacement-random": 1.582297608404997,
+          "l2c_prefetcher-ip_stride_llc_replacement-lru": 1.5198911779680981,
+          "l2c_prefetcher-ip_stride_llc_replacement-srrip": 1.5198911779680981,
+          "l2c_prefetcher-ip_stride_llc_replacement-random": 1.5198911779680981
+        }
+      },
+      {
+        "step": 70,
+        "skip_instructions": 15007000,
+        "rl_action": {
+          "l2c_prefetcher": "ip_stride",
+          "llc_replacement": "random"
+        },
+        "rl_ipc": 1.3694690568466605,
+        "best_action": {
+          "l2c_prefetcher": "next_line",
+          "llc_replacement": "lru"
+        },
+        "best_ipc": 1.4312806383511647,
+        "per_action_ipc": {
+          "l2c_prefetcher-no_llc_replacement-lru": 1.3454966228034768,
+          "l2c_prefetcher-no_llc_replacement-srrip": 1.3454966228034768,
+          "l2c_prefetcher-no_llc_replacement-random": 1.3454966228034768,
+          "l2c_prefetcher-next_line_llc_replacement-lru": 1.4312806383511647,
+          "l2c_prefetcher-next_line_llc_replacement-srrip": 1.4312806383511647,
+          "l2c_prefetcher-next_line_llc_replacement-random": 1.4312806383511647,
+          "l2c_prefetcher-ip_stride_llc_replacement-lru": 1.3694690568466605,
+          "l2c_prefetcher-ip_stride_llc_replacement-srrip": 1.3694690568466605,
+          "l2c_prefetcher-ip_stride_llc_replacement-random": 1.3694690568466605
+        }
+      },
+      {
+        "step": 71,
+        "skip_instructions": 15207100,
+        "rl_action": {
+          "l2c_prefetcher": "next_line",
+          "llc_replacement": "lru"
+        },
+        "rl_ipc": 0.852588860185351,
+        "best_action": {
+          "l2c_prefetcher": "next_line",
+          "llc_replacement": "lru"
+        },
+        "best_ipc": 0.852588860185351,
+        "per_action_ipc": {
+          "l2c_prefetcher-no_llc_replacement-lru": 0.7962750625069673,
+          "l2c_prefetcher-no_llc_replacement-srrip": 0.7962750625069673,
+          "l2c_prefetcher-no_llc_replacement-random": 0.7962750625069673,
+          "l2c_prefetcher-next_line_llc_replacement-lru": 0.852588860185351,
+          "l2c_prefetcher-next_line_llc_replacement-srrip": 0.852588860185351,
+          "l2c_prefetcher-next_line_llc_replacement-random": 0.852588860185351,
+          "l2c_prefetcher-ip_stride_llc_replacement-lru": 0.7962750625069673,
+          "l2c_prefetcher-ip_stride_llc_replacement-srrip": 0.7962750625069673,
+          "l2c_prefetcher-ip_stride_llc_replacement-random": 0.7962750625069673
+        }
+      },
+      {
+        "step": 72,
+        "skip_instructions": 15407200,
+        "rl_action": {
+          "l2c_prefetcher": "ip_stride",
+          "llc_replacement": "random"
+        },
+        "rl_ipc": 1.5101137847979886,
+        "best_action": {
+          "l2c_prefetcher": "next_line",
+          "llc_replacement": "lru"
+        },
+        "best_ipc": 1.569828499666418,
+        "per_action_ipc": {
+          "l2c_prefetcher-no_llc_replacement-lru": 1.5101137847979886,
+          "l2c_prefetcher-no_llc_replacement-srrip": 1.5101137847979886,
+          "l2c_prefetcher-no_llc_replacement-random": 1.5101137847979886,
+          "l2c_prefetcher-next_line_llc_replacement-lru": 1.569828499666418,
+          "l2c_prefetcher-next_line_llc_replacement-srrip": 1.569828499666418,
+          "l2c_prefetcher-next_line_llc_replacement-random": 1.569828499666418,
+          "l2c_prefetcher-ip_stride_llc_replacement-lru": 1.5101137847979886,
+          "l2c_prefetcher-ip_stride_llc_replacement-srrip": 1.5101137847979886,
+          "l2c_prefetcher-ip_stride_llc_replacement-random": 1.5101137847979886
+        }
+      },
+      {
+        "step": 73,
+        "skip_instructions": 15607300,
+        "rl_action": {
+          "l2c_prefetcher": "ip_stride",
+          "llc_replacement": "random"
+        },
+        "rl_ipc": 2.1532324917909245,
+        "best_action": {
+          "l2c_prefetcher": "next_line",
+          "llc_replacement": "lru"
+        },
+        "best_ipc": 2.193255839456081,
+        "per_action_ipc": {
+          "l2c_prefetcher-no_llc_replacement-lru": 2.1532324917909245,
+          "l2c_prefetcher-no_llc_replacement-srrip": 2.1532324917909245,
+          "l2c_prefetcher-no_llc_replacement-random": 2.1532324917909245,
+          "l2c_prefetcher-next_line_llc_replacement-lru": 2.193255839456081,
+          "l2c_prefetcher-next_line_llc_replacement-srrip": 2.193255839456081,
+          "l2c_prefetcher-next_line_llc_replacement-random": 2.193255839456081,
+          "l2c_prefetcher-ip_stride_llc_replacement-lru": 2.1532324917909245,
+          "l2c_prefetcher-ip_stride_llc_replacement-srrip": 2.1532324917909245,
+          "l2c_prefetcher-ip_stride_llc_replacement-random": 2.1532324917909245
+        }
+      },
+      {
+        "step": 74,
+        "skip_instructions": 15807400,
+        "rl_action": {
+          "l2c_prefetcher": "ip_stride",
+          "llc_replacement": "random"
+        },
+        "rl_ipc": 2.137435743980507,
+        "best_action": {
+          "l2c_prefetcher": "next_line",
+          "llc_replacement": "lru"
+        },
+        "best_ipc": 2.184811343427061,
+        "per_action_ipc": {
+          "l2c_prefetcher-no_llc_replacement-lru": 2.137435743980507,
+          "l2c_prefetcher-no_llc_replacement-srrip": 2.137435743980507,
+          "l2c_prefetcher-no_llc_replacement-random": 2.137435743980507,
+          "l2c_prefetcher-next_line_llc_replacement-lru": 2.184811343427061,
+          "l2c_prefetcher-next_line_llc_replacement-srrip": 2.184811343427061,
+          "l2c_prefetcher-next_line_llc_replacement-random": 2.184811343427061,
+          "l2c_prefetcher-ip_stride_llc_replacement-lru": 2.137435743980507,
+          "l2c_prefetcher-ip_stride_llc_replacement-srrip": 2.137435743980507,
+          "l2c_prefetcher-ip_stride_llc_replacement-random": 2.137435743980507
+        }
+      },
+      {
+        "step": 75,
+        "skip_instructions": 16007500,
+        "rl_action": {
+          "l2c_prefetcher": "ip_stride",
+          "llc_replacement": "random"
+        },
+        "rl_ipc": 1.4985875812047145,
+        "best_action": {
+          "l2c_prefetcher": "next_line",
+          "llc_replacement": "lru"
+        },
+        "best_ipc": 1.578918283084259,
+        "per_action_ipc": {
+          "l2c_prefetcher-no_llc_replacement-lru": 1.4985875812047145,
+          "l2c_prefetcher-no_llc_replacement-srrip": 1.4985875812047145,
+          "l2c_prefetcher-no_llc_replacement-random": 1.4985875812047145,
+          "l2c_prefetcher-next_line_llc_replacement-lru": 1.578918283084259,
+          "l2c_prefetcher-next_line_llc_replacement-srrip": 1.578918283084259,
+          "l2c_prefetcher-next_line_llc_replacement-random": 1.578918283084259,
+          "l2c_prefetcher-ip_stride_llc_replacement-lru": 1.4985875812047145,
+          "l2c_prefetcher-ip_stride_llc_replacement-srrip": 1.4985875812047145,
+          "l2c_prefetcher-ip_stride_llc_replacement-random": 1.4985875812047145
+        }
+      },
+      {
+        "step": 76,
+        "skip_instructions": 16207600,
+        "rl_action": {
+          "l2c_prefetcher": "ip_stride",
+          "llc_replacement": "random"
+        },
+        "rl_ipc": 2.0884011360788572,
+        "best_action": {
+          "l2c_prefetcher": "next_line",
+          "llc_replacement": "lru"
+        },
+        "best_ipc": 2.1315130394006245,
+        "per_action_ipc": {
+          "l2c_prefetcher-no_llc_replacement-lru": 2.0861356809078773,
+          "l2c_prefetcher-no_llc_replacement-srrip": 2.0861356809078773,
+          "l2c_prefetcher-no_llc_replacement-random": 2.0861356809078773,
+          "l2c_prefetcher-next_line_llc_replacement-lru": 2.1315130394006245,
+          "l2c_prefetcher-next_line_llc_replacement-srrip": 2.1315130394006245,
+          "l2c_prefetcher-next_line_llc_replacement-random": 2.1315130394006245,
+          "l2c_prefetcher-ip_stride_llc_replacement-lru": 2.0884011360788572,
+          "l2c_prefetcher-ip_stride_llc_replacement-srrip": 2.0884011360788572,
+          "l2c_prefetcher-ip_stride_llc_replacement-random": 2.0884011360788572
+        }
+      },
+      {
+        "step": 77,
+        "skip_instructions": 16407700,
+        "rl_action": {
+          "l2c_prefetcher": "ip_stride",
+          "llc_replacement": "random"
+        },
+        "rl_ipc": 2.030333177674456,
+        "best_action": {
+          "l2c_prefetcher": "next_line",
+          "llc_replacement": "lru"
+        },
+        "best_ipc": 2.0820320632937745,
+        "per_action_ipc": {
+          "l2c_prefetcher-no_llc_replacement-lru": 2.0221833513644683,
+          "l2c_prefetcher-no_llc_replacement-srrip": 2.0221833513644683,
+          "l2c_prefetcher-no_llc_replacement-random": 2.0221833513644683,
+          "l2c_prefetcher-next_line_llc_replacement-lru": 2.0820320632937745,
+          "l2c_prefetcher-next_line_llc_replacement-srrip": 2.0820320632937745,
+          "l2c_prefetcher-next_line_llc_replacement-random": 2.0820320632937745,
+          "l2c_prefetcher-ip_stride_llc_replacement-lru": 2.030333177674456,
+          "l2c_prefetcher-ip_stride_llc_replacement-srrip": 2.030333177674456,
+          "l2c_prefetcher-ip_stride_llc_replacement-random": 2.030333177674456
+        }
+      },
+      {
+        "step": 78,
+        "skip_instructions": 16607800,
+        "rl_action": {
+          "l2c_prefetcher": "ip_stride",
+          "llc_replacement": "random"
+        },
+        "rl_ipc": 1.5097984449309279,
+        "best_action": {
+          "l2c_prefetcher": "next_line",
+          "llc_replacement": "lru"
+        },
+        "best_ipc": 1.5777711161774335,
+        "per_action_ipc": {
+          "l2c_prefetcher-no_llc_replacement-lru": 1.5084775164798696,
+          "l2c_prefetcher-no_llc_replacement-srrip": 1.5084775164798696,
+          "l2c_prefetcher-no_llc_replacement-random": 1.5084775164798696,
+          "l2c_prefetcher-next_line_llc_replacement-lru": 1.5777711161774335,
+          "l2c_prefetcher-next_line_llc_replacement-srrip": 1.5777711161774335,
+          "l2c_prefetcher-next_line_llc_replacement-random": 1.5777711161774335,
+          "l2c_prefetcher-ip_stride_llc_replacement-lru": 1.5097984449309279,
+          "l2c_prefetcher-ip_stride_llc_replacement-srrip": 1.5097984449309279,
+          "l2c_prefetcher-ip_stride_llc_replacement-random": 1.5097984449309279
+        }
+      },
+      {
+        "step": 79,
+        "skip_instructions": 16807900,
+        "rl_action": {
+          "l2c_prefetcher": "ip_stride",
+          "llc_replacement": "random"
+        },
+        "rl_ipc": 1.9784937726908505,
+        "best_action": {
+          "l2c_prefetcher": "next_line",
+          "llc_replacement": "lru"
+        },
+        "best_ipc": 2.0182042019011486,
+        "per_action_ipc": {
+          "l2c_prefetcher-no_llc_replacement-lru": 1.9742167295125659,
+          "l2c_prefetcher-no_llc_replacement-srrip": 1.9742167295125659,
+          "l2c_prefetcher-no_llc_replacement-random": 1.9742167295125659,
+          "l2c_prefetcher-next_line_llc_replacement-lru": 2.0182042019011486,
+          "l2c_prefetcher-next_line_llc_replacement-srrip": 2.0182042019011486,
+          "l2c_prefetcher-next_line_llc_replacement-random": 2.0182042019011486,
+          "l2c_prefetcher-ip_stride_llc_replacement-lru": 1.9784937726908505,
+          "l2c_prefetcher-ip_stride_llc_replacement-srrip": 1.9784937726908505,
+          "l2c_prefetcher-ip_stride_llc_replacement-random": 1.9784937726908505
+        }
+      },
+      {
+        "step": 80,
+        "skip_instructions": 17008000,
+        "rl_action": {
+          "l2c_prefetcher": "ip_stride",
+          "llc_replacement": "random"
+        },
+        "rl_ipc": 2.1903755380083014,
+        "best_action": {
+          "l2c_prefetcher": "next_line",
+          "llc_replacement": "lru"
+        },
+        "best_ipc": 2.2310086339602435,
+        "per_action_ipc": {
+          "l2c_prefetcher-no_llc_replacement-lru": 2.185062984125597,
+          "l2c_prefetcher-no_llc_replacement-srrip": 2.185062984125597,
+          "l2c_prefetcher-no_llc_replacement-random": 2.185062984125597,
+          "l2c_prefetcher-next_line_llc_replacement-lru": 2.2310086339602435,
+          "l2c_prefetcher-next_line_llc_replacement-srrip": 2.2310086339602435,
+          "l2c_prefetcher-next_line_llc_replacement-random": 2.2310086339602435,
+          "l2c_prefetcher-ip_stride_llc_replacement-lru": 2.1903755380083014,
+          "l2c_prefetcher-ip_stride_llc_replacement-srrip": 2.1903755380083014,
+          "l2c_prefetcher-ip_stride_llc_replacement-random": 2.1903755380083014
+        }
+      },
+      {
+        "step": 81,
+        "skip_instructions": 17208100,
+        "rl_action": {
+          "l2c_prefetcher": "ip_stride",
+          "llc_replacement": "random"
+        },
+        "rl_ipc": 1.419215894979599,
+        "best_action": {
+          "l2c_prefetcher": "next_line",
+          "llc_replacement": "lru"
+        },
+        "best_ipc": 1.4968715853129164,
+        "per_action_ipc": {
+          "l2c_prefetcher-no_llc_replacement-lru": 1.4180989250971383,
+          "l2c_prefetcher-no_llc_replacement-srrip": 1.4180989250971383,
+          "l2c_prefetcher-no_llc_replacement-random": 1.4180989250971383,
+          "l2c_prefetcher-next_line_llc_replacement-lru": 1.4968715853129164,
+          "l2c_prefetcher-next_line_llc_replacement-srrip": 1.4968715853129164,
+          "l2c_prefetcher-next_line_llc_replacement-random": 1.4968715853129164,
+          "l2c_prefetcher-ip_stride_llc_replacement-lru": 1.419215894979599,
+          "l2c_prefetcher-ip_stride_llc_replacement-srrip": 1.419215894979599,
+          "l2c_prefetcher-ip_stride_llc_replacement-random": 1.419215894979599
+        }
+      },
+      {
+        "step": 82,
+        "skip_instructions": 17408200,
+        "rl_action": {
+          "l2c_prefetcher": "ip_stride",
+          "llc_replacement": "random"
+        },
+        "rl_ipc": 2.1643850440993453,
+        "best_action": {
+          "l2c_prefetcher": "next_line",
+          "llc_replacement": "lru"
+        },
+        "best_ipc": 2.1998328127062345,
+        "per_action_ipc": {
+          "l2c_prefetcher-no_llc_replacement-lru": 2.1526886812761012,
+          "l2c_prefetcher-no_llc_replacement-srrip": 2.1526886812761012,
+          "l2c_prefetcher-no_llc_replacement-random": 2.1526886812761012,
+          "l2c_prefetcher-next_line_llc_replacement-lru": 2.1998328127062345,
+          "l2c_prefetcher-next_line_llc_replacement-srrip": 2.1998328127062345,
+          "l2c_prefetcher-next_line_llc_replacement-random": 2.1998328127062345,
+          "l2c_prefetcher-ip_stride_llc_replacement-lru": 2.1643850440993453,
+          "l2c_prefetcher-ip_stride_llc_replacement-srrip": 2.1643850440993453,
+          "l2c_prefetcher-ip_stride_llc_replacement-random": 2.1643850440993453
+        }
+      },
+      {
+        "step": 83,
+        "skip_instructions": 17608300,
+        "rl_action": {
+          "l2c_prefetcher": "ip_stride",
+          "llc_replacement": "random"
+        },
+        "rl_ipc": 1.404683143352788,
+        "best_action": {
+          "l2c_prefetcher": "next_line",
+          "llc_replacement": "lru"
+        },
+        "best_ipc": 1.4802318008229964,
+        "per_action_ipc": {
+          "l2c_prefetcher-no_llc_replacement-lru": 1.404683143352788,
+          "l2c_prefetcher-no_llc_replacement-srrip": 1.404683143352788,
+          "l2c_prefetcher-no_llc_replacement-random": 1.404683143352788,
+          "l2c_prefetcher-next_line_llc_replacement-lru": 1.4802318008229964,
+          "l2c_prefetcher-next_line_llc_replacement-srrip": 1.4802318008229964,
+          "l2c_prefetcher-next_line_llc_replacement-random": 1.4802318008229964,
+          "l2c_prefetcher-ip_stride_llc_replacement-lru": 1.404683143352788,
+          "l2c_prefetcher-ip_stride_llc_replacement-srrip": 1.404683143352788,
+          "l2c_prefetcher-ip_stride_llc_replacement-random": 1.404683143352788
+        }
+      },
+      {
+        "step": 84,
+        "skip_instructions": 17808400,
+        "rl_action": {
+          "l2c_prefetcher": "ip_stride",
+          "llc_replacement": "random"
+        },
+        "rl_ipc": 1.499666324242856,
+        "best_action": {
+          "l2c_prefetcher": "next_line",
+          "llc_replacement": "lru"
+        },
+        "best_ipc": 1.5728092732834753,
+        "per_action_ipc": {
+          "l2c_prefetcher-no_llc_replacement-lru": 1.498329362760522,
+          "l2c_prefetcher-no_llc_replacement-srrip": 1.498329362760522,
+          "l2c_prefetcher-no_llc_replacement-random": 1.498329362760522,
+          "l2c_prefetcher-next_line_llc_replacement-lru": 1.5728092732834753,
+          "l2c_prefetcher-next_line_llc_replacement-srrip": 1.5728092732834753,
+          "l2c_prefetcher-next_line_llc_replacement-random": 1.5728092732834753,
+          "l2c_prefetcher-ip_stride_llc_replacement-lru": 1.499666324242856,
+          "l2c_prefetcher-ip_stride_llc_replacement-srrip": 1.499666324242856,
+          "l2c_prefetcher-ip_stride_llc_replacement-random": 1.499666324242856
+        }
+      },
+      {
+        "step": 85,
+        "skip_instructions": 18008500,
+        "rl_action": {
+          "l2c_prefetcher": "ip_stride",
+          "llc_replacement": "random"
+        },
+        "rl_ipc": 2.136866285592179,
+        "best_action": {
+          "l2c_prefetcher": "next_line",
+          "llc_replacement": "lru"
+        },
+        "best_ipc": 2.196257577088641,
+        "per_action_ipc": {
+          "l2c_prefetcher-no_llc_replacement-lru": 2.136866285592179,
+          "l2c_prefetcher-no_llc_replacement-srrip": 2.136866285592179,
+          "l2c_prefetcher-no_llc_replacement-random": 2.136866285592179,
+          "l2c_prefetcher-next_line_llc_replacement-lru": 2.196257577088641,
+          "l2c_prefetcher-next_line_llc_replacement-srrip": 2.196257577088641,
+          "l2c_prefetcher-next_line_llc_replacement-random": 2.196257577088641,
+          "l2c_prefetcher-ip_stride_llc_replacement-lru": 2.136866285592179,
+          "l2c_prefetcher-ip_stride_llc_replacement-srrip": 2.136866285592179,
+          "l2c_prefetcher-ip_stride_llc_replacement-random": 2.136866285592179
+        }
+      },
+      {
+        "step": 86,
+        "skip_instructions": 18208600,
+        "rl_action": {
+          "l2c_prefetcher": "ip_stride",
+          "llc_replacement": "random"
+        },
+        "rl_ipc": 1.4657168821270483,
+        "best_action": {
+          "l2c_prefetcher": "next_line",
+          "llc_replacement": "lru"
+        },
+        "best_ipc": 1.5355086372360844,
+        "per_action_ipc": {
+          "l2c_prefetcher-no_llc_replacement-lru": 1.4626405049035023,
+          "l2c_prefetcher-no_llc_replacement-srrip": 1.4626405049035023,
+          "l2c_prefetcher-no_llc_replacement-random": 1.4626405049035023,
+          "l2c_prefetcher-next_line_llc_replacement-lru": 1.5355086372360844,
+          "l2c_prefetcher-next_line_llc_replacement-srrip": 1.5355086372360844,
+          "l2c_prefetcher-next_line_llc_replacement-random": 1.5355086372360844,
+          "l2c_prefetcher-ip_stride_llc_replacement-lru": 1.4657168821270483,
+          "l2c_prefetcher-ip_stride_llc_replacement-srrip": 1.4657168821270483,
+          "l2c_prefetcher-ip_stride_llc_replacement-random": 1.4657168821270483
+        }
+      },
+      {
+        "step": 87,
+        "skip_instructions": 18408700,
+        "rl_action": {
+          "l2c_prefetcher": "ip_stride",
+          "llc_replacement": "random"
+        },
+        "rl_ipc": 1.5459014492753622,
+        "best_action": {
+          "l2c_prefetcher": "next_line",
+          "llc_replacement": "lru"
+        },
+        "best_ipc": 1.6181179763917768,
+        "per_action_ipc": {
+          "l2c_prefetcher-no_llc_replacement-lru": 1.5445166073317838,
+          "l2c_prefetcher-no_llc_replacement-srrip": 1.5445166073317838,
+          "l2c_prefetcher-no_llc_replacement-random": 1.5445166073317838,
+          "l2c_prefetcher-next_line_llc_replacement-lru": 1.6181179763917768,
+          "l2c_prefetcher-next_line_llc_replacement-srrip": 1.6181179763917768,
+          "l2c_prefetcher-next_line_llc_replacement-random": 1.6181179763917768,
+          "l2c_prefetcher-ip_stride_llc_replacement-lru": 1.5459014492753622,
+          "l2c_prefetcher-ip_stride_llc_replacement-srrip": 1.5459014492753622,
+          "l2c_prefetcher-ip_stride_llc_replacement-random": 1.5459014492753622
+        }
+      },
+      {
+        "step": 88,
+        "skip_instructions": 18608800,
+        "rl_action": {
+          "l2c_prefetcher": "ip_stride",
+          "llc_replacement": "random"
+        },
+        "rl_ipc": 2.086234053428187,
+        "best_action": {
+          "l2c_prefetcher": "next_line",
+          "llc_replacement": "lru"
+        },
+        "best_ipc": 2.1294598652058645,
+        "per_action_ipc": {
+          "l2c_prefetcher-no_llc_replacement-lru": 2.081370783944386,
+          "l2c_prefetcher-no_llc_replacement-srrip": 2.081370783944386,
+          "l2c_prefetcher-no_llc_replacement-random": 2.081370783944386,
+          "l2c_prefetcher-next_line_llc_replacement-lru": 2.1294598652058645,
+          "l2c_prefetcher-next_line_llc_replacement-srrip": 2.1294598652058645,
+          "l2c_prefetcher-next_line_llc_replacement-random": 2.1294598652058645,
+          "l2c_prefetcher-ip_stride_llc_replacement-lru": 2.086234053428187,
+          "l2c_prefetcher-ip_stride_llc_replacement-srrip": 2.086234053428187,
+          "l2c_prefetcher-ip_stride_llc_replacement-random": 2.086234053428187
+        }
+      },
+      {
+        "step": 89,
+        "skip_instructions": 18808900,
+        "rl_action": {
+          "l2c_prefetcher": "ip_stride",
+          "llc_replacement": "random"
+        },
+        "rl_ipc": 1.9858313061609492,
+        "best_action": {
+          "l2c_prefetcher": "next_line",
+          "llc_replacement": "lru"
+        },
+        "best_ipc": 2.039473415862786,
+        "per_action_ipc": {
+          "l2c_prefetcher-no_llc_replacement-lru": 1.9858313061609492,
+          "l2c_prefetcher-no_llc_replacement-srrip": 1.9858313061609492,
+          "l2c_prefetcher-no_llc_replacement-random": 1.9858313061609492,
+          "l2c_prefetcher-next_line_llc_replacement-lru": 2.039473415862786,
+          "l2c_prefetcher-next_line_llc_replacement-srrip": 2.039473415862786,
+          "l2c_prefetcher-next_line_llc_replacement-random": 2.039473415862786,
+          "l2c_prefetcher-ip_stride_llc_replacement-lru": 1.9858313061609492,
+          "l2c_prefetcher-ip_stride_llc_replacement-srrip": 1.9858313061609492,
+          "l2c_prefetcher-ip_stride_llc_replacement-random": 1.9858313061609492
+        }
+      },
+      {
+        "step": 90,
+        "skip_instructions": 19009000,
+        "rl_action": {
+          "l2c_prefetcher": "ip_stride",
+          "llc_replacement": "random"
+        },
+        "rl_ipc": 1.53933362580526,
+        "best_action": {
+          "l2c_prefetcher": "next_line",
+          "llc_replacement": "lru"
+        },
+        "best_ipc": 1.6113778823377753,
+        "per_action_ipc": {
+          "l2c_prefetcher-no_llc_replacement-lru": 1.5379132159911417,
+          "l2c_prefetcher-no_llc_replacement-srrip": 1.5379132159911417,
+          "l2c_prefetcher-no_llc_replacement-random": 1.5379132159911417,
+          "l2c_prefetcher-next_line_llc_replacement-lru": 1.6113778823377753,
+          "l2c_prefetcher-next_line_llc_replacement-srrip": 1.6113778823377753,
+          "l2c_prefetcher-next_line_llc_replacement-random": 1.6113778823377753,
+          "l2c_prefetcher-ip_stride_llc_replacement-lru": 1.53933362580526,
+          "l2c_prefetcher-ip_stride_llc_replacement-srrip": 1.53933362580526,
+          "l2c_prefetcher-ip_stride_llc_replacement-random": 1.53933362580526
+        }
+      },
+      {
+        "step": 91,
+        "skip_instructions": 19209100,
+        "rl_action": {
+          "l2c_prefetcher": "ip_stride",
+          "llc_replacement": "random"
+        },
+        "rl_ipc": 1.516422776556221,
+        "best_action": {
+          "l2c_prefetcher": "next_line",
+          "llc_replacement": "lru"
+        },
+        "best_ipc": 1.603831534377957,
+        "per_action_ipc": {
+          "l2c_prefetcher-no_llc_replacement-lru": 1.511609099841282,
+          "l2c_prefetcher-no_llc_replacement-srrip": 1.511609099841282,
+          "l2c_prefetcher-no_llc_replacement-random": 1.511609099841282,
+          "l2c_prefetcher-next_line_llc_replacement-lru": 1.603831534377957,
+          "l2c_prefetcher-next_line_llc_replacement-srrip": 1.603831534377957,
+          "l2c_prefetcher-next_line_llc_replacement-random": 1.603831534377957,
+          "l2c_prefetcher-ip_stride_llc_replacement-lru": 1.516422776556221,
+          "l2c_prefetcher-ip_stride_llc_replacement-srrip": 1.516422776556221,
+          "l2c_prefetcher-ip_stride_llc_replacement-random": 1.516422776556221
+        }
+      },
+      {
+        "step": 92,
+        "skip_instructions": 19409200,
+        "rl_action": {
+          "l2c_prefetcher": "ip_stride",
+          "llc_replacement": "random"
+        },
+        "rl_ipc": 1.5088530625485654,
+        "best_action": {
+          "l2c_prefetcher": "next_line",
+          "llc_replacement": "lru"
+        },
+        "best_ipc": 1.575794582499488,
+        "per_action_ipc": {
+          "l2c_prefetcher-no_llc_replacement-lru": 1.5088530625485654,
+          "l2c_prefetcher-no_llc_replacement-srrip": 1.5088530625485654,
+          "l2c_prefetcher-no_llc_replacement-random": 1.5088530625485654,
+          "l2c_prefetcher-next_line_llc_replacement-lru": 1.575794582499488,
+          "l2c_prefetcher-next_line_llc_replacement-srrip": 1.575794582499488,
+          "l2c_prefetcher-next_line_llc_replacement-random": 1.575794582499488,
+          "l2c_prefetcher-ip_stride_llc_replacement-lru": 1.5088530625485654,
+          "l2c_prefetcher-ip_stride_llc_replacement-srrip": 1.5088530625485654,
+          "l2c_prefetcher-ip_stride_llc_replacement-random": 1.5088530625485654
+        }
+      },
+      {
+        "step": 93,
+        "skip_instructions": 19609300,
+        "rl_action": {
+          "l2c_prefetcher": "ip_stride",
+          "llc_replacement": "random"
+        },
+        "rl_ipc": 2.090212677013116,
+        "best_action": {
+          "l2c_prefetcher": "next_line",
+          "llc_replacement": "lru"
+        },
+        "best_ipc": 2.1196981580007206,
+        "per_action_ipc": {
+          "l2c_prefetcher-no_llc_replacement-lru": 2.085526590198123,
+          "l2c_prefetcher-no_llc_replacement-srrip": 2.085526590198123,
+          "l2c_prefetcher-no_llc_replacement-random": 2.085526590198123,
+          "l2c_prefetcher-next_line_llc_replacement-lru": 2.1196981580007206,
+          "l2c_prefetcher-next_line_llc_replacement-srrip": 2.1196981580007206,
+          "l2c_prefetcher-next_line_llc_replacement-random": 2.1196981580007206,
+          "l2c_prefetcher-ip_stride_llc_replacement-lru": 2.090212677013116,
+          "l2c_prefetcher-ip_stride_llc_replacement-srrip": 2.090212677013116,
+          "l2c_prefetcher-ip_stride_llc_replacement-random": 2.090212677013116
+        }
+      },
+      {
+        "step": 94,
+        "skip_instructions": 19809400,
+        "rl_action": {
+          "l2c_prefetcher": "no",
+          "llc_replacement": "random"
+        },
+        "rl_ipc": 1.3642819138050997,
+        "best_action": {
+          "l2c_prefetcher": "next_line",
+          "llc_replacement": "lru"
+        },
+        "best_ipc": 1.435984146814285,
+        "per_action_ipc": {
+          "l2c_prefetcher-no_llc_replacement-lru": 1.3642819138050997,
+          "l2c_prefetcher-no_llc_replacement-srrip": 1.3642819138050997,
+          "l2c_prefetcher-no_llc_replacement-random": 1.3642819138050997,
+          "l2c_prefetcher-next_line_llc_replacement-lru": 1.435984146814285,
+          "l2c_prefetcher-next_line_llc_replacement-srrip": 1.435984146814285,
+          "l2c_prefetcher-next_line_llc_replacement-random": 1.435984146814285,
+          "l2c_prefetcher-ip_stride_llc_replacement-lru": 1.3642819138050997,
+          "l2c_prefetcher-ip_stride_llc_replacement-srrip": 1.3642819138050997,
+          "l2c_prefetcher-ip_stride_llc_replacement-random": 1.3642819138050997
+        }
+      },
+      {
+        "step": 95,
+        "skip_instructions": 20009500,
+        "rl_action": {
+          "l2c_prefetcher": "ip_stride",
+          "llc_replacement": "random"
+        },
+        "rl_ipc": 1.9832616068064177,
+        "best_action": {
+          "l2c_prefetcher": "next_line",
+          "llc_replacement": "lru"
+        },
+        "best_ipc": 2.040336648814078,
+        "per_action_ipc": {
+          "l2c_prefetcher-no_llc_replacement-lru": 1.9787290877251995,
+          "l2c_prefetcher-no_llc_replacement-srrip": 1.9787290877251995,
+          "l2c_prefetcher-no_llc_replacement-random": 1.9787290877251995,
+          "l2c_prefetcher-next_line_llc_replacement-lru": 2.040336648814078,
+          "l2c_prefetcher-next_line_llc_replacement-srrip": 2.040336648814078,
+          "l2c_prefetcher-next_line_llc_replacement-random": 2.040336648814078,
+          "l2c_prefetcher-ip_stride_llc_replacement-lru": 1.9832616068064177,
+          "l2c_prefetcher-ip_stride_llc_replacement-srrip": 1.9832616068064177,
+          "l2c_prefetcher-ip_stride_llc_replacement-random": 1.9832616068064177
+        }
+      },
+      {
+        "step": 96,
+        "skip_instructions": 20209600,
+        "rl_action": {
+          "l2c_prefetcher": "ip_stride",
+          "llc_replacement": "random"
+        },
+        "rl_ipc": 1.5032620296739474,
+        "best_action": {
+          "l2c_prefetcher": "next_line",
+          "llc_replacement": "lru"
+        },
+        "best_ipc": 1.5610964977325414,
+        "per_action_ipc": {
+          "l2c_prefetcher-no_llc_replacement-lru": 1.5032620296739474,
+          "l2c_prefetcher-no_llc_replacement-srrip": 1.5032620296739474,
+          "l2c_prefetcher-no_llc_replacement-random": 1.5032620296739474,
+          "l2c_prefetcher-next_line_llc_replacement-lru": 1.5610964977325414,
+          "l2c_prefetcher-next_line_llc_replacement-srrip": 1.5610964977325414,
+          "l2c_prefetcher-next_line_llc_replacement-random": 1.5610964977325414,
+          "l2c_prefetcher-ip_stride_llc_replacement-lru": 1.5032620296739474,
+          "l2c_prefetcher-ip_stride_llc_replacement-srrip": 1.5032620296739474,
+          "l2c_prefetcher-ip_stride_llc_replacement-random": 1.5032620296739474
+        }
+      },
+      {
+        "step": 97,
+        "skip_instructions": 20409700,
+        "rl_action": {
+          "l2c_prefetcher": "ip_stride",
+          "llc_replacement": "random"
+        },
+        "rl_ipc": 2.14105103144102,
+        "best_action": {
+          "l2c_prefetcher": "next_line",
+          "llc_replacement": "lru"
+        },
+        "best_ipc": 2.178243917314688,
+        "per_action_ipc": {
+          "l2c_prefetcher-no_llc_replacement-lru": 2.1382126858890067,
+          "l2c_prefetcher-no_llc_replacement-srrip": 2.1382126858890067,
+          "l2c_prefetcher-no_llc_replacement-random": 2.1382126858890067,
+          "l2c_prefetcher-next_line_llc_replacement-lru": 2.178243917314688,
+          "l2c_prefetcher-next_line_llc_replacement-srrip": 2.178243917314688,
+          "l2c_prefetcher-next_line_llc_replacement-random": 2.178243917314688,
+          "l2c_prefetcher-ip_stride_llc_replacement-lru": 2.14105103144102,
+          "l2c_prefetcher-ip_stride_llc_replacement-srrip": 2.14105103144102,
+          "l2c_prefetcher-ip_stride_llc_replacement-random": 2.14105103144102
+        }
+      },
+      {
+        "step": 98,
+        "skip_instructions": 20609800,
+        "rl_action": {
+          "l2c_prefetcher": "ip_stride",
+          "llc_replacement": "random"
+        },
+        "rl_ipc": 1.5509759369692835,
+        "best_action": {
+          "l2c_prefetcher": "next_line",
+          "llc_replacement": "lru"
+        },
+        "best_ipc": 1.6238227461678358,
+        "per_action_ipc": {
+          "l2c_prefetcher-no_llc_replacement-lru": 1.5516979199801386,
+          "l2c_prefetcher-no_llc_replacement-srrip": 1.5516979199801386,
+          "l2c_prefetcher-no_llc_replacement-random": 1.5516979199801386,
+          "l2c_prefetcher-next_line_llc_replacement-lru": 1.6238227461678358,
+          "l2c_prefetcher-next_line_llc_replacement-srrip": 1.6238227461678358,
+          "l2c_prefetcher-next_line_llc_replacement-random": 1.6238227461678358,
+          "l2c_prefetcher-ip_stride_llc_replacement-lru": 1.5509759369692835,
+          "l2c_prefetcher-ip_stride_llc_replacement-srrip": 1.5509759369692835,
+          "l2c_prefetcher-ip_stride_llc_replacement-random": 1.5509759369692835
+        }
+      },
+      {
+        "step": 99,
+        "skip_instructions": 20809900,
+        "rl_action": {
+          "l2c_prefetcher": "ip_stride",
+          "llc_replacement": "random"
+        },
+        "rl_ipc": 1.5576479750778816,
+        "best_action": {
+          "l2c_prefetcher": "next_line",
+          "llc_replacement": "lru"
+        },
+        "best_ipc": 1.6342035380152797,
+        "per_action_ipc": {
+          "l2c_prefetcher-no_llc_replacement-lru": 1.55550370595052,
+          "l2c_prefetcher-no_llc_replacement-srrip": 1.55550370595052,
+          "l2c_prefetcher-no_llc_replacement-random": 1.55550370595052,
+          "l2c_prefetcher-next_line_llc_replacement-lru": 1.6342035380152797,
+          "l2c_prefetcher-next_line_llc_replacement-srrip": 1.6342035380152797,
+          "l2c_prefetcher-next_line_llc_replacement-random": 1.6342035380152797,
+          "l2c_prefetcher-ip_stride_llc_replacement-lru": 1.5576479750778816,
+          "l2c_prefetcher-ip_stride_llc_replacement-srrip": 1.5576479750778816,
+          "l2c_prefetcher-ip_stride_llc_replacement-random": 1.5576479750778816
+        }
+      }
+    ]
+  }
+}

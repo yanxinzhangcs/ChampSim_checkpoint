@@ -26,6 +26,7 @@ def parse_args() -> argparse.Namespace:
   parser.add_argument("--seed", type=int, default=0, help="Random seed for the agent")
   parser.add_argument("--compare-limit", type=int, default=None, help="Limit the number of windows in per-step comparison (default: all)")
   parser.add_argument("--skip-grid", action="store_true", help="Skip the per-step optimal action comparison")
+  parser.add_argument("--topk", type=int, default=3, help="Number of top policies to record per step")
   parser.add_argument("--output", type=Path, default=Path("rl_experiments"), help="Root directory for experiment outputs")
   return parser.parse_args()
 
@@ -214,6 +215,7 @@ def run_experiments() -> None:
     step_results = []
     action_choices = action_space.all_actions()
     compare_steps = args.compare_limit if args.compare_limit is not None else len(rl_results)
+    best_action_counts: Dict[str, int] = {}
 
     for step_idx, rl_result in enumerate(rl_results[:compare_steps]):
       skip_value = rl_result.skip_instructions
@@ -243,6 +245,20 @@ def run_experiments() -> None:
           best_ipc = ipc
           best_action = action
 
+      # Prepare top-K leaderboard and relative gain versus base action
+      base_key = base_action.key()
+      base_ipc = per_action_ipc.get(base_key)
+      sorted_actions = sorted(per_action_ipc.items(), key=lambda item: item[1], reverse=True)
+      top_entries = []
+      for action_key, ipc in sorted_actions[: args.topk]:
+        delta_pct = None
+        if base_ipc and base_ipc != 0:
+          delta_pct = 100.0 * (ipc - base_ipc) / base_ipc
+        top_entries.append({"action": action_key, "ipc": ipc, "delta_pct_vs_base": delta_pct})
+
+      if best_action:
+        best_action_counts[best_action.key()] = best_action_counts.get(best_action.key(), 0) + 1
+
       step_results.append(
           {
               "step": step_idx,
@@ -252,6 +268,8 @@ def run_experiments() -> None:
               "best_action": action_display(best_action) if best_action else None,
               "best_ipc": best_ipc,
               "per_action_ipc": per_action_ipc,
+              "top_k": top_entries,
+              "base_ipc": base_ipc,
           }
       )
       start_checkpoint = rl_result.cache_path
@@ -259,6 +277,7 @@ def run_experiments() -> None:
     summary["per_step_comparison"] = {
         "steps_evaluated": len(step_results),
         "results": step_results,
+        "best_action_counts": best_action_counts,
     }
 
   summary_path = output_root / "experiment_summary.json"
