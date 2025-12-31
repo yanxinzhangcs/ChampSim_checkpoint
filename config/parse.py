@@ -422,7 +422,7 @@ class NormalizedConfiguration:
             ({
                 'name': c['name'],
                 '_branch_predictor_data':
-                    [*map(branch_parse, util.wrap_list(c.get('branch_predictor', 'hashed_perceptron')))],
+                    [*map(branch_parse, util.wrap_list(c.get('branch_predictor', 'spec_tagescl')))],
                 '_btb_data':
                     [*map(btb_parse, util.wrap_list(c.get('btb', 'basic_btb')))]
              } for c in cores),

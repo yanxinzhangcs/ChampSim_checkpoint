@@ -1,0 +1,13 @@
+{
+  "template_config": "rl_controller/configs/perlbench_baseline.json",
+  "heads": [
+    {
+      "name": "llc_replacement",
+      "path": ["LLC", "replacement"],
+      "choices": ["lru"]
+    }
+  ],
+  "base_action": {
+    "llc_replacement": "lru"
+  }
+}

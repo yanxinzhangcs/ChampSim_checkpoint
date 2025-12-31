@@ -1,0 +1,3535 @@
+{
+  "config": {
+    "trace": "/home/ubuntu/yanxin/ChampSim_checkpoint/600.perlbench_s-210B.champsimtrace.xz",
+    "warmup": 1000000,
+    "window": 200000,
+    "resume_warmup": 100,
+    "steps": 100,
+    "epsilon": 0.1,
+    "seed": 0
+  },
+  "rl": {
+    "total_ipc": 145.3810680951463,
+    "episode": [
+      {
+        "step": 0,
+        "action": {
+          "llc_replacement": "lru"
+        },
+        "reward": 1.3717960149525017,
+        "ipc": 1.3717960149525017,
+        "skip_instructions": 1000000,
+        "stats_path": "/home/ubuntu/yanxin/ChampSim_checkpoint/rl_results/perlbench_baseline/rl/iter_0000_stats.json",
+        "cache_path": "/home/ubuntu/yanxin/ChampSim_checkpoint/rl_results/perlbench_baseline/rl/iter_0000_cache.log"
+      },
+      {
+        "step": 1,
+        "action": {
+          "llc_replacement": "lru"
+        },
+        "reward": 1.4325394835798446,
+        "ipc": 1.4325394835798446,
+        "skip_instructions": 1200100,
+        "stats_path": "/home/ubuntu/yanxin/ChampSim_checkpoint/rl_results/perlbench_baseline/rl/iter_0001_stats.json",
+        "cache_path": "/home/ubuntu/yanxin/ChampSim_checkpoint/rl_results/perlbench_baseline/rl/iter_0001_cache.log"
+      },
+      {
+        "step": 2,
+        "action": {
+          "llc_replacement": "lru"
+        },
+        "reward": 1.3928546556166863,
+        "ipc": 1.3928546556166863,
+        "skip_instructions": 1400200,
+        "stats_path": "/home/ubuntu/yanxin/ChampSim_checkpoint/rl_results/perlbench_baseline/rl/iter_0002_stats.json",
+        "cache_path": "/home/ubuntu/yanxin/ChampSim_checkpoint/rl_results/perlbench_baseline/rl/iter_0002_cache.log"
+      },
+      {
+        "step": 3,
+        "action": {
+          "llc_replacement": "lru"
+        },
+        "reward": 1.4125702743170325,
+        "ipc": 1.4125702743170325,
+        "skip_instructions": 1600300,
+        "stats_path": "/home/ubuntu/yanxin/ChampSim_checkpoint/rl_results/perlbench_baseline/rl/iter_0003_stats.json",
+        "cache_path": "/home/ubuntu/yanxin/ChampSim_checkpoint/rl_results/perlbench_baseline/rl/iter_0003_cache.log"
+      },
+      {
+        "step": 4,
+        "action": {
+          "llc_replacement": "lru"
+        },
+        "reward": 1.4817852459380765,
+        "ipc": 1.4817852459380765,
+        "skip_instructions": 1800400,
+        "stats_path": "/home/ubuntu/yanxin/ChampSim_checkpoint/rl_results/perlbench_baseline/rl/iter_0004_stats.json",
+        "cache_path": "/home/ubuntu/yanxin/ChampSim_checkpoint/rl_results/perlbench_baseline/rl/iter_0004_cache.log"
+      },
+      {
+        "step": 5,
+        "action": {
+          "llc_replacement": "lru"
+        },
+        "reward": 1.3858039661312898,
+        "ipc": 1.3858039661312898,
+        "skip_instructions": 2000500,
+        "stats_path": "/home/ubuntu/yanxin/ChampSim_checkpoint/rl_results/perlbench_baseline/rl/iter_0005_stats.json",
+        "cache_path": "/home/ubuntu/yanxin/ChampSim_checkpoint/rl_results/perlbench_baseline/rl/iter_0005_cache.log"
+      },
+      {
+        "step": 6,
+        "action": {
+          "llc_replacement": "lru"
+        },
+        "reward": 0.6153145641880771,
+        "ipc": 0.6153145641880771,
+        "skip_instructions": 2200600,
+        "stats_path": "/home/ubuntu/yanxin/ChampSim_checkpoint/rl_results/perlbench_baseline/rl/iter_0006_stats.json",
+        "cache_path": "/home/ubuntu/yanxin/ChampSim_checkpoint/rl_results/perlbench_baseline/rl/iter_0006_cache.log"
+      },
+      {
+        "step": 7,
+        "action": {
+          "llc_replacement": "lru"
+        },
+        "reward": 0.5826227798541702,
+        "ipc": 0.5826227798541702,
+        "skip_instructions": 2400700,
+        "stats_path": "/home/ubuntu/yanxin/ChampSim_checkpoint/rl_results/perlbench_baseline/rl/iter_0007_stats.json",
+        "cache_path": "/home/ubuntu/yanxin/ChampSim_checkpoint/rl_results/perlbench_baseline/rl/iter_0007_cache.log"
+      },
+      {
+        "step": 8,
+        "action": {
+          "llc_replacement": "lru"
+        },
+        "reward": 1.5338517700472423,
+        "ipc": 1.5338517700472423,
+        "skip_instructions": 2600800,
+        "stats_path": "/home/ubuntu/yanxin/ChampSim_checkpoint/rl_results/perlbench_baseline/rl/iter_0008_stats.json",
+        "cache_path": "/home/ubuntu/yanxin/ChampSim_checkpoint/rl_results/perlbench_baseline/rl/iter_0008_cache.log"
+      },
+      {
+        "step": 9,
+        "action": {
+          "llc_replacement": "lru"
+        },
+        "reward": 1.4806188925081434,
+        "ipc": 1.4806188925081434,
+        "skip_instructions": 2800900,
+        "stats_path": "/home/ubuntu/yanxin/ChampSim_checkpoint/rl_results/perlbench_baseline/rl/iter_0009_stats.json",
+        "cache_path": "/home/ubuntu/yanxin/ChampSim_checkpoint/rl_results/perlbench_baseline/rl/iter_0009_cache.log"
+      },
+      {
+        "step": 10,
+        "action": {
+          "llc_replacement": "lru"
+        },
+        "reward": 1.29859167732594,
+        "ipc": 1.29859167732594,
+        "skip_instructions": 3001000,
+        "stats_path": "/home/ubuntu/yanxin/ChampSim_checkpoint/rl_results/perlbench_baseline/rl/iter_0010_stats.json",
+        "cache_path": "/home/ubuntu/yanxin/ChampSim_checkpoint/rl_results/perlbench_baseline/rl/iter_0010_cache.log"
+      },
+      {
+        "step": 11,
+        "action": {
+          "llc_replacement": "lru"
+        },
+        "reward": 1.45534655266509,
+        "ipc": 1.45534655266509,
+        "skip_instructions": 3201100,
+        "stats_path": "/home/ubuntu/yanxin/ChampSim_checkpoint/rl_results/perlbench_baseline/rl/iter_0011_stats.json",
+        "cache_path": "/home/ubuntu/yanxin/ChampSim_checkpoint/rl_results/perlbench_baseline/rl/iter_0011_cache.log"
+      },
+      {
+        "step": 12,
+        "action": {
+          "llc_replacement": "lru"
+        },
+        "reward": 1.4335971099260278,
+        "ipc": 1.4335971099260278,
+        "skip_instructions": 3401200,
+        "stats_path": "/home/ubuntu/yanxin/ChampSim_checkpoint/rl_results/perlbench_baseline/rl/iter_0012_stats.json",
+        "cache_path": "/home/ubuntu/yanxin/ChampSim_checkpoint/rl_results/perlbench_baseline/rl/iter_0012_cache.log"
+      },
+      {
+        "step": 13,
+        "action": {
+          "llc_replacement": "lru"
+        },
+        "reward": 1.3857036949789026,
+        "ipc": 1.3857036949789026,
+        "skip_instructions": 3601300,
+        "stats_path": "/home/ubuntu/yanxin/ChampSim_checkpoint/rl_results/perlbench_baseline/rl/iter_0013_stats.json",
+        "cache_path": "/home/ubuntu/yanxin/ChampSim_checkpoint/rl_results/perlbench_baseline/rl/iter_0013_cache.log"
+      },
+      {
+        "step": 14,
+        "action": {
+          "llc_replacement": "lru"
+        },
+        "reward": 1.5485347063605746,
+        "ipc": 1.5485347063605746,
+        "skip_instructions": 3801400,
+        "stats_path": "/home/ubuntu/yanxin/ChampSim_checkpoint/rl_results/perlbench_baseline/rl/iter_0014_stats.json",
+        "cache_path": "/home/ubuntu/yanxin/ChampSim_checkpoint/rl_results/perlbench_baseline/rl/iter_0014_cache.log"
+      },
+      {
+        "step": 15,
+        "action": {
+          "llc_replacement": "lru"
+        },
+        "reward": 1.504234419891996,
+        "ipc": 1.504234419891996,
+        "skip_instructions": 4001500,
+        "stats_path": "/home/ubuntu/yanxin/ChampSim_checkpoint/rl_results/perlbench_baseline/rl/iter_0015_stats.json",
+        "cache_path": "/home/ubuntu/yanxin/ChampSim_checkpoint/rl_results/perlbench_baseline/rl/iter_0015_cache.log"
+      },
+      {
+        "step": 16,
+        "action": {
+          "llc_replacement": "lru"
+        },
+        "reward": 0.6098507717545754,
+        "ipc": 0.6098507717545754,
+        "skip_instructions": 4201600,
+        "stats_path": "/home/ubuntu/yanxin/ChampSim_checkpoint/rl_results/perlbench_baseline/rl/iter_0016_stats.json",
+        "cache_path": "/home/ubuntu/yanxin/ChampSim_checkpoint/rl_results/perlbench_baseline/rl/iter_0016_cache.log"
+      },
+      {
+        "step": 17,
+        "action": {
+          "llc_replacement": "lru"
+        },
+        "reward": 0.49942691907198344,
+        "ipc": 0.49942691907198344,
+        "skip_instructions": 4401700,
+        "stats_path": "/home/ubuntu/yanxin/ChampSim_checkpoint/rl_results/perlbench_baseline/rl/iter_0017_stats.json",
+        "cache_path": "/home/ubuntu/yanxin/ChampSim_checkpoint/rl_results/perlbench_baseline/rl/iter_0017_cache.log"
+      },
+      {
+        "step": 18,
+        "action": {
+          "llc_replacement": "lru"
+        },
+        "reward": 1.0929558992294661,
+        "ipc": 1.0929558992294661,
+        "skip_instructions": 4601800,
+        "stats_path": "/home/ubuntu/yanxin/ChampSim_checkpoint/rl_results/perlbench_baseline/rl/iter_0018_stats.json",
+        "cache_path": "/home/ubuntu/yanxin/ChampSim_checkpoint/rl_results/perlbench_baseline/rl/iter_0018_cache.log"
+      },
+      {
+        "step": 19,
+        "action": {
+          "llc_replacement": "lru"
+        },
+        "reward": 1.0523324949751123,
+        "ipc": 1.0523324949751123,
+        "skip_instructions": 4801900,
+        "stats_path": "/home/ubuntu/yanxin/ChampSim_checkpoint/rl_results/perlbench_baseline/rl/iter_0019_stats.json",
+        "cache_path": "/home/ubuntu/yanxin/ChampSim_checkpoint/rl_results/perlbench_baseline/rl/iter_0019_cache.log"
+      },
+      {
+        "step": 20,
+        "action": {
+          "llc_replacement": "lru"
+        },
+        "reward": 1.147590931781798,
+        "ipc": 1.147590931781798,
+        "skip_instructions": 5002000,
+        "stats_path": "/home/ubuntu/yanxin/ChampSim_checkpoint/rl_results/perlbench_baseline/rl/iter_0020_stats.json",
+        "cache_path": "/home/ubuntu/yanxin/ChampSim_checkpoint/rl_results/perlbench_baseline/rl/iter_0020_cache.log"
+      },
+      {
+        "step": 21,
+        "action": {
+          "llc_replacement": "lru"
+        },
+        "reward": 1.0115620969577421,
+        "ipc": 1.0115620969577421,
+        "skip_instructions": 5202100,
+        "stats_path": "/home/ubuntu/yanxin/ChampSim_checkpoint/rl_results/perlbench_baseline/rl/iter_0021_stats.json",
+        "cache_path": "/home/ubuntu/yanxin/ChampSim_checkpoint/rl_results/perlbench_baseline/rl/iter_0021_cache.log"
+      },
+      {
+        "step": 22,
+        "action": {
+          "llc_replacement": "lru"
+        },
+        "reward": 1.1275736869404416,
+        "ipc": 1.1275736869404416,
+        "skip_instructions": 5402200,
+        "stats_path": "/home/ubuntu/yanxin/ChampSim_checkpoint/rl_results/perlbench_baseline/rl/iter_0022_stats.json",
+        "cache_path": "/home/ubuntu/yanxin/ChampSim_checkpoint/rl_results/perlbench_baseline/rl/iter_0022_cache.log"
+      },
+      {
+        "step": 23,
+        "action": {
+          "llc_replacement": "lru"
+        },
+        "reward": 1.089181270626164,
+        "ipc": 1.089181270626164,
+        "skip_instructions": 5602300,
+        "stats_path": "/home/ubuntu/yanxin/ChampSim_checkpoint/rl_results/perlbench_baseline/rl/iter_0023_stats.json",
+        "cache_path": "/home/ubuntu/yanxin/ChampSim_checkpoint/rl_results/perlbench_baseline/rl/iter_0023_cache.log"
+      },
+      {
+        "step": 24,
+        "action": {
+          "llc_replacement": "lru"
+        },
+        "reward": 0.6515052803710918,
+        "ipc": 0.6515052803710918,
+        "skip_instructions": 5802400,
+        "stats_path": "/home/ubuntu/yanxin/ChampSim_checkpoint/rl_results/perlbench_baseline/rl/iter_0024_stats.json",
+        "cache_path": "/home/ubuntu/yanxin/ChampSim_checkpoint/rl_results/perlbench_baseline/rl/iter_0024_cache.log"
+      },
+      {
+        "step": 25,
+        "action": {
+          "llc_replacement": "lru"
+        },
+        "reward": 1.5355080920062647,
+        "ipc": 1.5355080920062647,
+        "skip_instructions": 6002500,
+        "stats_path": "/home/ubuntu/yanxin/ChampSim_checkpoint/rl_results/perlbench_baseline/rl/iter_0025_stats.json",
+        "cache_path": "/home/ubuntu/yanxin/ChampSim_checkpoint/rl_results/perlbench_baseline/rl/iter_0025_cache.log"
+      },
+      {
+        "step": 26,
+        "action": {
+          "llc_replacement": "lru"
+        },
+        "reward": 1.350739867762567,
+        "ipc": 1.350739867762567,
+        "skip_instructions": 6202600,
+        "stats_path": "/home/ubuntu/yanxin/ChampSim_checkpoint/rl_results/perlbench_baseline/rl/iter_0026_stats.json",
+        "cache_path": "/home/ubuntu/yanxin/ChampSim_checkpoint/rl_results/perlbench_baseline/rl/iter_0026_cache.log"
+      },
+      {
+        "step": 27,
+        "action": {
+          "llc_replacement": "lru"
+        },
+        "reward": 1.4712156655044062,
+        "ipc": 1.4712156655044062,
+        "skip_instructions": 6402700,
+        "stats_path": "/home/ubuntu/yanxin/ChampSim_checkpoint/rl_results/perlbench_baseline/rl/iter_0027_stats.json",
+        "cache_path": "/home/ubuntu/yanxin/ChampSim_checkpoint/rl_results/perlbench_baseline/rl/iter_0027_cache.log"
+      },
+      {
+        "step": 28,
+        "action": {
+          "llc_replacement": "lru"
+        },
+        "reward": 1.439615334782546,
+        "ipc": 1.439615334782546,
+        "skip_instructions": 6602800,
+        "stats_path": "/home/ubuntu/yanxin/ChampSim_checkpoint/rl_results/perlbench_baseline/rl/iter_0028_stats.json",
+        "cache_path": "/home/ubuntu/yanxin/ChampSim_checkpoint/rl_results/perlbench_baseline/rl/iter_0028_cache.log"
+      },
+      {
+        "step": 29,
+        "action": {
+          "llc_replacement": "lru"
+        },
+        "reward": 1.4230096051227321,
+        "ipc": 1.4230096051227321,
+        "skip_instructions": 6802900,
+        "stats_path": "/home/ubuntu/yanxin/ChampSim_checkpoint/rl_results/perlbench_baseline/rl/iter_0029_stats.json",
+        "cache_path": "/home/ubuntu/yanxin/ChampSim_checkpoint/rl_results/perlbench_baseline/rl/iter_0029_cache.log"
+      },
+      {
+        "step": 30,
+        "action": {
+          "llc_replacement": "lru"
+        },
+        "reward": 1.4649404870902765,
+        "ipc": 1.4649404870902765,
+        "skip_instructions": 7003000,
+        "stats_path": "/home/ubuntu/yanxin/ChampSim_checkpoint/rl_results/perlbench_baseline/rl/iter_0030_stats.json",
+        "cache_path": "/home/ubuntu/yanxin/ChampSim_checkpoint/rl_results/perlbench_baseline/rl/iter_0030_cache.log"
+      },
+      {
+        "step": 31,
+        "action": {
+          "llc_replacement": "lru"
+        },
+        "reward": 1.4458983683118498,
+        "ipc": 1.4458983683118498,
+        "skip_instructions": 7203100,
+        "stats_path": "/home/ubuntu/yanxin/ChampSim_checkpoint/rl_results/perlbench_baseline/rl/iter_0031_stats.json",
+        "cache_path": "/home/ubuntu/yanxin/ChampSim_checkpoint/rl_results/perlbench_baseline/rl/iter_0031_cache.log"
+      },
+      {
+        "step": 32,
+        "action": {
+          "llc_replacement": "lru"
+        },
+        "reward": 1.0156302367386734,
+        "ipc": 1.0156302367386734,
+        "skip_instructions": 7403200,
+        "stats_path": "/home/ubuntu/yanxin/ChampSim_checkpoint/rl_results/perlbench_baseline/rl/iter_0032_stats.json",
+        "cache_path": "/home/ubuntu/yanxin/ChampSim_checkpoint/rl_results/perlbench_baseline/rl/iter_0032_cache.log"
+      },
+      {
+        "step": 33,
+        "action": {
+          "llc_replacement": "lru"
+        },
+        "reward": 0.5529624816832094,
+        "ipc": 0.5529624816832094,
+        "skip_instructions": 7603300,
+        "stats_path": "/home/ubuntu/yanxin/ChampSim_checkpoint/rl_results/perlbench_baseline/rl/iter_0033_stats.json",
+        "cache_path": "/home/ubuntu/yanxin/ChampSim_checkpoint/rl_results/perlbench_baseline/rl/iter_0033_cache.log"
+      },
+      {
+        "step": 34,
+        "action": {
+          "llc_replacement": "lru"
+        },
+        "reward": 1.3329578854061837,
+        "ipc": 1.3329578854061837,
+        "skip_instructions": 7803400,
+        "stats_path": "/home/ubuntu/yanxin/ChampSim_checkpoint/rl_results/perlbench_baseline/rl/iter_0034_stats.json",
+        "cache_path": "/home/ubuntu/yanxin/ChampSim_checkpoint/rl_results/perlbench_baseline/rl/iter_0034_cache.log"
+      },
+      {
+        "step": 35,
+        "action": {
+          "llc_replacement": "lru"
+        },
+        "reward": 1.386656405563182,
+        "ipc": 1.386656405563182,
+        "skip_instructions": 8003500,
+        "stats_path": "/home/ubuntu/yanxin/ChampSim_checkpoint/rl_results/perlbench_baseline/rl/iter_0035_stats.json",
+        "cache_path": "/home/ubuntu/yanxin/ChampSim_checkpoint/rl_results/perlbench_baseline/rl/iter_0035_cache.log"
+      },
+      {
+        "step": 36,
+        "action": {
+          "llc_replacement": "lru"
+        },
+        "reward": 1.268713524486171,
+        "ipc": 1.268713524486171,
+        "skip_instructions": 8203600,
+        "stats_path": "/home/ubuntu/yanxin/ChampSim_checkpoint/rl_results/perlbench_baseline/rl/iter_0036_stats.json",
+        "cache_path": "/home/ubuntu/yanxin/ChampSim_checkpoint/rl_results/perlbench_baseline/rl/iter_0036_cache.log"
+      },
+      {
+        "step": 37,
+        "action": {
+          "llc_replacement": "lru"
+        },
+        "reward": 1.3334844615723116,
+        "ipc": 1.3334844615723116,
+        "skip_instructions": 8403700,
+        "stats_path": "/home/ubuntu/yanxin/ChampSim_checkpoint/rl_results/perlbench_baseline/rl/iter_0037_stats.json",
+        "cache_path": "/home/ubuntu/yanxin/ChampSim_checkpoint/rl_results/perlbench_baseline/rl/iter_0037_cache.log"
+      },
+      {
+        "step": 38,
+        "action": {
+          "llc_replacement": "lru"
+        },
+        "reward": 1.3142507934630472,
+        "ipc": 1.3142507934630472,
+        "skip_instructions": 8603800,
+        "stats_path": "/home/ubuntu/yanxin/ChampSim_checkpoint/rl_results/perlbench_baseline/rl/iter_0038_stats.json",
+        "cache_path": "/home/ubuntu/yanxin/ChampSim_checkpoint/rl_results/perlbench_baseline/rl/iter_0038_cache.log"
+      },
+      {
+        "step": 39,
+        "action": {
+          "llc_replacement": "lru"
+        },
+        "reward": 1.3858012929332124,
+        "ipc": 1.3858012929332124,
+        "skip_instructions": 8803900,
+        "stats_path": "/home/ubuntu/yanxin/ChampSim_checkpoint/rl_results/perlbench_baseline/rl/iter_0039_stats.json",
+        "cache_path": "/home/ubuntu/yanxin/ChampSim_checkpoint/rl_results/perlbench_baseline/rl/iter_0039_cache.log"
+      },
+      {
+        "step": 40,
+        "action": {
+          "llc_replacement": "lru"
+        },
+        "reward": 1.2457505185332827,
+        "ipc": 1.2457505185332827,
+        "skip_instructions": 9004000,
+        "stats_path": "/home/ubuntu/yanxin/ChampSim_checkpoint/rl_results/perlbench_baseline/rl/iter_0040_stats.json",
+        "cache_path": "/home/ubuntu/yanxin/ChampSim_checkpoint/rl_results/perlbench_baseline/rl/iter_0040_cache.log"
+      },
+      {
+        "step": 41,
+        "action": {
+          "llc_replacement": "lru"
+        },
+        "reward": 1.4422698329138752,
+        "ipc": 1.4422698329138752,
+        "skip_instructions": 9204100,
+        "stats_path": "/home/ubuntu/yanxin/ChampSim_checkpoint/rl_results/perlbench_baseline/rl/iter_0041_stats.json",
+        "cache_path": "/home/ubuntu/yanxin/ChampSim_checkpoint/rl_results/perlbench_baseline/rl/iter_0041_cache.log"
+      },
+      {
+        "step": 42,
+        "action": {
+          "llc_replacement": "lru"
+        },
+        "reward": 1.354845920918039,
+        "ipc": 1.354845920918039,
+        "skip_instructions": 9404200,
+        "stats_path": "/home/ubuntu/yanxin/ChampSim_checkpoint/rl_results/perlbench_baseline/rl/iter_0042_stats.json",
+        "cache_path": "/home/ubuntu/yanxin/ChampSim_checkpoint/rl_results/perlbench_baseline/rl/iter_0042_cache.log"
+      },
+      {
+        "step": 43,
+        "action": {
+          "llc_replacement": "lru"
+        },
+        "reward": 1.2361306830824002,
+        "ipc": 1.2361306830824002,
+        "skip_instructions": 9604300,
+        "stats_path": "/home/ubuntu/yanxin/ChampSim_checkpoint/rl_results/perlbench_baseline/rl/iter_0043_stats.json",
+        "cache_path": "/home/ubuntu/yanxin/ChampSim_checkpoint/rl_results/perlbench_baseline/rl/iter_0043_cache.log"
+      },
+      {
+        "step": 44,
+        "action": {
+          "llc_replacement": "lru"
+        },
+        "reward": 0.6000780101413183,
+        "ipc": 0.6000780101413183,
+        "skip_instructions": 9804400,
+        "stats_path": "/home/ubuntu/yanxin/ChampSim_checkpoint/rl_results/perlbench_baseline/rl/iter_0044_stats.json",
+        "cache_path": "/home/ubuntu/yanxin/ChampSim_checkpoint/rl_results/perlbench_baseline/rl/iter_0044_cache.log"
+      },
+      {
+        "step": 45,
+        "action": {
+          "llc_replacement": "lru"
+        },
+        "reward": 1.40901341374063,
+        "ipc": 1.40901341374063,
+        "skip_instructions": 10004500,
+        "stats_path": "/home/ubuntu/yanxin/ChampSim_checkpoint/rl_results/perlbench_baseline/rl/iter_0045_stats.json",
+        "cache_path": "/home/ubuntu/yanxin/ChampSim_checkpoint/rl_results/perlbench_baseline/rl/iter_0045_cache.log"
+      },
+      {
+        "step": 46,
+        "action": {
+          "llc_replacement": "lru"
+        },
+        "reward": 1.5264451330270328,
+        "ipc": 1.5264451330270328,
+        "skip_instructions": 10204600,
+        "stats_path": "/home/ubuntu/yanxin/ChampSim_checkpoint/rl_results/perlbench_baseline/rl/iter_0046_stats.json",
+        "cache_path": "/home/ubuntu/yanxin/ChampSim_checkpoint/rl_results/perlbench_baseline/rl/iter_0046_cache.log"
+      },
+      {
+        "step": 47,
+        "action": {
+          "llc_replacement": "lru"
+        },
+        "reward": 1.3112371336786206,
+        "ipc": 1.3112371336786206,
+        "skip_instructions": 10404700,
+        "stats_path": "/home/ubuntu/yanxin/ChampSim_checkpoint/rl_results/perlbench_baseline/rl/iter_0047_stats.json",
+        "cache_path": "/home/ubuntu/yanxin/ChampSim_checkpoint/rl_results/perlbench_baseline/rl/iter_0047_cache.log"
+      },
+      {
+        "step": 48,
+        "action": {
+          "llc_replacement": "lru"
+        },
+        "reward": 1.4750894272965298,
+        "ipc": 1.4750894272965298,
+        "skip_instructions": 10604800,
+        "stats_path": "/home/ubuntu/yanxin/ChampSim_checkpoint/rl_results/perlbench_baseline/rl/iter_0048_stats.json",
+        "cache_path": "/home/ubuntu/yanxin/ChampSim_checkpoint/rl_results/perlbench_baseline/rl/iter_0048_cache.log"
+      },
+      {
+        "step": 49,
+        "action": {
+          "llc_replacement": "lru"
+        },
+        "reward": 1.4541231042154397,
+        "ipc": 1.4541231042154397,
+        "skip_instructions": 10804900,
+        "stats_path": "/home/ubuntu/yanxin/ChampSim_checkpoint/rl_results/perlbench_baseline/rl/iter_0049_stats.json",
+        "cache_path": "/home/ubuntu/yanxin/ChampSim_checkpoint/rl_results/perlbench_baseline/rl/iter_0049_cache.log"
+      },
+      {
+        "step": 50,
+        "action": {
+          "llc_replacement": "lru"
+        },
+        "reward": 1.4100635227264715,
+        "ipc": 1.4100635227264715,
+        "skip_instructions": 11005000,
+        "stats_path": "/home/ubuntu/yanxin/ChampSim_checkpoint/rl_results/perlbench_baseline/rl/iter_0050_stats.json",
+        "cache_path": "/home/ubuntu/yanxin/ChampSim_checkpoint/rl_results/perlbench_baseline/rl/iter_0050_cache.log"
+      },
+      {
+        "step": 51,
+        "action": {
+          "llc_replacement": "lru"
+        },
+        "reward": 1.556820039387547,
+        "ipc": 1.556820039387547,
+        "skip_instructions": 11205100,
+        "stats_path": "/home/ubuntu/yanxin/ChampSim_checkpoint/rl_results/perlbench_baseline/rl/iter_0051_stats.json",
+        "cache_path": "/home/ubuntu/yanxin/ChampSim_checkpoint/rl_results/perlbench_baseline/rl/iter_0051_cache.log"
+      },
+      {
+        "step": 52,
+        "action": {
+          "llc_replacement": "lru"
+        },
+        "reward": 1.4444917916753939,
+        "ipc": 1.4444917916753939,
+        "skip_instructions": 11405200,
+        "stats_path": "/home/ubuntu/yanxin/ChampSim_checkpoint/rl_results/perlbench_baseline/rl/iter_0052_stats.json",
+        "cache_path": "/home/ubuntu/yanxin/ChampSim_checkpoint/rl_results/perlbench_baseline/rl/iter_0052_cache.log"
+      },
+      {
+        "step": 53,
+        "action": {
+          "llc_replacement": "lru"
+        },
+        "reward": 0.7521265954166322,
+        "ipc": 0.7521265954166322,
+        "skip_instructions": 11605300,
+        "stats_path": "/home/ubuntu/yanxin/ChampSim_checkpoint/rl_results/perlbench_baseline/rl/iter_0053_stats.json",
+        "cache_path": "/home/ubuntu/yanxin/ChampSim_checkpoint/rl_results/perlbench_baseline/rl/iter_0053_cache.log"
+      },
+      {
+        "step": 54,
+        "action": {
+          "llc_replacement": "lru"
+        },
+        "reward": 1.5439281771794258,
+        "ipc": 1.5439281771794258,
+        "skip_instructions": 11805400,
+        "stats_path": "/home/ubuntu/yanxin/ChampSim_checkpoint/rl_results/perlbench_baseline/rl/iter_0054_stats.json",
+        "cache_path": "/home/ubuntu/yanxin/ChampSim_checkpoint/rl_results/perlbench_baseline/rl/iter_0054_cache.log"
+      },
+      {
+        "step": 55,
+        "action": {
+          "llc_replacement": "lru"
+        },
+        "reward": 1.488379534883721,
+        "ipc": 1.488379534883721,
+        "skip_instructions": 12005500,
+        "stats_path": "/home/ubuntu/yanxin/ChampSim_checkpoint/rl_results/perlbench_baseline/rl/iter_0055_stats.json",
+        "cache_path": "/home/ubuntu/yanxin/ChampSim_checkpoint/rl_results/perlbench_baseline/rl/iter_0055_cache.log"
+      },
+      {
+        "step": 56,
+        "action": {
+          "llc_replacement": "lru"
+        },
+        "reward": 1.4014238466281743,
+        "ipc": 1.4014238466281743,
+        "skip_instructions": 12205600,
+        "stats_path": "/home/ubuntu/yanxin/ChampSim_checkpoint/rl_results/perlbench_baseline/rl/iter_0056_stats.json",
+        "cache_path": "/home/ubuntu/yanxin/ChampSim_checkpoint/rl_results/perlbench_baseline/rl/iter_0056_cache.log"
+      },
+      {
+        "step": 57,
+        "action": {
+          "llc_replacement": "lru"
+        },
+        "reward": 1.4836685187795342,
+        "ipc": 1.4836685187795342,
+        "skip_instructions": 12405700,
+        "stats_path": "/home/ubuntu/yanxin/ChampSim_checkpoint/rl_results/perlbench_baseline/rl/iter_0057_stats.json",
+        "cache_path": "/home/ubuntu/yanxin/ChampSim_checkpoint/rl_results/perlbench_baseline/rl/iter_0057_cache.log"
+      },
+      {
+        "step": 58,
+        "action": {
+          "llc_replacement": "lru"
+        },
+        "reward": 1.3706559208317057,
+        "ipc": 1.3706559208317057,
+        "skip_instructions": 12605800,
+        "stats_path": "/home/ubuntu/yanxin/ChampSim_checkpoint/rl_results/perlbench_baseline/rl/iter_0058_stats.json",
+        "cache_path": "/home/ubuntu/yanxin/ChampSim_checkpoint/rl_results/perlbench_baseline/rl/iter_0058_cache.log"
+      },
+      {
+        "step": 59,
+        "action": {
+          "llc_replacement": "lru"
+        },
+        "reward": 1.4152361274253125,
+        "ipc": 1.4152361274253125,
+        "skip_instructions": 12805900,
+        "stats_path": "/home/ubuntu/yanxin/ChampSim_checkpoint/rl_results/perlbench_baseline/rl/iter_0059_stats.json",
+        "cache_path": "/home/ubuntu/yanxin/ChampSim_checkpoint/rl_results/perlbench_baseline/rl/iter_0059_cache.log"
+      },
+      {
+        "step": 60,
+        "action": {
+          "llc_replacement": "lru"
+        },
+        "reward": 1.5466827521672892,
+        "ipc": 1.5466827521672892,
+        "skip_instructions": 13006000,
+        "stats_path": "/home/ubuntu/yanxin/ChampSim_checkpoint/rl_results/perlbench_baseline/rl/iter_0060_stats.json",
+        "cache_path": "/home/ubuntu/yanxin/ChampSim_checkpoint/rl_results/perlbench_baseline/rl/iter_0060_cache.log"
+      },
+      {
+        "step": 61,
+        "action": {
+          "llc_replacement": "lru"
+        },
+        "reward": 1.4755433579744146,
+        "ipc": 1.4755433579744146,
+        "skip_instructions": 13206100,
+        "stats_path": "/home/ubuntu/yanxin/ChampSim_checkpoint/rl_results/perlbench_baseline/rl/iter_0061_stats.json",
+        "cache_path": "/home/ubuntu/yanxin/ChampSim_checkpoint/rl_results/perlbench_baseline/rl/iter_0061_cache.log"
+      },
+      {
+        "step": 62,
+        "action": {
+          "llc_replacement": "lru"
+        },
+        "reward": 0.7599351021912509,
+        "ipc": 0.7599351021912509,
+        "skip_instructions": 13406200,
+        "stats_path": "/home/ubuntu/yanxin/ChampSim_checkpoint/rl_results/perlbench_baseline/rl/iter_0062_stats.json",
+        "cache_path": "/home/ubuntu/yanxin/ChampSim_checkpoint/rl_results/perlbench_baseline/rl/iter_0062_cache.log"
+      },
+      {
+        "step": 63,
+        "action": {
+          "llc_replacement": "lru"
+        },
+        "reward": 1.4968827883514328,
+        "ipc": 1.4968827883514328,
+        "skip_instructions": 13606300,
+        "stats_path": "/home/ubuntu/yanxin/ChampSim_checkpoint/rl_results/perlbench_baseline/rl/iter_0063_stats.json",
+        "cache_path": "/home/ubuntu/yanxin/ChampSim_checkpoint/rl_results/perlbench_baseline/rl/iter_0063_cache.log"
+      },
+      {
+        "step": 64,
+        "action": {
+          "llc_replacement": "lru"
+        },
+        "reward": 1.4187617047840644,
+        "ipc": 1.4187617047840644,
+        "skip_instructions": 13806400,
+        "stats_path": "/home/ubuntu/yanxin/ChampSim_checkpoint/rl_results/perlbench_baseline/rl/iter_0064_stats.json",
+        "cache_path": "/home/ubuntu/yanxin/ChampSim_checkpoint/rl_results/perlbench_baseline/rl/iter_0064_cache.log"
+      },
+      {
+        "step": 65,
+        "action": {
+          "llc_replacement": "lru"
+        },
+        "reward": 1.4050680042713426,
+        "ipc": 1.4050680042713426,
+        "skip_instructions": 14006500,
+        "stats_path": "/home/ubuntu/yanxin/ChampSim_checkpoint/rl_results/perlbench_baseline/rl/iter_0065_stats.json",
+        "cache_path": "/home/ubuntu/yanxin/ChampSim_checkpoint/rl_results/perlbench_baseline/rl/iter_0065_cache.log"
+      },
+      {
+        "step": 66,
+        "action": {
+          "llc_replacement": "lru"
+        },
+        "reward": 1.3703041390036519,
+        "ipc": 1.3703041390036519,
+        "skip_instructions": 14206600,
+        "stats_path": "/home/ubuntu/yanxin/ChampSim_checkpoint/rl_results/perlbench_baseline/rl/iter_0066_stats.json",
+        "cache_path": "/home/ubuntu/yanxin/ChampSim_checkpoint/rl_results/perlbench_baseline/rl/iter_0066_cache.log"
+      },
+      {
+        "step": 67,
+        "action": {
+          "llc_replacement": "lru"
+        },
+        "reward": 1.5256766240502853,
+        "ipc": 1.5256766240502853,
+        "skip_instructions": 14406700,
+        "stats_path": "/home/ubuntu/yanxin/ChampSim_checkpoint/rl_results/perlbench_baseline/rl/iter_0067_stats.json",
+        "cache_path": "/home/ubuntu/yanxin/ChampSim_checkpoint/rl_results/perlbench_baseline/rl/iter_0067_cache.log"
+      },
+      {
+        "step": 68,
+        "action": {
+          "llc_replacement": "lru"
+        },
+        "reward": 1.3695152013147083,
+        "ipc": 1.3695152013147083,
+        "skip_instructions": 14606800,
+        "stats_path": "/home/ubuntu/yanxin/ChampSim_checkpoint/rl_results/perlbench_baseline/rl/iter_0068_stats.json",
+        "cache_path": "/home/ubuntu/yanxin/ChampSim_checkpoint/rl_results/perlbench_baseline/rl/iter_0068_cache.log"
+      },
+      {
+        "step": 69,
+        "action": {
+          "llc_replacement": "lru"
+        },
+        "reward": 1.5360588000368651,
+        "ipc": 1.5360588000368651,
+        "skip_instructions": 14806900,
+        "stats_path": "/home/ubuntu/yanxin/ChampSim_checkpoint/rl_results/perlbench_baseline/rl/iter_0069_stats.json",
+        "cache_path": "/home/ubuntu/yanxin/ChampSim_checkpoint/rl_results/perlbench_baseline/rl/iter_0069_cache.log"
+      },
+      {
+        "step": 70,
+        "action": {
+          "llc_replacement": "lru"
+        },
+        "reward": 1.3793008324080525,
+        "ipc": 1.3793008324080525,
+        "skip_instructions": 15007000,
+        "stats_path": "/home/ubuntu/yanxin/ChampSim_checkpoint/rl_results/perlbench_baseline/rl/iter_0070_stats.json",
+        "cache_path": "/home/ubuntu/yanxin/ChampSim_checkpoint/rl_results/perlbench_baseline/rl/iter_0070_cache.log"
+      },
+      {
+        "step": 71,
+        "action": {
+          "llc_replacement": "lru"
+        },
+        "reward": 0.8115968493967837,
+        "ipc": 0.8115968493967837,
+        "skip_instructions": 15207100,
+        "stats_path": "/home/ubuntu/yanxin/ChampSim_checkpoint/rl_results/perlbench_baseline/rl/iter_0071_stats.json",
+        "cache_path": "/home/ubuntu/yanxin/ChampSim_checkpoint/rl_results/perlbench_baseline/rl/iter_0071_cache.log"
+      },
+      {
+        "step": 72,
+        "action": {
+          "llc_replacement": "lru"
+        },
+        "reward": 1.6097419635239767,
+        "ipc": 1.6097419635239767,
+        "skip_instructions": 15407200,
+        "stats_path": "/home/ubuntu/yanxin/ChampSim_checkpoint/rl_results/perlbench_baseline/rl/iter_0072_stats.json",
+        "cache_path": "/home/ubuntu/yanxin/ChampSim_checkpoint/rl_results/perlbench_baseline/rl/iter_0072_cache.log"
+      },
+      {
+        "step": 73,
+        "action": {
+          "llc_replacement": "lru"
+        },
+        "reward": 2.3286682346366114,
+        "ipc": 2.3286682346366114,
+        "skip_instructions": 15607300,
+        "stats_path": "/home/ubuntu/yanxin/ChampSim_checkpoint/rl_results/perlbench_baseline/rl/iter_0073_stats.json",
+        "cache_path": "/home/ubuntu/yanxin/ChampSim_checkpoint/rl_results/perlbench_baseline/rl/iter_0073_cache.log"
+      },
+      {
+        "step": 74,
+        "action": {
+          "llc_replacement": "lru"
+        },
+        "reward": 2.313418851861705,
+        "ipc": 2.313418851861705,
+        "skip_instructions": 15807400,
+        "stats_path": "/home/ubuntu/yanxin/ChampSim_checkpoint/rl_results/perlbench_baseline/rl/iter_0074_stats.json",
+        "cache_path": "/home/ubuntu/yanxin/ChampSim_checkpoint/rl_results/perlbench_baseline/rl/iter_0074_cache.log"
+      },
+      {
+        "step": 75,
+        "action": {
+          "llc_replacement": "lru"
+        },
+        "reward": 1.5827668347037456,
+        "ipc": 1.5827668347037456,
+        "skip_instructions": 16007500,
+        "stats_path": "/home/ubuntu/yanxin/ChampSim_checkpoint/rl_results/perlbench_baseline/rl/iter_0075_stats.json",
+        "cache_path": "/home/ubuntu/yanxin/ChampSim_checkpoint/rl_results/perlbench_baseline/rl/iter_0075_cache.log"
+      },
+      {
+        "step": 76,
+        "action": {
+          "llc_replacement": "lru"
+        },
+        "reward": 2.2536931658121584,
+        "ipc": 2.2536931658121584,
+        "skip_instructions": 16207600,
+        "stats_path": "/home/ubuntu/yanxin/ChampSim_checkpoint/rl_results/perlbench_baseline/rl/iter_0076_stats.json",
+        "cache_path": "/home/ubuntu/yanxin/ChampSim_checkpoint/rl_results/perlbench_baseline/rl/iter_0076_cache.log"
+      },
+      {
+        "step": 77,
+        "action": {
+          "llc_replacement": "lru"
+        },
+        "reward": 2.1697621940635305,
+        "ipc": 2.1697621940635305,
+        "skip_instructions": 16407700,
+        "stats_path": "/home/ubuntu/yanxin/ChampSim_checkpoint/rl_results/perlbench_baseline/rl/iter_0077_stats.json",
+        "cache_path": "/home/ubuntu/yanxin/ChampSim_checkpoint/rl_results/perlbench_baseline/rl/iter_0077_cache.log"
+      },
+      {
+        "step": 78,
+        "action": {
+          "llc_replacement": "lru"
+        },
+        "reward": 1.61407784619606,
+        "ipc": 1.61407784619606,
+        "skip_instructions": 16607800,
+        "stats_path": "/home/ubuntu/yanxin/ChampSim_checkpoint/rl_results/perlbench_baseline/rl/iter_0078_stats.json",
+        "cache_path": "/home/ubuntu/yanxin/ChampSim_checkpoint/rl_results/perlbench_baseline/rl/iter_0078_cache.log"
+      },
+      {
+        "step": 79,
+        "action": {
+          "llc_replacement": "lru"
+        },
+        "reward": 2.122239789475918,
+        "ipc": 2.122239789475918,
+        "skip_instructions": 16807900,
+        "stats_path": "/home/ubuntu/yanxin/ChampSim_checkpoint/rl_results/perlbench_baseline/rl/iter_0079_stats.json",
+        "cache_path": "/home/ubuntu/yanxin/ChampSim_checkpoint/rl_results/perlbench_baseline/rl/iter_0079_cache.log"
+      },
+      {
+        "step": 80,
+        "action": {
+          "llc_replacement": "lru"
+        },
+        "reward": 2.3704384103919502,
+        "ipc": 2.3704384103919502,
+        "skip_instructions": 17008000,
+        "stats_path": "/home/ubuntu/yanxin/ChampSim_checkpoint/rl_results/perlbench_baseline/rl/iter_0080_stats.json",
+        "cache_path": "/home/ubuntu/yanxin/ChampSim_checkpoint/rl_results/perlbench_baseline/rl/iter_0080_cache.log"
+      },
+      {
+        "step": 81,
+        "action": {
+          "llc_replacement": "lru"
+        },
+        "reward": 1.5191101186407208,
+        "ipc": 1.5191101186407208,
+        "skip_instructions": 17208100,
+        "stats_path": "/home/ubuntu/yanxin/ChampSim_checkpoint/rl_results/perlbench_baseline/rl/iter_0081_stats.json",
+        "cache_path": "/home/ubuntu/yanxin/ChampSim_checkpoint/rl_results/perlbench_baseline/rl/iter_0081_cache.log"
+      },
+      {
+        "step": 82,
+        "action": {
+          "llc_replacement": "lru"
+        },
+        "reward": 2.3365850809042583,
+        "ipc": 2.3365850809042583,
+        "skip_instructions": 17408200,
+        "stats_path": "/home/ubuntu/yanxin/ChampSim_checkpoint/rl_results/perlbench_baseline/rl/iter_0082_stats.json",
+        "cache_path": "/home/ubuntu/yanxin/ChampSim_checkpoint/rl_results/perlbench_baseline/rl/iter_0082_cache.log"
+      },
+      {
+        "step": 83,
+        "action": {
+          "llc_replacement": "lru"
+        },
+        "reward": 1.4929719400132873,
+        "ipc": 1.4929719400132873,
+        "skip_instructions": 17608300,
+        "stats_path": "/home/ubuntu/yanxin/ChampSim_checkpoint/rl_results/perlbench_baseline/rl/iter_0083_stats.json",
+        "cache_path": "/home/ubuntu/yanxin/ChampSim_checkpoint/rl_results/perlbench_baseline/rl/iter_0083_cache.log"
+      },
+      {
+        "step": 84,
+        "action": {
+          "llc_replacement": "lru"
+        },
+        "reward": 1.5994625805729275,
+        "ipc": 1.5994625805729275,
+        "skip_instructions": 17808400,
+        "stats_path": "/home/ubuntu/yanxin/ChampSim_checkpoint/rl_results/perlbench_baseline/rl/iter_0084_stats.json",
+        "cache_path": "/home/ubuntu/yanxin/ChampSim_checkpoint/rl_results/perlbench_baseline/rl/iter_0084_cache.log"
+      },
+      {
+        "step": 85,
+        "action": {
+          "llc_replacement": "lru"
+        },
+        "reward": 2.288722320764433,
+        "ipc": 2.288722320764433,
+        "skip_instructions": 18008500,
+        "stats_path": "/home/ubuntu/yanxin/ChampSim_checkpoint/rl_results/perlbench_baseline/rl/iter_0085_stats.json",
+        "cache_path": "/home/ubuntu/yanxin/ChampSim_checkpoint/rl_results/perlbench_baseline/rl/iter_0085_cache.log"
+      },
+      {
+        "step": 86,
+        "action": {
+          "llc_replacement": "lru"
+        },
+        "reward": 1.552337043418867,
+        "ipc": 1.552337043418867,
+        "skip_instructions": 18208600,
+        "stats_path": "/home/ubuntu/yanxin/ChampSim_checkpoint/rl_results/perlbench_baseline/rl/iter_0086_stats.json",
+        "cache_path": "/home/ubuntu/yanxin/ChampSim_checkpoint/rl_results/perlbench_baseline/rl/iter_0086_cache.log"
+      },
+      {
+        "step": 87,
+        "action": {
+          "llc_replacement": "lru"
+        },
+        "reward": 1.639204661874749,
+        "ipc": 1.639204661874749,
+        "skip_instructions": 18408700,
+        "stats_path": "/home/ubuntu/yanxin/ChampSim_checkpoint/rl_results/perlbench_baseline/rl/iter_0087_stats.json",
+        "cache_path": "/home/ubuntu/yanxin/ChampSim_checkpoint/rl_results/perlbench_baseline/rl/iter_0087_cache.log"
+      },
+      {
+        "step": 88,
+        "action": {
+          "llc_replacement": "lru"
+        },
+        "reward": 2.241610813476497,
+        "ipc": 2.241610813476497,
+        "skip_instructions": 18608800,
+        "stats_path": "/home/ubuntu/yanxin/ChampSim_checkpoint/rl_results/perlbench_baseline/rl/iter_0088_stats.json",
+        "cache_path": "/home/ubuntu/yanxin/ChampSim_checkpoint/rl_results/perlbench_baseline/rl/iter_0088_cache.log"
+      },
+      {
+        "step": 89,
+        "action": {
+          "llc_replacement": "lru"
+        },
+        "reward": 2.127159023228112,
+        "ipc": 2.127159023228112,
+        "skip_instructions": 18808900,
+        "stats_path": "/home/ubuntu/yanxin/ChampSim_checkpoint/rl_results/perlbench_baseline/rl/iter_0089_stats.json",
+        "cache_path": "/home/ubuntu/yanxin/ChampSim_checkpoint/rl_results/perlbench_baseline/rl/iter_0089_cache.log"
+      },
+      {
+        "step": 90,
+        "action": {
+          "llc_replacement": "lru"
+        },
+        "reward": 1.647210463028546,
+        "ipc": 1.647210463028546,
+        "skip_instructions": 19009000,
+        "stats_path": "/home/ubuntu/yanxin/ChampSim_checkpoint/rl_results/perlbench_baseline/rl/iter_0090_stats.json",
+        "cache_path": "/home/ubuntu/yanxin/ChampSim_checkpoint/rl_results/perlbench_baseline/rl/iter_0090_cache.log"
+      },
+      {
+        "step": 91,
+        "action": {
+          "llc_replacement": "lru"
+        },
+        "reward": 1.5979243067040578,
+        "ipc": 1.5979243067040578,
+        "skip_instructions": 19209100,
+        "stats_path": "/home/ubuntu/yanxin/ChampSim_checkpoint/rl_results/perlbench_baseline/rl/iter_0091_stats.json",
+        "cache_path": "/home/ubuntu/yanxin/ChampSim_checkpoint/rl_results/perlbench_baseline/rl/iter_0091_cache.log"
+      },
+      {
+        "step": 92,
+        "action": {
+          "llc_replacement": "lru"
+        },
+        "reward": 1.6173098072195626,
+        "ipc": 1.6173098072195626,
+        "skip_instructions": 19409200,
+        "stats_path": "/home/ubuntu/yanxin/ChampSim_checkpoint/rl_results/perlbench_baseline/rl/iter_0092_stats.json",
+        "cache_path": "/home/ubuntu/yanxin/ChampSim_checkpoint/rl_results/perlbench_baseline/rl/iter_0092_cache.log"
+      },
+      {
+        "step": 93,
+        "action": {
+          "llc_replacement": "lru"
+        },
+        "reward": 2.2530866979091564,
+        "ipc": 2.2530866979091564,
+        "skip_instructions": 19609300,
+        "stats_path": "/home/ubuntu/yanxin/ChampSim_checkpoint/rl_results/perlbench_baseline/rl/iter_0093_stats.json",
+        "cache_path": "/home/ubuntu/yanxin/ChampSim_checkpoint/rl_results/perlbench_baseline/rl/iter_0093_cache.log"
+      },
+      {
+        "step": 94,
+        "action": {
+          "llc_replacement": "lru"
+        },
+        "reward": 1.4409501577832533,
+        "ipc": 1.4409501577832533,
+        "skip_instructions": 19809400,
+        "stats_path": "/home/ubuntu/yanxin/ChampSim_checkpoint/rl_results/perlbench_baseline/rl/iter_0094_stats.json",
+        "cache_path": "/home/ubuntu/yanxin/ChampSim_checkpoint/rl_results/perlbench_baseline/rl/iter_0094_cache.log"
+      },
+      {
+        "step": 95,
+        "action": {
+          "llc_replacement": "lru"
+        },
+        "reward": 2.127069884182203,
+        "ipc": 2.127069884182203,
+        "skip_instructions": 20009500,
+        "stats_path": "/home/ubuntu/yanxin/ChampSim_checkpoint/rl_results/perlbench_baseline/rl/iter_0095_stats.json",
+        "cache_path": "/home/ubuntu/yanxin/ChampSim_checkpoint/rl_results/perlbench_baseline/rl/iter_0095_cache.log"
+      },
+      {
+        "step": 96,
+        "action": {
+          "llc_replacement": "lru"
+        },
+        "reward": 1.5889900530714718,
+        "ipc": 1.5889900530714718,
+        "skip_instructions": 20209600,
+        "stats_path": "/home/ubuntu/yanxin/ChampSim_checkpoint/rl_results/perlbench_baseline/rl/iter_0096_stats.json",
+        "cache_path": "/home/ubuntu/yanxin/ChampSim_checkpoint/rl_results/perlbench_baseline/rl/iter_0096_cache.log"
+      },
+      {
+        "step": 97,
+        "action": {
+          "llc_replacement": "lru"
+        },
+        "reward": 2.2957334221008048,
+        "ipc": 2.2957334221008048,
+        "skip_instructions": 20409700,
+        "stats_path": "/home/ubuntu/yanxin/ChampSim_checkpoint/rl_results/perlbench_baseline/rl/iter_0097_stats.json",
+        "cache_path": "/home/ubuntu/yanxin/ChampSim_checkpoint/rl_results/perlbench_baseline/rl/iter_0097_cache.log"
+      },
+      {
+        "step": 98,
+        "action": {
+          "llc_replacement": "lru"
+        },
+        "reward": 1.6602857308883225,
+        "ipc": 1.6602857308883225,
+        "skip_instructions": 20609800,
+        "stats_path": "/home/ubuntu/yanxin/ChampSim_checkpoint/rl_results/perlbench_baseline/rl/iter_0098_stats.json",
+        "cache_path": "/home/ubuntu/yanxin/ChampSim_checkpoint/rl_results/perlbench_baseline/rl/iter_0098_cache.log"
+      },
+      {
+        "step": 99,
+        "action": {
+          "llc_replacement": "lru"
+        },
+        "reward": 1.6543036278515773,
+        "ipc": 1.6543036278515773,
+        "skip_instructions": 20809900,
+        "stats_path": "/home/ubuntu/yanxin/ChampSim_checkpoint/rl_results/perlbench_baseline/rl/iter_0099_stats.json",
+        "cache_path": "/home/ubuntu/yanxin/ChampSim_checkpoint/rl_results/perlbench_baseline/rl/iter_0099_cache.log"
+      }
+    ]
+  },
+  "fixed_policies": {
+    "llc_replacement-lru": {
+      "total_ipc": 145.3810680951463,
+      "per_step_ipc": [
+        1.3717960149525017,
+        1.4325394835798446,
+        1.3928546556166863,
+        1.4125702743170325,
+        1.4817852459380765,
+        1.3858039661312898,
+        0.6153145641880771,
+        0.5826227798541702,
+        1.5338517700472423,
+        1.4806188925081434,
+        1.29859167732594,
+        1.45534655266509,
+        1.4335971099260278,
+        1.3857036949789026,
+        1.5485347063605746,
+        1.504234419891996,
+        0.6098507717545754,
+        0.49942691907198344,
+        1.0929558992294661,
+        1.0523324949751123,
+        1.147590931781798,
+        1.0115620969577421,
+        1.1275736869404416,
+        1.089181270626164,
+        0.6515052803710918,
+        1.5355080920062647,
+        1.350739867762567,
+        1.4712156655044062,
+        1.439615334782546,
+        1.4230096051227321,
+        1.4649404870902765,
+        1.4458983683118498,
+        1.0156302367386734,
+        0.5529624816832094,
+        1.3329578854061837,
+        1.386656405563182,
+        1.268713524486171,
+        1.3334844615723116,
+        1.3142507934630472,
+        1.3858012929332124,
+        1.2457505185332827,
+        1.4422698329138752,
+        1.354845920918039,
+        1.2361306830824002,
+        0.6000780101413183,
+        1.40901341374063,
+        1.5264451330270328,
+        1.3112371336786206,
+        1.4750894272965298,
+        1.4541231042154397,
+        1.4100635227264715,
+        1.556820039387547,
+        1.4444917916753939,
+        0.7521265954166322,
+        1.5439281771794258,
+        1.488379534883721,
+        1.4014238466281743,
+        1.4836685187795342,
+        1.3706559208317057,
+        1.4152361274253125,
+        1.5466827521672892,
+        1.4755433579744146,
+        0.7599351021912509,
+        1.4968827883514328,
+        1.4187617047840644,
+        1.4050680042713426,
+        1.3703041390036519,
+        1.5256766240502853,
+        1.3695152013147083,
+        1.5360588000368651,
+        1.3793008324080525,
+        0.8115968493967837,
+        1.6097419635239767,
+        2.3286682346366114,
+        2.313418851861705,
+        1.5827668347037456,
+        2.2536931658121584,
+        2.1697621940635305,
+        1.61407784619606,
+        2.122239789475918,
+        2.3704384103919502,
+        1.5191101186407208,
+        2.3365850809042583,
+        1.4929719400132873,
+        1.5994625805729275,
+        2.288722320764433,
+        1.552337043418867,
+        1.639204661874749,
+        2.241610813476497,
+        2.127159023228112,
+        1.647210463028546,
+        1.5979243067040578,
+        1.6173098072195626,
+        2.2530866979091564,
+        1.4409501577832533,
+        2.127069884182203,
+        1.5889900530714718,
+        2.2957334221008048,
+        1.6602857308883225,
+        1.6543036278515773
+      ]
+    }
+  },
+  "best_fixed_policy": {
+    "action": "llc_replacement-lru",
+    "total_ipc": 145.3810680951463
+  },
+  "per_step_comparison": {
+    "steps_evaluated": 100,
+    "results": [
+      {
+        "step": 0,
+        "skip_instructions": 1000000,
+        "rl_action": {
+          "llc_replacement": "lru"
+        },
+        "rl_ipc": 1.3717960149525017,
+        "best_action": {
+          "llc_replacement": "lru"
+        },
+        "best_ipc": 1.3717960149525017,
+        "per_action_ipc": {
+          "llc_replacement-lru": 1.3717960149525017
+        },
+        "top_k": [
+          {
+            "action": "llc_replacement-lru",
+            "ipc": 1.3717960149525017,
+            "delta_pct_vs_base": 0.0
+          }
+        ],
+        "base_ipc": 1.3717960149525017
+      },
+      {
+        "step": 1,
+        "skip_instructions": 1200100,
+        "rl_action": {
+          "llc_replacement": "lru"
+        },
+        "rl_ipc": 1.4325394835798446,
+        "best_action": {
+          "llc_replacement": "lru"
+        },
+        "best_ipc": 1.4325394835798446,
+        "per_action_ipc": {
+          "llc_replacement-lru": 1.4325394835798446
+        },
+        "top_k": [
+          {
+            "action": "llc_replacement-lru",
+            "ipc": 1.4325394835798446,
+            "delta_pct_vs_base": 0.0
+          }
+        ],
+        "base_ipc": 1.4325394835798446
+      },
+      {
+        "step": 2,
+        "skip_instructions": 1400200,
+        "rl_action": {
+          "llc_replacement": "lru"
+        },
+        "rl_ipc": 1.3928546556166863,
+        "best_action": {
+          "llc_replacement": "lru"
+        },
+        "best_ipc": 1.3928546556166863,
+        "per_action_ipc": {
+          "llc_replacement-lru": 1.3928546556166863
+        },
+        "top_k": [
+          {
+            "action": "llc_replacement-lru",
+            "ipc": 1.3928546556166863,
+            "delta_pct_vs_base": 0.0
+          }
+        ],
+        "base_ipc": 1.3928546556166863
+      },
+      {
+        "step": 3,
+        "skip_instructions": 1600300,
+        "rl_action": {
+          "llc_replacement": "lru"
+        },
+        "rl_ipc": 1.4125702743170325,
+        "best_action": {
+          "llc_replacement": "lru"
+        },
+        "best_ipc": 1.4125702743170325,
+        "per_action_ipc": {
+          "llc_replacement-lru": 1.4125702743170325
+        },
+        "top_k": [
+          {
+            "action": "llc_replacement-lru",
+            "ipc": 1.4125702743170325,
+            "delta_pct_vs_base": 0.0
+          }
+        ],
+        "base_ipc": 1.4125702743170325
+      },
+      {
+        "step": 4,
+        "skip_instructions": 1800400,
+        "rl_action": {
+          "llc_replacement": "lru"
+        },
+        "rl_ipc": 1.4817852459380765,
+        "best_action": {
+          "llc_replacement": "lru"
+        },
+        "best_ipc": 1.4817852459380765,
+        "per_action_ipc": {
+          "llc_replacement-lru": 1.4817852459380765
+        },
+        "top_k": [
+          {
+            "action": "llc_replacement-lru",
+            "ipc": 1.4817852459380765,
+            "delta_pct_vs_base": 0.0
+          }
+        ],
+        "base_ipc": 1.4817852459380765
+      },
+      {
+        "step": 5,
+        "skip_instructions": 2000500,
+        "rl_action": {
+          "llc_replacement": "lru"
+        },
+        "rl_ipc": 1.3858039661312898,
+        "best_action": {
+          "llc_replacement": "lru"
+        },
+        "best_ipc": 1.3858039661312898,
+        "per_action_ipc": {
+          "llc_replacement-lru": 1.3858039661312898
+        },
+        "top_k": [
+          {
+            "action": "llc_replacement-lru",
+            "ipc": 1.3858039661312898,
+            "delta_pct_vs_base": 0.0
+          }
+        ],
+        "base_ipc": 1.3858039661312898
+      },
+      {
+        "step": 6,
+        "skip_instructions": 2200600,
+        "rl_action": {
+          "llc_replacement": "lru"
+        },
+        "rl_ipc": 0.6153145641880771,
+        "best_action": {
+          "llc_replacement": "lru"
+        },
+        "best_ipc": 0.6153145641880771,
+        "per_action_ipc": {
+          "llc_replacement-lru": 0.6153145641880771
+        },
+        "top_k": [
+          {
+            "action": "llc_replacement-lru",
+            "ipc": 0.6153145641880771,
+            "delta_pct_vs_base": 0.0
+          }
+        ],
+        "base_ipc": 0.6153145641880771
+      },
+      {
+        "step": 7,
+        "skip_instructions": 2400700,
+        "rl_action": {
+          "llc_replacement": "lru"
+        },
+        "rl_ipc": 0.5826227798541702,
+        "best_action": {
+          "llc_replacement": "lru"
+        },
+        "best_ipc": 0.5826227798541702,
+        "per_action_ipc": {
+          "llc_replacement-lru": 0.5826227798541702
+        },
+        "top_k": [
+          {
+            "action": "llc_replacement-lru",
+            "ipc": 0.5826227798541702,
+            "delta_pct_vs_base": 0.0
+          }
+        ],
+        "base_ipc": 0.5826227798541702
+      },
+      {
+        "step": 8,
+        "skip_instructions": 2600800,
+        "rl_action": {
+          "llc_replacement": "lru"
+        },
+        "rl_ipc": 1.5338517700472423,
+        "best_action": {
+          "llc_replacement": "lru"
+        },
+        "best_ipc": 1.5338517700472423,
+        "per_action_ipc": {
+          "llc_replacement-lru": 1.5338517700472423
+        },
+        "top_k": [
+          {
+            "action": "llc_replacement-lru",
+            "ipc": 1.5338517700472423,
+            "delta_pct_vs_base": 0.0
+          }
+        ],
+        "base_ipc": 1.5338517700472423
+      },
+      {
+        "step": 9,
+        "skip_instructions": 2800900,
+        "rl_action": {
+          "llc_replacement": "lru"
+        },
+        "rl_ipc": 1.4806188925081434,
+        "best_action": {
+          "llc_replacement": "lru"
+        },
+        "best_ipc": 1.4806188925081434,
+        "per_action_ipc": {
+          "llc_replacement-lru": 1.4806188925081434
+        },
+        "top_k": [
+          {
+            "action": "llc_replacement-lru",
+            "ipc": 1.4806188925081434,
+            "delta_pct_vs_base": 0.0
+          }
+        ],
+        "base_ipc": 1.4806188925081434
+      },
+      {
+        "step": 10,
+        "skip_instructions": 3001000,
+        "rl_action": {
+          "llc_replacement": "lru"
+        },
+        "rl_ipc": 1.29859167732594,
+        "best_action": {
+          "llc_replacement": "lru"
+        },
+        "best_ipc": 1.29859167732594,
+        "per_action_ipc": {
+          "llc_replacement-lru": 1.29859167732594
+        },
+        "top_k": [
+          {
+            "action": "llc_replacement-lru",
+            "ipc": 1.29859167732594,
+            "delta_pct_vs_base": 0.0
+          }
+        ],
+        "base_ipc": 1.29859167732594
+      },
+      {
+        "step": 11,
+        "skip_instructions": 3201100,
+        "rl_action": {
+          "llc_replacement": "lru"
+        },
+        "rl_ipc": 1.45534655266509,
+        "best_action": {
+          "llc_replacement": "lru"
+        },
+        "best_ipc": 1.45534655266509,
+        "per_action_ipc": {
+          "llc_replacement-lru": 1.45534655266509
+        },
+        "top_k": [
+          {
+            "action": "llc_replacement-lru",
+            "ipc": 1.45534655266509,
+            "delta_pct_vs_base": 0.0
+          }
+        ],
+        "base_ipc": 1.45534655266509
+      },
+      {
+        "step": 12,
+        "skip_instructions": 3401200,
+        "rl_action": {
+          "llc_replacement": "lru"
+        },
+        "rl_ipc": 1.4335971099260278,
+        "best_action": {
+          "llc_replacement": "lru"
+        },
+        "best_ipc": 1.4335971099260278,
+        "per_action_ipc": {
+          "llc_replacement-lru": 1.4335971099260278
+        },
+        "top_k": [
+          {
+            "action": "llc_replacement-lru",
+            "ipc": 1.4335971099260278,
+            "delta_pct_vs_base": 0.0
+          }
+        ],
+        "base_ipc": 1.4335971099260278
+      },
+      {
+        "step": 13,
+        "skip_instructions": 3601300,
+        "rl_action": {
+          "llc_replacement": "lru"
+        },
+        "rl_ipc": 1.3857036949789026,
+        "best_action": {
+          "llc_replacement": "lru"
+        },
+        "best_ipc": 1.3857036949789026,
+        "per_action_ipc": {
+          "llc_replacement-lru": 1.3857036949789026
+        },
+        "top_k": [
+          {
+            "action": "llc_replacement-lru",
+            "ipc": 1.3857036949789026,
+            "delta_pct_vs_base": 0.0
+          }
+        ],
+        "base_ipc": 1.3857036949789026
+      },
+      {
+        "step": 14,
+        "skip_instructions": 3801400,
+        "rl_action": {
+          "llc_replacement": "lru"
+        },
+        "rl_ipc": 1.5485347063605746,
+        "best_action": {
+          "llc_replacement": "lru"
+        },
+        "best_ipc": 1.5485347063605746,
+        "per_action_ipc": {
+          "llc_replacement-lru": 1.5485347063605746
+        },
+        "top_k": [
+          {
+            "action": "llc_replacement-lru",
+            "ipc": 1.5485347063605746,
+            "delta_pct_vs_base": 0.0
+          }
+        ],
+        "base_ipc": 1.5485347063605746
+      },
+      {
+        "step": 15,
+        "skip_instructions": 4001500,
+        "rl_action": {
+          "llc_replacement": "lru"
+        },
+        "rl_ipc": 1.504234419891996,
+        "best_action": {
+          "llc_replacement": "lru"
+        },
+        "best_ipc": 1.504234419891996,
+        "per_action_ipc": {
+          "llc_replacement-lru": 1.504234419891996
+        },
+        "top_k": [
+          {
+            "action": "llc_replacement-lru",
+            "ipc": 1.504234419891996,
+            "delta_pct_vs_base": 0.0
+          }
+        ],
+        "base_ipc": 1.504234419891996
+      },
+      {
+        "step": 16,
+        "skip_instructions": 4201600,
+        "rl_action": {
+          "llc_replacement": "lru"
+        },
+        "rl_ipc": 0.6098507717545754,
+        "best_action": {
+          "llc_replacement": "lru"
+        },
+        "best_ipc": 0.6098507717545754,
+        "per_action_ipc": {
+          "llc_replacement-lru": 0.6098507717545754
+        },
+        "top_k": [
+          {
+            "action": "llc_replacement-lru",
+            "ipc": 0.6098507717545754,
+            "delta_pct_vs_base": 0.0
+          }
+        ],
+        "base_ipc": 0.6098507717545754
+      },
+      {
+        "step": 17,
+        "skip_instructions": 4401700,
+        "rl_action": {
+          "llc_replacement": "lru"
+        },
+        "rl_ipc": 0.49942691907198344,
+        "best_action": {
+          "llc_replacement": "lru"
+        },
+        "best_ipc": 0.49942691907198344,
+        "per_action_ipc": {
+          "llc_replacement-lru": 0.49942691907198344
+        },
+        "top_k": [
+          {
+            "action": "llc_replacement-lru",
+            "ipc": 0.49942691907198344,
+            "delta_pct_vs_base": 0.0
+          }
+        ],
+        "base_ipc": 0.49942691907198344
+      },
+      {
+        "step": 18,
+        "skip_instructions": 4601800,
+        "rl_action": {
+          "llc_replacement": "lru"
+        },
+        "rl_ipc": 1.0929558992294661,
+        "best_action": {
+          "llc_replacement": "lru"
+        },
+        "best_ipc": 1.0929558992294661,
+        "per_action_ipc": {
+          "llc_replacement-lru": 1.0929558992294661
+        },
+        "top_k": [
+          {
+            "action": "llc_replacement-lru",
+            "ipc": 1.0929558992294661,
+            "delta_pct_vs_base": 0.0
+          }
+        ],
+        "base_ipc": 1.0929558992294661
+      },
+      {
+        "step": 19,
+        "skip_instructions": 4801900,
+        "rl_action": {
+          "llc_replacement": "lru"
+        },
+        "rl_ipc": 1.0523324949751123,
+        "best_action": {
+          "llc_replacement": "lru"
+        },
+        "best_ipc": 1.0523324949751123,
+        "per_action_ipc": {
+          "llc_replacement-lru": 1.0523324949751123
+        },
+        "top_k": [
+          {
+            "action": "llc_replacement-lru",
+            "ipc": 1.0523324949751123,
+            "delta_pct_vs_base": 0.0
+          }
+        ],
+        "base_ipc": 1.0523324949751123
+      },
+      {
+        "step": 20,
+        "skip_instructions": 5002000,
+        "rl_action": {
+          "llc_replacement": "lru"
+        },
+        "rl_ipc": 1.147590931781798,
+        "best_action": {
+          "llc_replacement": "lru"
+        },
+        "best_ipc": 1.147590931781798,
+        "per_action_ipc": {
+          "llc_replacement-lru": 1.147590931781798
+        },
+        "top_k": [
+          {
+            "action": "llc_replacement-lru",
+            "ipc": 1.147590931781798,
+            "delta_pct_vs_base": 0.0
+          }
+        ],
+        "base_ipc": 1.147590931781798
+      },
+      {
+        "step": 21,
+        "skip_instructions": 5202100,
+        "rl_action": {
+          "llc_replacement": "lru"
+        },
+        "rl_ipc": 1.0115620969577421,
+        "best_action": {
+          "llc_replacement": "lru"
+        },
+        "best_ipc": 1.0115620969577421,
+        "per_action_ipc": {
+          "llc_replacement-lru": 1.0115620969577421
+        },
+        "top_k": [
+          {
+            "action": "llc_replacement-lru",
+            "ipc": 1.0115620969577421,
+            "delta_pct_vs_base": 0.0
+          }
+        ],
+        "base_ipc": 1.0115620969577421
+      },
+      {
+        "step": 22,
+        "skip_instructions": 5402200,
+        "rl_action": {
+          "llc_replacement": "lru"
+        },
+        "rl_ipc": 1.1275736869404416,
+        "best_action": {
+          "llc_replacement": "lru"
+        },
+        "best_ipc": 1.1275736869404416,
+        "per_action_ipc": {
+          "llc_replacement-lru": 1.1275736869404416
+        },
+        "top_k": [
+          {
+            "action": "llc_replacement-lru",
+            "ipc": 1.1275736869404416,
+            "delta_pct_vs_base": 0.0
+          }
+        ],
+        "base_ipc": 1.1275736869404416
+      },
+      {
+        "step": 23,
+        "skip_instructions": 5602300,
+        "rl_action": {
+          "llc_replacement": "lru"
+        },
+        "rl_ipc": 1.089181270626164,
+        "best_action": {
+          "llc_replacement": "lru"
+        },
+        "best_ipc": 1.089181270626164,
+        "per_action_ipc": {
+          "llc_replacement-lru": 1.089181270626164
+        },
+        "top_k": [
+          {
+            "action": "llc_replacement-lru",
+            "ipc": 1.089181270626164,
+            "delta_pct_vs_base": 0.0
+          }
+        ],
+        "base_ipc": 1.089181270626164
+      },
+      {
+        "step": 24,
+        "skip_instructions": 5802400,
+        "rl_action": {
+          "llc_replacement": "lru"
+        },
+        "rl_ipc": 0.6515052803710918,
+        "best_action": {
+          "llc_replacement": "lru"
+        },
+        "best_ipc": 0.6515052803710918,
+        "per_action_ipc": {
+          "llc_replacement-lru": 0.6515052803710918
+        },
+        "top_k": [
+          {
+            "action": "llc_replacement-lru",
+            "ipc": 0.6515052803710918,
+            "delta_pct_vs_base": 0.0
+          }
+        ],
+        "base_ipc": 0.6515052803710918
+      },
+      {
+        "step": 25,
+        "skip_instructions": 6002500,
+        "rl_action": {
+          "llc_replacement": "lru"
+        },
+        "rl_ipc": 1.5355080920062647,
+        "best_action": {
+          "llc_replacement": "lru"
+        },
+        "best_ipc": 1.5355080920062647,
+        "per_action_ipc": {
+          "llc_replacement-lru": 1.5355080920062647
+        },
+        "top_k": [
+          {
+            "action": "llc_replacement-lru",
+            "ipc": 1.5355080920062647,
+            "delta_pct_vs_base": 0.0
+          }
+        ],
+        "base_ipc": 1.5355080920062647
+      },
+      {
+        "step": 26,
+        "skip_instructions": 6202600,
+        "rl_action": {
+          "llc_replacement": "lru"
+        },
+        "rl_ipc": 1.350739867762567,
+        "best_action": {
+          "llc_replacement": "lru"
+        },
+        "best_ipc": 1.350739867762567,
+        "per_action_ipc": {
+          "llc_replacement-lru": 1.350739867762567
+        },
+        "top_k": [
+          {
+            "action": "llc_replacement-lru",
+            "ipc": 1.350739867762567,
+            "delta_pct_vs_base": 0.0
+          }
+        ],
+        "base_ipc": 1.350739867762567
+      },
+      {
+        "step": 27,
+        "skip_instructions": 6402700,
+        "rl_action": {
+          "llc_replacement": "lru"
+        },
+        "rl_ipc": 1.4712156655044062,
+        "best_action": {
+          "llc_replacement": "lru"
+        },
+        "best_ipc": 1.4712156655044062,
+        "per_action_ipc": {
+          "llc_replacement-lru": 1.4712156655044062
+        },
+        "top_k": [
+          {
+            "action": "llc_replacement-lru",
+            "ipc": 1.4712156655044062,
+            "delta_pct_vs_base": 0.0
+          }
+        ],
+        "base_ipc": 1.4712156655044062
+      },
+      {
+        "step": 28,
+        "skip_instructions": 6602800,
+        "rl_action": {
+          "llc_replacement": "lru"
+        },
+        "rl_ipc": 1.439615334782546,
+        "best_action": {
+          "llc_replacement": "lru"
+        },
+        "best_ipc": 1.439615334782546,
+        "per_action_ipc": {
+          "llc_replacement-lru": 1.439615334782546
+        },
+        "top_k": [
+          {
+            "action": "llc_replacement-lru",
+            "ipc": 1.439615334782546,
+            "delta_pct_vs_base": 0.0
+          }
+        ],
+        "base_ipc": 1.439615334782546
+      },
+      {
+        "step": 29,
+        "skip_instructions": 6802900,
+        "rl_action": {
+          "llc_replacement": "lru"
+        },
+        "rl_ipc": 1.4230096051227321,
+        "best_action": {
+          "llc_replacement": "lru"
+        },
+        "best_ipc": 1.4230096051227321,
+        "per_action_ipc": {
+          "llc_replacement-lru": 1.4230096051227321
+        },
+        "top_k": [
+          {
+            "action": "llc_replacement-lru",
+            "ipc": 1.4230096051227321,
+            "delta_pct_vs_base": 0.0
+          }
+        ],
+        "base_ipc": 1.4230096051227321
+      },
+      {
+        "step": 30,
+        "skip_instructions": 7003000,
+        "rl_action": {
+          "llc_replacement": "lru"
+        },
+        "rl_ipc": 1.4649404870902765,
+        "best_action": {
+          "llc_replacement": "lru"
+        },
+        "best_ipc": 1.4649404870902765,
+        "per_action_ipc": {
+          "llc_replacement-lru": 1.4649404870902765
+        },
+        "top_k": [
+          {
+            "action": "llc_replacement-lru",
+            "ipc": 1.4649404870902765,
+            "delta_pct_vs_base": 0.0
+          }
+        ],
+        "base_ipc": 1.4649404870902765
+      },
+      {
+        "step": 31,
+        "skip_instructions": 7203100,
+        "rl_action": {
+          "llc_replacement": "lru"
+        },
+        "rl_ipc": 1.4458983683118498,
+        "best_action": {
+          "llc_replacement": "lru"
+        },
+        "best_ipc": 1.4458983683118498,
+        "per_action_ipc": {
+          "llc_replacement-lru": 1.4458983683118498
+        },
+        "top_k": [
+          {
+            "action": "llc_replacement-lru",
+            "ipc": 1.4458983683118498,
+            "delta_pct_vs_base": 0.0
+          }
+        ],
+        "base_ipc": 1.4458983683118498
+      },
+      {
+        "step": 32,
+        "skip_instructions": 7403200,
+        "rl_action": {
+          "llc_replacement": "lru"
+        },
+        "rl_ipc": 1.0156302367386734,
+        "best_action": {
+          "llc_replacement": "lru"
+        },
+        "best_ipc": 1.0156302367386734,
+        "per_action_ipc": {
+          "llc_replacement-lru": 1.0156302367386734
+        },
+        "top_k": [
+          {
+            "action": "llc_replacement-lru",
+            "ipc": 1.0156302367386734,
+            "delta_pct_vs_base": 0.0
+          }
+        ],
+        "base_ipc": 1.0156302367386734
+      },
+      {
+        "step": 33,
+        "skip_instructions": 7603300,
+        "rl_action": {
+          "llc_replacement": "lru"
+        },
+        "rl_ipc": 0.5529624816832094,
+        "best_action": {
+          "llc_replacement": "lru"
+        },
+        "best_ipc": 0.5529624816832094,
+        "per_action_ipc": {
+          "llc_replacement-lru": 0.5529624816832094
+        },
+        "top_k": [
+          {
+            "action": "llc_replacement-lru",
+            "ipc": 0.5529624816832094,
+            "delta_pct_vs_base": 0.0
+          }
+        ],
+        "base_ipc": 0.5529624816832094
+      },
+      {
+        "step": 34,
+        "skip_instructions": 7803400,
+        "rl_action": {
+          "llc_replacement": "lru"
+        },
+        "rl_ipc": 1.3329578854061837,
+        "best_action": {
+          "llc_replacement": "lru"
+        },
+        "best_ipc": 1.3329578854061837,
+        "per_action_ipc": {
+          "llc_replacement-lru": 1.3329578854061837
+        },
+        "top_k": [
+          {
+            "action": "llc_replacement-lru",
+            "ipc": 1.3329578854061837,
+            "delta_pct_vs_base": 0.0
+          }
+        ],
+        "base_ipc": 1.3329578854061837
+      },
+      {
+        "step": 35,
+        "skip_instructions": 8003500,
+        "rl_action": {
+          "llc_replacement": "lru"
+        },
+        "rl_ipc": 1.386656405563182,
+        "best_action": {
+          "llc_replacement": "lru"
+        },
+        "best_ipc": 1.386656405563182,
+        "per_action_ipc": {
+          "llc_replacement-lru": 1.386656405563182
+        },
+        "top_k": [
+          {
+            "action": "llc_replacement-lru",
+            "ipc": 1.386656405563182,
+            "delta_pct_vs_base": 0.0
+          }
+        ],
+        "base_ipc": 1.386656405563182
+      },
+      {
+        "step": 36,
+        "skip_instructions": 8203600,
+        "rl_action": {
+          "llc_replacement": "lru"
+        },
+        "rl_ipc": 1.268713524486171,
+        "best_action": {
+          "llc_replacement": "lru"
+        },
+        "best_ipc": 1.268713524486171,
+        "per_action_ipc": {
+          "llc_replacement-lru": 1.268713524486171
+        },
+        "top_k": [
+          {
+            "action": "llc_replacement-lru",
+            "ipc": 1.268713524486171,
+            "delta_pct_vs_base": 0.0
+          }
+        ],
+        "base_ipc": 1.268713524486171
+      },
+      {
+        "step": 37,
+        "skip_instructions": 8403700,
+        "rl_action": {
+          "llc_replacement": "lru"
+        },
+        "rl_ipc": 1.3334844615723116,
+        "best_action": {
+          "llc_replacement": "lru"
+        },
+        "best_ipc": 1.3334844615723116,
+        "per_action_ipc": {
+          "llc_replacement-lru": 1.3334844615723116
+        },
+        "top_k": [
+          {
+            "action": "llc_replacement-lru",
+            "ipc": 1.3334844615723116,
+            "delta_pct_vs_base": 0.0
+          }
+        ],
+        "base_ipc": 1.3334844615723116
+      },
+      {
+        "step": 38,
+        "skip_instructions": 8603800,
+        "rl_action": {
+          "llc_replacement": "lru"
+        },
+        "rl_ipc": 1.3142507934630472,
+        "best_action": {
+          "llc_replacement": "lru"
+        },
+        "best_ipc": 1.3142507934630472,
+        "per_action_ipc": {
+          "llc_replacement-lru": 1.3142507934630472
+        },
+        "top_k": [
+          {
+            "action": "llc_replacement-lru",
+            "ipc": 1.3142507934630472,
+            "delta_pct_vs_base": 0.0
+          }
+        ],
+        "base_ipc": 1.3142507934630472
+      },
+      {
+        "step": 39,
+        "skip_instructions": 8803900,
+        "rl_action": {
+          "llc_replacement": "lru"
+        },
+        "rl_ipc": 1.3858012929332124,
+        "best_action": {
+          "llc_replacement": "lru"
+        },
+        "best_ipc": 1.3858012929332124,
+        "per_action_ipc": {
+          "llc_replacement-lru": 1.3858012929332124
+        },
+        "top_k": [
+          {
+            "action": "llc_replacement-lru",
+            "ipc": 1.3858012929332124,
+            "delta_pct_vs_base": 0.0
+          }
+        ],
+        "base_ipc": 1.3858012929332124
+      },
+      {
+        "step": 40,
+        "skip_instructions": 9004000,
+        "rl_action": {
+          "llc_replacement": "lru"
+        },
+        "rl_ipc": 1.2457505185332827,
+        "best_action": {
+          "llc_replacement": "lru"
+        },
+        "best_ipc": 1.2457505185332827,
+        "per_action_ipc": {
+          "llc_replacement-lru": 1.2457505185332827
+        },
+        "top_k": [
+          {
+            "action": "llc_replacement-lru",
+            "ipc": 1.2457505185332827,
+            "delta_pct_vs_base": 0.0
+          }
+        ],
+        "base_ipc": 1.2457505185332827
+      },
+      {
+        "step": 41,
+        "skip_instructions": 9204100,
+        "rl_action": {
+          "llc_replacement": "lru"
+        },
+        "rl_ipc": 1.4422698329138752,
+        "best_action": {
+          "llc_replacement": "lru"
+        },
+        "best_ipc": 1.4422698329138752,
+        "per_action_ipc": {
+          "llc_replacement-lru": 1.4422698329138752
+        },
+        "top_k": [
+          {
+            "action": "llc_replacement-lru",
+            "ipc": 1.4422698329138752,
+            "delta_pct_vs_base": 0.0
+          }
+        ],
+        "base_ipc": 1.4422698329138752
+      },
+      {
+        "step": 42,
+        "skip_instructions": 9404200,
+        "rl_action": {
+          "llc_replacement": "lru"
+        },
+        "rl_ipc": 1.354845920918039,
+        "best_action": {
+          "llc_replacement": "lru"
+        },
+        "best_ipc": 1.354845920918039,
+        "per_action_ipc": {
+          "llc_replacement-lru": 1.354845920918039
+        },
+        "top_k": [
+          {
+            "action": "llc_replacement-lru",
+            "ipc": 1.354845920918039,
+            "delta_pct_vs_base": 0.0
+          }
+        ],
+        "base_ipc": 1.354845920918039
+      },
+      {
+        "step": 43,
+        "skip_instructions": 9604300,
+        "rl_action": {
+          "llc_replacement": "lru"
+        },
+        "rl_ipc": 1.2361306830824002,
+        "best_action": {
+          "llc_replacement": "lru"
+        },
+        "best_ipc": 1.2361306830824002,
+        "per_action_ipc": {
+          "llc_replacement-lru": 1.2361306830824002
+        },
+        "top_k": [
+          {
+            "action": "llc_replacement-lru",
+            "ipc": 1.2361306830824002,
+            "delta_pct_vs_base": 0.0
+          }
+        ],
+        "base_ipc": 1.2361306830824002
+      },
+      {
+        "step": 44,
+        "skip_instructions": 9804400,
+        "rl_action": {
+          "llc_replacement": "lru"
+        },
+        "rl_ipc": 0.6000780101413183,
+        "best_action": {
+          "llc_replacement": "lru"
+        },
+        "best_ipc": 0.6000780101413183,
+        "per_action_ipc": {
+          "llc_replacement-lru": 0.6000780101413183
+        },
+        "top_k": [
+          {
+            "action": "llc_replacement-lru",
+            "ipc": 0.6000780101413183,
+            "delta_pct_vs_base": 0.0
+          }
+        ],
+        "base_ipc": 0.6000780101413183
+      },
+      {
+        "step": 45,
+        "skip_instructions": 10004500,
+        "rl_action": {
+          "llc_replacement": "lru"
+        },
+        "rl_ipc": 1.40901341374063,
+        "best_action": {
+          "llc_replacement": "lru"
+        },
+        "best_ipc": 1.40901341374063,
+        "per_action_ipc": {
+          "llc_replacement-lru": 1.40901341374063
+        },
+        "top_k": [
+          {
+            "action": "llc_replacement-lru",
+            "ipc": 1.40901341374063,
+            "delta_pct_vs_base": 0.0
+          }
+        ],
+        "base_ipc": 1.40901341374063
+      },
+      {
+        "step": 46,
+        "skip_instructions": 10204600,
+        "rl_action": {
+          "llc_replacement": "lru"
+        },
+        "rl_ipc": 1.5264451330270328,
+        "best_action": {
+          "llc_replacement": "lru"
+        },
+        "best_ipc": 1.5264451330270328,
+        "per_action_ipc": {
+          "llc_replacement-lru": 1.5264451330270328
+        },
+        "top_k": [
+          {
+            "action": "llc_replacement-lru",
+            "ipc": 1.5264451330270328,
+            "delta_pct_vs_base": 0.0
+          }
+        ],
+        "base_ipc": 1.5264451330270328
+      },
+      {
+        "step": 47,
+        "skip_instructions": 10404700,
+        "rl_action": {
+          "llc_replacement": "lru"
+        },
+        "rl_ipc": 1.3112371336786206,
+        "best_action": {
+          "llc_replacement": "lru"
+        },
+        "best_ipc": 1.3112371336786206,
+        "per_action_ipc": {
+          "llc_replacement-lru": 1.3112371336786206
+        },
+        "top_k": [
+          {
+            "action": "llc_replacement-lru",
+            "ipc": 1.3112371336786206,
+            "delta_pct_vs_base": 0.0
+          }
+        ],
+        "base_ipc": 1.3112371336786206
+      },
+      {
+        "step": 48,
+        "skip_instructions": 10604800,
+        "rl_action": {
+          "llc_replacement": "lru"
+        },
+        "rl_ipc": 1.4750894272965298,
+        "best_action": {
+          "llc_replacement": "lru"
+        },
+        "best_ipc": 1.4750894272965298,
+        "per_action_ipc": {
+          "llc_replacement-lru": 1.4750894272965298
+        },
+        "top_k": [
+          {
+            "action": "llc_replacement-lru",
+            "ipc": 1.4750894272965298,
+            "delta_pct_vs_base": 0.0
+          }
+        ],
+        "base_ipc": 1.4750894272965298
+      },
+      {
+        "step": 49,
+        "skip_instructions": 10804900,
+        "rl_action": {
+          "llc_replacement": "lru"
+        },
+        "rl_ipc": 1.4541231042154397,
+        "best_action": {
+          "llc_replacement": "lru"
+        },
+        "best_ipc": 1.4541231042154397,
+        "per_action_ipc": {
+          "llc_replacement-lru": 1.4541231042154397
+        },
+        "top_k": [
+          {
+            "action": "llc_replacement-lru",
+            "ipc": 1.4541231042154397,
+            "delta_pct_vs_base": 0.0
+          }
+        ],
+        "base_ipc": 1.4541231042154397
+      },
+      {
+        "step": 50,
+        "skip_instructions": 11005000,
+        "rl_action": {
+          "llc_replacement": "lru"
+        },
+        "rl_ipc": 1.4100635227264715,
+        "best_action": {
+          "llc_replacement": "lru"
+        },
+        "best_ipc": 1.4100635227264715,
+        "per_action_ipc": {
+          "llc_replacement-lru": 1.4100635227264715
+        },
+        "top_k": [
+          {
+            "action": "llc_replacement-lru",
+            "ipc": 1.4100635227264715,
+            "delta_pct_vs_base": 0.0
+          }
+        ],
+        "base_ipc": 1.4100635227264715
+      },
+      {
+        "step": 51,
+        "skip_instructions": 11205100,
+        "rl_action": {
+          "llc_replacement": "lru"
+        },
+        "rl_ipc": 1.556820039387547,
+        "best_action": {
+          "llc_replacement": "lru"
+        },
+        "best_ipc": 1.556820039387547,
+        "per_action_ipc": {
+          "llc_replacement-lru": 1.556820039387547
+        },
+        "top_k": [
+          {
+            "action": "llc_replacement-lru",
+            "ipc": 1.556820039387547,
+            "delta_pct_vs_base": 0.0
+          }
+        ],
+        "base_ipc": 1.556820039387547
+      },
+      {
+        "step": 52,
+        "skip_instructions": 11405200,
+        "rl_action": {
+          "llc_replacement": "lru"
+        },
+        "rl_ipc": 1.4444917916753939,
+        "best_action": {
+          "llc_replacement": "lru"
+        },
+        "best_ipc": 1.4444917916753939,
+        "per_action_ipc": {
+          "llc_replacement-lru": 1.4444917916753939
+        },
+        "top_k": [
+          {
+            "action": "llc_replacement-lru",
+            "ipc": 1.4444917916753939,
+            "delta_pct_vs_base": 0.0
+          }
+        ],
+        "base_ipc": 1.4444917916753939
+      },
+      {
+        "step": 53,
+        "skip_instructions": 11605300,
+        "rl_action": {
+          "llc_replacement": "lru"
+        },
+        "rl_ipc": 0.7521265954166322,
+        "best_action": {
+          "llc_replacement": "lru"
+        },
+        "best_ipc": 0.7521265954166322,
+        "per_action_ipc": {
+          "llc_replacement-lru": 0.7521265954166322
+        },
+        "top_k": [
+          {
+            "action": "llc_replacement-lru",
+            "ipc": 0.7521265954166322,
+            "delta_pct_vs_base": 0.0
+          }
+        ],
+        "base_ipc": 0.7521265954166322
+      },
+      {
+        "step": 54,
+        "skip_instructions": 11805400,
+        "rl_action": {
+          "llc_replacement": "lru"
+        },
+        "rl_ipc": 1.5439281771794258,
+        "best_action": {
+          "llc_replacement": "lru"
+        },
+        "best_ipc": 1.5439281771794258,
+        "per_action_ipc": {
+          "llc_replacement-lru": 1.5439281771794258
+        },
+        "top_k": [
+          {
+            "action": "llc_replacement-lru",
+            "ipc": 1.5439281771794258,
+            "delta_pct_vs_base": 0.0
+          }
+        ],
+        "base_ipc": 1.5439281771794258
+      },
+      {
+        "step": 55,
+        "skip_instructions": 12005500,
+        "rl_action": {
+          "llc_replacement": "lru"
+        },
+        "rl_ipc": 1.488379534883721,
+        "best_action": {
+          "llc_replacement": "lru"
+        },
+        "best_ipc": 1.488379534883721,
+        "per_action_ipc": {
+          "llc_replacement-lru": 1.488379534883721
+        },
+        "top_k": [
+          {
+            "action": "llc_replacement-lru",
+            "ipc": 1.488379534883721,
+            "delta_pct_vs_base": 0.0
+          }
+        ],
+        "base_ipc": 1.488379534883721
+      },
+      {
+        "step": 56,
+        "skip_instructions": 12205600,
+        "rl_action": {
+          "llc_replacement": "lru"
+        },
+        "rl_ipc": 1.4014238466281743,
+        "best_action": {
+          "llc_replacement": "lru"
+        },
+        "best_ipc": 1.4014238466281743,
+        "per_action_ipc": {
+          "llc_replacement-lru": 1.4014238466281743
+        },
+        "top_k": [
+          {
+            "action": "llc_replacement-lru",
+            "ipc": 1.4014238466281743,
+            "delta_pct_vs_base": 0.0
+          }
+        ],
+        "base_ipc": 1.4014238466281743
+      },
+      {
+        "step": 57,
+        "skip_instructions": 12405700,
+        "rl_action": {
+          "llc_replacement": "lru"
+        },
+        "rl_ipc": 1.4836685187795342,
+        "best_action": {
+          "llc_replacement": "lru"
+        },
+        "best_ipc": 1.4836685187795342,
+        "per_action_ipc": {
+          "llc_replacement-lru": 1.4836685187795342
+        },
+        "top_k": [
+          {
+            "action": "llc_replacement-lru",
+            "ipc": 1.4836685187795342,
+            "delta_pct_vs_base": 0.0
+          }
+        ],
+        "base_ipc": 1.4836685187795342
+      },
+      {
+        "step": 58,
+        "skip_instructions": 12605800,
+        "rl_action": {
+          "llc_replacement": "lru"
+        },
+        "rl_ipc": 1.3706559208317057,
+        "best_action": {
+          "llc_replacement": "lru"
+        },
+        "best_ipc": 1.3706559208317057,
+        "per_action_ipc": {
+          "llc_replacement-lru": 1.3706559208317057
+        },
+        "top_k": [
+          {
+            "action": "llc_replacement-lru",
+            "ipc": 1.3706559208317057,
+            "delta_pct_vs_base": 0.0
+          }
+        ],
+        "base_ipc": 1.3706559208317057
+      },
+      {
+        "step": 59,
+        "skip_instructions": 12805900,
+        "rl_action": {
+          "llc_replacement": "lru"
+        },
+        "rl_ipc": 1.4152361274253125,
+        "best_action": {
+          "llc_replacement": "lru"
+        },
+        "best_ipc": 1.4152361274253125,
+        "per_action_ipc": {
+          "llc_replacement-lru": 1.4152361274253125
+        },
+        "top_k": [
+          {
+            "action": "llc_replacement-lru",
+            "ipc": 1.4152361274253125,
+            "delta_pct_vs_base": 0.0
+          }
+        ],
+        "base_ipc": 1.4152361274253125
+      },
+      {
+        "step": 60,
+        "skip_instructions": 13006000,
+        "rl_action": {
+          "llc_replacement": "lru"
+        },
+        "rl_ipc": 1.5466827521672892,
+        "best_action": {
+          "llc_replacement": "lru"
+        },
+        "best_ipc": 1.5466827521672892,
+        "per_action_ipc": {
+          "llc_replacement-lru": 1.5466827521672892
+        },
+        "top_k": [
+          {
+            "action": "llc_replacement-lru",
+            "ipc": 1.5466827521672892,
+            "delta_pct_vs_base": 0.0
+          }
+        ],
+        "base_ipc": 1.5466827521672892
+      },
+      {
+        "step": 61,
+        "skip_instructions": 13206100,
+        "rl_action": {
+          "llc_replacement": "lru"
+        },
+        "rl_ipc": 1.4755433579744146,
+        "best_action": {
+          "llc_replacement": "lru"
+        },
+        "best_ipc": 1.4755433579744146,
+        "per_action_ipc": {
+          "llc_replacement-lru": 1.4755433579744146
+        },
+        "top_k": [
+          {
+            "action": "llc_replacement-lru",
+            "ipc": 1.4755433579744146,
+            "delta_pct_vs_base": 0.0
+          }
+        ],
+        "base_ipc": 1.4755433579744146
+      },
+      {
+        "step": 62,
+        "skip_instructions": 13406200,
+        "rl_action": {
+          "llc_replacement": "lru"
+        },
+        "rl_ipc": 0.7599351021912509,
+        "best_action": {
+          "llc_replacement": "lru"
+        },
+        "best_ipc": 0.7599351021912509,
+        "per_action_ipc": {
+          "llc_replacement-lru": 0.7599351021912509
+        },
+        "top_k": [
+          {
+            "action": "llc_replacement-lru",
+            "ipc": 0.7599351021912509,
+            "delta_pct_vs_base": 0.0
+          }
+        ],
+        "base_ipc": 0.7599351021912509
+      },
+      {
+        "step": 63,
+        "skip_instructions": 13606300,
+        "rl_action": {
+          "llc_replacement": "lru"
+        },
+        "rl_ipc": 1.4968827883514328,
+        "best_action": {
+          "llc_replacement": "lru"
+        },
+        "best_ipc": 1.4968827883514328,
+        "per_action_ipc": {
+          "llc_replacement-lru": 1.4968827883514328
+        },
+        "top_k": [
+          {
+            "action": "llc_replacement-lru",
+            "ipc": 1.4968827883514328,
+            "delta_pct_vs_base": 0.0
+          }
+        ],
+        "base_ipc": 1.4968827883514328
+      },
+      {
+        "step": 64,
+        "skip_instructions": 13806400,
+        "rl_action": {
+          "llc_replacement": "lru"
+        },
+        "rl_ipc": 1.4187617047840644,
+        "best_action": {
+          "llc_replacement": "lru"
+        },
+        "best_ipc": 1.4187617047840644,
+        "per_action_ipc": {
+          "llc_replacement-lru": 1.4187617047840644
+        },
+        "top_k": [
+          {
+            "action": "llc_replacement-lru",
+            "ipc": 1.4187617047840644,
+            "delta_pct_vs_base": 0.0
+          }
+        ],
+        "base_ipc": 1.4187617047840644
+      },
+      {
+        "step": 65,
+        "skip_instructions": 14006500,
+        "rl_action": {
+          "llc_replacement": "lru"
+        },
+        "rl_ipc": 1.4050680042713426,
+        "best_action": {
+          "llc_replacement": "lru"
+        },
+        "best_ipc": 1.4050680042713426,
+        "per_action_ipc": {
+          "llc_replacement-lru": 1.4050680042713426
+        },
+        "top_k": [
+          {
+            "action": "llc_replacement-lru",
+            "ipc": 1.4050680042713426,
+            "delta_pct_vs_base": 0.0
+          }
+        ],
+        "base_ipc": 1.4050680042713426
+      },
+      {
+        "step": 66,
+        "skip_instructions": 14206600,
+        "rl_action": {
+          "llc_replacement": "lru"
+        },
+        "rl_ipc": 1.3703041390036519,
+        "best_action": {
+          "llc_replacement": "lru"
+        },
+        "best_ipc": 1.3703041390036519,
+        "per_action_ipc": {
+          "llc_replacement-lru": 1.3703041390036519
+        },
+        "top_k": [
+          {
+            "action": "llc_replacement-lru",
+            "ipc": 1.3703041390036519,
+            "delta_pct_vs_base": 0.0
+          }
+        ],
+        "base_ipc": 1.3703041390036519
+      },
+      {
+        "step": 67,
+        "skip_instructions": 14406700,
+        "rl_action": {
+          "llc_replacement": "lru"
+        },
+        "rl_ipc": 1.5256766240502853,
+        "best_action": {
+          "llc_replacement": "lru"
+        },
+        "best_ipc": 1.5256766240502853,
+        "per_action_ipc": {
+          "llc_replacement-lru": 1.5256766240502853
+        },
+        "top_k": [
+          {
+            "action": "llc_replacement-lru",
+            "ipc": 1.5256766240502853,
+            "delta_pct_vs_base": 0.0
+          }
+        ],
+        "base_ipc": 1.5256766240502853
+      },
+      {
+        "step": 68,
+        "skip_instructions": 14606800,
+        "rl_action": {
+          "llc_replacement": "lru"
+        },
+        "rl_ipc": 1.3695152013147083,
+        "best_action": {
+          "llc_replacement": "lru"
+        },
+        "best_ipc": 1.3695152013147083,
+        "per_action_ipc": {
+          "llc_replacement-lru": 1.3695152013147083
+        },
+        "top_k": [
+          {
+            "action": "llc_replacement-lru",
+            "ipc": 1.3695152013147083,
+            "delta_pct_vs_base": 0.0
+          }
+        ],
+        "base_ipc": 1.3695152013147083
+      },
+      {
+        "step": 69,
+        "skip_instructions": 14806900,
+        "rl_action": {
+          "llc_replacement": "lru"
+        },
+        "rl_ipc": 1.5360588000368651,
+        "best_action": {
+          "llc_replacement": "lru"
+        },
+        "best_ipc": 1.5360588000368651,
+        "per_action_ipc": {
+          "llc_replacement-lru": 1.5360588000368651
+        },
+        "top_k": [
+          {
+            "action": "llc_replacement-lru",
+            "ipc": 1.5360588000368651,
+            "delta_pct_vs_base": 0.0
+          }
+        ],
+        "base_ipc": 1.5360588000368651
+      },
+      {
+        "step": 70,
+        "skip_instructions": 15007000,
+        "rl_action": {
+          "llc_replacement": "lru"
+        },
+        "rl_ipc": 1.3793008324080525,
+        "best_action": {
+          "llc_replacement": "lru"
+        },
+        "best_ipc": 1.3793008324080525,
+        "per_action_ipc": {
+          "llc_replacement-lru": 1.3793008324080525
+        },
+        "top_k": [
+          {
+            "action": "llc_replacement-lru",
+            "ipc": 1.3793008324080525,
+            "delta_pct_vs_base": 0.0
+          }
+        ],
+        "base_ipc": 1.3793008324080525
+      },
+      {
+        "step": 71,
+        "skip_instructions": 15207100,
+        "rl_action": {
+          "llc_replacement": "lru"
+        },
+        "rl_ipc": 0.8115968493967837,
+        "best_action": {
+          "llc_replacement": "lru"
+        },
+        "best_ipc": 0.8115968493967837,
+        "per_action_ipc": {
+          "llc_replacement-lru": 0.8115968493967837
+        },
+        "top_k": [
+          {
+            "action": "llc_replacement-lru",
+            "ipc": 0.8115968493967837,
+            "delta_pct_vs_base": 0.0
+          }
+        ],
+        "base_ipc": 0.8115968493967837
+      },
+      {
+        "step": 72,
+        "skip_instructions": 15407200,
+        "rl_action": {
+          "llc_replacement": "lru"
+        },
+        "rl_ipc": 1.6097419635239767,
+        "best_action": {
+          "llc_replacement": "lru"
+        },
+        "best_ipc": 1.6097419635239767,
+        "per_action_ipc": {
+          "llc_replacement-lru": 1.6097419635239767
+        },
+        "top_k": [
+          {
+            "action": "llc_replacement-lru",
+            "ipc": 1.6097419635239767,
+            "delta_pct_vs_base": 0.0
+          }
+        ],
+        "base_ipc": 1.6097419635239767
+      },
+      {
+        "step": 73,
+        "skip_instructions": 15607300,
+        "rl_action": {
+          "llc_replacement": "lru"
+        },
+        "rl_ipc": 2.3286682346366114,
+        "best_action": {
+          "llc_replacement": "lru"
+        },
+        "best_ipc": 2.3286682346366114,
+        "per_action_ipc": {
+          "llc_replacement-lru": 2.3286682346366114
+        },
+        "top_k": [
+          {
+            "action": "llc_replacement-lru",
+            "ipc": 2.3286682346366114,
+            "delta_pct_vs_base": 0.0
+          }
+        ],
+        "base_ipc": 2.3286682346366114
+      },
+      {
+        "step": 74,
+        "skip_instructions": 15807400,
+        "rl_action": {
+          "llc_replacement": "lru"
+        },
+        "rl_ipc": 2.313418851861705,
+        "best_action": {
+          "llc_replacement": "lru"
+        },
+        "best_ipc": 2.313418851861705,
+        "per_action_ipc": {
+          "llc_replacement-lru": 2.313418851861705
+        },
+        "top_k": [
+          {
+            "action": "llc_replacement-lru",
+            "ipc": 2.313418851861705,
+            "delta_pct_vs_base": 0.0
+          }
+        ],
+        "base_ipc": 2.313418851861705
+      },
+      {
+        "step": 75,
+        "skip_instructions": 16007500,
+        "rl_action": {
+          "llc_replacement": "lru"
+        },
+        "rl_ipc": 1.5827668347037456,
+        "best_action": {
+          "llc_replacement": "lru"
+        },
+        "best_ipc": 1.5827668347037456,
+        "per_action_ipc": {
+          "llc_replacement-lru": 1.5827668347037456
+        },
+        "top_k": [
+          {
+            "action": "llc_replacement-lru",
+            "ipc": 1.5827668347037456,
+            "delta_pct_vs_base": 0.0
+          }
+        ],
+        "base_ipc": 1.5827668347037456
+      },
+      {
+        "step": 76,
+        "skip_instructions": 16207600,
+        "rl_action": {
+          "llc_replacement": "lru"
+        },
+        "rl_ipc": 2.2536931658121584,
+        "best_action": {
+          "llc_replacement": "lru"
+        },
+        "best_ipc": 2.2536931658121584,
+        "per_action_ipc": {
+          "llc_replacement-lru": 2.2536931658121584
+        },
+        "top_k": [
+          {
+            "action": "llc_replacement-lru",
+            "ipc": 2.2536931658121584,
+            "delta_pct_vs_base": 0.0
+          }
+        ],
+        "base_ipc": 2.2536931658121584
+      },
+      {
+        "step": 77,
+        "skip_instructions": 16407700,
+        "rl_action": {
+          "llc_replacement": "lru"
+        },
+        "rl_ipc": 2.1697621940635305,
+        "best_action": {
+          "llc_replacement": "lru"
+        },
+        "best_ipc": 2.1697621940635305,
+        "per_action_ipc": {
+          "llc_replacement-lru": 2.1697621940635305
+        },
+        "top_k": [
+          {
+            "action": "llc_replacement-lru",
+            "ipc": 2.1697621940635305,
+            "delta_pct_vs_base": 0.0
+          }
+        ],
+        "base_ipc": 2.1697621940635305
+      },
+      {
+        "step": 78,
+        "skip_instructions": 16607800,
+        "rl_action": {
+          "llc_replacement": "lru"
+        },
+        "rl_ipc": 1.61407784619606,
+        "best_action": {
+          "llc_replacement": "lru"
+        },
+        "best_ipc": 1.61407784619606,
+        "per_action_ipc": {
+          "llc_replacement-lru": 1.61407784619606
+        },
+        "top_k": [
+          {
+            "action": "llc_replacement-lru",
+            "ipc": 1.61407784619606,
+            "delta_pct_vs_base": 0.0
+          }
+        ],
+        "base_ipc": 1.61407784619606
+      },
+      {
+        "step": 79,
+        "skip_instructions": 16807900,
+        "rl_action": {
+          "llc_replacement": "lru"
+        },
+        "rl_ipc": 2.122239789475918,
+        "best_action": {
+          "llc_replacement": "lru"
+        },
+        "best_ipc": 2.122239789475918,
+        "per_action_ipc": {
+          "llc_replacement-lru": 2.122239789475918
+        },
+        "top_k": [
+          {
+            "action": "llc_replacement-lru",
+            "ipc": 2.122239789475918,
+            "delta_pct_vs_base": 0.0
+          }
+        ],
+        "base_ipc": 2.122239789475918
+      },
+      {
+        "step": 80,
+        "skip_instructions": 17008000,
+        "rl_action": {
+          "llc_replacement": "lru"
+        },
+        "rl_ipc": 2.3704384103919502,
+        "best_action": {
+          "llc_replacement": "lru"
+        },
+        "best_ipc": 2.3704384103919502,
+        "per_action_ipc": {
+          "llc_replacement-lru": 2.3704384103919502
+        },
+        "top_k": [
+          {
+            "action": "llc_replacement-lru",
+            "ipc": 2.3704384103919502,
+            "delta_pct_vs_base": 0.0
+          }
+        ],
+        "base_ipc": 2.3704384103919502
+      },
+      {
+        "step": 81,
+        "skip_instructions": 17208100,
+        "rl_action": {
+          "llc_replacement": "lru"
+        },
+        "rl_ipc": 1.5191101186407208,
+        "best_action": {
+          "llc_replacement": "lru"
+        },
+        "best_ipc": 1.5191101186407208,
+        "per_action_ipc": {
+          "llc_replacement-lru": 1.5191101186407208
+        },
+        "top_k": [
+          {
+            "action": "llc_replacement-lru",
+            "ipc": 1.5191101186407208,
+            "delta_pct_vs_base": 0.0
+          }
+        ],
+        "base_ipc": 1.5191101186407208
+      },
+      {
+        "step": 82,
+        "skip_instructions": 17408200,
+        "rl_action": {
+          "llc_replacement": "lru"
+        },
+        "rl_ipc": 2.3365850809042583,
+        "best_action": {
+          "llc_replacement": "lru"
+        },
+        "best_ipc": 2.3365850809042583,
+        "per_action_ipc": {
+          "llc_replacement-lru": 2.3365850809042583
+        },
+        "top_k": [
+          {
+            "action": "llc_replacement-lru",
+            "ipc": 2.3365850809042583,
+            "delta_pct_vs_base": 0.0
+          }
+        ],
+        "base_ipc": 2.3365850809042583
+      },
+      {
+        "step": 83,
+        "skip_instructions": 17608300,
+        "rl_action": {
+          "llc_replacement": "lru"
+        },
+        "rl_ipc": 1.4929719400132873,
+        "best_action": {
+          "llc_replacement": "lru"
+        },
+        "best_ipc": 1.4929719400132873,
+        "per_action_ipc": {
+          "llc_replacement-lru": 1.4929719400132873
+        },
+        "top_k": [
+          {
+            "action": "llc_replacement-lru",
+            "ipc": 1.4929719400132873,
+            "delta_pct_vs_base": 0.0
+          }
+        ],
+        "base_ipc": 1.4929719400132873
+      },
+      {
+        "step": 84,
+        "skip_instructions": 17808400,
+        "rl_action": {
+          "llc_replacement": "lru"
+        },
+        "rl_ipc": 1.5994625805729275,
+        "best_action": {
+          "llc_replacement": "lru"
+        },
+        "best_ipc": 1.5994625805729275,
+        "per_action_ipc": {
+          "llc_replacement-lru": 1.5994625805729275
+        },
+        "top_k": [
+          {
+            "action": "llc_replacement-lru",
+            "ipc": 1.5994625805729275,
+            "delta_pct_vs_base": 0.0
+          }
+        ],
+        "base_ipc": 1.5994625805729275
+      },
+      {
+        "step": 85,
+        "skip_instructions": 18008500,
+        "rl_action": {
+          "llc_replacement": "lru"
+        },
+        "rl_ipc": 2.288722320764433,
+        "best_action": {
+          "llc_replacement": "lru"
+        },
+        "best_ipc": 2.288722320764433,
+        "per_action_ipc": {
+          "llc_replacement-lru": 2.288722320764433
+        },
+        "top_k": [
+          {
+            "action": "llc_replacement-lru",
+            "ipc": 2.288722320764433,
+            "delta_pct_vs_base": 0.0
+          }
+        ],
+        "base_ipc": 2.288722320764433
+      },
+      {
+        "step": 86,
+        "skip_instructions": 18208600,
+        "rl_action": {
+          "llc_replacement": "lru"
+        },
+        "rl_ipc": 1.552337043418867,
+        "best_action": {
+          "llc_replacement": "lru"
+        },
+        "best_ipc": 1.552337043418867,
+        "per_action_ipc": {
+          "llc_replacement-lru": 1.552337043418867
+        },
+        "top_k": [
+          {
+            "action": "llc_replacement-lru",
+            "ipc": 1.552337043418867,
+            "delta_pct_vs_base": 0.0
+          }
+        ],
+        "base_ipc": 1.552337043418867
+      },
+      {
+        "step": 87,
+        "skip_instructions": 18408700,
+        "rl_action": {
+          "llc_replacement": "lru"
+        },
+        "rl_ipc": 1.639204661874749,
+        "best_action": {
+          "llc_replacement": "lru"
+        },
+        "best_ipc": 1.639204661874749,
+        "per_action_ipc": {
+          "llc_replacement-lru": 1.639204661874749
+        },
+        "top_k": [
+          {
+            "action": "llc_replacement-lru",
+            "ipc": 1.639204661874749,
+            "delta_pct_vs_base": 0.0
+          }
+        ],
+        "base_ipc": 1.639204661874749
+      },
+      {
+        "step": 88,
+        "skip_instructions": 18608800,
+        "rl_action": {
+          "llc_replacement": "lru"
+        },
+        "rl_ipc": 2.241610813476497,
+        "best_action": {
+          "llc_replacement": "lru"
+        },
+        "best_ipc": 2.241610813476497,
+        "per_action_ipc": {
+          "llc_replacement-lru": 2.241610813476497
+        },
+        "top_k": [
+          {
+            "action": "llc_replacement-lru",
+            "ipc": 2.241610813476497,
+            "delta_pct_vs_base": 0.0
+          }
+        ],
+        "base_ipc": 2.241610813476497
+      },
+      {
+        "step": 89,
+        "skip_instructions": 18808900,
+        "rl_action": {
+          "llc_replacement": "lru"
+        },
+        "rl_ipc": 2.127159023228112,
+        "best_action": {
+          "llc_replacement": "lru"
+        },
+        "best_ipc": 2.127159023228112,
+        "per_action_ipc": {
+          "llc_replacement-lru": 2.127159023228112
+        },
+        "top_k": [
+          {
+            "action": "llc_replacement-lru",
+            "ipc": 2.127159023228112,
+            "delta_pct_vs_base": 0.0
+          }
+        ],
+        "base_ipc": 2.127159023228112
+      },
+      {
+        "step": 90,
+        "skip_instructions": 19009000,
+        "rl_action": {
+          "llc_replacement": "lru"
+        },
+        "rl_ipc": 1.647210463028546,
+        "best_action": {
+          "llc_replacement": "lru"
+        },
+        "best_ipc": 1.647210463028546,
+        "per_action_ipc": {
+          "llc_replacement-lru": 1.647210463028546
+        },
+        "top_k": [
+          {
+            "action": "llc_replacement-lru",
+            "ipc": 1.647210463028546,
+            "delta_pct_vs_base": 0.0
+          }
+        ],
+        "base_ipc": 1.647210463028546
+      },
+      {
+        "step": 91,
+        "skip_instructions": 19209100,
+        "rl_action": {
+          "llc_replacement": "lru"
+        },
+        "rl_ipc": 1.5979243067040578,
+        "best_action": {
+          "llc_replacement": "lru"
+        },
+        "best_ipc": 1.5979243067040578,
+        "per_action_ipc": {
+          "llc_replacement-lru": 1.5979243067040578
+        },
+        "top_k": [
+          {
+            "action": "llc_replacement-lru",
+            "ipc": 1.5979243067040578,
+            "delta_pct_vs_base": 0.0
+          }
+        ],
+        "base_ipc": 1.5979243067040578
+      },
+      {
+        "step": 92,
+        "skip_instructions": 19409200,
+        "rl_action": {
+          "llc_replacement": "lru"
+        },
+        "rl_ipc": 1.6173098072195626,
+        "best_action": {
+          "llc_replacement": "lru"
+        },
+        "best_ipc": 1.6173098072195626,
+        "per_action_ipc": {
+          "llc_replacement-lru": 1.6173098072195626
+        },
+        "top_k": [
+          {
+            "action": "llc_replacement-lru",
+            "ipc": 1.6173098072195626,
+            "delta_pct_vs_base": 0.0
+          }
+        ],
+        "base_ipc": 1.6173098072195626
+      },
+      {
+        "step": 93,
+        "skip_instructions": 19609300,
+        "rl_action": {
+          "llc_replacement": "lru"
+        },
+        "rl_ipc": 2.2530866979091564,
+        "best_action": {
+          "llc_replacement": "lru"
+        },
+        "best_ipc": 2.2530866979091564,
+        "per_action_ipc": {
+          "llc_replacement-lru": 2.2530866979091564
+        },
+        "top_k": [
+          {
+            "action": "llc_replacement-lru",
+            "ipc": 2.2530866979091564,
+            "delta_pct_vs_base": 0.0
+          }
+        ],
+        "base_ipc": 2.2530866979091564
+      },
+      {
+        "step": 94,
+        "skip_instructions": 19809400,
+        "rl_action": {
+          "llc_replacement": "lru"
+        },
+        "rl_ipc": 1.4409501577832533,
+        "best_action": {
+          "llc_replacement": "lru"
+        },
+        "best_ipc": 1.4409501577832533,
+        "per_action_ipc": {
+          "llc_replacement-lru": 1.4409501577832533
+        },
+        "top_k": [
+          {
+            "action": "llc_replacement-lru",
+            "ipc": 1.4409501577832533,
+            "delta_pct_vs_base": 0.0
+          }
+        ],
+        "base_ipc": 1.4409501577832533
+      },
+      {
+        "step": 95,
+        "skip_instructions": 20009500,
+        "rl_action": {
+          "llc_replacement": "lru"
+        },
+        "rl_ipc": 2.127069884182203,
+        "best_action": {
+          "llc_replacement": "lru"
+        },
+        "best_ipc": 2.127069884182203,
+        "per_action_ipc": {
+          "llc_replacement-lru": 2.127069884182203
+        },
+        "top_k": [
+          {
+            "action": "llc_replacement-lru",
+            "ipc": 2.127069884182203,
+            "delta_pct_vs_base": 0.0
+          }
+        ],
+        "base_ipc": 2.127069884182203
+      },
+      {
+        "step": 96,
+        "skip_instructions": 20209600,
+        "rl_action": {
+          "llc_replacement": "lru"
+        },
+        "rl_ipc": 1.5889900530714718,
+        "best_action": {
+          "llc_replacement": "lru"
+        },
+        "best_ipc": 1.5889900530714718,
+        "per_action_ipc": {
+          "llc_replacement-lru": 1.5889900530714718
+        },
+        "top_k": [
+          {
+            "action": "llc_replacement-lru",
+            "ipc": 1.5889900530714718,
+            "delta_pct_vs_base": 0.0
+          }
+        ],
+        "base_ipc": 1.5889900530714718
+      },
+      {
+        "step": 97,
+        "skip_instructions": 20409700,
+        "rl_action": {
+          "llc_replacement": "lru"
+        },
+        "rl_ipc": 2.2957334221008048,
+        "best_action": {
+          "llc_replacement": "lru"
+        },
+        "best_ipc": 2.2957334221008048,
+        "per_action_ipc": {
+          "llc_replacement-lru": 2.2957334221008048
+        },
+        "top_k": [
+          {
+            "action": "llc_replacement-lru",
+            "ipc": 2.2957334221008048,
+            "delta_pct_vs_base": 0.0
+          }
+        ],
+        "base_ipc": 2.2957334221008048
+      },
+      {
+        "step": 98,
+        "skip_instructions": 20609800,
+        "rl_action": {
+          "llc_replacement": "lru"
+        },
+        "rl_ipc": 1.6602857308883225,
+        "best_action": {
+          "llc_replacement": "lru"
+        },
+        "best_ipc": 1.6602857308883225,
+        "per_action_ipc": {
+          "llc_replacement-lru": 1.6602857308883225
+        },
+        "top_k": [
+          {
+            "action": "llc_replacement-lru",
+            "ipc": 1.6602857308883225,
+            "delta_pct_vs_base": 0.0
+          }
+        ],
+        "base_ipc": 1.6602857308883225
+      },
+      {
+        "step": 99,
+        "skip_instructions": 20809900,
+        "rl_action": {
+          "llc_replacement": "lru"
+        },
+        "rl_ipc": 1.6543036278515773,
+        "best_action": {
+          "llc_replacement": "lru"
+        },
+        "best_ipc": 1.6543036278515773,
+        "per_action_ipc": {
+          "llc_replacement-lru": 1.6543036278515773
+        },
+        "top_k": [
+          {
+            "action": "llc_replacement-lru",
+            "ipc": 1.6543036278515773,
+            "delta_pct_vs_base": 0.0
+          }
+        ],
+        "base_ipc": 1.6543036278515773
+      }
+    ],
+    "best_action_counts": {
+      "llc_replacement-lru": 100
+    }
+  }
+}

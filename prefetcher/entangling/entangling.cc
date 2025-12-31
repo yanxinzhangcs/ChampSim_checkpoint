@@ -931,6 +931,19 @@ uint32_t l1i_add_hist_table(uint64_t line_addr, uint64_t instr_id, uint32_t form
 
 // INTERFACE
 
+uint32_t entangling::prefetcher_cache_operate(champsim::address addr, champsim::address ip, bool cache_hit, bool useful_prefetch, access_type type,
+                                              uint32_t metadata_in)
+{
+  return prefetcher_cache_operate(addr.to<uint64_t>(), ip.to<uint64_t>(), 0, cache_hit, useful_prefetch, champsim::to_underlying(type), metadata_in);
+}
+
+uint32_t entangling::prefetcher_cache_fill(champsim::address addr, long set, long way, bool prefetch, champsim::address evicted_addr,
+                                           uint32_t metadata_in)
+{
+  return prefetcher_cache_fill(addr.to<uint64_t>(), static_cast<uint32_t>(set), static_cast<uint32_t>(way),
+                               static_cast<uint8_t>(prefetch), evicted_addr.to<uint64_t>(), metadata_in);
+}
+
 void entangling::prefetcher_initialize() 
 {
   uint32_t my_cpu = parent_cache->cpu;

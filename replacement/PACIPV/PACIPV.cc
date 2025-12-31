@@ -151,7 +151,7 @@ void PACIPV_Entry::demand_promote(long way)
 
         // Update RRPV
         uint32_t old_rrpv = rrpvs.at(way);
-        uint32_t new_rrpv = demand_vector.at(old_rrpv - 1);
+        uint32_t new_rrpv = demand_vector.at(old_rrpv);
         rrpvs.at(way)     = new_rrpv;
 }
 
@@ -171,7 +171,7 @@ void PACIPV_Entry::prefetch_promote(long way)
 
         // Update RRPV
         uint32_t old_rrpv = rrpvs.at(way);
-        uint32_t new_rrpv = prefetch_vector.at(old_rrpv - 1);
+        uint32_t new_rrpv = prefetch_vector.at(old_rrpv);
         rrpvs.at(way)     = new_rrpv;
 }
 
@@ -298,13 +298,11 @@ void PACIPV::initialize_replacement()
                 std::exit(-1);
         }
 
-        const uint32_t min_demand_rrpv   = *std::min_element(demand_vector.cbegin(), demand_vector.cend());
         const uint32_t max_demand_rrpv   = *std::max_element(demand_vector.cbegin(), demand_vector.cend());
-        const uint32_t min_prefetch_rrpv = *std::min_element(prefetch_vector.cbegin(), prefetch_vector.cend());
         const uint32_t max_prefetch_rrpv = *std::max_element(prefetch_vector.cbegin(), prefetch_vector.cend());
-        if(max_demand_rrpv >= demand_vector.size() || min_demand_rrpv < 1 || max_prefetch_rrpv >= prefetch_vector.size() || min_prefetch_rrpv < 1)
+        if(max_demand_rrpv >= demand_vector.size() || max_prefetch_rrpv >= prefetch_vector.size())
         {
-                std::cerr << "[ERROR (" << cache_name << ")] Illegal IPV specified. Illegal RRPV value(s) found in IPVs." << std::endl;
+                std::cerr << "[ERROR (" << cache_name << ")] Illegal IPV specified. RRPV values must be within [0, vector_size - 1]." << std::endl;
                 std::exit(-1);
         }
 
