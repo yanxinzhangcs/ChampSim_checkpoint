@@ -25,6 +25,16 @@ OUTDIR="rl_results/${TRACE_BASE}_combo"
 CONFIG_SRC="rl_controller/action_space_perlbench_combo.json"
 CONFIG_DST="rl_controller/action_space_${TRACE_BASE}_combo.json"
 
+mkdir -p "${OUTDIR}"
+LOGFILE="${OUTDIR}/run.log"
+rm -f "${OUTDIR}/DONE" "${OUTDIR}/FAILED"
+
+# 让 tmux 后台运行时也能保留完整日志，便于定位中途退出原因
+exec > >(tee -a "${LOGFILE}") 2>&1
+echo "[INFO] start: $(date) trace=${TRACE_NAME} outdir=${OUTDIR}"
+
+trap 'rc=$?; if (( rc == 0 )); then echo "[INFO] done: $(date)"; touch "${OUTDIR}/DONE"; else echo "[ERROR] failed rc=${rc} at $(date)"; echo "${rc}" > "${OUTDIR}/FAILED"; fi' EXIT
+
 download_trace () {
   echo "[INFO] downloading: ${TRACE_URL}"
   if command -v curl >/dev/null 2>&1; then
@@ -74,7 +84,6 @@ cp -f "${CONFIG_SRC}" "${CONFIG_DST}"
 echo "[INFO] per-trace config: ${CONFIG_DST}"
 
 # 每个 trace 单独输出目录（你现在要求必须这么做）
-mkdir -p "${OUTDIR}"
 echo "[INFO] output dir: ${OUTDIR}"
 
 # ===== 按你给的固定参数格式直接跑（仅替换 config 与 output）=====

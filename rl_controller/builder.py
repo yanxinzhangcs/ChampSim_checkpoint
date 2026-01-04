@@ -1,9 +1,11 @@
 from __future__ import annotations
 
+import fcntl
 import json
 import subprocess
 from dataclasses import dataclass
 from pathlib import Path
+from typing import IO
 from typing import Dict, Mapping
 
 
@@ -23,6 +25,15 @@ class ChampSimBuildManager:
     self.build_root.mkdir(parents=True, exist_ok=True)
     self.bin_root = repo_root / "bin"
 
+  def _build_lock_path(self) -> Path:
+    return self.build_root / ".build.lock"
+
+  def _acquire_build_lock(self) -> IO[str]:
+    lock_path = self._build_lock_path()
+    lock_file = lock_path.open("a+", encoding="utf-8")
+    fcntl.flock(lock_file.fileno(), fcntl.LOCK_EX)
+    return lock_file
+
   def _binary_name(self, action_updates: Mapping[str, str]) -> str:
     suffix = "_".join(f"{key.replace('.', '-')}-{value}" for key, value in sorted(action_updates.items()))
     return f"champsim_rl_{suffix}"
@@ -33,7 +44,16 @@ class ChampSimBuildManager:
     config_path = self.build_root / f"{name}.json"
 
     if not binary_path.exists():
-      self._build_binary(name, binary_path, config_path, action_updates)
+      # ChampSim's configure step overwrites repo-global files (e.g. `_configuration.mk` and `.csconfig`).
+      # When multiple experiments run concurrently (tmux/workers), racing config+make often causes
+      # intermittent build failures and truncated experiment outputs. Serialize the build phase.
+      lock_file = self._acquire_build_lock()
+      try:
+        if not binary_path.exists():
+          self._build_binary(name, binary_path, config_path, action_updates)
+      finally:
+        fcntl.flock(lock_file.fileno(), fcntl.LOCK_UN)
+        lock_file.close()
 
     return BuildResult(binary_path=binary_path, config_path=config_path)
 
