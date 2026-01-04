@@ -1,0 +1,25 @@
+{
+  "template_config": "rl_controller/configs/perlbench_combo.json",
+  "heads": [
+    {
+      "name": "l1d_prefetcher",
+      "path": ["L1D", "prefetcher"],
+      "choices": ["berti", "gaze"]
+    },
+    {
+      "name": "l1i_prefetcher",
+      "path": ["L1I", "prefetcher"],
+      "choices": ["entangling", "barca"]
+    },
+    {
+      "name": "l2c_replacement",
+      "path": ["L2C", "replacement"],
+      "choices": ["mockingjay", "PACIPV"]
+    }
+  ],
+  "base_action": {
+    "l1d_prefetcher": "berti",
+    "l1i_prefetcher": "entangling",
+    "l2c_replacement": "mockingjay"
+  }
+}
