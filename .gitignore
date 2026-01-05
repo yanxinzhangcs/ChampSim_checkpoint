@@ -35,10 +35,9 @@ compile_commands.json
 # Local worktrees (created during maintenance)
 .worktree-results-full/
 
-# Results/logs: keep repo slim by tracking summaries only
-rl_results/**
-!rl_results/**/
-!rl_results/**/experiment_summary.json
+# Results/logs:
+# - `rl_results/` is intentionally tracked (pruned separately)
+# - Keep other generated result dirs slim by tracking summaries only
 
 baseline/results/**
 !baseline/results/**/
