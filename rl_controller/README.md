@@ -39,6 +39,24 @@ The script prints one line per step with the chosen action and IPC, and
 stores detailed statistics in `rl_runs/.../iter_XXXX_stats.json`.  A
 summary of the episode lives in `episode_summary.json`.
 
+## Full-trace fixed-policy sweep
+
+If you want to run *every* fixed policy in an action space over the whole trace
+(one warmup + one simulation run per policy), use:
+
+```bash
+export L2C_IPV="0 1 1 0 3#0 1 0 0 3"  # required when PACIPV is in the action space
+python3 -m rl_controller.full_trace_policies \
+  --config rl_controller/action_space_perlbench_combo.json \
+  --trace traces/600.perlbench_s-210B.champsimtrace.xz \
+  --warmup 1000000 \
+  --output rl_results/perlbench_combo_fulltrace
+```
+
+Outputs:
+- `.../baseline/<policy>/full_trace_stats.json` and `.../baseline/<policy>/full_trace.log`
+- `.../experiment_summary.json` (best policy + per-policy IPC)
+
 ### Notes
 
 - The harness reuses a warm checkpoint created once with the base action.
