@@ -35,9 +35,10 @@ compile_commands.json
 # Local worktrees (created during maintenance)
 .worktree-results-full/
 
-# Results/logs:
-# - `rl_results/` is intentionally tracked (pruned separately)
-# - Keep other generated result dirs slim by tracking summaries only
+# Results/logs: keep master slim by tracking summaries only (full artifacts live on `results-full`)
+rl_results/**
+!rl_results/**/
+!rl_results/**/experiment_summary.json
 
 baseline/results/**
 !baseline/results/**/
@@ -56,6 +57,3 @@ rl_experiments/**
 !rl_experiments/**/experiment_summary.json
 
 rl_controller/build_configs/.build.lock
-rl_results/**/*.log
-rl_results/**/*.log
-rl_results/**/*.log
