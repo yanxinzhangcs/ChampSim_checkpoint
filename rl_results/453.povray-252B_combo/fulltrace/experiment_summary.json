@@ -1,0 +1,103 @@
+{
+  "config": {
+    "trace": "/users/lijrjyan/ChampSim_checkpoint/traces/453.povray-252B.champsimtrace.xz",
+    "warmup": 1000000,
+    "skip_instructions": 0,
+    "simulation_instructions": null,
+    "action_space": "/users/lijrjyan/ChampSim_checkpoint/rl_controller/action_space_453.povray-252B_combo.json"
+  },
+  "fixed_policies": {
+    "l1d_prefetcher-gaze_l1i_prefetcher-entangling_l2c_replacement-mockingjay": {
+      "total_ipc": 1.979690742485334,
+      "per_step_ipc": [
+        1.979690742485334
+      ],
+      "instructions": 1998999670.0,
+      "cycles": 1009753507.0,
+      "ipc": 1.979690742485334,
+      "stats_path": "/users/lijrjyan/ChampSim_checkpoint/rl_results/453.povray-252B_combo/fulltrace/baseline/l1d_prefetcher-gaze_l1i_prefetcher-entangling_l2c_replacement-mockingjay/full_trace_stats.json",
+      "log_path": "/users/lijrjyan/ChampSim_checkpoint/rl_results/453.povray-252B_combo/fulltrace/baseline/l1d_prefetcher-gaze_l1i_prefetcher-entangling_l2c_replacement-mockingjay/full_trace.log"
+    },
+    "l1d_prefetcher-berti_l1i_prefetcher-entangling_l2c_replacement-PACIPV": {
+      "total_ipc": 1.9774508110958517,
+      "per_step_ipc": [
+        1.9774508110958517
+      ],
+      "instructions": 1998999670.0,
+      "cycles": 1010897292.0,
+      "ipc": 1.9774508110958517,
+      "stats_path": "/users/lijrjyan/ChampSim_checkpoint/rl_results/453.povray-252B_combo/fulltrace/baseline/l1d_prefetcher-berti_l1i_prefetcher-entangling_l2c_replacement-PACIPV/full_trace_stats.json",
+      "log_path": "/users/lijrjyan/ChampSim_checkpoint/rl_results/453.povray-252B_combo/fulltrace/baseline/l1d_prefetcher-berti_l1i_prefetcher-entangling_l2c_replacement-PACIPV/full_trace.log"
+    },
+    "l1d_prefetcher-gaze_l1i_prefetcher-entangling_l2c_replacement-PACIPV": {
+      "total_ipc": 1.9790852963855412,
+      "per_step_ipc": [
+        1.9790852963855412
+      ],
+      "instructions": 1998999670.0,
+      "cycles": 1010062413.0,
+      "ipc": 1.9790852963855412,
+      "stats_path": "/users/lijrjyan/ChampSim_checkpoint/rl_results/453.povray-252B_combo/fulltrace/baseline/l1d_prefetcher-gaze_l1i_prefetcher-entangling_l2c_replacement-PACIPV/full_trace_stats.json",
+      "log_path": "/users/lijrjyan/ChampSim_checkpoint/rl_results/453.povray-252B_combo/fulltrace/baseline/l1d_prefetcher-gaze_l1i_prefetcher-entangling_l2c_replacement-PACIPV/full_trace.log"
+    },
+    "l1d_prefetcher-berti_l1i_prefetcher-entangling_l2c_replacement-mockingjay": {
+      "total_ipc": 1.9771485954272736,
+      "per_step_ipc": [
+        1.9771485954272736
+      ],
+      "instructions": 1998999670.0,
+      "cycles": 1011051812.0,
+      "ipc": 1.9771485954272736,
+      "stats_path": "/users/lijrjyan/ChampSim_checkpoint/rl_results/453.povray-252B_combo/fulltrace/baseline/l1d_prefetcher-berti_l1i_prefetcher-entangling_l2c_replacement-mockingjay/full_trace_stats.json",
+      "log_path": "/users/lijrjyan/ChampSim_checkpoint/rl_results/453.povray-252B_combo/fulltrace/baseline/l1d_prefetcher-berti_l1i_prefetcher-entangling_l2c_replacement-mockingjay/full_trace.log"
+    },
+    "l1d_prefetcher-berti_l1i_prefetcher-barca_l2c_replacement-mockingjay": {
+      "total_ipc": 1.9772796856770884,
+      "per_step_ipc": [
+        1.9772796856770884
+      ],
+      "instructions": 1998999670.0,
+      "cycles": 1010984781.0,
+      "ipc": 1.9772796856770884,
+      "stats_path": "/users/lijrjyan/ChampSim_checkpoint/rl_results/453.povray-252B_combo/fulltrace/baseline/l1d_prefetcher-berti_l1i_prefetcher-barca_l2c_replacement-mockingjay/full_trace_stats.json",
+      "log_path": "/users/lijrjyan/ChampSim_checkpoint/rl_results/453.povray-252B_combo/fulltrace/baseline/l1d_prefetcher-berti_l1i_prefetcher-barca_l2c_replacement-mockingjay/full_trace.log"
+    },
+    "l1d_prefetcher-berti_l1i_prefetcher-barca_l2c_replacement-PACIPV": {
+      "total_ipc": 1.977132489760885,
+      "per_step_ipc": [
+        1.977132489760885
+      ],
+      "instructions": 1998999670.0,
+      "cycles": 1011060048.0,
+      "ipc": 1.977132489760885,
+      "stats_path": "/users/lijrjyan/ChampSim_checkpoint/rl_results/453.povray-252B_combo/fulltrace/baseline/l1d_prefetcher-berti_l1i_prefetcher-barca_l2c_replacement-PACIPV/full_trace_stats.json",
+      "log_path": "/users/lijrjyan/ChampSim_checkpoint/rl_results/453.povray-252B_combo/fulltrace/baseline/l1d_prefetcher-berti_l1i_prefetcher-barca_l2c_replacement-PACIPV/full_trace.log"
+    },
+    "l1d_prefetcher-gaze_l1i_prefetcher-barca_l2c_replacement-mockingjay": {
+      "total_ipc": 1.9785955870182637,
+      "per_step_ipc": [
+        1.9785955870182637
+      ],
+      "instructions": 1998999670.0,
+      "cycles": 1010312407.0,
+      "ipc": 1.9785955870182637,
+      "stats_path": "/users/lijrjyan/ChampSim_checkpoint/rl_results/453.povray-252B_combo/fulltrace/baseline/l1d_prefetcher-gaze_l1i_prefetcher-barca_l2c_replacement-mockingjay/full_trace_stats.json",
+      "log_path": "/users/lijrjyan/ChampSim_checkpoint/rl_results/453.povray-252B_combo/fulltrace/baseline/l1d_prefetcher-gaze_l1i_prefetcher-barca_l2c_replacement-mockingjay/full_trace.log"
+    },
+    "l1d_prefetcher-gaze_l1i_prefetcher-barca_l2c_replacement-PACIPV": {
+      "total_ipc": 1.9787389934011133,
+      "per_step_ipc": [
+        1.9787389934011133
+      ],
+      "instructions": 1998999670.0,
+      "cycles": 1010239186.0,
+      "ipc": 1.9787389934011133,
+      "stats_path": "/users/lijrjyan/ChampSim_checkpoint/rl_results/453.povray-252B_combo/fulltrace/baseline/l1d_prefetcher-gaze_l1i_prefetcher-barca_l2c_replacement-PACIPV/full_trace_stats.json",
+      "log_path": "/users/lijrjyan/ChampSim_checkpoint/rl_results/453.povray-252B_combo/fulltrace/baseline/l1d_prefetcher-gaze_l1i_prefetcher-barca_l2c_replacement-PACIPV/full_trace.log"
+    }
+  },
+  "best_fixed_policy": {
+    "action": "l1d_prefetcher-gaze_l1i_prefetcher-entangling_l2c_replacement-mockingjay",
+    "ipc": 1.979690742485334
+  }
+}
