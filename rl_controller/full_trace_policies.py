@@ -1,12 +1,10 @@
 from __future__ import annotations
 
 import argparse
-import concurrent.futures
 import json
 import os
 import signal
 import subprocess
-import sys
 from pathlib import Path
 from typing import Dict, Optional
 
@@ -56,12 +54,6 @@ def parse_args() -> argparse.Namespace:
       default=None,
       help='Value for env var L2C_IPV (required by PACIPV). If omitted, uses existing $L2C_IPV.',
   )
-  parser.add_argument(
-      "--jobs",
-      type=int,
-      default=1,
-      help="Number of policies to run in parallel (processes). Use 1 to disable parallelism.",
-  )
   parser.add_argument("--dry-run", action="store_true", help="Print commands without running them")
   parser.add_argument("--force", action="store_true", help="Re-run even if output stats already exist")
   return parser.parse_args()
@@ -87,55 +79,6 @@ def _needs_ipv(action_space: ActionSpace) -> bool:
     if any(v == "PACIPV" for v in action.values.values()):
       return True
   return False
-
-
-def _run_policy_worker(
-    repo_root: str,
-    config_path: str,
-    trace_path: str,
-    action_values: Dict[str, str],
-    warmup: int,
-    skip_instructions: int,
-    simulation_instructions: Optional[int],
-    out_dir: str,
-    env_overrides: Dict[str, str],
-    dry_run: bool,
-    force: bool,
-) -> Dict[str, float]:
-  repo_root_path = Path(repo_root)
-  action_space, _, template_config = load_action_space(Path(config_path))
-  build_manager = ChampSimBuildManager(repo_root=repo_root_path, template_config=template_config.resolve())
-  action = action_space.from_dict(action_values)
-
-  env = os.environ.copy()
-  env.update(env_overrides)
-
-  metrics = run_full_trace(
-      repo_root=repo_root_path,
-      build_manager=build_manager,
-      action_space=action_space,
-      trace_path=Path(trace_path),
-      action=action,
-      warmup=warmup,
-      skip_instructions=skip_instructions,
-      simulation_instructions=simulation_instructions,
-      out_dir=Path(out_dir),
-      env=env,
-      dry_run=dry_run,
-      force=force,
-  )
-
-  return {
-      "instructions": float(metrics.instructions),
-      "cycles": float(metrics.cycles),
-      "ipc": float(metrics.ipc),
-      "l1d_mpki": float(metrics.l1d_mpki),
-      "l2_mpki": float(metrics.l2_mpki),
-      "llc_mpki": float(metrics.llc_mpki),
-      "prefetch_coverage": float(metrics.prefetch_coverage),
-      "prefetch_accuracy": float(metrics.prefetch_accuracy),
-      "branch_miss_rate": float(metrics.branch_miss_rate),
-  }
 
 
 def run_full_trace(
@@ -198,14 +141,7 @@ def run_full_trace(
   with log_path.open("w", encoding="utf-8") as log_handle:
     log_handle.write(cmd + "\n")
     log_handle.flush()
-    subprocess.run(
-        ["bash", "-lc", cmd],
-        cwd=repo_root,
-        check=True,
-        stdout=log_handle,
-        stderr=subprocess.STDOUT,
-        env=env,
-    )
+    subprocess.run(["bash", "-lc", cmd], cwd=repo_root, check=True, stdout=log_handle, stderr=subprocess.STDOUT, env=env)
 
   return parse_stats_json(stats_path)
 
@@ -214,9 +150,6 @@ def main() -> int:
   args = parse_args()
   repo_root = Path(__file__).resolve().parents[1]
   output_root = ensure_dir(args.output.resolve())
-
-  if args.jobs < 1:
-    raise SystemExit("--jobs must be >= 1")
 
   action_space, _, template_config = load_action_space(args.config.resolve())
   build_manager = ChampSimBuildManager(repo_root=repo_root, template_config=template_config.resolve())
@@ -230,97 +163,37 @@ def main() -> int:
 
   results: Dict[str, Dict[str, object]] = {}
   actions = action_space.all_actions()
-  total = len(actions)
-
-  # Keep output stable and readable for --dry-run.
-  jobs = 1 if args.dry_run else min(args.jobs, total) if total else 1
-
-  env_overrides: Dict[str, str] = {}
-  if ipv_value:
-    env_overrides["L2C_IPV"] = ipv_value
-
-  if jobs == 1:
-    for idx, action in enumerate(actions):
-      key = action.key()
-      safe_key = sanitize(key)
-      out_dir = output_root / "baseline" / safe_key
-      print(f"[{idx+1}/{total}] {key}")
-      metrics = run_full_trace(
-          repo_root=repo_root,
-          build_manager=build_manager,
-          action_space=action_space,
-          trace_path=args.trace.resolve(),
-          action=action,
-          warmup=args.warmup,
-          skip_instructions=args.skip_instructions,
-          simulation_instructions=args.simulation_instructions,
-          out_dir=out_dir,
-          env=env,
-          dry_run=args.dry_run,
-          force=args.force,
-      )
-      if not args.dry_run:
-        results[key] = {
-            # Keep compatibility with existing analysis scripts
-            "total_ipc": metrics.ipc,
-            "per_step_ipc": [metrics.ipc],
-            # Full-trace metrics
-            "instructions": metrics.instructions,
-            "cycles": metrics.cycles,
-            "ipc": metrics.ipc,
-            "stats_path": str(out_dir / "full_trace_stats.json"),
-            "log_path": str(out_dir / "full_trace.log"),
-        }
-  else:
-    print(f"[INFO] running {total} policies with --jobs={jobs}")
-    futures: Dict[concurrent.futures.Future, tuple[str, Path]] = {}
-    try:
-      with concurrent.futures.ProcessPoolExecutor(max_workers=jobs) as executor:
-        for idx, action in enumerate(actions):
-          key = action.key()
-          safe_key = sanitize(key)
-          out_dir = output_root / "baseline" / safe_key
-          print(f"[{idx+1}/{total}] {key}")
-          future = executor.submit(
-              _run_policy_worker,
-              repo_root=str(repo_root),
-              config_path=str(args.config.resolve()),
-              trace_path=str(args.trace.resolve()),
-              action_values=dict(action.values),
-              warmup=args.warmup,
-              skip_instructions=args.skip_instructions,
-              simulation_instructions=args.simulation_instructions,
-              out_dir=str(out_dir),
-              env_overrides=env_overrides,
-              dry_run=args.dry_run,
-              force=args.force,
-          )
-          futures[future] = (key, out_dir)
-
-        for future in concurrent.futures.as_completed(futures):
-          key, out_dir = futures[future]
-          try:
-            metrics = future.result()
-          except Exception as exc:
-            print(f"[ERROR] policy failed: {key} (see {out_dir}/full_trace.log): {exc}", file=sys.stderr)
-            for pending in futures:
-              pending.cancel()
-            raise
-
-          results[key] = {
-              # Keep compatibility with existing analysis scripts
-              "total_ipc": metrics["ipc"],
-              "per_step_ipc": [metrics["ipc"]],
-              # Full-trace metrics
-              "instructions": metrics["instructions"],
-              "cycles": metrics["cycles"],
-              "ipc": metrics["ipc"],
-              "stats_path": str(out_dir / "full_trace_stats.json"),
-              "log_path": str(out_dir / "full_trace.log"),
-          }
-    except KeyboardInterrupt:
-      print("[ERROR] interrupted", file=sys.stderr)
-      return 130
+  for idx, action in enumerate(actions):
+    key = action.key()
+    safe_key = sanitize(key)
+    out_dir = output_root / "baseline" / safe_key
+    print(f"[{idx+1}/{len(actions)}] {key}")
+    metrics = run_full_trace(
+        repo_root=repo_root,
+        build_manager=build_manager,
+        action_space=action_space,
+        trace_path=args.trace.resolve(),
+        action=action,
+        warmup=args.warmup,
+        skip_instructions=args.skip_instructions,
+        simulation_instructions=args.simulation_instructions,
+        out_dir=out_dir,
+        env=env,
+        dry_run=args.dry_run,
+        force=args.force,
+    )
+    if not args.dry_run:
+      results[key] = {
+          # Keep compatibility with existing analysis scripts
+          "total_ipc": metrics.ipc,
+          "per_step_ipc": [metrics.ipc],
+          # Full-trace metrics
+          "instructions": metrics.instructions,
+          "cycles": metrics.cycles,
+          "ipc": metrics.ipc,
+          "stats_path": str(out_dir / "full_trace_stats.json"),
+          "log_path": str(out_dir / "full_trace.log"),
+      }
 
   if args.dry_run:
     return 0

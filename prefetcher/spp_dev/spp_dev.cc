@@ -140,7 +140,8 @@ uint32_t spp_dev::prefetcher_cache_fill(champsim::address addr, long set, long w
     if constexpr (SPP_DEBUG_PRINT) {
       std::cout << std::endl;
     }
-    FILTER.check(evicted_addr, spp_dev::L2C_EVICT);
+    if (evicted_addr != champsim::address{})
+      FILTER.check(evicted_addr, spp_dev::L2C_EVICT);
   }
 
   return metadata_in;
@@ -360,15 +361,17 @@ void spp_dev::PATTERN_TABLE::read_pattern(uint32_t curr_sig, std::vector<typenam
       pf_conf = depth ? (_parent->GHR.global_accuracy * c_delta[set][way] / c_sig[set] * lookahead_conf / 100) : local_conf;
 
       if (pf_conf >= PF_THRESHOLD) {
-        confidence_q[pf_q_tail] = pf_conf;
-        delta_q[pf_q_tail] = delta[set][way];
-
         // Lookahead path follows the most confident entry
         if (pf_conf > max_conf) {
           lookahead_way = way;
           max_conf = pf_conf;
         }
-        pf_q_tail++;
+
+        if (pf_q_tail < confidence_q.size() && pf_q_tail < delta_q.size()) {
+          confidence_q[pf_q_tail] = pf_conf;
+          delta_q[pf_q_tail] = delta[set][way];
+          pf_q_tail++;
+        }
 
         if constexpr (SPP_DEBUG_PRINT) {
           std::cout << "[PT] " << __func__ << " HIGH CONF: " << pf_conf << " sig: " << std::hex << curr_sig << std::dec << " set: " << set << " way: " << way;
@@ -383,7 +386,6 @@ void spp_dev::PATTERN_TABLE::read_pattern(uint32_t curr_sig, std::vector<typenam
         }
       }
     }
-    pf_q_tail++;
 
     lookahead_conf = max_conf;
     if (lookahead_conf >= PF_THRESHOLD)

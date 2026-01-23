@@ -521,8 +521,29 @@ void CACHE::replacement_module_model<Rs...>::impl_replacement_cache_fill(uint32_
     if constexpr (replacement::has_cache_fill<decltype(r), uint32_t, long, long, champsim::address, champsim::address, champsim::address, access_type>)
       r.replacement_cache_fill(triggering_cpu, set, way, full_addr, ip, victim_addr, type);
 
-    else
-      impl_update_replacement_state(triggering_cpu, set, way, full_addr, ip, victim_addr, type, false);
+    else {
+      auto new_victim_addr = victim_addr;
+
+      /* Strong addresses */
+      if constexpr (replacement::has_update_state<decltype(r), uint32_t, long, long, champsim::address, champsim::address, access_type, bool>)
+        r.update_replacement_state(triggering_cpu, set, way, full_addr, ip, type, false);
+
+      /* Strong addresses */
+      else if constexpr (replacement::has_update_state<decltype(r), uint32_t, long, long, champsim::address, champsim::address, champsim::address, access_type,
+                                                       bool>)
+        r.update_replacement_state(triggering_cpu, set, way, full_addr, ip, new_victim_addr, type, false);
+
+      /* Raw integer access type */
+      else if constexpr (replacement::has_update_state<decltype(r), uint32_t, long, long, champsim::address, champsim::address, champsim::address,
+                                                       std::underlying_type_t<access_type>, bool>)
+        r.update_replacement_state(triggering_cpu, set, way, full_addr, ip, new_victim_addr, champsim::to_underlying(type), false);
+
+      /* Raw integer addresses, raw integer access type */
+      else if constexpr (replacement::has_update_state<decltype(r), uint32_t, long, long, uint64_t, uint64_t, uint64_t, std::underlying_type_t<access_type>,
+                                                       bool>)
+        r.update_replacement_state(triggering_cpu, set, way, full_addr.to<uint64_t>(), ip.to<uint64_t>(), new_victim_addr.to<uint64_t>(),
+                                   champsim::to_underlying(type), false);
+    }
   };
 
   std::apply([&](auto&... r) { (..., process_one(r)); }, intern_);

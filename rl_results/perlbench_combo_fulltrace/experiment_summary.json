@@ -1,0 +1,103 @@
+{
+  "config": {
+    "trace": "/home/ubuntu/yanxin/ChampSim_checkpoint/600.perlbench_s-210B.champsimtrace.xz",
+    "warmup": 1000000,
+    "skip_instructions": 0,
+    "simulation_instructions": null,
+    "action_space": "/home/ubuntu/yanxin/ChampSim_checkpoint/rl_controller/action_space_perlbench_combo.json"
+  },
+  "fixed_policies": {
+    "l1d_prefetcher-berti_l1i_prefetcher-entangling_l2c_replacement-mockingjay": {
+      "total_ipc": 1.883350972266958,
+      "per_step_ipc": [
+        1.883350972266958
+      ],
+      "instructions": 1998999668.0,
+      "cycles": 1061405812.0,
+      "ipc": 1.883350972266958,
+      "stats_path": "/home/ubuntu/yanxin/ChampSim_checkpoint/rl_results/perlbench_combo_fulltrace/baseline/l1d_prefetcher-berti_l1i_prefetcher-entangling_l2c_replacement-mockingjay/full_trace_stats.json",
+      "log_path": "/home/ubuntu/yanxin/ChampSim_checkpoint/rl_results/perlbench_combo_fulltrace/baseline/l1d_prefetcher-berti_l1i_prefetcher-entangling_l2c_replacement-mockingjay/full_trace.log"
+    },
+    "l1d_prefetcher-berti_l1i_prefetcher-entangling_l2c_replacement-PACIPV": {
+      "total_ipc": 1.883776448907768,
+      "per_step_ipc": [
+        1.883776448907768
+      ],
+      "instructions": 1998999668.0,
+      "cycles": 1061166079.0,
+      "ipc": 1.883776448907768,
+      "stats_path": "/home/ubuntu/yanxin/ChampSim_checkpoint/rl_results/perlbench_combo_fulltrace/baseline/l1d_prefetcher-berti_l1i_prefetcher-entangling_l2c_replacement-PACIPV/full_trace_stats.json",
+      "log_path": "/home/ubuntu/yanxin/ChampSim_checkpoint/rl_results/perlbench_combo_fulltrace/baseline/l1d_prefetcher-berti_l1i_prefetcher-entangling_l2c_replacement-PACIPV/full_trace.log"
+    },
+    "l1d_prefetcher-berti_l1i_prefetcher-barca_l2c_replacement-mockingjay": {
+      "total_ipc": 1.8578735926854975,
+      "per_step_ipc": [
+        1.8578735926854975
+      ],
+      "instructions": 1998999668.0,
+      "cycles": 1075961075.0,
+      "ipc": 1.8578735926854975,
+      "stats_path": "/home/ubuntu/yanxin/ChampSim_checkpoint/rl_results/perlbench_combo_fulltrace/baseline/l1d_prefetcher-berti_l1i_prefetcher-barca_l2c_replacement-mockingjay/full_trace_stats.json",
+      "log_path": "/home/ubuntu/yanxin/ChampSim_checkpoint/rl_results/perlbench_combo_fulltrace/baseline/l1d_prefetcher-berti_l1i_prefetcher-barca_l2c_replacement-mockingjay/full_trace.log"
+    },
+    "l1d_prefetcher-berti_l1i_prefetcher-barca_l2c_replacement-PACIPV": {
+      "total_ipc": 1.8576938836513452,
+      "per_step_ipc": [
+        1.8576938836513452
+      ],
+      "instructions": 1998999668.0,
+      "cycles": 1076065161.0,
+      "ipc": 1.8576938836513452,
+      "stats_path": "/home/ubuntu/yanxin/ChampSim_checkpoint/rl_results/perlbench_combo_fulltrace/baseline/l1d_prefetcher-berti_l1i_prefetcher-barca_l2c_replacement-PACIPV/full_trace_stats.json",
+      "log_path": "/home/ubuntu/yanxin/ChampSim_checkpoint/rl_results/perlbench_combo_fulltrace/baseline/l1d_prefetcher-berti_l1i_prefetcher-barca_l2c_replacement-PACIPV/full_trace.log"
+    },
+    "l1d_prefetcher-gaze_l1i_prefetcher-entangling_l2c_replacement-mockingjay": {
+      "total_ipc": 1.88954002400618,
+      "per_step_ipc": [
+        1.88954002400618
+      ],
+      "instructions": 1998999668.0,
+      "cycles": 1057929254.0,
+      "ipc": 1.88954002400618,
+      "stats_path": "/home/ubuntu/yanxin/ChampSim_checkpoint/rl_results/perlbench_combo_fulltrace/baseline/l1d_prefetcher-gaze_l1i_prefetcher-entangling_l2c_replacement-mockingjay/full_trace_stats.json",
+      "log_path": "/home/ubuntu/yanxin/ChampSim_checkpoint/rl_results/perlbench_combo_fulltrace/baseline/l1d_prefetcher-gaze_l1i_prefetcher-entangling_l2c_replacement-mockingjay/full_trace.log"
+    },
+    "l1d_prefetcher-gaze_l1i_prefetcher-entangling_l2c_replacement-PACIPV": {
+      "total_ipc": 1.8906225170945241,
+      "per_step_ipc": [
+        1.8906225170945241
+      ],
+      "instructions": 1998999668.0,
+      "cycles": 1057323527.0,
+      "ipc": 1.8906225170945241,
+      "stats_path": "/home/ubuntu/yanxin/ChampSim_checkpoint/rl_results/perlbench_combo_fulltrace/baseline/l1d_prefetcher-gaze_l1i_prefetcher-entangling_l2c_replacement-PACIPV/full_trace_stats.json",
+      "log_path": "/home/ubuntu/yanxin/ChampSim_checkpoint/rl_results/perlbench_combo_fulltrace/baseline/l1d_prefetcher-gaze_l1i_prefetcher-entangling_l2c_replacement-PACIPV/full_trace.log"
+    },
+    "l1d_prefetcher-gaze_l1i_prefetcher-barca_l2c_replacement-mockingjay": {
+      "total_ipc": 1.8671470654726081,
+      "per_step_ipc": [
+        1.8671470654726081
+      ],
+      "instructions": 1998999668.0,
+      "cycles": 1070617149.0,
+      "ipc": 1.8671470654726081,
+      "stats_path": "/home/ubuntu/yanxin/ChampSim_checkpoint/rl_results/perlbench_combo_fulltrace/baseline/l1d_prefetcher-gaze_l1i_prefetcher-barca_l2c_replacement-mockingjay/full_trace_stats.json",
+      "log_path": "/home/ubuntu/yanxin/ChampSim_checkpoint/rl_results/perlbench_combo_fulltrace/baseline/l1d_prefetcher-gaze_l1i_prefetcher-barca_l2c_replacement-mockingjay/full_trace.log"
+    },
+    "l1d_prefetcher-gaze_l1i_prefetcher-barca_l2c_replacement-PACIPV": {
+      "total_ipc": 1.8664954569969225,
+      "per_step_ipc": [
+        1.8664954569969225
+      ],
+      "instructions": 1998999668.0,
+      "cycles": 1070990910.0,
+      "ipc": 1.8664954569969225,
+      "stats_path": "/home/ubuntu/yanxin/ChampSim_checkpoint/rl_results/perlbench_combo_fulltrace/baseline/l1d_prefetcher-gaze_l1i_prefetcher-barca_l2c_replacement-PACIPV/full_trace_stats.json",
+      "log_path": "/home/ubuntu/yanxin/ChampSim_checkpoint/rl_results/perlbench_combo_fulltrace/baseline/l1d_prefetcher-gaze_l1i_prefetcher-barca_l2c_replacement-PACIPV/full_trace.log"
+    }
+  },
+  "best_fixed_policy": {
+    "action": "l1d_prefetcher-gaze_l1i_prefetcher-entangling_l2c_replacement-PACIPV",
+    "ipc": 1.8906225170945241
+  }
+}
