@@ -269,32 +269,38 @@ void PrefetchBuffer::prefetch(champsim::modules::prefetcher* prefetcher, uint64_
     uint64_t second = entry->data.second;
 
     pattern[region_offset] = 0;
-    
-    // Throttle based on MSHR occupancy
-    // Use intern_->get_mshr_occupancy_ratio()
-    if (prefetcher->intern_->get_mshr_occupancy_ratio() > 0.8) {
-        return;
-    }
-
     for (uint64_t i = 1; i < (REGION_SIZE / BLOCK_SIZE); i++) {
         uint64_t pf_offset = ((uint64_t)region_offset + i) % (REGION_SIZE / BLOCK_SIZE);
         if (pf_offset != trigger && pf_offset != second && pattern[pf_offset] != 0) {
             uint64_t pf_addr_raw = (region_num << LOG2_REGION_SIZE) + (pf_offset << LOG2_BLOCK_SIZE);
             champsim::address pf_addr{pf_addr_raw};
 
-            pf_metadata = pf_metadatas[pf_offset];
-            pf_metadata = __add_pf_sour_level(pf_metadata, 1);
-            if (pattern[pf_offset] == PF_FILL_L1) {
-                pf_metadata = __add_pf_dest_level(pf_metadata, 1);
-            } else {
-                pf_metadata = __add_pf_dest_level(pf_metadata, 2);
-            }
-            
-            bool fill_this_level = (pattern[pf_offset] == PF_FILL_L1);
-            bool ok = prefetcher->prefetch_line(pf_addr, fill_this_level, pf_metadata);
+            // Per-request capacity check matching old ChampSim behavior:
+            // old queue type 3 = PQ, old queue type 0 = MSHR
+            auto pq_occ_vec = prefetcher->intern_->get_pq_occupancy();
+            auto pq_sz_vec = prefetcher->intern_->get_pq_size();
+            std::size_t pq_occ = pq_occ_vec.empty() ? 0 : pq_occ_vec[0];
+            std::size_t pq_sz = pq_sz_vec.empty() ? 0 : pq_sz_vec[0];
+            std::size_t mshr_occ = prefetcher->intern_->get_mshr_occupancy();
+            std::size_t mshr_sz = prefetcher->intern_->get_mshr_size();
 
-            if (ok) {
-                pattern[pf_offset] = 0;
+            if (pq_occ + mshr_occ < mshr_sz - 1 && pq_occ < pq_sz) {
+                pf_metadata = pf_metadatas[pf_offset];
+                pf_metadata = __add_pf_sour_level(pf_metadata, 1);
+                if (pattern[pf_offset] == PF_FILL_L1) {
+                    pf_metadata = __add_pf_dest_level(pf_metadata, 1);
+                } else {
+                    pf_metadata = __add_pf_dest_level(pf_metadata, 2);
+                }
+
+                bool fill_this_level = (pattern[pf_offset] == PF_FILL_L1);
+                bool ok = prefetcher->prefetch_line(pf_addr, fill_this_level, pf_metadata);
+
+                if (ok) {
+                    pattern[pf_offset] = 0;
+                }
+            } else {
+                return; // Early return without erasing PB entry - retry on next call
             }
         }
     }
@@ -326,8 +332,6 @@ uint64_t PrefetchBuffer::build_key(uint64_t region_num) {
 Gaze::Gaze(int ft_size, int ft_ways, int at_size, int at_ways, int pt_size, int pt_ways, int pb_size, int pb_ways) :
     ft(ft_size, ft_ways), at(at_size, at_ways), pt(pt_size, pt_ways), pb(pb_size, pb_ways) {
 }
-
-Gaze::Gaze() : ft(64, 8), at(64, 8), pt(32, 4), pb(32, 8) {}
 
 void Gaze::access(uint64_t block_num, uint64_t pc, champsim::modules::prefetcher* prefetcher) {
     uint64_t region_num = block_num >> (LOG2_REGION_SIZE - LOG2_BLOCK_SIZE);
@@ -486,7 +490,7 @@ uint32_t gaze::prefetcher_cache_operate(champsim::address addr, champsim::addres
     if (type != access_type::LOAD)
         return metadata_in;
         
-    uint64_t block_num = addr.template to<uint64_t>() >> gaze_impl::LOG2_BLOCK_SIZE;
+    uint64_t block_num = addr.template to<uint64_t>() >> LOG2_BLOCK_SIZE;
 
     impl.access(block_num, ip.template to<uint64_t>(), this);
     impl.prefetch(this, block_num);

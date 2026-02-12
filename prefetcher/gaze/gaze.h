@@ -24,10 +24,6 @@ class CACHE; // Forward declaration
 
 namespace gaze_impl {
 
-// Define local constants usable in constexpr
-constexpr unsigned BLOCK_SIZE = 64;
-constexpr unsigned LOG2_BLOCK_SIZE = 6;
-
 #define __region_offset(block_num) (block_num & REGION_OFFSET_MASK)
 
 #define FT_TYPE custom_util::SRRIPSetAssociativeCache
@@ -37,14 +33,14 @@ constexpr unsigned LOG2_BLOCK_SIZE = 6;
 
 constexpr uint64_t REGION_SIZE = 4 * 1024; // '4KB', '8KB', '16KB, '32KB', '64KB, '128KB', '512KB', '1024KB', '2048KB'
 constexpr uint64_t LOG2_REGION_SIZE = champsim::lg2(REGION_SIZE);
-constexpr uint64_t REGION_OFFSET_MASK = (1ULL << (LOG2_REGION_SIZE - LOG2_BLOCK_SIZE)) - 1;
+const uint64_t REGION_OFFSET_MASK = (1ULL << (LOG2_REGION_SIZE - LOG2_BLOCK_SIZE)) - 1;
 
-constexpr int NUM_BLOCKS = REGION_SIZE / BLOCK_SIZE;
+const int NUM_BLOCKS = REGION_SIZE / BLOCK_SIZE;
 
 constexpr int FT_SIZE = 64, FT_WAY = 8;
 constexpr int AT_SIZE = 64, AT_WAY = 8;
 constexpr int PT_WAY = 4;
-constexpr int PT_SIZE = PT_WAY * NUM_BLOCKS;
+const int PT_SIZE = PT_WAY * NUM_BLOCKS;
 constexpr int PB_SIZE = 32, PB_WAY = 8;
 
 constexpr int STRIDE_PF_LOOKAHEAD = 2;
@@ -204,7 +200,6 @@ public:
     bool warmup;
 
     Gaze(int ft_size, int ft_ways, int at_size, int at_ways, int pt_size, int pt_ways, int pb_size, int pb_ways);
-    Gaze();
     void set_warmup(bool warmup);
 
     void access(uint64_t block_num, uint64_t ip, champsim::modules::prefetcher* prefetcher);
@@ -224,8 +219,6 @@ public:
 class gaze : public champsim::modules::prefetcher {
     gaze_impl::Gaze impl;
 public:
-    using prefetcher::prefetcher;
-    
     // Initialize the prefetcher
     explicit gaze(CACHE* cache) : prefetcher(cache), 
          impl(gaze_impl::FT_SIZE, gaze_impl::FT_WAY, gaze_impl::AT_SIZE, gaze_impl::AT_WAY, gaze_impl::PT_SIZE, gaze_impl::PT_WAY, gaze_impl::PB_SIZE, gaze_impl::PB_WAY) {}
