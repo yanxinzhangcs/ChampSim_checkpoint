@@ -25,10 +25,12 @@
 #include <array>
 #include <bitset>
 #include <deque>
+#include <fstream>
 #include <limits>
 #include <memory>
 #include <optional>
 #include <queue>
+#include <string>
 #include <stdexcept>
 #include <type_traits>
 #include <vector>
@@ -101,6 +103,10 @@ public:
   using stats_type = cpu_stats;
 
   stats_type roi_stats{}, sim_stats{};
+
+  // Optional commit-trace dump (for learning-data generation).
+  // When enabled, `retire_rob()` appends a CSV row per committed instruction.
+  void open_commit_trace(std::string filename, bool dump_warmup = false);
 
   // instruction buffer
   struct dib_shift {
@@ -225,6 +231,10 @@ public:
 
   std::unique_ptr<branch_module_concept> branch_module_pimpl;
   std::unique_ptr<btb_module_concept> btb_module_pimpl;
+
+  std::unique_ptr<std::ofstream> commit_trace_stream{};
+  bool commit_trace_dump_warmup = false;
+  std::optional<uint64_t> commit_trace_last_cycle{};
 
   // NOLINTBEGIN(readability-make-member-function-const): legacy modules use non-const hooks
   void impl_initialize_branch_predictor() const;

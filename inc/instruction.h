@@ -22,6 +22,7 @@
 #include <cstdint>
 #include <functional>
 #include <limits>
+#include <ostream>
 #include <string_view>
 #include <vector>
 
@@ -98,6 +99,12 @@ struct ooo_model_instr : champsim::program_ordered<ooo_model_instr> {
   champsim::address ip{};
   champsim::chrono::clock::time_point ready_time{};
 
+  // A lightweight "opcode" classification derived from existing Champsim metadata.
+  //
+  // Champsim trace inputs do not include ISA opcodes; for learning models we only
+  // need coarse instruction-type separation (branch vs load/store vs other).
+  uint8_t opcode = 0;
+
   bool is_branch = false;
   bool branch_taken = false;
   bool branch_prediction = false;
@@ -119,6 +126,11 @@ struct ooo_model_instr : champsim::program_ordered<ooo_model_instr> {
   unsigned completed_mem_ops = 0;
   int num_reg_dependent = 0;
 
+  // Preserve architectural registers as observed in the trace.
+  // (source_registers/destination_registers are renamed to physical IDs later.)
+  std::vector<uint8_t> arch_destination_registers = {};
+  std::vector<uint8_t> arch_source_registers = {};
+
   std::vector<PHYSICAL_REGISTER_ID> destination_registers = {}; // output registers
   std::vector<PHYSICAL_REGISTER_ID> source_registers = {};      // input registers
 
@@ -129,6 +141,29 @@ struct ooo_model_instr : champsim::program_ordered<ooo_model_instr> {
   std::vector<std::reference_wrapper<ooo_model_instr>> registers_instrs_depend_on_me;
 
 private:
+  static uint8_t compute_opcode_class(bool is_branch, branch_type bt, bool has_load, bool has_store)
+  {
+    // Keep values small and stable:
+    // 0  = other (no mem, not branch)
+    // 1  = load
+    // 2  = store
+    // 3  = read-modify-write (both read+write memory)
+    // 4+ = branch sub-types (4 + branch_type enum)
+    if (is_branch) {
+      // bt is meaningful only for branches; clamp unknowns into BRANCH_OTHER.
+      auto safe_bt = (bt == NOT_BRANCH) ? BRANCH_OTHER : bt;
+      return static_cast<uint8_t>(4 + safe_bt);
+    }
+
+    if (has_load && has_store)
+      return 3;
+    if (has_load)
+      return 1;
+    if (has_store)
+      return 2;
+    return 0;
+  }
+
   template <typename T>
   ooo_model_instr(T instr, std::array<uint8_t, 2> local_asid) : ip(instr.ip), is_branch(instr.is_branch), branch_taken(instr.branch_taken), asid(local_asid)
   {
@@ -189,6 +224,17 @@ private:
     } else {
       branch_taken = false;
     }
+
+    // Snapshot architectural registers before any later transform (stack folding, renaming).
+    arch_destination_registers.reserve(destination_registers.size());
+    std::transform(std::begin(destination_registers), std::end(destination_registers), std::back_inserter(arch_destination_registers),
+                   [](PHYSICAL_REGISTER_ID r) { return static_cast<uint8_t>(r); });
+    arch_source_registers.reserve(source_registers.size());
+    std::transform(std::begin(source_registers), std::end(source_registers), std::back_inserter(arch_source_registers),
+                   [](PHYSICAL_REGISTER_ID r) { return static_cast<uint8_t>(r); });
+
+    // Derive an "opcode" class from branch/memory metadata.
+    opcode = compute_opcode_class(is_branch, branch, !std::empty(source_memory), !std::empty(destination_memory));
   }
 
 public:
@@ -196,6 +242,27 @@ public:
   ooo_model_instr(uint8_t /*cpu*/, cloudsuite_instr instr) : ooo_model_instr(instr, {instr.asid[0], instr.asid[1]}) {}
 
   [[nodiscard]] std::size_t num_mem_ops() const { return std::size(destination_memory) + std::size(source_memory); }
+
+  [[nodiscard]] uint64_t primary_memory_address() const
+  {
+    if (!std::empty(source_memory))
+      return source_memory.front().to<uint64_t>();
+    if (!std::empty(destination_memory))
+      return destination_memory.front().to<uint64_t>();
+    return 0;
+  }
+
+  void dump_neuroscalar_csv(std::ostream& os, uint64_t commit_cycle, uint64_t delta_cycles) const
+  {
+    const uint8_t src1 = !std::empty(arch_source_registers) ? arch_source_registers[0] : 0;
+    const uint8_t src2 = (arch_source_registers.size() > 1) ? arch_source_registers[1] : 0;
+    const uint8_t dst1 = !std::empty(arch_destination_registers) ? arch_destination_registers[0] : 0;
+
+    // Columns:
+    // pc, memory_address, opcode, src1, src2, dst1, commit_cycle, delta_cycles_since_last_commit
+    os << ip.to<uint64_t>() << ',' << primary_memory_address() << ',' << static_cast<unsigned>(opcode) << ',' << static_cast<unsigned>(src1) << ','
+       << static_cast<unsigned>(src2) << ',' << static_cast<unsigned>(dst1) << ',' << commit_cycle << ',' << delta_cycles << '\n';
+  }
 };
 
 #endif

@@ -78,6 +78,22 @@ void O3_CPU::initialize()
   impl_initialize_btb();
 }
 
+void O3_CPU::open_commit_trace(std::string filename, bool dump_warmup)
+{
+  commit_trace_dump_warmup = dump_warmup;
+  commit_trace_last_cycle.reset();
+
+  auto path = std::move(filename);
+  commit_trace_stream = std::make_unique<std::ofstream>(path);
+  if (!commit_trace_stream->is_open()) {
+    throw std::runtime_error{fmt::format("Failed to open commit trace output file: {}", path)};
+  }
+
+  // Header for downstream parsing. Values are decimal integers.
+  (*commit_trace_stream) << "pc,memory_address,opcode,source_register1,source_register2,destination_register1,commit_cycle,delta_cycles\n";
+  commit_trace_stream->flush();
+}
+
 void O3_CPU::begin_phase()
 {
   begin_phase_instr = num_retired;
@@ -89,6 +105,11 @@ void O3_CPU::begin_phase()
   stats.begin_instrs = num_retired;
   stats.begin_cycles = begin_phase_time.time_since_epoch() / clock_period;
   sim_stats = stats;
+
+  // Treat each phase as a new segment for commit-trace deltas.
+  if (commit_trace_stream) {
+    commit_trace_last_cycle.reset();
+  }
 }
 
 void O3_CPU::end_phase(unsigned finished_cpu)
@@ -713,6 +734,15 @@ long O3_CPU::retire_rob()
     std::for_each(retire_begin, retire_end, [cycle = current_time.time_since_epoch() / clock_period](const auto& x) {
       fmt::print("[ROB] retire_rob instr_id: {} is retired cycle: {}\n", x.instr_id, cycle);
     });
+  }
+
+  if (commit_trace_stream && (commit_trace_dump_warmup || !warmup)) {
+    const uint64_t commit_cycle = static_cast<uint64_t>(current_time.time_since_epoch() / clock_period);
+    for (auto rob_it = retire_begin; rob_it != retire_end; ++rob_it) {
+      const uint64_t delta_cycles = commit_trace_last_cycle ? (commit_cycle - *commit_trace_last_cycle) : 0ULL;
+      commit_trace_last_cycle = commit_cycle;
+      rob_it->dump_neuroscalar_csv(*commit_trace_stream, commit_cycle, delta_cycles);
+    }
   }
 
   // commit register writes to backend RAT

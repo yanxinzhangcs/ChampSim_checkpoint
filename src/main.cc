@@ -18,6 +18,7 @@
 #include <fstream>
 #include <numeric>
 #include <string>
+#include <string_view>
 #include <vector>
 #include <CLI/CLI.hpp>
 #include <fmt/core.h>
@@ -66,6 +67,8 @@ int main(int argc, char** argv) // NOLINT(bugprone-exception-escape)
   long subtrace_count = 1;
   std::string json_file_name;
   std::string checkpoint_path;
+  std::string commit_trace_prefix;
+  bool commit_trace_warmup = false;
   long long skip_instructions = 0;
   std::vector<std::string> trace_names;
 
@@ -91,6 +94,11 @@ int main(int argc, char** argv) // NOLINT(bugprone-exception-escape)
   app.add_option("--subtrace-count", subtrace_count, "Number of simulation subtraces to run sequentially after warmup")->check(CLI::PositiveNumber);
   app.add_option("--cache-checkpoint", checkpoint_path, "Path to cache checkpoint log file used to persist cache contents between phases")
       ->expected(0, 1);
+  auto* commit_trace_option =
+      app.add_option("--commit-trace", commit_trace_prefix,
+                     "Write per-CPU commit traces as CSV. If no argument is given, defaults to 'commit_trace'.")
+          ->expected(0, 1);
+  app.add_flag("--commit-trace-warmup", commit_trace_warmup, "Also dump warmup-phase commits to the commit trace CSV");
   app.add_option("--skip-instructions", skip_instructions, "Number of instructions to fast-forward before warmup")
       ->check(CLI::NonNegativeNumber);
 
@@ -139,6 +147,32 @@ int main(int argc, char** argv) // NOLINT(bugprone-exception-escape)
     for (auto& trace : traces) {
       for (long long skipped = 0; skipped < skip_instructions && !trace.eof(); ++skipped) {
         static_cast<void>(trace());
+      }
+    }
+  }
+
+  if (commit_trace_option->count() > 0) {
+    if (commit_trace_prefix.empty()) {
+      commit_trace_prefix = "commit_trace";
+    }
+
+    const auto make_trace_name = [&](const std::string& base, std::size_t cpu) -> std::string {
+      constexpr std::string_view ext{".csv"};
+      const bool has_csv_ext = (base.size() >= ext.size()) && (base.compare(base.size() - ext.size(), ext.size(), ext) == 0);
+      const auto stem = has_csv_ext ? base.substr(0, base.size() - ext.size()) : base;
+
+      if (NUM_CPUS == 1) {
+        return has_csv_ext ? base : (stem + std::string(ext));
+      }
+      return stem + ".cpu" + std::to_string(cpu) + std::string(ext);
+    };
+
+    for (O3_CPU& cpu : gen_environment.cpu_view()) {
+      try {
+        cpu.open_commit_trace(make_trace_name(commit_trace_prefix, cpu.cpu), commit_trace_warmup);
+      } catch (const std::exception& e) {
+        fmt::print("ERROR: failed to open commit trace: {}\n", e.what());
+        return 1;
       }
     }
   }
