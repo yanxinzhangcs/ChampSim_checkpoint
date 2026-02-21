@@ -5,8 +5,8 @@ import json
 from pathlib import Path
 from typing import List
 
-from .action_space import Action, ActionSpace, load_action_space
-from .agent import EpsilonGreedyAgent, RandomAgent
+from .action_space import load_action_space
+from .agent import EpsilonGreedyAgent, PPOAgent, RandomAgent
 from .builder import ChampSimBuildManager
 from .runner import ChampSimRunner
 
@@ -21,8 +21,19 @@ def parse_args() -> argparse.Namespace:
   parser.add_argument("--seed", type=int, default=0, help="Random seed")
   parser.add_argument("--output", type=Path, default=Path("rl_runs"), help="Directory to store checkpoints and stats")
   parser.add_argument("--resume-warmup", type=int, default=1, help="Warmup instructions to run before each measurement window")
-  parser.add_argument("--agent", choices=["random", "epsilon_greedy"], default="epsilon_greedy", help="Policy used to select actions")
-  parser.add_argument("--epsilon", type=float, default=0.1, help="Exploration rate for epsilon-greedy policy")
+  parser.add_argument("--agent", choices=["ppo", "random", "epsilon_greedy"], default="ppo", help="Policy used to select actions")
+  parser.add_argument("--epsilon", type=float, default=0.1, help="Exploration rate for epsilon-greedy policy (legacy mode)")
+  parser.add_argument("--state-dim", type=int, default=7, help="State vector dimension expected by PPO")
+  parser.add_argument("--ppo-rollout-size", type=int, default=32, help="Transitions per PPO update")
+  parser.add_argument("--ppo-epochs", type=int, default=4, help="PPO update epochs per rollout")
+  parser.add_argument("--ppo-minibatch-size", type=int, default=32, help="PPO minibatch size")
+  parser.add_argument("--ppo-policy-lr", type=float, default=0.01, help="PPO policy learning rate")
+  parser.add_argument("--ppo-value-lr", type=float, default=0.02, help="PPO value learning rate")
+  parser.add_argument("--ppo-gamma", type=float, default=0.99, help="PPO discount factor")
+  parser.add_argument("--ppo-lambda", type=float, default=0.95, help="PPO GAE lambda")
+  parser.add_argument("--ppo-clip", type=float, default=0.2, help="PPO clipping epsilon")
+  parser.add_argument("--ppo-value-coef", type=float, default=0.5, help="PPO value loss coefficient")
+  parser.add_argument("--ppo-entropy-coef", type=float, default=0.0, help="PPO entropy coefficient")
   return parser.parse_args()
 
 
@@ -47,8 +58,24 @@ def main() -> None:
 
   if args.agent == "random":
     agent = RandomAgent(action_space, seed=args.seed)
-  else:
+  elif args.agent == "epsilon_greedy":
     agent = EpsilonGreedyAgent(action_space, epsilon=args.epsilon, seed=args.seed)
+  else:
+    agent = PPOAgent(
+        action_space=action_space,
+        state_dim=args.state_dim,
+        seed=args.seed,
+        gamma=args.ppo_gamma,
+        gae_lambda=args.ppo_lambda,
+        clip_epsilon=args.ppo_clip,
+        policy_lr=args.ppo_policy_lr,
+        value_lr=args.ppo_value_lr,
+        value_coef=args.ppo_value_coef,
+        entropy_coef=args.ppo_entropy_coef,
+        rollout_size=args.ppo_rollout_size,
+        update_epochs=args.ppo_epochs,
+        minibatch_size=args.ppo_minibatch_size,
+    )
   episode_log: List[dict] = []
 
   state = None
@@ -79,6 +106,8 @@ def main() -> None:
         }
     )
     print(f"[step {step}] action={action.values} IPC={metrics.ipc:.6f} reward={reward:.6f}")
+
+  agent.finalize(state)
 
   summary_path = args.output / "episode_summary.json"
   with summary_path.open("w", encoding="utf-8") as handle:

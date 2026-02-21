@@ -27,8 +27,10 @@ python -m rl_controller.main \
   --steps 5 \
   --output rl_runs/perlbench \
   --resume-warmup 100 \
-  --agent epsilon_greedy \
-  --epsilon 0.1
+  --agent ppo \
+  --ppo-rollout-size 32 \
+  --ppo-epochs 4 \
+  --ppo-minibatch-size 32
 ```
 
 The `--resume-warmup` knob controls how many instructions are run before each
@@ -48,9 +50,11 @@ summary of the episode lives in `episode_summary.json`.
   `bin/champsim_rl_llc-replacement-srrip_l2c-prefetcher-next_line`).  If
   you change module code, remove the corresponding binary to force a
   rebuild.
-- Two policy options exist out of the box: `--agent random` samples uniformly,
-  while `--agent epsilon_greedy` (default) keeps running action-value
-  averages and explores with probability `--epsilon`.
+- `--agent ppo` is the default and uses clipped PPO with a linear actor-critic
+  model over the discrete action combinations.
+- `--agent random` samples uniformly.
+- `--agent epsilon_greedy` is kept as a legacy baseline and uses `--epsilon`
+  for exploration.
 - The controller keeps track of the trace offset: each step fast-forwards by
   the cumulative `warmup + resume + window` instructions consumed so far, then
   restores the prior cache checkpoint before running the next window.

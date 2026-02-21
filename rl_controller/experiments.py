@@ -3,12 +3,11 @@ from __future__ import annotations
 import argparse
 import json
 import shutil
-from dataclasses import dataclass
 from pathlib import Path
-from typing import Dict, Iterable, List, Optional
+from typing import Dict, Iterable, List
 
 from .action_space import Action, ActionSpace, load_action_space
-from .agent import EpsilonGreedyAgent
+from .agent import Agent, EpsilonGreedyAgent, PPOAgent, RandomAgent
 from .builder import ChampSimBuildManager
 from .runner import ChampSimRunner, RunResult
 from .state import parse_stats_json
@@ -22,8 +21,20 @@ def parse_args() -> argparse.Namespace:
   parser.add_argument("--window", type=int, default=50_000_000, help="Simulation instructions per window")
   parser.add_argument("--resume-warmup", type=int, default=100, help="Warmup instructions before each measurement window")
   parser.add_argument("--steps", type=int, default=100, help="Number of windows/subtraces to evaluate")
-  parser.add_argument("--epsilon", type=float, default=0.1, help="Exploration rate for epsilon-greedy RL agent")
+  parser.add_argument("--agent", choices=["ppo", "random", "epsilon_greedy"], default="ppo", help="RL agent to use")
+  parser.add_argument("--epsilon", type=float, default=0.1, help="Exploration rate for epsilon-greedy agent (legacy mode)")
   parser.add_argument("--seed", type=int, default=0, help="Random seed for the agent")
+  parser.add_argument("--state-dim", type=int, default=7, help="State vector dimension expected by PPO")
+  parser.add_argument("--ppo-rollout-size", type=int, default=32, help="Transitions per PPO update")
+  parser.add_argument("--ppo-epochs", type=int, default=4, help="PPO update epochs per rollout")
+  parser.add_argument("--ppo-minibatch-size", type=int, default=32, help="PPO minibatch size")
+  parser.add_argument("--ppo-policy-lr", type=float, default=0.01, help="PPO policy learning rate")
+  parser.add_argument("--ppo-value-lr", type=float, default=0.02, help="PPO value learning rate")
+  parser.add_argument("--ppo-gamma", type=float, default=0.99, help="PPO discount factor")
+  parser.add_argument("--ppo-lambda", type=float, default=0.95, help="PPO GAE lambda")
+  parser.add_argument("--ppo-clip", type=float, default=0.2, help="PPO clipping epsilon")
+  parser.add_argument("--ppo-value-coef", type=float, default=0.5, help="PPO value loss coefficient")
+  parser.add_argument("--ppo-entropy-coef", type=float, default=0.0, help="PPO entropy coefficient")
   parser.add_argument("--compare-limit", type=int, default=None, help="Limit the number of windows in per-step comparison (default: all)")
   parser.add_argument("--skip-grid", action="store_true", help="Skip the per-step optimal action comparison")
   parser.add_argument("--topk", type=int, default=3, help="Number of top policies to record per step")
@@ -44,16 +55,36 @@ def ensure_dir(path: Path) -> Path:
   return path
 
 
+def build_agent(args: argparse.Namespace, action_space: ActionSpace) -> Agent:
+  if args.agent == "random":
+    return RandomAgent(action_space, seed=args.seed)
+  if args.agent == "epsilon_greedy":
+    return EpsilonGreedyAgent(action_space, epsilon=args.epsilon, seed=args.seed)
+  return PPOAgent(
+      action_space=action_space,
+      state_dim=args.state_dim,
+      seed=args.seed,
+      gamma=args.ppo_gamma,
+      gae_lambda=args.ppo_lambda,
+      clip_epsilon=args.ppo_clip,
+      policy_lr=args.ppo_policy_lr,
+      value_lr=args.ppo_value_lr,
+      value_coef=args.ppo_value_coef,
+      entropy_coef=args.ppo_entropy_coef,
+      rollout_size=args.ppo_rollout_size,
+      update_epochs=args.ppo_epochs,
+      minibatch_size=args.ppo_minibatch_size,
+  )
+
+
 def run_rl_episode(
     runner: ChampSimRunner,
     action_space: ActionSpace,
     base_action: Action,
-    epsilon: float,
-    seed: int,
+    agent: Agent,
     steps: int,
 ) -> tuple[Path, List[RunResult]]:
   base_checkpoint = runner.initialise_checkpoint(base_action, action_space)
-  agent = EpsilonGreedyAgent(action_space, epsilon=epsilon, seed=seed)
 
   results: List[RunResult] = []
   state = None
@@ -65,6 +96,7 @@ def run_rl_episode(
     agent.observe(state, action, reward, next_state)
     state = next_state
     results.append(result)
+  agent.finalize(state)
   return base_checkpoint, results
 
 
@@ -126,6 +158,7 @@ def run_experiments() -> None:
 
   action_space, base_action, template_config = load_action_space(args.config.resolve())
   build_manager = ChampSimBuildManager(repo_root=repo_root, template_config=template_config.resolve())
+  agent = build_agent(args, action_space)
 
   # === Experiment 1: RL vs fixed policies ===
   rl_dir = ensure_dir(output_root / "rl")
@@ -142,8 +175,7 @@ def run_experiments() -> None:
       runner=rl_runner,
       action_space=action_space,
       base_action=base_action,
-      epsilon=args.epsilon,
-      seed=args.seed,
+      agent=agent,
       steps=args.steps,
   )
   rl_total_ipc = summarize_results(rl_results)
@@ -187,16 +219,36 @@ def run_experiments() -> None:
 
   best_policy_key, best_policy_data = max(baselines.items(), key=lambda item: item[1]["total_ipc"])
 
+  config_summary: Dict[str, object] = {
+      "trace": str(args.trace.resolve()),
+      "warmup": args.warmup,
+      "window": args.window,
+      "resume_warmup": args.resume_warmup,
+      "steps": args.steps,
+      "agent": args.agent,
+      "seed": args.seed,
+  }
+  if args.agent == "epsilon_greedy":
+    config_summary["epsilon"] = args.epsilon
+  if args.agent == "ppo":
+    config_summary.update(
+        {
+            "state_dim": args.state_dim,
+            "ppo_rollout_size": args.ppo_rollout_size,
+            "ppo_epochs": args.ppo_epochs,
+            "ppo_minibatch_size": args.ppo_minibatch_size,
+            "ppo_policy_lr": args.ppo_policy_lr,
+            "ppo_value_lr": args.ppo_value_lr,
+            "ppo_gamma": args.ppo_gamma,
+            "ppo_lambda": args.ppo_lambda,
+            "ppo_clip": args.ppo_clip,
+            "ppo_value_coef": args.ppo_value_coef,
+            "ppo_entropy_coef": args.ppo_entropy_coef,
+        }
+    )
+
   summary = {
-      "config": {
-          "trace": str(args.trace.resolve()),
-          "warmup": args.warmup,
-          "window": args.window,
-          "resume_warmup": args.resume_warmup,
-          "steps": args.steps,
-          "epsilon": args.epsilon,
-          "seed": args.seed,
-      },
+      "config": config_summary,
       "rl": {
           "total_ipc": rl_total_ipc,
           "episode": rl_episode_log,

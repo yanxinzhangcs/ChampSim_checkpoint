@@ -12,7 +12,17 @@ WARMUP=1000000
 WINDOW=200000
 RESUME_WARMUP=100
 STEPS=100
-EPSILON=0.1
+AGENT=ppo
+PPO_ROLLOUT_SIZE=32
+PPO_EPOCHS=4
+PPO_MINIBATCH_SIZE=32
+PPO_POLICY_LR=0.01
+PPO_VALUE_LR=0.02
+PPO_GAMMA=0.99
+PPO_LAMBDA=0.95
+PPO_CLIP=0.2
+PPO_VALUE_COEF=0.5
+PPO_ENTROPY_COEF=0.0
 SEED=0
 
 # trace 放哪里：默认当前目录；如果你放在 traces/ 里，就改成 TRACE_DIR="traces"
@@ -59,7 +69,17 @@ while true; do
     --window "$WINDOW" \
     --resume-warmup "$RESUME_WARMUP" \
     --steps "$STEPS" \
-    --epsilon "$EPSILON" \
+    --agent "$AGENT" \
+    --ppo-rollout-size "$PPO_ROLLOUT_SIZE" \
+    --ppo-epochs "$PPO_EPOCHS" \
+    --ppo-minibatch-size "$PPO_MINIBATCH_SIZE" \
+    --ppo-policy-lr "$PPO_POLICY_LR" \
+    --ppo-value-lr "$PPO_VALUE_LR" \
+    --ppo-gamma "$PPO_GAMMA" \
+    --ppo-lambda "$PPO_LAMBDA" \
+    --ppo-clip "$PPO_CLIP" \
+    --ppo-value-coef "$PPO_VALUE_COEF" \
+    --ppo-entropy-coef "$PPO_ENTROPY_COEF" \
     --seed "$SEED" \
     --output "$OUTDIR" 2>&1 | tee -a "$LOGFILE"
 

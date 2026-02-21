@@ -219,7 +219,17 @@ python3 -m rl_controller.experiments \
   --window 200000 \
   --resume-warmup 100 \
   --steps 100 \
-  --epsilon 0.1 \
+  --agent ppo \
+  --ppo-rollout-size 32 \
+  --ppo-epochs 4 \
+  --ppo-minibatch-size 32 \
+  --ppo-policy-lr 0.01 \
+  --ppo-value-lr 0.02 \
+  --ppo-gamma 0.99 \
+  --ppo-lambda 0.95 \
+  --ppo-clip 0.2 \
+  --ppo-value-coef 0.5 \
+  --ppo-entropy-coef 0.0 \
   --seed 0 \
   --output "${OUTDIR}" || PY_RC=$?
 
