@@ -1,14 +1,27 @@
 from __future__ import annotations
 
+import json
 import random
 from dataclasses import dataclass
-from typing import Dict, List, Optional, Sequence
+from pathlib import Path
+from typing import Dict, List, Optional, Sequence, Tuple
 
 import numpy as np
 
 from .action_space import Action, ActionSpace
 
 EPS = 1e-12
+FEATURE_ORDER: Tuple[str, ...] = (
+    "ipc",
+    "l1d_mpki",
+    "l2_mpki",
+    "llc_mpki",
+    "prefetch_coverage",
+    "prefetch_accuracy",
+    "branch_miss_rate",
+)
+DEFAULT_STATE_CUTOFFS: Tuple[float, ...] = (1.25, 0.02, 0.1, 0.1, 0.8, 0.7, 0.002)
+NUM_STATE_BINS = 1 << len(DEFAULT_STATE_CUTOFFS)
 
 
 class Agent:
@@ -308,3 +321,188 @@ class PPOAgent(Agent):
 
     self._value_w -= self.value_lr * grad_value_w
     self._value_b -= self.value_lr * grad_value_b
+
+
+class HashTableAgent(Agent):
+  """Contextual bandit backed by a 7-bit state hash table.
+
+  The state vector is binned using per-feature cutoffs into one of 128 buckets
+  (2^7). Each bucket stores per-action mean reward estimates and selects
+  actions via epsilon-greedy over those estimates.
+  """
+
+  def __init__(
+      self,
+      action_space: ActionSpace,
+      cutoffs: Sequence[float] = DEFAULT_STATE_CUTOFFS,
+      epsilon: float = 0.1,
+      seed: Optional[int] = None,
+      table_path: Optional[Path] = None,
+      initial_action: Optional[Action] = None,
+  ):
+    self.action_space = action_space
+    self.cutoffs = tuple(float(x) for x in cutoffs)
+    if len(self.cutoffs) != len(DEFAULT_STATE_CUTOFFS):
+      raise ValueError(f"HashTableAgent requires {len(DEFAULT_STATE_CUTOFFS)} cutoffs (got {len(self.cutoffs)})")
+    self.epsilon = float(epsilon)
+    self._rng = random.Random(seed)
+
+    self._actions: Sequence[Action] = action_space.all_actions()
+    if not self._actions:
+      raise ValueError("Action space produced no actions")
+    self._action_by_key: Dict[str, Action] = {action.key(): action for action in self._actions}
+
+    self.initial_action = initial_action or action_space.default_action()
+    self.table_path = table_path
+
+    # Bin -> action_key -> (value/count)
+    self._values: Dict[int, Dict[str, float]] = {}
+    self._counts: Dict[int, Dict[str, int]] = {}
+    self._pending: Dict[str, object] | None = None
+
+    if self.table_path is not None and self.table_path.exists():
+      self._load_table(self.table_path)
+
+  def select_action(self, state=None) -> Action:
+    bin_id = self._bin_id(state)
+    if self._rng.random() < self.epsilon:
+      action = self.action_space.random_action(self._rng)
+    else:
+      action = self._best_action(bin_id)
+    self._pending = {"bin_id": bin_id, "action_key": action.key()}
+    return action
+
+  def observe(self, state, action: Action, reward: float, next_state) -> None:
+    action_key = action.key()
+    if action_key not in self._action_by_key:
+      raise KeyError(f"Unknown action '{action_key}' for HashTableAgent")
+
+    bin_id = self._bin_id(state)
+    if self._pending is not None and self._pending.get("action_key") == action_key:
+      bin_id = int(self._pending.get("bin_id", bin_id))
+    self._pending = None
+
+    values = self._values.setdefault(bin_id, {})
+    counts = self._counts.setdefault(bin_id, {})
+    count = counts.get(action_key, 0) + 1
+    counts[action_key] = count
+    old_value = values.get(action_key, 0.0)
+    values[action_key] = old_value + (float(reward) - old_value) / count
+
+  def finalize(self, final_state=None) -> None:
+    if self.table_path is None:
+      return
+    self._save_table(self.table_path)
+
+  def _state_to_array(self, state) -> np.ndarray:
+    if state is None:
+      return np.zeros(len(self.cutoffs), dtype=np.float64)
+
+    arr = np.asarray(state, dtype=np.float64).reshape(-1)
+    if arr.size >= len(self.cutoffs):
+      return arr[: len(self.cutoffs)].copy()
+
+    out = np.zeros(len(self.cutoffs), dtype=np.float64)
+    out[: arr.size] = arr
+    return out
+
+  def _bin_id(self, state) -> int:
+    state_vec = self._state_to_array(state)
+    bin_id = 0
+    for idx, cutoff in enumerate(self.cutoffs):
+      if float(state_vec[idx]) >= cutoff:
+        bin_id |= 1 << idx
+    return bin_id
+
+  def _best_action(self, bin_id: int) -> Action:
+    values = self._values.get(bin_id)
+    if not values:
+      return self.initial_action
+
+    best_value = max(values.values())
+    best_keys = [key for key, val in values.items() if val == best_value]
+    chosen_key = self._rng.choice(best_keys)
+    return self._action_by_key.get(chosen_key, self.initial_action)
+
+  def _load_table(self, path: Path) -> None:
+    with path.open("r", encoding="utf-8") as handle:
+      data = json.load(handle)
+
+    file_cutoffs = data.get("cutoffs")
+    if file_cutoffs is not None:
+      file_cutoffs_tuple = tuple(float(x) for x in file_cutoffs)
+      if file_cutoffs_tuple != self.cutoffs:
+        raise ValueError(f"Hash table cutoffs mismatch: file={file_cutoffs_tuple} agent={self.cutoffs}")
+
+    policy = data.get("policy", {})
+    for bin_key, action_key in policy.items():
+      try:
+        bin_id = int(bin_key)
+      except (TypeError, ValueError):
+        continue
+      if action_key not in self._action_by_key:
+        continue
+      self._values.setdefault(bin_id, {})[action_key] = self._values.get(bin_id, {}).get(action_key, 0.0)
+      self._counts.setdefault(bin_id, {})[action_key] = self._counts.get(bin_id, {}).get(action_key, 0)
+
+    bins = data.get("bins", {})
+    for bin_key, bin_data in bins.items():
+      try:
+        bin_id = int(bin_key)
+      except (TypeError, ValueError):
+        continue
+      action_entries = {}
+      if isinstance(bin_data, dict):
+        action_entries = bin_data.get("actions", {}) or {}
+
+      loaded_values: Dict[str, float] = {}
+      loaded_counts: Dict[str, int] = {}
+      for action_key, entry in action_entries.items():
+        if action_key not in self._action_by_key or not isinstance(entry, dict):
+          continue
+        try:
+          value = float(entry.get("value", 0.0))
+          count = int(entry.get("count", 0))
+        except (TypeError, ValueError):
+          continue
+        loaded_counts[action_key] = max(count, 0)
+        loaded_values[action_key] = value
+
+      if loaded_values:
+        self._values.setdefault(bin_id, {}).update(loaded_values)
+      if loaded_counts:
+        self._counts.setdefault(bin_id, {}).update(loaded_counts)
+
+  def _save_table(self, path: Path) -> None:
+    path.parent.mkdir(parents=True, exist_ok=True)
+
+    bins: Dict[str, Dict[str, object]] = {}
+    policy: Dict[str, str] = {}
+    for bin_id in range(NUM_STATE_BINS):
+      values = self._values.get(bin_id, {})
+      counts = self._counts.get(bin_id, {})
+      if not values and not counts:
+        continue
+      actions: Dict[str, Dict[str, object]] = {}
+      for action_key in set(values.keys()) | set(counts.keys()):
+        actions[action_key] = {
+            "value": float(values.get(action_key, 0.0)),
+            "count": int(counts.get(action_key, 0)),
+        }
+      bins[str(bin_id)] = {"actions": actions}
+      if values:
+        best_key = max(values.items(), key=lambda item: item[1])[0]
+        policy[str(bin_id)] = best_key
+
+    data = {
+        "version": 1,
+        "feature_order": list(FEATURE_ORDER),
+        "cutoffs": list(self.cutoffs),
+        "epsilon": self.epsilon,
+        "bins": bins,
+        "policy": policy,
+    }
+    tmp_path = path.with_suffix(path.suffix + ".tmp")
+    with tmp_path.open("w", encoding="utf-8") as handle:
+      json.dump(data, handle, indent=2, sort_keys=True)
+    tmp_path.replace(path)

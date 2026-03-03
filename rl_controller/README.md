@@ -55,6 +55,9 @@ summary of the episode lives in `episode_summary.json`.
 - `--agent random` samples uniformly.
 - `--agent epsilon_greedy` is kept as a legacy baseline and uses `--epsilon`
   for exploration.
+- `--agent hash_table` bins the 7-D state into 128 buckets using `--hash-cutoffs`
+  and does per-bucket epsilon-greedy selection. The learned table is saved to
+  `<output>/hash_table.json` (override with `--hash-table`).
 - The controller keeps track of the trace offset: each step fast-forwards by
   the cumulative `warmup + resume + window` instructions consumed so far, then
   restores the prior cache checkpoint before running the next window.

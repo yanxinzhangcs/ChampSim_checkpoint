@@ -3,12 +3,23 @@ from __future__ import annotations
 import argparse
 import json
 from pathlib import Path
-from typing import List
+from typing import List, Tuple
 
 from .action_space import load_action_space
-from .agent import EpsilonGreedyAgent, PPOAgent, RandomAgent
+from .agent import DEFAULT_STATE_CUTOFFS, FEATURE_ORDER, EpsilonGreedyAgent, HashTableAgent, PPOAgent, RandomAgent
 from .builder import ChampSimBuildManager
 from .runner import ChampSimRunner
+
+
+def _parse_hash_cutoffs(text: str) -> Tuple[float, ...]:
+  parts = [part.strip() for part in text.split(",") if part.strip()]
+  expected = len(DEFAULT_STATE_CUTOFFS)
+  if len(parts) != expected:
+    raise argparse.ArgumentTypeError(f"--hash-cutoffs expects {expected} comma-separated floats (got {len(parts)})")
+  try:
+    return tuple(float(part) for part in parts)
+  except ValueError as exc:
+    raise argparse.ArgumentTypeError(f"Invalid float in --hash-cutoffs: {text}") from exc
 
 
 def parse_args() -> argparse.Namespace:
@@ -21,9 +32,21 @@ def parse_args() -> argparse.Namespace:
   parser.add_argument("--seed", type=int, default=0, help="Random seed")
   parser.add_argument("--output", type=Path, default=Path("rl_runs"), help="Directory to store checkpoints and stats")
   parser.add_argument("--resume-warmup", type=int, default=1, help="Warmup instructions to run before each measurement window")
-  parser.add_argument("--agent", choices=["ppo", "random", "epsilon_greedy"], default="ppo", help="Policy used to select actions")
-  parser.add_argument("--epsilon", type=float, default=0.1, help="Exploration rate for epsilon-greedy policy (legacy mode)")
-  parser.add_argument("--state-dim", type=int, default=7, help="State vector dimension expected by PPO")
+  parser.add_argument(
+      "--agent",
+      choices=["ppo", "random", "epsilon_greedy", "hash_table"],
+      default="ppo",
+      help="Policy used to select actions",
+  )
+  parser.add_argument("--epsilon", type=float, default=0.1, help="Exploration rate for epsilon-greedy/hash-table policies")
+  parser.add_argument("--state-dim", type=int, default=7, help="State vector dimension expected by PPO (ignored otherwise)")
+  parser.add_argument(
+      "--hash-cutoffs",
+      type=_parse_hash_cutoffs,
+      default=DEFAULT_STATE_CUTOFFS,
+      help=f"Comma-separated cutoffs for state binning (order: {','.join(FEATURE_ORDER)})",
+  )
+  parser.add_argument("--hash-table", type=Path, default=None, help="Path to load/save the hash table policy JSON (default: <output>/hash_table.json)")
   parser.add_argument("--ppo-rollout-size", type=int, default=32, help="Transitions per PPO update")
   parser.add_argument("--ppo-epochs", type=int, default=4, help="PPO update epochs per rollout")
   parser.add_argument("--ppo-minibatch-size", type=int, default=32, help="PPO minibatch size")
@@ -60,6 +83,16 @@ def main() -> None:
     agent = RandomAgent(action_space, seed=args.seed)
   elif args.agent == "epsilon_greedy":
     agent = EpsilonGreedyAgent(action_space, epsilon=args.epsilon, seed=args.seed)
+  elif args.agent == "hash_table":
+    table_path = args.hash_table.resolve() if args.hash_table is not None else (args.output.resolve() / "hash_table.json")
+    agent = HashTableAgent(
+        action_space=action_space,
+        cutoffs=args.hash_cutoffs,
+        epsilon=args.epsilon,
+        seed=args.seed,
+        table_path=table_path,
+        initial_action=base_action,
+    )
   else:
     agent = PPOAgent(
         action_space=action_space,

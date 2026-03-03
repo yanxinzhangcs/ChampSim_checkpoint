@@ -1,0 +1,48 @@
+Introduction:
+We have a decade of processor design which arguably has been about policies added to various parts of the out-of-order processor pipline like: cache replacement, prefetch, branch prediction. In general the philosophy is to build a processor with ONE selection of policies across these different things.
+
+Question: do different workloads actually want different policies?
+within a workload do different phases want different policies?
+would a hypothetical (idealized) processor that had MULTIPLE policies perform much better than the typical static policy processor?
+
+This work answers this question, as a way to explore whether it is fruitful to do research on dynamic policy selection as another know by which we can unlock single thread performance which is VERY hard to improve.
+
+Methodology section:
+
+- Champsim based.https://github.com/ChampSim/ChampSim
+- list all the policies 
+- we implemented them all in one code base
+- we then chop up each workload into 100M instruction chunks (call that a timestep)
+- we have 40 benchmarks, and 100 timesteps for each benchmark
+
+Results:
+
+The policy_ip_table.csv file has IPC for each application for each policy, and for each timestep.
+You created a bunch of scripts to analyze this data already. Below are notes on how to write the paper decsribing all this data.
+
+a) One policy and by application.
+
+First, we analyzed whether the best policy that a timestep for an application changes across time steps.
+Show as an example, for ONE policy, the box-plot for each application, showing the distribution of IPC loss. Considering one policy.
+loss_distribution_berti_entangling_mockingjay.png figure for example.
+
+b) Across application.
+If we consider each time step across all benchmarks, as a data point, we have 4900 datapoints.
+If we plot the loss of static policy against optimal, we observe:   fill in insights here.
+Show first only policy: static_vs_oracle_dist_berti_entangling_mockingjay.png
+
+And quantiatively measured the IPC loss of ONE static policy against the best dynamic policy (assuming full future knowledge and simply looking up the best IPC from all our simulations).
+Findings: fill in insights here.
+
+c) Now show the plot for all policies.
+Insight here:_______
+
+d) Frequency of policy?
+Two policies cover MOST of the space.
+policy_optimality_frequency.png picture
+analysze insights ....
+
+e) how does performance change with a chip with 2 policies we can dynamically switch from one to the other.
+First show the graph of policy_vs_baseline_berti_entangling_mockingjay.png figure and describe insights.
+contrast this box plot vs the box plot where the chip had ONE static policy.
+baseline_global_lost_distribution.png
