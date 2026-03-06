@@ -1,0 +1,86 @@
+{
+  "bins": {
+    "0": {
+      "actions": {
+        "l1d_prefetcher-berti_l1i_prefetcher-entangling_l2c_replacement-mockingjay": {
+          "count": 1,
+          "value": 1.3838696954809961
+        }
+      }
+    },
+    "15": {
+      "actions": {
+        "l1d_prefetcher-berti_l1i_prefetcher-barca_l2c_replacement-mockingjay": {
+          "count": 1,
+          "value": 1.6581493487650993
+        },
+        "l1d_prefetcher-berti_l1i_prefetcher-entangling_l2c_replacement-mockingjay": {
+          "count": 27,
+          "value": 1.809322446303971
+        },
+        "l1d_prefetcher-gaze_l1i_prefetcher-entangling_l2c_replacement-mockingjay": {
+          "count": 7,
+          "value": 1.8684646625359722
+        }
+      }
+    },
+    "78": {
+      "actions": {
+        "l1d_prefetcher-berti_l1i_prefetcher-entangling_l2c_replacement-PACIPV": {
+          "count": 13,
+          "value": 1.2153906962910206
+        },
+        "l1d_prefetcher-berti_l1i_prefetcher-entangling_l2c_replacement-mockingjay": {
+          "count": 4,
+          "value": 0.9529701206713729
+        }
+      }
+    },
+    "79": {
+      "actions": {
+        "l1d_prefetcher-berti_l1i_prefetcher-barca_l2c_replacement-PACIPV": {
+          "count": 8,
+          "value": 1.3579701392020156
+        },
+        "l1d_prefetcher-berti_l1i_prefetcher-entangling_l2c_replacement-mockingjay": {
+          "count": 14,
+          "value": 1.2768163774459018
+        },
+        "l1d_prefetcher-gaze_l1i_prefetcher-barca_l2c_replacement-mockingjay": {
+          "count": 15,
+          "value": 1.3091079353642217
+        },
+        "l1d_prefetcher-gaze_l1i_prefetcher-entangling_l2c_replacement-mockingjay": {
+          "count": 10,
+          "value": 1.3891660743318157
+        }
+      }
+    }
+  },
+  "cutoffs": [
+    1.25,
+    0.02,
+    0.1,
+    0.1,
+    0.8,
+    0.7,
+    0.002
+  ],
+  "epsilon": 0.1,
+  "feature_order": [
+    "ipc",
+    "l1d_mpki",
+    "l2_mpki",
+    "llc_mpki",
+    "prefetch_coverage",
+    "prefetch_accuracy",
+    "branch_miss_rate"
+  ],
+  "policy": {
+    "0": "l1d_prefetcher-berti_l1i_prefetcher-entangling_l2c_replacement-mockingjay",
+    "15": "l1d_prefetcher-gaze_l1i_prefetcher-entangling_l2c_replacement-mockingjay",
+    "78": "l1d_prefetcher-berti_l1i_prefetcher-entangling_l2c_replacement-PACIPV",
+    "79": "l1d_prefetcher-gaze_l1i_prefetcher-entangling_l2c_replacement-mockingjay"
+  },
+  "version": 1
+}
