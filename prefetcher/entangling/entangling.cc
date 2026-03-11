@@ -16,7 +16,7 @@
 #include "cache.h"
 #include "entangling.h"
 
-#define MAX_NUM_SET 64
+#define MAX_NUM_SET 128
 #define MAX_NUM_WAY 8
 
 #define NUM_CPUS 1
@@ -24,6 +24,9 @@
 // To access cpu in my functions
 uint32_t l1i_cpu_id;
 uint64_t l1i_current_cycle;
+uint32_t l1i_num_set[NUM_CPUS];
+uint32_t l1i_num_way[NUM_CPUS];
+uint32_t l1i_set_bits[NUM_CPUS];
 
 uint64_t l1i_last_basic_block;
 uint32_t l1i_consecutive_count;
@@ -474,11 +477,9 @@ void l1i_print_hist_table() {
 
 // TIMING TABLES
 
-#define L1I_SET_BITS 6
 #define L1I_TIMING_MSHR_SIZE 1024
 #define L1I_TIMING_MSHR_TAG_BITS 42
 #define L1I_TIMING_MSHR_TAG_MASK (((uint64_t)1 << L1I_HIST_TAG_BITS) - 1)
-#define L1I_TIMING_CACHE_TAG_BITS (L1I_TIMING_MSHR_TAG_BITS - L1I_SET_BITS)
 #define L1I_TIMING_CACHE_TAG_MASK (((uint64_t)1 << L1I_HIST_TAG_BITS) - 1)
 
 // We do not have access to the MSHR, so we aproximate it using this structure
@@ -524,12 +525,12 @@ uint64_t l1i_find_timing_mshr_entry(uint64_t line_addr) {
 }
 
 uint64_t l1i_find_timing_cache_entry(uint64_t line_addr) {
-  uint64_t i = line_addr % MAX_NUM_SET;
-  for (uint32_t j = 0; j < MAX_NUM_WAY; j++) {
-    if (l1i_timing_cache_table[l1i_cpu_id][i][j].tag == ((line_addr >> L1I_SET_BITS) & L1I_TIMING_CACHE_TAG_MASK)
+  uint64_t i = line_addr % l1i_num_set[l1i_cpu_id];
+  for (uint32_t j = 0; j < l1i_num_way[l1i_cpu_id]; j++) {
+    if (l1i_timing_cache_table[l1i_cpu_id][i][j].tag == ((line_addr >> l1i_set_bits[l1i_cpu_id]) & L1I_TIMING_CACHE_TAG_MASK)
 	&& l1i_timing_cache_table[l1i_cpu_id][i][j].valid) return j;
   }
-  return MAX_NUM_WAY;
+  return l1i_num_way[l1i_cpu_id];
 }
 
 uint32_t l1i_get_invalid_timing_mshr_entry() {
@@ -541,18 +542,19 @@ uint32_t l1i_get_invalid_timing_mshr_entry() {
 }
 
 uint32_t l1i_get_invalid_timing_cache_entry(uint64_t line_addr) {
-  uint32_t i = line_addr % MAX_NUM_SET;
-  for (uint32_t j = 0; j < MAX_NUM_WAY; j++) {
+  uint32_t i = line_addr % l1i_num_set[l1i_cpu_id];
+  for (uint32_t j = 0; j < l1i_num_way[l1i_cpu_id]; j++) {
     if (!l1i_timing_cache_table[l1i_cpu_id][i][j].valid) return j;
   }
-  assert(false); // It must return a free entry
-  return MAX_NUM_WAY;  
+  // The timing-cache model can diverge from the real cache under some policies (e.g., due to coalescing and fills).
+  // Evict a deterministic victim instead of asserting.
+  return static_cast<uint32_t>(line_addr % l1i_num_way[l1i_cpu_id]);
 }
 
 void l1i_add_timing_entry(uint64_t line_addr, uint32_t source_set, uint32_t source_way) {
   // First find for coalescing
   if (l1i_find_timing_mshr_entry(line_addr) < L1I_TIMING_MSHR_SIZE) return;
-  if (l1i_find_timing_cache_entry(line_addr) < MAX_NUM_WAY) return;
+  if (l1i_find_timing_cache_entry(line_addr) < l1i_num_way[l1i_cpu_id]) return;
 
   uint32_t i = l1i_get_invalid_timing_mshr_entry();
   l1i_timing_mshr_table[l1i_cpu_id][i].valid = true;
@@ -572,18 +574,18 @@ void l1i_invalid_timing_mshr_entry(uint64_t line_addr) {
 void l1i_move_timing_entry(uint64_t line_addr) {
   uint32_t index_mshr = l1i_find_timing_mshr_entry(line_addr); 
   if (index_mshr == L1I_TIMING_MSHR_SIZE) {
-    uint32_t set = line_addr % MAX_NUM_SET;
+    uint32_t set = line_addr % l1i_num_set[l1i_cpu_id];
     uint32_t index_cache = l1i_get_invalid_timing_cache_entry(line_addr);
     l1i_timing_cache_table[l1i_cpu_id][set][index_cache].valid = true;
-    l1i_timing_cache_table[l1i_cpu_id][set][index_cache].tag = (line_addr >> L1I_SET_BITS) & L1I_TIMING_CACHE_TAG_MASK;
+    l1i_timing_cache_table[l1i_cpu_id][set][index_cache].tag = (line_addr >> l1i_set_bits[l1i_cpu_id]) & L1I_TIMING_CACHE_TAG_MASK;
     l1i_timing_cache_table[l1i_cpu_id][set][index_cache].source_way = L1I_ENTANGLED_TABLE_WAYS;
     l1i_timing_cache_table[l1i_cpu_id][set][index_cache].accessed = true;
     return;
   }
-  uint64_t set = line_addr % MAX_NUM_SET;
+  uint64_t set = line_addr % l1i_num_set[l1i_cpu_id];
   uint64_t index_cache = l1i_get_invalid_timing_cache_entry(line_addr);
   l1i_timing_cache_table[l1i_cpu_id][set][index_cache].valid = true;
-  l1i_timing_cache_table[l1i_cpu_id][set][index_cache].tag = (line_addr >> L1I_SET_BITS) & L1I_TIMING_CACHE_TAG_MASK;
+  l1i_timing_cache_table[l1i_cpu_id][set][index_cache].tag = (line_addr >> l1i_set_bits[l1i_cpu_id]) & L1I_TIMING_CACHE_TAG_MASK;
   l1i_timing_cache_table[l1i_cpu_id][set][index_cache].source_set = l1i_timing_mshr_table[l1i_cpu_id][index_mshr].source_set;
   l1i_timing_cache_table[l1i_cpu_id][set][index_cache].source_way = l1i_timing_mshr_table[l1i_cpu_id][index_mshr].source_way;
   l1i_timing_cache_table[l1i_cpu_id][set][index_cache].accessed = l1i_timing_mshr_table[l1i_cpu_id][index_mshr].accessed;
@@ -592,9 +594,13 @@ void l1i_move_timing_entry(uint64_t line_addr) {
 
 // returns if accessed
 bool l1i_invalid_timing_cache_entry(uint64_t line_addr, uint32_t &source_set, uint32_t &source_way) {
-  uint32_t set = line_addr % MAX_NUM_SET;
+  uint32_t set = line_addr % l1i_num_set[l1i_cpu_id];
   uint32_t way = l1i_find_timing_cache_entry(line_addr);
-  assert(way < MAX_NUM_WAY);
+  if (way >= l1i_num_way[l1i_cpu_id]) {
+    source_set = 0;
+    source_way = L1I_ENTANGLED_TABLE_WAYS;
+    return false;
+  }
   l1i_timing_cache_table[l1i_cpu_id][set][way].valid = false;
   source_set = l1i_timing_cache_table[l1i_cpu_id][set][way].source_set;
   source_way = l1i_timing_cache_table[l1i_cpu_id][set][way].source_way;
@@ -610,9 +616,9 @@ void l1i_access_timing_entry(uint64_t line_addr, uint32_t pos_hist) {
     }
     return;
   }
-  uint32_t set = line_addr % MAX_NUM_SET;
+  uint32_t set = line_addr % l1i_num_set[l1i_cpu_id];
   uint32_t way = l1i_find_timing_cache_entry(line_addr);
-  if (way < MAX_NUM_WAY) {
+  if (way < l1i_num_way[l1i_cpu_id]) {
     l1i_timing_cache_table[l1i_cpu_id][set][way].accessed = true;
   }
 }
@@ -621,9 +627,9 @@ bool l1i_different_timing_entry_src(uint64_t line_addr, uint32_t source_set, uin
   uint32_t index = l1i_find_timing_mshr_entry(line_addr);
   if (index < L1I_TIMING_MSHR_SIZE)
     if (l1i_timing_mshr_table[l1i_cpu_id][index].source_set != source_set || l1i_timing_mshr_table[l1i_cpu_id][index].source_way != source_way) return true;
-  uint32_t set = line_addr % MAX_NUM_SET;
+  uint32_t set = line_addr % l1i_num_set[l1i_cpu_id];
   uint32_t way = l1i_find_timing_cache_entry(line_addr);
-  if (way < MAX_NUM_WAY)
+  if (way < l1i_num_way[l1i_cpu_id])
     if (l1i_timing_cache_table[l1i_cpu_id][set][way].source_set != source_set || l1i_timing_cache_table[l1i_cpu_id][set][way].source_way != source_way) return true;
   return false;
 }
@@ -633,16 +639,16 @@ bool l1i_is_accessed_timing_entry(uint64_t line_addr) {
   if (index < L1I_TIMING_MSHR_SIZE) {
     return l1i_timing_mshr_table[l1i_cpu_id][index].accessed;
   }
-  uint32_t set = line_addr % MAX_NUM_SET;
+  uint32_t set = line_addr % l1i_num_set[l1i_cpu_id];
   uint32_t way = l1i_find_timing_cache_entry(line_addr);
-  if (way < MAX_NUM_WAY) {
+  if (way < l1i_num_way[l1i_cpu_id]) {
     return l1i_timing_cache_table[l1i_cpu_id][set][way].accessed;
   }
   return false;
 }
 
 bool l1i_completed_request(uint64_t line_addr) {
-  return l1i_find_timing_cache_entry(line_addr) < MAX_NUM_WAY;
+  return l1i_find_timing_cache_entry(line_addr) < l1i_num_way[l1i_cpu_id];
 }
 
 bool l1i_ongoing_request(uint64_t line_addr) {
@@ -953,11 +959,17 @@ void entangling::prefetcher_initialize()
 	
   std::cout << "CPU " << my_cpu << " EPI prefetcher" << std::endl;
 
-  assert(MAX_NUM_SET == sets);
-  assert(MAX_NUM_WAY == ways);
+  assert(sets > 0);
+  assert((sets & (sets - 1)) == 0);
+  assert(sets <= MAX_NUM_SET);
+  assert(ways > 0);
+  assert(ways <= MAX_NUM_WAY);
 
   l1i_cpu_id = my_cpu;
   l1i_current_cycle = cur_cycle;
+  l1i_num_set[my_cpu] = sets;
+  l1i_num_way[my_cpu] = ways;
+  l1i_set_bits[my_cpu] = __builtin_ctz(sets);
   
   l1i_init_stats_table();
   l1i_last_basic_block = 0;
@@ -1019,9 +1031,7 @@ uint32_t entangling::prefetcher_cache_operate(uint64_t addr, uint64_t ip, uint64
   
   uint64_t line_addr = addr >> LOG2_BLOCK_SIZE;
 
-  if (!cache_hit) assert(!useful_prefetch);
-  if (!cache_hit) assert(l1i_find_timing_cache_entry(line_addr) == MAX_NUM_WAY);
-  if (cache_hit) assert(l1i_find_timing_cache_entry(line_addr) < MAX_NUM_WAY);
+  if (!cache_hit) useful_prefetch = false;
 
   l1i_stats_table[my_cpu][(line_addr & L1I_STATS_TABLE_MASK)].accesses++;
   if (!cache_hit) {

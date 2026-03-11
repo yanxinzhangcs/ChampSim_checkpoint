@@ -1,0 +1,53 @@
+{
+  "bins": {
+    "0": {
+      "actions": {
+        "l2c_prefetcher-no_llc_prefetcher-no_llc_replacement-lru": {
+          "count": 1,
+          "value": 2.4327666025129897
+        }
+      }
+    },
+    "15": {
+      "actions": {
+        "l2c_prefetcher-no_llc_prefetcher-no_llc_replacement-lru": {
+          "count": 2,
+          "value": 2.420915508713321
+        }
+      }
+    },
+    "3": {
+      "actions": {
+        "l2c_prefetcher-no_llc_prefetcher-no_llc_replacement-lru": {
+          "count": 2,
+          "value": 2.464204706803578
+        }
+      }
+    }
+  },
+  "cutoffs": [
+    1.25,
+    0.02,
+    0.1,
+    0.1,
+    0.8,
+    0.7,
+    0.002
+  ],
+  "epsilon": 0.1,
+  "feature_order": [
+    "ipc",
+    "l1d_mpki",
+    "l2_mpki",
+    "llc_mpki",
+    "prefetch_coverage",
+    "prefetch_accuracy",
+    "branch_miss_rate"
+  ],
+  "policy": {
+    "0": "l2c_prefetcher-no_llc_prefetcher-no_llc_replacement-lru",
+    "15": "l2c_prefetcher-no_llc_prefetcher-no_llc_replacement-lru",
+    "3": "l2c_prefetcher-no_llc_prefetcher-no_llc_replacement-lru"
+  },
+  "version": 1
+}

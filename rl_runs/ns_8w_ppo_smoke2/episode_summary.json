@@ -1,0 +1,116 @@
+[
+  {
+    "step": 0,
+    "action": {
+      "l2c_prefetcher": "next_line",
+      "llc_prefetcher": "no",
+      "llc_replacement": "lru"
+    },
+    "reward": 1.4702657720607424,
+    "ipc": 1.4702657720607424,
+    "l1d_mpki": 1.249497501004998,
+    "l2_mpki": 1.201997596004808,
+    "llc_mpki": 1.033997932004136,
+    "prefetch_coverage": 0.06042416966786715,
+    "prefetch_accuracy": 0.2504145936981758,
+    "branch_miss_rate": 0.002127995744008512,
+    "skip_instructions": 1000000,
+    "stats_path": "/home/ubuntu/yanxin/ChampSim_checkpoint/rl_runs/ns_8w_ppo_smoke2/iter_0000_stats.json",
+    "cache_path": "/home/ubuntu/yanxin/ChampSim_checkpoint/rl_runs/ns_8w_ppo_smoke2/iter_0000_cache.log"
+  },
+  {
+    "step": 1,
+    "action": {
+      "l2c_prefetcher": "no",
+      "llc_prefetcher": "next_line",
+      "llc_replacement": "lru"
+    },
+    "reward": 1.4776709258047023,
+    "ipc": 1.4776709258047023,
+    "l1d_mpki": 1.1209994395002802,
+    "l2_mpki": 0.927999536000232,
+    "llc_mpki": 1.3389993305003347,
+    "prefetch_coverage": 0.059322033898305086,
+    "prefetch_accuracy": 0.2860215053763441,
+    "branch_miss_rate": 0.0031179984410007796,
+    "skip_instructions": 3000100,
+    "stats_path": "/home/ubuntu/yanxin/ChampSim_checkpoint/rl_runs/ns_8w_ppo_smoke2/iter_0001_stats.json",
+    "cache_path": "/home/ubuntu/yanxin/ChampSim_checkpoint/rl_runs/ns_8w_ppo_smoke2/iter_0001_cache.log"
+  },
+  {
+    "step": 2,
+    "action": {
+      "l2c_prefetcher": "next_line",
+      "llc_prefetcher": "next_line",
+      "llc_replacement": "lru"
+    },
+    "reward": 1.6919715105837048,
+    "ipc": 1.6919715105837048,
+    "l1d_mpki": 0.693,
+    "l2_mpki": 1.0445,
+    "llc_mpki": 1.3945,
+    "prefetch_coverage": 0.0873015873015873,
+    "prefetch_accuracy": 0.38412698412698415,
+    "branch_miss_rate": 0.0030735,
+    "skip_instructions": 5000200,
+    "stats_path": "/home/ubuntu/yanxin/ChampSim_checkpoint/rl_runs/ns_8w_ppo_smoke2/iter_0002_stats.json",
+    "cache_path": "/home/ubuntu/yanxin/ChampSim_checkpoint/rl_runs/ns_8w_ppo_smoke2/iter_0002_cache.log"
+  },
+  {
+    "step": 3,
+    "action": {
+      "l2c_prefetcher": "no",
+      "llc_prefetcher": "no",
+      "llc_replacement": "mockingjay"
+    },
+    "reward": 1.4756939064323862,
+    "ipc": 1.4756939064323862,
+    "l1d_mpki": 1.0694973262566843,
+    "l2_mpki": 0.7694980762548094,
+    "llc_mpki": 0.7694980762548094,
+    "prefetch_coverage": 0.06077606358111267,
+    "prefetch_accuracy": 0.31476997578692495,
+    "branch_miss_rate": 0.0023824940437648908,
+    "skip_instructions": 7000300,
+    "stats_path": "/home/ubuntu/yanxin/ChampSim_checkpoint/rl_runs/ns_8w_ppo_smoke2/iter_0003_stats.json",
+    "cache_path": "/home/ubuntu/yanxin/ChampSim_checkpoint/rl_runs/ns_8w_ppo_smoke2/iter_0003_cache.log"
+  },
+  {
+    "step": 4,
+    "action": {
+      "l2c_prefetcher": "gaze",
+      "llc_prefetcher": "no",
+      "llc_replacement": "lru"
+    },
+    "reward": 1.4942650166012676,
+    "ipc": 1.4942650166012676,
+    "l1d_mpki": 0.9904990095009905,
+    "l2_mpki": 0.837999162000838,
+    "llc_mpki": 0.798999201000799,
+    "prefetch_coverage": 0.0636042402826855,
+    "prefetch_accuracy": 0.3378016085790885,
+    "branch_miss_rate": 0.002080997919002081,
+    "skip_instructions": 9000400,
+    "stats_path": "/home/ubuntu/yanxin/ChampSim_checkpoint/rl_runs/ns_8w_ppo_smoke2/iter_0004_stats.json",
+    "cache_path": "/home/ubuntu/yanxin/ChampSim_checkpoint/rl_runs/ns_8w_ppo_smoke2/iter_0004_cache.log"
+  },
+  {
+    "step": 5,
+    "action": {
+      "l2c_prefetcher": "no",
+      "llc_prefetcher": "no",
+      "llc_replacement": "srrip"
+    },
+    "reward": 1.524872940089327,
+    "ipc": 1.524872940089327,
+    "l1d_mpki": 0.680999319000681,
+    "l2_mpki": 0.643999356000644,
+    "llc_mpki": 0.643999356000644,
+    "prefetch_coverage": 0.08663729809104258,
+    "prefetch_accuracy": 0.4013605442176871,
+    "branch_miss_rate": 0.0014444985555014445,
+    "skip_instructions": 11000500,
+    "stats_path": "/home/ubuntu/yanxin/ChampSim_checkpoint/rl_runs/ns_8w_ppo_smoke2/iter_0005_stats.json",
+    "cache_path": "/home/ubuntu/yanxin/ChampSim_checkpoint/rl_runs/ns_8w_ppo_smoke2/iter_0005_cache.log"
+  }
+]
