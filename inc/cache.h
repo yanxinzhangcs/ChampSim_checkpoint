@@ -63,6 +63,7 @@ class CACHE : public champsim::operable
     champsim::address data;
     champsim::address ip;
     uint64_t instr_id;
+    bool wrong_path = false;
 
     uint32_t pf_metadata;
     uint32_t cpu;
@@ -237,13 +238,14 @@ public:
     virtual void bind(CACHE* cache) = 0;
 
     virtual void impl_prefetcher_initialize() = 0;
-    virtual uint32_t impl_prefetcher_cache_operate(champsim::address addr, champsim::address ip, bool cache_hit, bool useful_prefetch, access_type type,
-                                                   uint32_t metadata_in) = 0;
+    virtual uint32_t impl_prefetcher_cache_operate(champsim::address addr, champsim::address ip, uint64_t instr_id, bool wrong_path, bool cache_hit,
+                                                   bool useful_prefetch, access_type type, uint32_t metadata_in) = 0;
     virtual uint32_t impl_prefetcher_cache_fill(champsim::address addr, long set, long way, bool prefetch, champsim::address evicted_addr,
                                                 uint32_t metadata_in) = 0;
     virtual void impl_prefetcher_cycle_operate() = 0;
     virtual void impl_prefetcher_final_stats() = 0;
     virtual void impl_prefetcher_branch_operate(champsim::address ip, uint8_t branch_type, champsim::address branch_target) = 0;
+    virtual void impl_prefetcher_squash(champsim::address ip, uint64_t instr_id) = 0;
   };
 
   struct replacement_module_concept {
@@ -271,13 +273,14 @@ public:
     }
 
     void impl_prefetcher_initialize() final;
-    [[nodiscard]] uint32_t impl_prefetcher_cache_operate(champsim::address addr, champsim::address ip, bool cache_hit, bool useful_prefetch, access_type type,
-                                                         uint32_t metadata_in) final;
+    [[nodiscard]] uint32_t impl_prefetcher_cache_operate(champsim::address addr, champsim::address ip, uint64_t instr_id, bool wrong_path, bool cache_hit,
+                                                         bool useful_prefetch, access_type type, uint32_t metadata_in) final;
     [[nodiscard]] uint32_t impl_prefetcher_cache_fill(champsim::address addr, long set, long way, bool prefetch, champsim::address evicted_addr,
                                                       uint32_t metadata_in) final;
     void impl_prefetcher_cycle_operate() final;
     void impl_prefetcher_final_stats() final;
     void impl_prefetcher_branch_operate(champsim::address ip, uint8_t branch_type, champsim::address branch_target) final;
+    void impl_prefetcher_squash(champsim::address ip, uint64_t instr_id) final;
   };
 
   template <typename... Rs>
@@ -309,11 +312,14 @@ public:
   void impl_prefetcher_initialize() const;
   [[nodiscard]] uint32_t impl_prefetcher_cache_operate(champsim::address addr, champsim::address ip, bool cache_hit, bool useful_prefetch, access_type type,
                                                        uint32_t metadata_in) const;
+  [[nodiscard]] uint32_t impl_prefetcher_cache_operate(champsim::address addr, champsim::address ip, uint64_t instr_id, bool wrong_path, bool cache_hit,
+                                                       bool useful_prefetch, access_type type, uint32_t metadata_in) const;
   [[nodiscard]] uint32_t impl_prefetcher_cache_fill(champsim::address addr, long set, long way, bool prefetch, champsim::address evicted_addr,
                                                     uint32_t metadata_in) const;
   void impl_prefetcher_cycle_operate() const;
   void impl_prefetcher_final_stats() const;
   void impl_prefetcher_branch_operate(champsim::address ip, uint8_t branch_type, champsim::address branch_target) const;
+  void impl_prefetcher_squash(champsim::address ip, uint64_t instr_id) const;
 
   void impl_initialize_replacement() const;
   [[nodiscard]] long impl_find_victim(uint32_t triggering_cpu, uint64_t instr_id, long set, const BLOCK* current_set, champsim::address ip,
@@ -354,12 +360,21 @@ void CACHE::prefetcher_module_model<Ps...>::impl_prefetcher_initialize()
 }
 
 template <typename... Ps>
-uint32_t CACHE::prefetcher_module_model<Ps...>::impl_prefetcher_cache_operate(champsim::address addr, champsim::address ip, bool cache_hit,
-                                                                              bool useful_prefetch, access_type type, uint32_t metadata_in)
+uint32_t CACHE::prefetcher_module_model<Ps...>::impl_prefetcher_cache_operate(champsim::address addr, champsim::address ip, uint64_t instr_id,
+                                                                              bool wrong_path, bool cache_hit, bool useful_prefetch, access_type type,
+                                                                              uint32_t metadata_in)
 {
   using return_type = uint32_t;
   [[maybe_unused]] auto process_one = [&](auto& p) {
     using namespace champsim::modules;
+    /* Strong addresses with instr_id and wrong_path */
+    if constexpr (prefetcher::has_cache_operate<decltype(p), champsim::address, champsim::address, uint64_t, bool, bool, bool, access_type, uint32_t>)
+      return return_type{p.prefetcher_cache_operate(addr, ip, instr_id, wrong_path, cache_hit, useful_prefetch, type, metadata_in)};
+
+    /* Strong addresses with instr_id */
+    if constexpr (prefetcher::has_cache_operate<decltype(p), champsim::address, champsim::address, uint64_t, bool, bool, access_type, uint32_t>)
+      return return_type{p.prefetcher_cache_operate(addr, ip, instr_id, cache_hit, useful_prefetch, type, metadata_in)};
+
     /* Strong addresses */
     if constexpr (prefetcher::has_cache_operate<decltype(p), champsim::address, champsim::address, bool, bool, access_type, uint32_t>)
       return return_type{p.prefetcher_cache_operate(addr, ip, cache_hit, useful_prefetch, type, metadata_in)};
@@ -367,6 +382,16 @@ uint32_t CACHE::prefetcher_module_model<Ps...>::impl_prefetcher_cache_operate(ch
     /* Strong addresses, raw integer access type */
     if constexpr (prefetcher::has_cache_operate<decltype(p), champsim::address, champsim::address, bool, bool, std::underlying_type_t<access_type>, uint32_t>)
       return return_type{p.prefetcher_cache_operate(addr, ip, cache_hit, useful_prefetch, champsim::to_underlying(type), metadata_in)};
+
+    /* Raw integer addresses with instr_id and wrong_path */
+    if constexpr (prefetcher::has_cache_operate<decltype(p), uint64_t, uint64_t, uint64_t, bool, bool, bool, std::underlying_type_t<access_type>, uint32_t>)
+      return return_type{p.prefetcher_cache_operate(addr.to<uint64_t>(), ip.to<uint64_t>(), instr_id, wrong_path, cache_hit, useful_prefetch,
+                                                    champsim::to_underlying(type), metadata_in)};
+
+    /* Raw integer addresses with instr_id */
+    if constexpr (prefetcher::has_cache_operate<decltype(p), uint64_t, uint64_t, uint64_t, bool, bool, std::underlying_type_t<access_type>, uint32_t>)
+      return return_type{p.prefetcher_cache_operate(addr.to<uint64_t>(), ip.to<uint64_t>(), instr_id, cache_hit, useful_prefetch,
+                                                    champsim::to_underlying(type), metadata_in)};
 
     /* Raw integer addresses, no useful_prefetch parameter, raw integer access type */
     if constexpr (prefetcher::has_cache_operate<decltype(p), uint64_t, uint64_t, bool, std::underlying_type_t<access_type>, uint32_t>)
@@ -428,6 +453,20 @@ void CACHE::prefetcher_module_model<Ps...>::impl_prefetcher_branch_operate(champ
       p.prefetcher_branch_operate(ip, branch_type, branch_target);
     if constexpr (prefetcher::has_branch_operate<decltype(p), uint64_t, uint8_t, uint64_t>)
       p.prefetcher_branch_operate(ip.to<uint64_t>(), branch_type, branch_target.to<uint64_t>());
+  };
+
+  std::apply([&](auto&... p) { (..., process_one(p)); }, intern_);
+}
+
+template <typename... Ps>
+void CACHE::prefetcher_module_model<Ps...>::impl_prefetcher_squash(champsim::address ip, uint64_t instr_id)
+{
+  [[maybe_unused]] auto process_one = [&](auto& p) {
+    using namespace champsim::modules;
+    if constexpr (prefetcher::has_squash_operate<decltype(p), champsim::address, uint64_t>)
+      p.prefetcher_squash(ip, instr_id);
+    if constexpr (prefetcher::has_squash_operate<decltype(p), uint64_t, uint64_t>)
+      p.prefetcher_squash(ip.to<uint64_t>(), instr_id);
   };
 
   std::apply([&](auto&... p) { (..., process_one(p)); }, intern_);

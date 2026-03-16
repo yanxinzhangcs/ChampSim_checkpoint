@@ -499,6 +499,16 @@ uint32_t gaze::prefetcher_cache_operate(champsim::address addr, champsim::addres
 }
 
 uint32_t gaze::prefetcher_cache_fill(champsim::address addr, long set, long way, uint8_t prefetch, champsim::address evicted_addr, uint32_t metadata_in) {
+    (void)addr;
+    (void)set;
+    (void)way;
+    (void)prefetch;
+
+    if (evicted_addr != champsim::address{}) {
+        uint64_t evicted_block = evicted_addr.template to<uint64_t>() >> LOG2_BLOCK_SIZE;
+        impl.eviction(evicted_block);
+    }
+
     return metadata_in;
 }
 

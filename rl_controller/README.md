@@ -43,9 +43,13 @@ summary of the episode lives in `episode_summary.json`.
 
 ### Notes
 
-- The harness reuses a warm checkpoint created once with the base action.
-  Each window restores that state before running the measurement phase,
-  so you can compare policies under identical cache contents.
+- Step 0 starts from a warm checkpoint created once with the base action.
+  Later windows chain from the previous window's checkpoint at the matching
+  trace offset, so `main.py` models a continuous policy rollout rather than
+  re-evaluating every step from the same cache state.
+- `experiments.py` uses the RL rollout's step-start checkpoint for its per-step
+  action grid, so each action in that comparison is evaluated from the same
+  cache state the rollout saw at that step.
 - New ChampSim binaries are generated lazily and cached (for example
   `bin/champsim_rl_llc-replacement-srrip_l2c-prefetcher-next_line`).  If
   you change module code, remove the corresponding binary to force a

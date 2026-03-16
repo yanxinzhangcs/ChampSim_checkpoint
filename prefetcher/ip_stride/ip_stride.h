@@ -10,6 +10,10 @@
 #include "msl/lru_table.h"
 
 struct ip_stride : public champsim::modules::prefetcher {
+  constexpr static std::size_t TRACKER_SETS = 256;
+  constexpr static std::size_t TRACKER_WAYS = 4;
+  constexpr static champsim::data::bits TRACKER_INDEX_BITS{champsim::lg2(TRACKER_SETS)};
+
   struct tracker_entry {
     champsim::address ip{};                                // the IP we're tracking
     champsim::block_number last_cl_addr{};                 // the last address accessed by this IP
@@ -17,13 +21,11 @@ struct ip_stride : public champsim::modules::prefetcher {
 
     auto index() const
     {
-      using namespace champsim::data::data_literals;
-      return ip.slice_upper<2_b>();
+      return ip.slice_lower(TRACKER_INDEX_BITS);
     }
     auto tag() const
     {
-      using namespace champsim::data::data_literals;
-      return ip.slice_upper<2_b>();
+      return ip.slice_upper(TRACKER_INDEX_BITS);
     }
   };
 
@@ -33,11 +35,10 @@ struct ip_stride : public champsim::modules::prefetcher {
     int degree = 0; // degree remaining
   };
 
-  constexpr static std::size_t TRACKER_SETS = 256;
-  constexpr static std::size_t TRACKER_WAYS = 4;
   constexpr static int PREFETCH_DEGREE = 3;
 
   std::optional<lookahead_entry> active_lookahead;
+  std::optional<champsim::address> branch_context_ip;
 
   champsim::msl::lru_table<tracker_entry> table{TRACKER_SETS, TRACKER_WAYS};
 
@@ -47,6 +48,7 @@ public:
   uint32_t prefetcher_cache_operate(champsim::address addr, champsim::address ip, uint8_t cache_hit, bool useful_prefetch, access_type type,
                                     uint32_t metadata_in);
   uint32_t prefetcher_cache_fill(champsim::address addr, long set, long way, uint8_t prefetch, champsim::address evicted_addr, uint32_t metadata_in);
+  void prefetcher_branch_operate(champsim::address ip, uint8_t branch_type, champsim::address branch_target);
   void prefetcher_cycle_operate();
 };
 

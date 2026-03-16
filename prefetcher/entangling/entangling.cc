@@ -937,10 +937,17 @@ uint32_t l1i_add_hist_table(uint64_t line_addr, uint64_t instr_id, uint32_t form
 
 // INTERFACE
 
+uint32_t entangling::prefetcher_cache_operate(champsim::address addr, champsim::address ip, uint64_t instr_id, bool wrong_path, bool cache_hit,
+                                              bool useful_prefetch, access_type type, uint32_t metadata_in)
+{
+  return prefetcher_cache_operate(addr.to<uint64_t>(), ip.to<uint64_t>(), instr_id, wrong_path, cache_hit, useful_prefetch, champsim::to_underlying(type),
+                                  metadata_in);
+}
+
 uint32_t entangling::prefetcher_cache_operate(champsim::address addr, champsim::address ip, bool cache_hit, bool useful_prefetch, access_type type,
                                               uint32_t metadata_in)
 {
-  return prefetcher_cache_operate(addr.to<uint64_t>(), ip.to<uint64_t>(), 0, cache_hit, useful_prefetch, champsim::to_underlying(type), metadata_in);
+  return prefetcher_cache_operate(addr, ip, 0, false, cache_hit, useful_prefetch, type, metadata_in);
 }
 
 uint32_t entangling::prefetcher_cache_fill(champsim::address addr, long set, long way, bool prefetch, champsim::address evicted_addr,
@@ -989,13 +996,12 @@ void entangling::prefetcher_branch_operate(uint64_t ip, uint8_t branch_type, uin
 // IMPORTANT: This function needs to be called in the same order as prefetcher_cache_operate,
 // meaning that after calling prefetcher_squash, none of the squashed instructions should call prefetcher_cache_operate.
 // Otherwise, performance may be sub-optimal.
-/**
-void CACHE::prefetcher_squash(uint64_t ip, uint64_t instr_id)
+void entangling::prefetcher_squash(champsim::address ip, uint64_t instr_id)
 {
-  l1i_cpu_id = cpu;
-  l1i_current_cycle = current_cycle;
+  l1i_cpu_id = parent_cache->cpu;
+  l1i_current_cycle = parent_cache->current_cycle();
 
-  uint64_t line_addr = ip >> LOG2_BLOCK_SIZE;
+  uint64_t line_addr = ip.to<uint64_t>() >> LOG2_BLOCK_SIZE;
 
   l1i_squash_hist_table(instr_id, line_addr);
   uint32_t last = (l1i_hist_table_head[l1i_cpu_id] + L1I_HIST_TABLE_MASK) % L1I_HIST_TABLE_ENTRIES;
@@ -1016,18 +1022,22 @@ void CACHE::prefetcher_squash(uint64_t ip, uint64_t instr_id)
   l1i_basic_block_merge_diff = 0;
   l1i_contains_wrong_path = false;
   l1i_stats_last_wrong_path = false;
-}**/
+}
 
-// NOTE: Here metadata_in receives a boolean indicating if the instruction is from wrong_path or not.
-// This information is only used to gather stats.
-uint32_t entangling::prefetcher_cache_operate(uint64_t addr, uint64_t ip, uint64_t instr_id, bool cache_hit, bool useful_prefetch, uint8_t type, uint32_t metadata_in)
+uint32_t entangling::prefetcher_cache_operate(uint64_t addr, uint64_t ip, uint64_t instr_id, bool wrong_path, bool cache_hit, bool useful_prefetch,
+                                              uint8_t type, uint32_t metadata_in)
 {
+  (void)ip;
+  (void)type;
+
   uint32_t my_cpu = parent_cache->cpu;
   uint64_t cur_cycle = parent_cache->current_cycle();
   l1i_cpu_id = parent_cache->cpu;
   l1i_current_cycle = cur_cycle;
 
-  if (!metadata_in) assert(!l1i_stats_last_wrong_path);
+  if (!wrong_path)
+    assert(!l1i_stats_last_wrong_path);
+  l1i_stats_last_wrong_path = wrong_path;
   
   uint64_t line_addr = addr >> LOG2_BLOCK_SIZE;
 
@@ -1051,7 +1061,8 @@ uint32_t entangling::prefetcher_cache_operate(uint64_t addr, uint64_t ip, uint64
     return metadata_in;
   } else if (l1i_last_basic_block + l1i_consecutive_count + 1 == line_addr) { // Consecutive
     l1i_consecutive_count++;
-    //if (metadata_in) l1i_contains_wrong_path = true;
+    if (wrong_path)
+      l1i_contains_wrong_path = true;
     consecutive = true;
   }
 
@@ -1117,7 +1128,7 @@ uint32_t entangling::prefetcher_cache_operate(uint64_t addr, uint64_t ip, uint64
   if (!consecutive) { // New basic block found
     l1i_consecutive_count = 0;
     l1i_last_basic_block = line_addr;
-    //l1i_contains_wrong_path = metadata_in;
+    l1i_contains_wrong_path = wrong_path;
   }  
 
   if (!consecutive) {
@@ -1128,10 +1139,10 @@ uint32_t entangling::prefetcher_cache_operate(uint64_t addr, uint64_t ip, uint64
   uint32_t pos_hist = L1I_HIST_TABLE_ENTRIES;
   if (!consecutive && l1i_basic_block_merge_diff == 0) {
     if ((l1i_find_hist_entry(line_addr) == L1I_HIST_TABLE_ENTRIES)) {
-      pos_hist = l1i_add_hist_table(line_addr, instr_id, format, num_entangled, metadata_in);
+      pos_hist = l1i_add_hist_table(line_addr, instr_id, format, num_entangled, wrong_path);
     } else {
       if (!cache_hit && !l1i_ongoing_accessed_request(line_addr)) {
-    	pos_hist = l1i_add_hist_table(line_addr, instr_id, format, num_entangled, metadata_in);      
+    	pos_hist = l1i_add_hist_table(line_addr, instr_id, format, num_entangled, wrong_path);      
       }
     }
   }

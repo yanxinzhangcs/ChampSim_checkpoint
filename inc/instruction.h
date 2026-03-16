@@ -97,6 +97,8 @@ struct program_ordered {
 
 struct ooo_model_instr : champsim::program_ordered<ooo_model_instr> {
   champsim::address ip{};
+  champsim::address l1i_pf_ip{};
+  bool l1i_wrong_path = false;
   champsim::chrono::clock::time_point ready_time{};
 
   // A lightweight "opcode" classification derived from existing Champsim metadata.

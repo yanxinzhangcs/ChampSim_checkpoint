@@ -1,0 +1,43 @@
+{
+  "template_config": "rl_controller/configs/perlbench_combo.json",
+  "heads": [
+    {
+      "name": "l1d_prefetcher",
+      "path": ["L1D", "prefetcher"],
+      "choices": ["ip_stride"]
+    },
+    {
+      "name": "l1i_prefetcher",
+      "path": ["L1I", "prefetcher"],
+      "choices": ["ip_stride"]
+    },
+    {
+      "name": "l1d_replacement",
+      "path": ["L1D", "replacement"],
+      "choices": ["lru"]
+    },
+    {
+      "name": "l1i_replacement",
+      "path": ["L1I", "replacement"],
+      "choices": ["lru"]
+    },
+    {
+      "name": "l2c_prefetcher",
+      "path": ["L2C", "prefetcher"],
+      "choices": ["no"]
+    },
+    {
+      "name": "l2c_replacement",
+      "path": ["L2C", "replacement"],
+      "choices": ["lru"]
+    }
+  ],
+  "base_action": {
+    "l1d_prefetcher": "ip_stride",
+    "l1i_prefetcher": "ip_stride",
+    "l1d_replacement": "lru",
+    "l1i_replacement": "lru",
+    "l2c_prefetcher": "no",
+    "l2c_replacement": "lru"
+  }
+}

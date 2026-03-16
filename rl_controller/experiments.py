@@ -299,13 +299,16 @@ def run_experiments() -> None:
   # === Experiment 2: per-step optimal action ===
   if not args.skip_grid:
     grid_dir = ensure_dir(output_root / "per_step_grid")
-    start_checkpoint = rl_base_checkpoint
     step_results = []
     action_choices = action_space.all_actions()
     compare_steps = args.compare_limit if args.compare_limit is not None else len(rl_results)
     best_action_counts: Dict[str, int] = {}
 
     for step_idx, rl_result in enumerate(rl_results[:compare_steps]):
+      # Re-evaluate each action from the same checkpoint the RL rollout used at
+      # the start of this step. Step 0 starts from the initial warm checkpoint;
+      # later steps start from the previous step's post-window checkpoint.
+      start_checkpoint = rl_base_checkpoint if step_idx == 0 else rl_results[step_idx - 1].cache_path
       skip_value = rl_result.skip_instructions
       per_action_ipc: Dict[str, float] = {}
       best_action = None
@@ -351,6 +354,7 @@ def run_experiments() -> None:
           {
               "step": step_idx,
               "skip_instructions": skip_value,
+              "start_checkpoint": str(start_checkpoint),
               "rl_action": action_display(rl_result.action),
               "rl_ipc": rl_result.metrics.ipc,
               "best_action": action_display(best_action) if best_action else None,
@@ -360,7 +364,6 @@ def run_experiments() -> None:
               "base_ipc": base_ipc,
           }
       )
-      start_checkpoint = rl_result.cache_path
 
     summary["per_step_comparison"] = {
         "steps_evaluated": len(step_results),

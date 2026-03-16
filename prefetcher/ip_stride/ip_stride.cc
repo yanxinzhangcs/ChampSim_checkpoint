@@ -7,8 +7,15 @@ uint32_t ip_stride::prefetcher_cache_operate(champsim::address addr, champsim::a
 {
   champsim::block_number cl_addr{addr};
   champsim::block_number::difference_type stride = 0;
+  auto tracker_ip = ip;
 
-  auto found = table.check_hit({ip, cl_addr, stride});
+  // Instruction fetches do not have a distinct producer IP; when the caller
+  // wires addr==ip, reuse the most recent branch PC as the correlation key so
+  // the stride tracker can learn instruction-stream line patterns.
+  if (branch_context_ip.has_value() && champsim::block_number{tracker_ip} == cl_addr)
+    tracker_ip = *branch_context_ip;
+
+  auto found = table.check_hit({tracker_ip, cl_addr, stride});
 
   // if we found a matching entry
   if (found.has_value()) {
@@ -21,9 +28,14 @@ uint32_t ip_stride::prefetcher_cache_operate(champsim::address addr, champsim::a
   }
 
   // update tracking set
-  table.fill({ip, cl_addr, stride});
+  table.fill({tracker_ip, cl_addr, stride});
 
   return metadata_in;
+}
+
+void ip_stride::prefetcher_branch_operate(champsim::address ip, uint8_t branch_type, champsim::address branch_target)
+{
+  branch_context_ip = ip;
 }
 
 void ip_stride::prefetcher_cycle_operate()

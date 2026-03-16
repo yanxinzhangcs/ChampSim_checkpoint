@@ -94,8 +94,9 @@ auto CACHE::operator=(CACHE&& other) -> CACHE&
 }
 
 CACHE::tag_lookup_type::tag_lookup_type(const request_type& req, bool local_pref, bool skip)
-    : address(req.address), v_address(req.v_address), data(req.data), ip(req.ip), instr_id(req.instr_id), pf_metadata(req.pf_metadata), cpu(req.cpu),
-      type(req.type), prefetch_from_this(local_pref), skip_fill(skip), is_translated(req.is_translated), instr_depend_on_me(req.instr_depend_on_me)
+    : address(req.address), v_address(req.v_address), data(req.data), ip(req.ip), instr_id(req.instr_id), wrong_path(req.wrong_path),
+      pf_metadata(req.pf_metadata), cpu(req.cpu), type(req.type), prefetch_from_this(local_pref), skip_fill(skip), is_translated(req.is_translated),
+      instr_depend_on_me(req.instr_depend_on_me)
 {
 }
 
@@ -266,7 +267,8 @@ bool CACHE::try_hit(const tag_lookup_type& handle_pkt)
 
   auto metadata_thru = handle_pkt.pf_metadata;
   if (should_activate_prefetcher(handle_pkt)) {
-    metadata_thru = impl_prefetcher_cache_operate(module_address(handle_pkt), handle_pkt.ip, hit, useful_prefetch, handle_pkt.type, metadata_thru);
+    metadata_thru = impl_prefetcher_cache_operate(module_address(handle_pkt), handle_pkt.ip, handle_pkt.instr_id, handle_pkt.wrong_path, hit, useful_prefetch,
+                                                  handle_pkt.type, metadata_thru);
   }
 
   // update replacement policy
@@ -798,7 +800,13 @@ void CACHE::impl_prefetcher_initialize() const { pref_module_pimpl->impl_prefetc
 uint32_t CACHE::impl_prefetcher_cache_operate(champsim::address addr, champsim::address ip, bool cache_hit, bool useful_prefetch, access_type type,
                                               uint32_t metadata_in) const
 {
-  return pref_module_pimpl->impl_prefetcher_cache_operate(addr, ip, cache_hit, useful_prefetch, type, metadata_in);
+  return impl_prefetcher_cache_operate(addr, ip, 0, false, cache_hit, useful_prefetch, type, metadata_in);
+}
+
+uint32_t CACHE::impl_prefetcher_cache_operate(champsim::address addr, champsim::address ip, uint64_t instr_id, bool wrong_path, bool cache_hit,
+                                              bool useful_prefetch, access_type type, uint32_t metadata_in) const
+{
+  return pref_module_pimpl->impl_prefetcher_cache_operate(addr, ip, instr_id, wrong_path, cache_hit, useful_prefetch, type, metadata_in);
 }
 
 uint32_t CACHE::impl_prefetcher_cache_fill(champsim::address addr, long set, long way, bool prefetch, champsim::address evicted_addr,
@@ -815,6 +823,8 @@ void CACHE::impl_prefetcher_branch_operate(champsim::address ip, uint8_t branch_
 {
   pref_module_pimpl->impl_prefetcher_branch_operate(ip, branch_type, branch_target);
 }
+
+void CACHE::impl_prefetcher_squash(champsim::address ip, uint64_t instr_id) const { pref_module_pimpl->impl_prefetcher_squash(ip, instr_id); }
 
 void CACHE::impl_initialize_replacement() const { repl_module_pimpl->impl_initialize_replacement(); }
 

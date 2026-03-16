@@ -187,6 +187,7 @@ bool O3_CPU::do_predict_branch(ooo_model_instr& arch_instr)
 
     // call code prefetcher every time the branch predictor is used
     l1i->impl_prefetcher_branch_operate(arch_instr.ip, arch_instr.branch, predicted_branch_target);
+    l1i_fetch_context_ip = arch_instr.ip;
 
     if (predicted_branch_target != arch_instr.branch_target
         || (((arch_instr.branch == BRANCH_CONDITIONAL) || (arch_instr.branch == BRANCH_OTHER))
@@ -216,6 +217,15 @@ bool O3_CPU::do_init_instruction(ooo_model_instr& arch_instr)
     arch_instr.source_registers.clear();
     arch_instr.destination_registers.clear();
   }
+
+  // Carry the fetch context alongside each instruction so L1I prefetchers see
+  // the branch/basic-block producer that led to this line fetch, not the line's
+  // own address or a later branch observed while filling the IFETCH buffer.
+  arch_instr.l1i_pf_ip = l1i_fetch_context_ip;
+  // The current front-end does not materialize wrong-path instruction streams.
+  // Keep the signal explicitly wired anyway so L1I prefetchers can consume it
+  // if/when the fetch model starts producing it.
+  arch_instr.l1i_wrong_path = false;
 
   ::do_stack_pointer_folding(arch_instr);
   return do_predict_branch(arch_instr);
@@ -292,7 +302,8 @@ bool O3_CPU::do_fetch_instruction(std::deque<ooo_model_instr>::iterator begin, s
   CacheBus::request_type fetch_packet;
   fetch_packet.v_address = begin->ip;
   fetch_packet.instr_id = begin->instr_id;
-  fetch_packet.ip = begin->ip;
+  fetch_packet.ip = begin->l1i_pf_ip;
+  fetch_packet.wrong_path = begin->l1i_wrong_path;
 
   std::transform(begin, end, std::back_inserter(fetch_packet.instr_depend_on_me), [](const auto& instr) { return instr.instr_id; });
 
@@ -392,6 +403,7 @@ long O3_CPU::decode_instruction()
       // These branches detect the misprediction at decode
       if ((db_entry.branch == BRANCH_DIRECT_JUMP) || (db_entry.branch == BRANCH_DIRECT_CALL)
           || (((db_entry.branch == BRANCH_CONDITIONAL) || (db_entry.branch == BRANCH_OTHER)) && db_entry.branch_taken == db_entry.branch_prediction)) {
+        l1i->impl_prefetcher_squash(db_entry.ip, db_entry.instr_id);
         // clear the branch_mispredicted bit so we don't attempt to resume fetch again at execute
         db_entry.branch_mispredicted = 0;
         // pay misprediction penalty
@@ -661,6 +673,7 @@ void O3_CPU::do_complete_execution(ooo_model_instr& instr)
   instr.completed = true;
 
   if (instr.branch_mispredicted) {
+    l1i->impl_prefetcher_squash(instr.ip, instr.instr_id);
     fetch_resume_time = current_time + BRANCH_MISPREDICT_PENALTY;
   }
 }

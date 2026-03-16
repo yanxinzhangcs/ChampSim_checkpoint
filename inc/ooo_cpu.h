@@ -144,6 +144,7 @@ public:
 
   // branch
   champsim::chrono::clock::time_point fetch_resume_time{};
+  champsim::address l1i_fetch_context_ip{};
 
   const long IN_QUEUE_SIZE;
   std::deque<ooo_model_instr> input_queue;
