@@ -54,10 +54,6 @@ uint64_t found_berti = 0;
 uint64_t average_issued = 0;
 uint64_t average_num = 0;
 
-LatencyTable* latencyt = nullptr;
-ShadowCache* scache = nullptr;
-HistoryTable* historyt = nullptr;
-Berti* berti_table = nullptr;
 } // namespace berti_space
 /******************************************************************************/
 /*                      Latency table functions                               */
@@ -768,7 +764,9 @@ void Berti::find_and_update(uint64_t latency, uint64_t tag, uint64_t cycle, uint
         uint16_t num_on_time = 0;
 
         // Get the IPs that can launch a prefetch
-        num_on_time = historyt->get(latency, tag, line_addr, tags, addr, cycle);
+        if(history_table == nullptr)
+                return;
+        num_on_time = history_table->get(latency, tag, line_addr, tags, addr, cycle);
 
         for(uint32_t i = 0; i < num_on_time; i++)
         {
@@ -953,6 +951,16 @@ uint64_t Berti::ip_hash(uint64_t ip)
 /* *****************************************************************************/
 void berti::prefetcher_initialize()
 {
+        average_latency = {};
+        pf_to_l1 = 0;
+        pf_to_l2 = 0;
+        pf_to_l2_bc_mshr = 0;
+        cant_track_latency = 0;
+        cross_page = 0;
+        no_cross_page = 0;
+        average_issued = 0;
+        average_num = 0;
+
         // Calculate latency table size
         uint64_t latency_table_size = intern_->get_mshr_size();
         for(auto const& i: intern_->get_rq_size()) latency_table_size += i;
@@ -960,10 +968,10 @@ void berti::prefetcher_initialize()
         for(auto const& i: intern_->get_pq_size()) latency_table_size += i;
 
         // New structures
-        latencyt    = new LatencyTable(latency_table_size);
-        scache      = new ShadowCache(intern_->NUM_SET, intern_->NUM_WAY);
-        historyt    = new HistoryTable();
-        berti_table = new Berti(BERTI_TABLE_DELTA_SIZE);
+        latencyt    = std::make_unique<LatencyTable>(latency_table_size);
+        scache      = std::make_unique<ShadowCache>(intern_->NUM_SET, intern_->NUM_WAY);
+        historyt    = std::make_unique<HistoryTable>();
+        berti_table = std::make_unique<Berti>(BERTI_TABLE_DELTA_SIZE, historyt.get());
 
         std::cout << "Berti Prefetcher" << std::endl;
 
@@ -1006,7 +1014,7 @@ uint32_t berti::prefetcher_cache_operate(champsim::address addr, champsim::addre
                 latencyt->add(line_addr, ip_hash, false, cycle_now); // Add @ to latency
                 historyt->add(ip_hash, line_addr, cycle_now);        // Add to the table
         }
-        else if(cache_hit && scache->is_pf(line_addr)) // Hit bc prefetch
+        else if(cache_hit && scache->get(line_addr) && scache->is_pf(line_addr)) // Hit bc prefetch
         {
                 if constexpr(champsim::debug_print)
                         std::cout << "[BERTI] operate cache hit because of pf" << std::endl;
@@ -1136,8 +1144,9 @@ uint32_t berti::prefetcher_cache_fill(champsim::address addr, long set, long way
                 }
         }
 
-        // Add to the shadow cache
-        scache->add(static_cast<uint32_t>(set), static_cast<uint32_t>(way), line_addr, prefetch, latency);
+        // Bypassed fills are reported with way == NUM_WAY; they do not occupy the cache.
+        if(set >= 0 && way >= 0 && set < intern_->NUM_SET && way < intern_->NUM_WAY)
+                scache->add(static_cast<uint32_t>(set), static_cast<uint32_t>(way), line_addr, prefetch, latency);
 
         if(latency != 0 && !prefetch)
         {

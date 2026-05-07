@@ -49,6 +49,7 @@
 #include <cstdio>
 #include <iostream>
 #include <map>
+#include <memory>
 #include <queue>
 #include <stdlib.h>
 #include <time.h>
@@ -117,10 +118,10 @@ namespace berti_space
                         {
                                 latencyt = new latency_table[size];
                         }
-                        ~LatencyTable()
-                        {
-                                delete latencyt;
-                        }
+	                        ~LatencyTable()
+	                        {
+	                                delete[] latencyt;
+	                        }
 
                         uint8_t  add(uint64_t addr, uint64_t tag, bool pf, uint64_t cycle);
                         uint64_t get(uint64_t addr);
@@ -154,11 +155,11 @@ namespace berti_space
                                 this->ways = ways;
                         }
 
-                        ~ShadowCache()
-                        {
-                                for(int i = 0; i < sets; i++) delete scache[i];
-                                delete scache;
-                        }
+	                        ~ShadowCache()
+	                        {
+	                                for(int i = 0; i < sets; i++) delete[] scache[i];
+	                                delete[] scache;
+	                        }
 
                         bool     add(uint32_t set, uint32_t way, uint64_t addr, bool pf, uint64_t lat);
                         bool     get(uint64_t addr);
@@ -197,13 +198,13 @@ namespace berti_space
                                 for(int i = 0; i < sets; i++) history_pointers[i] = historyt[i];
                         }
 
-                        ~HistoryTable()
-                        {
-                                for(int i = 0; i < sets; i++) delete historyt[i];
-                                delete historyt;
+	                        ~HistoryTable()
+	                        {
+	                                for(int i = 0; i < sets; i++) delete[] historyt[i];
+	                                delete[] historyt;
 
-                                delete history_pointers;
-                        }
+	                                delete[] history_pointers;
+	                        }
 
                         int      get_ways();
                         void     add(uint64_t tag, uint64_t addr, uint64_t cycle);
@@ -226,6 +227,7 @@ namespace berti_space
                         std::queue<uint64_t>       bertit_queue;
 
                         uint64_t size = 0;
+                        HistoryTable* history_table = nullptr;
 
                         bool static compare_greater_delta(delta_t a, delta_t b);
                         bool static compare_rpl(delta_t a, delta_t b);
@@ -235,16 +237,12 @@ namespace berti_space
                         void add(uint64_t tag, int64_t delta);
 
                 public:
-                        Berti(uint64_t p_size): size(p_size) {};
+                        Berti(uint64_t p_size, HistoryTable* p_history_table): size(p_size), history_table(p_history_table) {};
                         void     find_and_update(uint64_t latency, uint64_t tag, uint64_t cycle, uint64_t line_addr);
                         uint8_t  get(uint64_t tag, std::vector<delta_t>& res);
                         uint64_t ip_hash(uint64_t ip);
         };
 
-        extern LatencyTable* latencyt;
-        extern ShadowCache*  scache;
-        extern HistoryTable* historyt;
-        extern Berti*        berti_table;
 }; // namespace berti_space
 
 struct berti : public champsim::modules::prefetcher {
@@ -256,6 +254,22 @@ struct berti : public champsim::modules::prefetcher {
   uint32_t prefetcher_cache_fill(champsim::address addr, long set, long way, bool prefetch, champsim::address evicted_addr, uint32_t metadata_in);
   void prefetcher_cycle_operate();
   void prefetcher_final_stats();
+
+private:
+  berti_space::welford_t average_latency{};
+  uint64_t pf_to_l1 = 0;
+  uint64_t pf_to_l2 = 0;
+  uint64_t pf_to_l2_bc_mshr = 0;
+  uint64_t cant_track_latency = 0;
+  uint64_t cross_page = 0;
+  uint64_t no_cross_page = 0;
+  uint64_t average_issued = 0;
+  uint64_t average_num = 0;
+
+  std::unique_ptr<berti_space::LatencyTable> latencyt;
+  std::unique_ptr<berti_space::ShadowCache> scache;
+  std::unique_ptr<berti_space::HistoryTable> historyt;
+  std::unique_ptr<berti_space::Berti> berti_table;
 };
 
 #endif
