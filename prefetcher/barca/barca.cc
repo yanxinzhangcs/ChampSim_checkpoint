@@ -578,10 +578,17 @@ void access_cache(uint64_t   addr,               // the virtual address of the a
 
         if(real_victim)
         {
-                // make sure this victim is actually in this set (trust ChampSim to start using weird hash functions)
-
-                int rvset = (real_victim / BLOCK_SIZE) % L1I_SET;
-                assert(rvset == set);
+                /*
+                 * ChampSim chooses the real victim using the cache's translated
+                 * address, but BARCA's shadow cache is indexed by the module
+                 * address passed to the prefetcher. For L1I with virtual
+                 * prefetching enabled, the filled block and victim can therefore
+                 * map to different shadow sets even though they occupied the same
+                 * real cache set. Invalidate the victim in its own shadow set
+                 * instead of asserting that both shadow sets are identical.
+                 */
+                int          rvset = (real_victim / BLOCK_SIZE) % L1I_SET;
+                cache_block* V     = &shadow_cache[rvset][0];
 
                 // go through each way looking for this victim
 
@@ -589,7 +596,7 @@ void access_cache(uint64_t   addr,               // the virtual address of the a
                 {
                         // figure out the (partial) address of this block
 
-                        uint64_t my_addr = ((S[i].tag * L1I_SET) | set) * BLOCK_SIZE;
+                        uint64_t my_addr = ((V[i].tag * L1I_SET) | rvset) * BLOCK_SIZE;
 
                         // prepare a mask to allow comparing the shorter addresses
 
@@ -599,12 +606,14 @@ void access_cache(uint64_t   addr,               // the virtual address of the a
 
                         if((my_addr & mask) == (real_victim & mask))
                         {
-                                // yes? ok, invalidate this block so it will be replaced instead of the LRU block
+                                // yes? ok, invalidate this block so it will not remain as a stale shadow hit
 
-                                S[i].valid = false;
+                                V[i].valid      = false;
+                                V[i].prefetched = false;
+                                V[i].edge       = NULL;
 
                                 // why do we do this?
-                                // if (get_edge) *get_edge = S[i].edge;
+                                // if (get_edge) *get_edge = V[i].edge;
                                 break;
                         }
                 }
@@ -1227,11 +1236,12 @@ void barca::prefetcher_final_stats() {}
 uint32_t barca::prefetcher_cache_fill(champsim::address addr, long set, long way, bool prefetch, champsim::address evicted_addr,
                                       uint32_t metadata_in)
 {
-        (void)set;
-        (void)way;
-
         const uint64_t addr_val    = addr.to<uint64_t>();
         const uint64_t evict_value = evicted_addr.to<uint64_t>();
+
+        // Bypassed fills are reported with way == NUM_WAY; they do not occupy the cache.
+        if(set < 0 || way < 0 || set >= static_cast<long>(intern_->NUM_SET) || way >= static_cast<long>(intern_->NUM_WAY))
+                return metadata_in;
 
         if(!prefetch)
         {
