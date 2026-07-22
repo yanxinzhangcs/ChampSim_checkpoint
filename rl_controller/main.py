@@ -6,7 +6,7 @@ from pathlib import Path
 from typing import List, Tuple
 
 from .action_space import load_action_space
-from .agent import DEFAULT_STATE_CUTOFFS, FEATURE_ORDER, EpsilonGreedyAgent, HashTableAgent, PPOAgent, RandomAgent
+from .agent import DEFAULT_STATE_CUTOFFS, FEATURE_ORDER, EpsilonGreedyAgent, HashTableAgent, PPOAgent, RandomAgent, SlidingUCBAgent
 from .builder import ChampSimBuildManager
 from .runner import ChampSimRunner
 
@@ -34,11 +34,13 @@ def parse_args() -> argparse.Namespace:
   parser.add_argument("--resume-warmup", type=int, default=1, help="Warmup instructions to run before each measurement window")
   parser.add_argument(
       "--agent",
-      choices=["ppo", "random", "epsilon_greedy", "hash_table"],
+      choices=["ppo", "random", "epsilon_greedy", "sliding_ucb", "hash_table"],
       default="ppo",
       help="Policy used to select actions",
   )
   parser.add_argument("--epsilon", type=float, default=0.1, help="Exploration rate for epsilon-greedy/hash-table policies")
+  parser.add_argument("--ucb-c", type=float, default=0.03, help="Exploration bonus coefficient for sliding UCB")
+  parser.add_argument("--sliding-window", type=int, default=3, help="Reward history window for sliding UCB")
   parser.add_argument("--state-dim", type=int, default=7, help="State vector dimension expected by PPO (ignored otherwise)")
   parser.add_argument(
       "--hash-cutoffs",
@@ -83,6 +85,8 @@ def main() -> None:
     agent = RandomAgent(action_space, seed=args.seed)
   elif args.agent == "epsilon_greedy":
     agent = EpsilonGreedyAgent(action_space, epsilon=args.epsilon, seed=args.seed)
+  elif args.agent == "sliding_ucb":
+    agent = SlidingUCBAgent(action_space, c=args.ucb_c, window_size=args.sliding_window)
   elif args.agent == "hash_table":
     table_path = args.hash_table.resolve() if args.hash_table is not None else (args.output.resolve() / "hash_table.json")
     agent = HashTableAgent(

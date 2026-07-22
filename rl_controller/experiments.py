@@ -7,7 +7,7 @@ from pathlib import Path
 from typing import Dict, Iterable, List, Tuple
 
 from .action_space import Action, ActionSpace, load_action_space
-from .agent import DEFAULT_STATE_CUTOFFS, FEATURE_ORDER, Agent, EpsilonGreedyAgent, HashTableAgent, PPOAgent, RandomAgent
+from .agent import DEFAULT_STATE_CUTOFFS, FEATURE_ORDER, Agent, EpsilonGreedyAgent, HashTableAgent, PPOAgent, RandomAgent, SlidingUCBAgent
 from .builder import ChampSimBuildManager
 from .runner import ChampSimRunner, RunResult
 from .state import parse_stats_json
@@ -32,8 +32,10 @@ def parse_args() -> argparse.Namespace:
   parser.add_argument("--window", type=int, default=50_000_000, help="Simulation instructions per window")
   parser.add_argument("--resume-warmup", type=int, default=100, help="Warmup instructions before each measurement window")
   parser.add_argument("--steps", type=int, default=100, help="Number of windows/subtraces to evaluate")
-  parser.add_argument("--agent", choices=["ppo", "random", "epsilon_greedy", "hash_table"], default="ppo", help="RL agent to use")
+  parser.add_argument("--agent", choices=["ppo", "random", "epsilon_greedy", "sliding_ucb", "hash_table"], default="ppo", help="RL agent to use")
   parser.add_argument("--epsilon", type=float, default=0.1, help="Exploration rate for epsilon-greedy/hash-table policies")
+  parser.add_argument("--ucb-c", type=float, default=0.03, help="Exploration bonus coefficient for sliding UCB")
+  parser.add_argument("--sliding-window", type=int, default=3, help="Reward history window for sliding UCB")
   parser.add_argument("--seed", type=int, default=0, help="Random seed for the agent")
   parser.add_argument("--state-dim", type=int, default=7, help="State vector dimension expected by PPO")
   parser.add_argument(
@@ -78,6 +80,8 @@ def build_agent(args: argparse.Namespace, action_space: ActionSpace, base_action
     return RandomAgent(action_space, seed=args.seed)
   if args.agent == "epsilon_greedy":
     return EpsilonGreedyAgent(action_space, epsilon=args.epsilon, seed=args.seed)
+  if args.agent == "sliding_ucb":
+    return SlidingUCBAgent(action_space, c=args.ucb_c, window_size=args.sliding_window)
   if args.agent == "hash_table":
     table_path = args.hash_table.resolve() if args.hash_table is not None else (output_root / "hash_table.json")
     return HashTableAgent(
@@ -258,6 +262,8 @@ def run_experiments() -> None:
   }
   if args.agent == "epsilon_greedy":
     config_summary["epsilon"] = args.epsilon
+  if args.agent == "sliding_ucb":
+    config_summary.update({"ucb_c": args.ucb_c, "sliding_window": args.sliding_window})
   if args.agent == "hash_table":
     config_summary.update(
         {

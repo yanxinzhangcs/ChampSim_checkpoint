@@ -59,6 +59,8 @@ summary of the episode lives in `episode_summary.json`.
 - `--agent random` samples uniformly.
 - `--agent epsilon_greedy` is kept as a legacy baseline and uses `--epsilon`
   for exploration.
+- `--agent sliding_ucb` uses a sliding-window UCB selector; `--sliding-window`
+  controls the recent reward window and `--ucb-c` controls the exploration bonus.
 - `--agent hash_table` bins the 7-D state into 128 buckets using `--hash-cutoffs`
   and does per-bucket epsilon-greedy selection. The learned table is saved to
   `<output>/hash_table.json` (override with `--hash-table`).

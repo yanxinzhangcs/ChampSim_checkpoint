@@ -1,6 +1,7 @@
 from __future__ import annotations
 
 import json
+import math
 import random
 from dataclasses import dataclass
 from pathlib import Path
@@ -90,6 +91,42 @@ class EpsilonGreedyAgent(Agent):
     value = self._values[key]
     # Incremental mean
     self._values[key] = value + (reward - value) / count
+
+
+class SlidingUCBAgent(Agent):
+  """Sliding-window UCB bandit over discrete action combinations.
+
+  The score is the recent mean reward plus ``c * sqrt(log(total_recent + 1) /
+  recent_count)``. This keeps the selector responsive to phase changes while
+  still forcing light exploration of actions that have little recent evidence.
+  """
+
+  def __init__(self, action_space: ActionSpace, c: float = 0.03, window_size: int = 3):
+    self.action_space = action_space
+    self.c = c
+    self.window_size = max(1, window_size)
+    self._actions: Sequence[Action] = action_space.all_actions()
+    if not self._actions:
+      raise ValueError("Action space produced no actions")
+    self._history = {action.key(): [] for action in self._actions}
+
+  def select_action(self, state=None) -> Action:
+    for action in self._actions:
+      if not self._history[action.key()]:
+        return action
+
+    total_recent = sum(min(len(values), self.window_size) for values in self._history.values())
+
+    def score(action: Action) -> float:
+      recent = self._history[action.key()][-self.window_size :]
+      mean_reward = sum(recent) / len(recent)
+      bonus = self.c * math.sqrt(math.log(total_recent + 1) / len(recent))
+      return mean_reward + bonus
+
+    return max(self._actions, key=score)
+
+  def observe(self, state, action: Action, reward: float, next_state) -> None:
+    self._history[action.key()].append(float(reward))
 
 
 @dataclass
